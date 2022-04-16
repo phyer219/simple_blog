@@ -1,0 +1,462 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2022-04-16 Sat 17:43 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>NSR Calculate II</title>
+<meta name="generator" content="Org Mode" />
+<style>
+  #content { max-width: 60em; margin: auto; }
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #e6e6e6;
+    border-radius: 3px;
+    background-color: #f2f2f2;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: auto;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    top: -8px;
+    right: 12px;
+    padding: 3px;
+    color: #555;
+    background-color: #f2f2f299;
+  }
+  pre.src:hover:before { display: inline; margin-top: 14px;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-authinfo::before { content: 'Authinfo'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .equation-container {
+    display: table;
+    text-align: center;
+    width: 100%;
+  }
+  .equation {
+    vertical-align: middle;
+  }
+  .equation-label {
+    display: table-cell;
+    text-align: right;
+    vertical-align: middle;
+  }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { width: 90%; }
+</style>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        displayAlign: "center",
+        displayIndent: "0em",
+
+        "HTML-CSS": { scale: 100,
+                        linebreaks: { automatic: "false" },
+                        webFont: "TeX"
+                       },
+        SVG: {scale: 100,
+              linebreaks: { automatic: "false" },
+              font: "TeX"},
+        NativeMML: {scale: 100},
+        TeX: { equationNumbers: {autoNumber: "AMS"},
+               MultLineWidth: "85%",
+               TagSide: "right",
+               TagIndent: ".8em"
+             }
+});
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS_HTML"></script>
+</head>
+<body>
+<div id="content" class="content">
+<h1 class="title">NSR Calculate II</h1>
+<div id="table-of-contents" role="doc-toc">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents" role="doc-toc">
+<ul>
+<li><a href="#org8b54f25">1. 整体思路</a></li>
+<li><a href="#org77c037b">2. \(\delta^p(\vec{q}, z)\) 的近似的解析表达式</a></li>
+<li><a href="#org3f8e170">3. 计算 density I</a></li>
+<li><a href="#org46d668a">4. 计算 density II</a></li>
+<li><a href="#org39e5532">5. 最终结果</a></li>
+<li><a href="#org4b8fb0a">6. 计算 \(T_C\)</a>
+<ul>
+<li><a href="#org8745807">6.1. weak coupling</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<!-- toc -->
+<!-- more -->
+
+<div id="outline-container-org8b54f25" class="outline-2">
+<h2 id="org8b54f25"><span class="section-number-2">1.</span> 整体思路</h2>
+<div class="outline-text-2" id="text-1">
+\begin{align}
+  \frac{\Delta F}{NE_n} 
+  = \left[ \tilde{\tilde{\Omega}}_{\mathrm{int}} - \tilde{\Omega}_{0}^{\mathrm{M}} 
+  + \tilde{\mu} \right]\left( \frac{n_{\varepsilon}}{n} \right)^{2/3}
+\end{align}
+\begin{align}
+  \frac{n}{n_{\varepsilon}} 
+ =& - \frac{\partial}{\partial\tilde{\mu}}\left[
+       \tilde{\tilde{\Omega}}_{\mathrm{int}} + \tilde{\Omega}_{0}^{\mathrm{B}}
+    \right]
+\end{align}
+\begin{align}
+  \tilde{\tilde{\Omega}}_{\mathrm{int}} = \int \mathrm{d}\tilde{q}\cdot \tilde{q}^2
+     \int_{-\infty}^{+\infty}\mathrm{d}\tilde{\omega}
+      \cdot \frac{3}{\pi}\cdot \frac{1}{e^{\tilde{\beta}\tilde{\omega}}-1} 
+       \delta^p(\vec{q},z)
+\end{align}
+\begin{align}
+  \tilde{\Omega}_0^{\mathrm{B}} = \frac{3}{\tilde{\beta}} \int_0^{\infty} \mathrm{d}
+  \tilde{k} \cdot \tilde{k}^2 \ln \left[1 - e^{- \tilde{\beta} \tilde{\xi}_k}\right]
+\end{align}
+\begin{align}
+  \delta^p(\vec{q}, z) 
+       =& \mathrm{Arg}\left[
+             \frac{1}{4\pi}\cdot \frac{2R}{k_{\varepsilon}^2 v}
+            + \tilde{z}\cdot\frac{1}{4\pi} 
+           + \frac{2 R}{M k_{\varepsilon}^2}\Pi_r(\vec{q},z + \mathrm{i}0^+) 
+                \right]
+\end{align}
+\begin{align}
+  \frac{2 R}{M k_{\varepsilon}^2}\Pi_r(\vec{q},z) 
+  =& \frac{2}{\pi^2} \cdot k_{\varepsilon}R\cdot \int \mathrm{d}\tilde{k}
+           \left\{
+       \int_{-1}^1 \mathrm{d}x
+        \cdot x^2\left[
+        1+n(\xi_{\vec{k}+\vec{q}/2}) + n(\xi_{-\vec{k}+\vec{q}/2})
+              \right]\frac{3}{2}\frac{\tilde{k}^4}
+          {2\tilde{k}^2 - \tilde{z}}
+           -\frac{1}{2}\tilde{k}^2
+           - \frac{1}{4}\tilde{z}
+          \right\} 
+\end{align}
+
+<p>
+带 tilde 的都是以 \(\varepsilon\) 或 \(k_{\varepsilon}\) 为单位的无量纲量.
+</p>
+
+<p>
+最终画的是 \((1)\) 式. \((1)\) 式左边以 \(E_n\) 为单位, 右边乘上 \(\left(
+\frac{n_{\varepsilon}}{n} \right)^{2/3}\) 进行单位转换.
+</p>
+
+<p>
+将 \((2)~(5)\) 式依次代入可得结果
+</p>
+
+<p>
+还有一些关系: \(\tilde{\xi} = \tilde{k}^2 - \tilde{\mu} ,\quad n(\xi) =
+\frac{1}{e^{\tilde{\beta} \tilde{\xi}}-1}, \quad \tilde{z} =
+\tilde{\omega} - \frac{\tilde{q}^2}{2} + 2 \tilde{\mu}\) 
+</p>
+</div>
+</div>
+
+<div id="outline-container-org77c037b" class="outline-2">
+<h2 id="org77c037b"><span class="section-number-2">2.</span> \(\delta^p(\vec{q}, z)\) 的近似的解析表达式</h2>
+<div class="outline-text-2" id="text-2">
+<p>
+\(\delta^p(\vec{q}, z)\) 的近似的解析表达式为
+</p>
+\begin{align}
+  -\pi \theta(\omega - a)
+\end{align}
+<p>
+其中 
+</p>
+\begin{align}
+  a = \frac{\tilde{q}^2}{2} - 2 \tilde{\mu} - \frac{2R}{k_{\varepsilon}^2 v}
+\end{align}
+
+<p>
+以 \(\tilde{q}\) 和 \(\tilde{\omega}\) 为变量, 数值上画出的
+\(\delta^p(\vec{q}, z)\) 的二维图为
+</p>
+
+
+<div id="org56d9214" class="figure">
+<p><img src="./2019-09-08-专业笔记-NSRcalv2/2Dfig.png" alt="2Dfig.png" />
+</p>
+</div>
+
+<p>
+是一个阶跃函数. 其边界和近似的解析表达式对比
+</p>
+
+
+<div id="org259b51b" class="figure">
+<p><img src="./2019-09-08-专业笔记-NSRcalv2/stepLine.png" alt="stepLine.png" />
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org3f8e170" class="outline-2">
+<h2 id="org3f8e170"><span class="section-number-2">3.</span> 计算 density I</h2>
+<div class="outline-text-2" id="text-3">
+\begin{align}
+  \frac{n}{n_{\varepsilon}} 
+ =& - \frac{\partial}{\partial\tilde{\mu}}\left[
+       \tilde{\tilde{\Omega}}_{\mathrm{int}} + \tilde{\Omega}_{0}^{\mathrm{B}}
+    \right]
+\end{align}
+
+<p>
+density \(\frac{n}{n_{\varepsilon}}\)  与温度 \(\tilde{\beta}\) , \(k_{\varepsilon}R\) ,
+\(\frac{2R}{k_{\varepsilon}^2 v}\) , 化学势 \(\tilde{\mu}\) 有关.
+</p>
+
+<p>
+将温度 \(\tilde{\beta}=1\) 和 \(k_{\varepsilon}R=1/30\) 固定, 以
+\(\frac{2R}{k_{\varepsilon}^2 v}\) 为横坐标, 画出不同化学势
+\(\tilde{\mu}\) 时积分部分的多条曲线.
+</p>
+
+<p>
+取 \(\frac{2R}{k_{\varepsilon}^2 v}\in [-2, 2]\) , \(\mu \in [-2, -.0.1]\)
+</p>
+</div>
+</div>
+
+<div id="outline-container-org46d668a" class="outline-2">
+<h2 id="org46d668a"><span class="section-number-2">4.</span> 计算 density II</h2>
+<div class="outline-text-2" id="text-4">
+<p>
+用 \(\delta^p(\vec{q}, z)\) 的近似的解析表达式求 density 的解析表达式
+</p>
+\begin{align}
+  \frac{n}{n_{\varepsilon}} 
+ =& - \frac{\partial}{\partial\tilde{\mu}}\left[
+       \tilde{\tilde{\Omega}}_{\mathrm{int}} + \tilde{\Omega}_{0}^{\mathrm{B}}
+    \right] \\
+ =& \int_0^{\infty}\mathrm{d}\tilde{q}\cdot 3 \tilde{q}^2\left[ 
+    \frac{2}{e^{\tilde{\beta}a}-1} +
+    \frac{1}{e^{\tilde{\beta}(\tilde{q}^2 - \tilde{\mu})}-1}
+  \right]
+\end{align}
+</div>
+</div>
+
+<div id="outline-container-org39e5532" class="outline-2">
+<h2 id="org39e5532"><span class="section-number-2">5.</span> 最终结果</h2>
+<div class="outline-text-2" id="text-5">
+<p>
+将结果与原文中的结果对比
+</p>
+
+
+<div id="org4d9e2ad" class="figure">
+<p><img src="./2019-09-08-专业笔记-NSRcalv2/co-result.png" alt="co-result.png" />
+</p>
+</div>
+
+<ul class="org-ul">
+<li>蓝线: 原文结果</li>
+<li>num 数值结果.</li>
+<li>ana1 只把 \(\delta^p\) 的边界的边界用数值解代替(analytically calculate \(\delta^p\) ).</li>
+<li>ana2 直到积分的结果都是解析的, 微分是数值微分(analytically calculate the integral F).</li>
+<li>ana3 对 \(\mu\) 的微分也用解析结果(analytically calculate \(\mu\) ).</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org4b8fb0a" class="outline-2">
+<h2 id="org4b8fb0a"><span class="section-number-2">6.</span> 计算 \(T_C\)</h2>
+<div class="outline-text-2" id="text-6">
+</div>
+<div id="outline-container-org8745807" class="outline-3">
+<h3 id="org8745807"><span class="section-number-3">6.1.</span> weak coupling</h3>
+<div class="outline-text-3" id="text-6-1">
+<p>
+算出 \(\mu = 0\) 时的 density .
+</p>
+
+<p>
+对应的纵坐标为
+</p>
+\begin{align}
+  \frac{k_BT_C}{E_n} = \frac{1}{\beta E_n} = \frac{1}{\varepsilon \beta} \frac{\varepsilon}{E_n}
+  = \frac{1}{\tilde{\beta}} \cdot \left(\frac{n_{\varepsilon}}{n}\right)^{2/3}
+\end{align}
+<p>
+横坐标为
+</p>
+\begin{align}
+  \frac{2 R_p}{k_n^2v_p} = \frac{2 \tilde{R_p}}{k_{\varepsilon}^2 \tilde{v_p}}\cdot \left(
+   \frac{n_{\varepsilon}}{n}\right)^{2/3}
+\end{align}
+
+
+<div id="orgd2b6735" class="figure">
+<p><img src="./2019-09-08-专业笔记-NSRcalv2/Tc.png" alt="Tc.png" />
+</p>
+</div>
+
+
+<div id="org42191ee" class="figure">
+<p><img src="./2019-09-08-专业笔记-NSRcalv2/TcNum.png" alt="TcNum.png" />
+</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="date">Date: 2019-09-08 Sun 00:00</p>
+<p class="date">Created: 2022-04-16 Sat 17:43</p>
+<p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
+</div>
+</body>
+</html>

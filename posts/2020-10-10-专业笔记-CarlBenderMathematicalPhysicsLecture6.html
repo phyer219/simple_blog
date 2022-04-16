@@ -1,0 +1,607 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2022-04-16 Sat 17:42 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Carl Bender Mathematical Physics Lecture6 Note</title>
+<meta name="generator" content="Org Mode" />
+<style>
+  #content { max-width: 60em; margin: auto; }
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #e6e6e6;
+    border-radius: 3px;
+    background-color: #f2f2f2;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: auto;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    top: -8px;
+    right: 12px;
+    padding: 3px;
+    color: #555;
+    background-color: #f2f2f299;
+  }
+  pre.src:hover:before { display: inline; margin-top: 14px;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-authinfo::before { content: 'Authinfo'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .equation-container {
+    display: table;
+    text-align: center;
+    width: 100%;
+  }
+  .equation {
+    vertical-align: middle;
+  }
+  .equation-label {
+    display: table-cell;
+    text-align: right;
+    vertical-align: middle;
+  }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { width: 90%; }
+</style>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        displayAlign: "center",
+        displayIndent: "0em",
+
+        "HTML-CSS": { scale: 100,
+                        linebreaks: { automatic: "false" },
+                        webFont: "TeX"
+                       },
+        SVG: {scale: 100,
+              linebreaks: { automatic: "false" },
+              font: "TeX"},
+        NativeMML: {scale: 100},
+        TeX: { equationNumbers: {autoNumber: "AMS"},
+               MultLineWidth: "85%",
+               TagSide: "right",
+               TagIndent: ".8em"
+             }
+});
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS_HTML"></script>
+</head>
+<body>
+<div id="content" class="content">
+<h1 class="title">Carl Bender Mathematical Physics Lecture6 Note</h1>
+<div id="table-of-contents" role="doc-toc">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents" role="doc-toc">
+<ul>
+<li><a href="#org27bb8c3">1. Information</a></li>
+<li><a href="#org4096b51">2. Keywords</a></li>
+<li><a href="#org2da6966">3. Continued Factions</a></li>
+<li><a href="#org3ac5823">4. IQ Test</a>
+<ul>
+<li><a href="#orgdd93a51">4.1. step1</a></li>
+<li><a href="#orgb13c8b1">4.2. step2</a></li>
+<li><a href="#org096e4e4">4.3. step3</a></li>
+</ul>
+</li>
+<li><a href="#orga0e5982">5. </a></li>
+<li><a href="#orgb132d3b">6. Pade Sequence</a></li>
+<li><a href="#org402746b">7. An Intuitive Explanation</a></li>
+<li><a href="#org781384a">8. Summary</a></li>
+<li><a href="#org70b43b9">9. Reference</a></li>
+</ul>
+</div>
+</div>
+<!-- toc -->
+<!-- more -->
+
+<div id="outline-container-org27bb8c3" class="outline-2">
+<h2 id="org27bb8c3"><span class="section-number-2">1.</span> Information</h2>
+<div class="outline-text-2" id="text-1">
+<ul class="org-ul">
+<li>原出处: <a href="https://www.perimeterinstitute.ca/video-library/collection/11/12-psi-mathematical-physics">https://www.perimeterinstitute.ca/video-library/collection/11/12-psi-mathematical-physics</a></li>
+
+<li>可以看自动生成的字幕: <a href="https://www.youtube.com/playlist?list=PLzcd6SoIscwjHuWRE38UXWG92uq0Sy4UF">https://www.youtube.com/playlist?list=PLzcd6SoIscwjHuWRE38UXWG92uq0Sy4UF</a></li>
+
+<li>Bilibili:
+<a href="https://www.bilibili.com/video/BV1w4411q7x6?from=search&amp;seid=7852838902448285010">https://www.bilibili.com/video/BV1w4411q7x6?from=search&amp;seid=7852838902448285010</a></li>
+
+<li>Book: Carl M. Bender, Steven A. Orszag, Advanced Mathematical Methods for Scientists and
+Engineers I Asympotic Methods and Perturbation Theory, 1999</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org4096b51" class="outline-2">
+<h2 id="org4096b51"><span class="section-number-2">2.</span> Keywords</h2>
+<div class="outline-text-2" id="text-2">
+<p>
+Continued fractions.  Pade sequence. Shear magic. Stieltjes series
+</p>
+</div>
+</div>
+
+<div id="outline-container-org2da6966" class="outline-2">
+<h2 id="org2da6966"><span class="section-number-2">3.</span> Continued Factions</h2>
+<div class="outline-text-2" id="text-3">
+<p>
+有一个 \(HP(\epsilon)\) 微扰得到一个 asympotic series 形式的结果 \(ANS(\epsilon) \sim \sum a_n \epsilon^n\)
+, 但是一般只有前几项, 而且收敛半径是 \(0\) . 思路上将其转化成 continued
+functions, a sequence of "approximants" , 而这个 sequence 的收敛性比那个
+asympotic series 的收敛性好的多. 之前讲 \(e^{ze^{ze^{z\cdots}}}\) 的例子只因为 Bender
+love 这个例子, 因为它太 weird, 它 glorious, 并且鲜为人知. 之后并不会再讨论
+continued exponential. 
+</p>
+
+<p>
+下面考虑 continued fractions
+</p>
+\begin{align}
+  \label{eq:cf}
+  \sum a_n x^n \to \frac{b_0}{1 - \frac{b_1x}{1 - \frac{ b_2x}{1 - b_3 x \cdots}}}
+\end{align}
+<p>
+idea 是, 我们求得了 (\ref{eq:cf}) 的左边, 但它是发散的. 如果把它转换成
+(\ref{eq:cf}) 右边的 continued fractions 的形式, the sequence of approximants
+you get from the continued fractions might well converge. the sequence of
+approximants 指的是(假设收敛到 \(L\) )
+</p>
+\begin{align}
+  b_0, \frac{b_0}{1 - b_1x}, \frac{b_0}{1 - \frac{b_1x}{ 1 - b_2x}}, \cdots, \to L
+\end{align}
+<p>
+也就是说, 我们从一个发散的, 但是包含我们所需要的信息的级数, 转化成一个收敛的级数,
+因此我们从其中提取所需要的信息.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org3ac5823" class="outline-2">
+<h2 id="org3ac5823"><span class="section-number-2">4.</span> IQ Test</h2>
+<div class="outline-text-2" id="text-4">
+<p>
+用一个特别的方式来说明这个.
+</p>
+
+<p>
+像 IQ 测试一样, 下面数例的下一个数是什么
+</p>
+\begin{align}
+  1, 5, 61, ??
+\end{align}
+<p>
+这太难了, 你之前知道就会, 之前不知道就不会. 它们是 Euler numbers. 下面讲一种方法
+来计算它.
+将上面的数列记为(手动加上 \(a_0 = 1\) )
+</p>
+\begin{align}
+  a_0 = 1, a_1= 1, a_2 = 5, a_3 = 61, \cdots
+\end{align}
+<p>
+我们想将它 transform 成一个更明显, 更好猜的数例 \(b_n\)
+</p>
+\begin{align}
+  b_0, b_1, b_2, b_3, \cdots
+\end{align}
+<p>
+下面分三个步骤进行
+</p>
+</div>
+
+<div id="outline-container-orgdd93a51" class="outline-3">
+<h3 id="orgdd93a51"><span class="section-number-3">4.1.</span> step1</h3>
+<div class="outline-text-3" id="text-4-1">
+<blockquote>
+<p>
+Given \(\{a_n\}\), imagine that (moment problems)
+</p>
+\begin{align}
+  a_n = \int_{-L}^L \mathrm{d}x\cdot w(x) x^{2n}
+\end{align}
+</blockquote>
+</div>
+</div>
+
+<div id="outline-container-orgb13c8b1" class="outline-3">
+<h3 id="orgb13c8b1"><span class="section-number-3">4.2.</span> step2</h3>
+<div class="outline-text-3" id="text-4-2">
+<blockquote>
+<p>
+If you have \(\{b_n\}\) 
+</p>
+\begin{align}
+  P_0 (x) =& 1 \\
+  P_1(x) \equiv& x \\
+   P_{n + 1}(x) =& x P_n - b_n P_{n - 1}(x)
+\end{align}
+<p>
+so (monic)
+</p>
+\begin{align}
+  P_2(x) =& x^2 - b_1 \\
+  P_3(x) =& x^{3} - (b_1 + b_2) x \\
+  P_4(x) =& x^4 - (b_1 + b_2 + b_3) x^2 + b_3 b_1
+\end{align}
+</blockquote>
+</div>
+</div>
+
+<div id="outline-container-org096e4e4" class="outline-3">
+<h3 id="org096e4e4"><span class="section-number-3">4.3.</span> step3</h3>
+<div class="outline-text-3" id="text-4-3">
+<blockquote>
+<p>
+Let's require these polynomials are orthogonal with respect to \(w\)
+</p>
+\begin{align}
+  \int_{-L} ^L \mathrm{d}x \cdot w(x) P_n(x) P_m(x) = 0 , \quad n\neq m
+\end{align}
+<p>
+so
+</p>
+\begin{align}
+  P_0 \bot P_2 :& a_1 - b_1 = 0 \Rightarrow a_1 = b_1 \\
+  P_1 \bot P_3 :& a_2 - (b_1 + b_2 ) b_1 = 0 \Rightarrow a_2 = b_1(b_1 + b_2) \\
+  P_4 \bot P_o :& a_2 = b_1(b_1 + b_2) \\
+  P_4 \bot P_2 :& a_3 = b_1(b_1 + b_2)^2 + b_1 b_2 b_3
+\end{align}
+
+<p>
+\(\mathscr{P}\)
+</p>
+</blockquote>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orga0e5982" class="outline-2">
+<h2 id="orga0e5982"><span class="section-number-2">5.</span> </h2>
+<div class="outline-text-2" id="text-5">
+<p>
+发现结果恰好是之前的数例
+</p>
+\begin{align}
+  a_1 = 1 \to& b_1 = 1 \\
+  a_2 = 5 \to& b_2 = 4 \\
+  a_3 = 61\to& b_3 = 9 \\
+  a_4 = 1385 \to& b_4 = 16
+\end{align}
+<p>
+If \(a_n\sim n!\) , then \(b_n \sim n\) . If \(a_n \sim (2n)!\) , then \(b_n\sim n^2\) . 这里的 \(a_n,
+b_n\) 的关系, 就是前面的级数和 continued fractions 的关系. 比如
+</p>
+\begin{align}
+  E_n(1, 5, 61, 1385, \cdots) \sim (2n)! C^n,\quad \mathrm{as}\, n\to \infty
+\end{align}
+</div>
+</div>
+
+<div id="outline-container-orgb132d3b" class="outline-2">
+<h2 id="orgb132d3b"><span class="section-number-2">6.</span> Pade Sequence</h2>
+<div class="outline-text-2" id="text-6">
+<p>
+There is very deep connetction between continued fractions and orthogonal
+polynomials. 当然, 最简单的方法是直接 Taylor 展开, 如
+</p>
+\begin{align}
+  \frac{1}{1 - x} =& 1 + x + \mathcal{O}(x^2) \\
+  \frac{1}{1 - \frac{x}{1 - 4x}} =& 1 + x + 5 x^2 + \mathcal{O}(x^2) \\
+  \frac{1}{1 - \frac{x}{1 - \frac{4x}{1 - 9 x}}} =& 1 + x + 5 x^2 + 61 x^3 + \cdots \\
+  \vdots &
+\end{align}
+<p>
+如果把 continued fractions 有理化, 那么
+</p>
+\begin{align}
+  b_0 \to& \frac{\mathscr{P}_0}{\mathscr{P}_0} \label{eq:padeStart}\\
+   \frac{b_0}{1 - b_1x}\to& \frac{\mathscr{P}_0}{\mathscr{P}_{1}} \\
+  \frac{b_0}{1 - \frac{b_1 x}{ 1 - b_2x}} \to& \frac{\mathscr{P}_1}{\mathscr{P}_1}\\
+  \frac{b_0}{1 - \frac{b_1 x}{ 1 - \frac{b_2x}{1 - b_3x}}} 
+                   \to& \frac{\mathscr{P}_1}{\mathscr{P}_2} \\
+         \vdots \to& \frac{\mathscr{P}_2}{\mathscr{P}_2} \\
+         \vdots \to& \frac{\mathscr{P}_2}{\mathscr{P}_3} \label{eq:padeEnd}\\
+         \vdots &
+\end{align}
+<p>
+其中 \(\mathscr{P}_n\) 代表 \(n\) 阶多项式. 右边叫做 Pade sequence. 更 general 的
+</p>
+\begin{align}
+  \sum_0^{p+q} a_n x^n = \frac{\mathscr{P}_p}{\mathscr{P}_q} = \mathcal{P}^p_q
+\end{align}
+<p>
+两边的系数相等. 被称作  Pade approximates. 对于一个级数, 可以写一个 Pade table
+(Bender 在黑板上笔误了上下标标反了)
+</p>
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<tbody>
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">\(q=1\)</td>
+<td class="org-left">\(q=2\)</td>
+<td class="org-left">\(q=3\)</td>
+<td class="org-left">\(\cdots\)</td>
+</tr>
+
+<tr>
+<td class="org-left">\(p=1\)</td>
+<td class="org-left">\(\mathcal{P}^1_1\)</td>
+<td class="org-left">\(\mathcal{P}^1_2\)</td>
+<td class="org-left">\(\mathcal{P}^1_3\)</td>
+<td class="org-left">\(\cdots\)</td>
+</tr>
+
+<tr>
+<td class="org-left">\(p=2\)</td>
+<td class="org-left">\(\mathcal{P}^2_1\)</td>
+<td class="org-left">\(\mathcal{P}^2_2\)</td>
+<td class="org-left">\(\mathcal{P}^2_3\)</td>
+<td class="org-left">\(\cdots\)</td>
+</tr>
+
+<tr>
+<td class="org-left">\(p=3\)</td>
+<td class="org-left">\(\mathcal{P}^3_1\)</td>
+<td class="org-left">\(\mathcal{P}^3_2\)</td>
+<td class="org-left">\(\mathcal{P}^3_3\)</td>
+<td class="org-left">\(\cdots\)</td>
+</tr>
+
+<tr>
+<td class="org-left">\(\vdots\)</td>
+<td class="org-left">\(\vdots\)</td>
+<td class="org-left">\(\vdots\)</td>
+<td class="org-left">\(\vdots\)</td>
+<td class="org-left">\(\ddots\)</td>
+</tr>
+</tbody>
+</table>
+<p>
+而前面的 (\ref{eq:padeStart}) ~ (\ref{eq:padeEnd}) 是 Pade table 中(副)对角的部
+分, 称为 main/diagonal Pade sequence. 
+</p>
+
+<p>
+总的来说, 我们将一个不收敛的级数, 写成了 Pade sequence 的形式, 而这通常收敛非常
+快, really really rapidly. 
+</p>
+
+<p>
+接下来是精辟的评论
+</p>
+<blockquote>
+<p>
+It's the antidote to what they teach you in calsses on quantum field theory and
+on quantum mechanics. Because in a class on quantum mechanics or quantum field
+theory they teach you perturbation theory and without teaching you this. It's
+junk! Because you can't do anything with what you've learned. You calculate a
+bunch of Feynman diagrams, big deal, but you convert that to Pade, and you can
+sum it up. 
+</p>
+</blockquote>
+
+<p>
+Pade 不仅收敛地快, 而且 \(\mathcal{P}^n_n\) 和 \(\mathcal{P}^n_{n + 1}\) 分别从 \(L\) 的
+上边和下边逼近, 因此还可以做 Shanks transform, 会收敛地更快. 
+</p>
+
+<p>
+之后举了几个例子, 来说明 Pade sequence 比 Taylor series 收敛地更快.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org402746b" class="outline-2">
+<h2 id="org402746b"><span class="section-number-2">7.</span> An Intuitive Explanation</h2>
+<div class="outline-text-2" id="text-7">
+<p>
+Pade 是多项式, 它的分母可以有零点. 比如 \(\Gamma\) function 有许多 pole, Taylor series
+没有 pole, 但 Pade 可以有. Pade 可以 mock up (模拟) poles. 因此 Pade 是一个 very
+flexible 的表示. 
+</p>
+
+<p>
+同时, Taylor series 的收敛区域是一个圆, 它要求圆内所有的点都收敛. 这就限制了它的
+收敛的区域. 而 Pade 就不必, 它的收敛区域可以是整个复平切去割线. Pade 所要求的更
+少, 它的收敛区域不必是一个圆, 因此, 它可以给我们的更多.
+</p>
+
+<blockquote>
+<p>
+Taylor series hate you, because you force them to converge in a full circle. It
+just say 'go away, I'm not working for you today.'
+</p>
+
+<p>
+Whereas Pade, you don't force it to converge here, you're not requiring it and
+it doesn't converge, and therefore where it does converge it converges much
+better and much faster than a Taylor series. It's wonderful!  
+</p>
+</blockquote>
+</div>
+</div>
+
+<div id="outline-container-org781384a" class="outline-2">
+<h2 id="org781384a"><span class="section-number-2">8.</span> Summary</h2>
+<div class="outline-text-2" id="text-8">
+<p>
+讲了如何将发散的级数求和, 给出的方法是将原来发散的级数转化成 Pade sequence. 
+</p>
+</div>
+</div>
+
+<div id="outline-container-org70b43b9" class="outline-2">
+<h2 id="org70b43b9"><span class="section-number-2">9.</span> Reference</h2>
+<div class="outline-text-2" id="text-9">
+<ul class="org-ul">
+<li><a href="https://en.wikipedia.org/wiki/Pad%C3%A9_table">https://en.wikipedia.org/wiki/Pad%C3%A9_table</a></li>
+</ul>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="date">Date: 2020-10-10 Sat 00:00</p>
+<p class="date">Created: 2022-04-16 Sat 17:42</p>
+<p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
+</div>
+</body>
+</html>

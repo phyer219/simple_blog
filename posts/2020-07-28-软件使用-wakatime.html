@@ -1,0 +1,360 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2022-04-16 Sat 17:42 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>坎坷的 wakatime-mode</title>
+<meta name="generator" content="Org Mode" />
+<style>
+  #content { max-width: 60em; margin: auto; }
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #e6e6e6;
+    border-radius: 3px;
+    background-color: #f2f2f2;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: auto;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    top: -8px;
+    right: 12px;
+    padding: 3px;
+    color: #555;
+    background-color: #f2f2f299;
+  }
+  pre.src:hover:before { display: inline; margin-top: 14px;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-authinfo::before { content: 'Authinfo'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .equation-container {
+    display: table;
+    text-align: center;
+    width: 100%;
+  }
+  .equation {
+    vertical-align: middle;
+  }
+  .equation-label {
+    display: table-cell;
+    text-align: right;
+    vertical-align: middle;
+  }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { width: 90%; }
+</style>
+</head>
+<body>
+<div id="content" class="content">
+<h1 class="title">坎坷的 wakatime-mode</h1>
+<div id="table-of-contents" role="doc-toc">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents" role="doc-toc">
+<ul>
+<li><a href="#orgd9372b5">1. ailien invasion</a></li>
+<li><a href="#orgd6e3a22">2. VS Code</a></li>
+<li><a href="#orgc26ce8d">3. wakatime-mode</a></li>
+</ul>
+</div>
+</div>
+<!-- toc -->
+<!-- more -->
+
+<p>
+(许久没有更新折腾类的了.)
+</p>
+
+<div id="outline-container-orgd9372b5" class="outline-2">
+<h2 id="orgd9372b5"><span class="section-number-2">1.</span> ailien invasion</h2>
+<div class="outline-text-2" id="text-1">
+<p>
+最近按照 《Python编程：从入门到实践 - 2016》 一书重复了 ailien invasion 这一
+project (见 <a href="https://github.com/phyer219/alien_invasion">https://github.com/phyer219/alien_invasion</a> ) ! 本身是个写游戏的项目.
+但是很多方法都可以借鉴到其它的 project 中. 对于我这种没有正经地学过写程序的人来
+说(我不想回忆本科时上的那门程序设计课&#x2026;), 收获还是颇丰的!
+</p>
+
+<ul class="org-ul">
+<li>对类的应用</li>
+
+<li>要给每个函数写 docstring</li>
+
+<li>把不同功能的函数放到不同的文件里</li>
+
+<li>写一些程序后, 要进行重构(Refactoring), 降低一些函数的长度. 使程序的结构清晰.</li>
+</ul>
+
+<p>
+感谢这本书的作者和翻译者. 这样完整且标准的去重复这样的 project 的机会真的难得!
+</p>
+
+<p>
+得益于 ailien invasion , 又用了一天的时间把正在做的课题用 python 重新算了一遍.
+经过修改一些 bug 后, 和之前的 fortran 符合得很好, 我终于能够对自己写的 fortran
+程序的正确性很有信心了!
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgd6e3a22" class="outline-2">
+<h2 id="orgd6e3a22"><span class="section-number-2">2.</span> VS Code</h2>
+<div class="outline-text-2" id="text-2">
+<p>
+就我目前所处的 emacs 学习曲线的阶段来说, 还是 VS Code / Atom 这类的编辑器写这种
+project 比较合适. 它的特点是 
+</p>
+
+<ul class="org-ul">
+<li>程序分散在不同的文件里, 要频繁来回切换, 反复修改.</li>
+
+<li>总的代码量并不大.</li>
+
+<li>要时常查看函数的 docstring .</li>
+</ul>
+
+<p>
+VS Code 新插件 Pylance 真的方便. (期间遇到问题, 才知道 VS Code 有好多分支, code,
+vscodium &#x2026;)
+</p>
+
+<p>
+但写 tex , emacs + auctex 的效率还是无敌的! 
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgc26ce8d" class="outline-2">
+<h2 id="orgc26ce8d"><span class="section-number-2">3.</span> wakatime-mode</h2>
+<div class="outline-text-2" id="text-3">
+<p>
+用了 VS Code, 不免要看看有哪些好玩的插件. 于是就发现了 wakatime. 统计你在不同去
+的 project, 不同的时间段, 不同的编辑器上花费的时间的插件. 好玩! 好玩在展示统计结
+果的界面, 真好看! 我此时认为统计的主要魅力就在于那些漂亮的图表!
+</p>
+
+<p>
+昨天发现 wakatime 还有 emacs 的插件, 那岂不美哉! 
+</p>
+
+<p>
+但是无论怎么搞, 它都会报错
+</p>
+<div class="org-src-container">
+<pre class="src src-lisp">error "WakaTime Error 104 Invalid API Key. Set your api key with: (custom-set-variables '(wakatime-api-key \"XXXX\")) 
+</pre>
+</div>
+
+<p>
+几个小时没有解决(折腾这种事容易上头, 这还是近几个月来少见地上头了) . 回头一看 VS
+code 竟然也 Invalid API Key 了, 在 atom 也是 Invalid API Key . 然后换了系统, 换
+了账号, 都是 Invalid API Key . 而其它类似的插件是可以正常连接的. 此时, 我已基本
+断定, 这个报错的原因极有可能是服务器出了问题. 于是没有再理.
+</p>
+
+<p>
+今天早上一看, 昨天果是它们的服务器的问题, VS Code 和 atom 都正常了. emacs 仍然是
+Invalid API Key. 我打开 dashboard 一看, 让我震惊的是 dashboard 上竟然显示了我昨
+天在 atom 和 emacs 上的活动! 也就是说, 虽然 wakatime-mode 报错 Invalid API Key,
+但是实际是 dashboard 已经收到信号了. 这是谎报的!
+</p>
+
+<p>
+经过一波测试, 断定是 emacs 的 wakatime-mode 插件的 bug! 于是找到插件对应的
+wakatime-mode.elc , 定位到 Error 104 对应的语句
+</p>
+<div class="org-src-container">
+<pre class="src src-lisp">(set-process-sentinel process
+  `(lambda (process signal)
+     (when (memq (process-status process) '(exit signal))
+       (kill-buffer (process-buffer process))
+       (let ((exit-status (process-exit-status process)))
+	 (when (and (not (= 0 exit-status)) (not (= 102 exit-status)))
+	   (cond
+	     ((= exit-status 103) (error "WakaTime Error (%s) Config file parse error. Check your ~/.wakatime.cfg file." exit-status))
+	     ((= exit-status 104) (error "WakaTime Error (%s) Invalid API Key. Set your api key with: (custom-set-variables '(wakatime-api-key \"XXXX\"))" exit-status))
+	     ((= exit-status 105) (error "WakaTime Error (%s) Unknown wakatime-cli error. Please check your ~/.wakatime.log file and open a new issue at https://github.com/wakatime/wakatime-mode" exit-status))
+	     ((= exit-status 106) (error "WakaTime Error (%s) Malformed heartbeat error. Please check your ~/.wakatime.log file and open a new issue at https://github.com/wakatime/wakatime-mode" exit-status))
+	     (t (error "WakaTime Error (%s) Make sure this command runs in a Terminal: %s" exit-status (wakatime-client-command nil)))
+	   )
+	 )
+       )
+     )
+  )
+)
+</pre>
+</div>
+
+<p>
+果断删除了
+</p>
+<div class="org-src-container">
+<pre class="src src-lisp">((= exit-status 104) (error "WakaTime Error (%s) Invalid API Key. Set your api key with: (custom-set-variables '(wakatime-api-key \"XXXX\"))" exit-status))
+</pre>
+</div>
+<p>
+再测试一波, dashboard 能统计到 emacs 的活动, emacs 的 wakatime-mode 也不再报错.
+完美解决.
+</p>
+
+<p>
+对我来说是解决了, 如果有能力的话, 还是把这个 bug 报给开发都比较好. 我还是算了&#x2026;
+</p>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="date">Date: 2020-07-28 Tue 00:00</p>
+<p class="date">Created: 2022-04-16 Sat 17:42</p>
+<p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
+</div>
+</body>
+</html>

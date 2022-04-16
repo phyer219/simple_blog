@@ -1,0 +1,717 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2022-04-16 Sat 17:43 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>NSR Calculate</title>
+<meta name="generator" content="Org Mode" />
+<style>
+  #content { max-width: 60em; margin: auto; }
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #e6e6e6;
+    border-radius: 3px;
+    background-color: #f2f2f2;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: auto;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    top: -8px;
+    right: 12px;
+    padding: 3px;
+    color: #555;
+    background-color: #f2f2f299;
+  }
+  pre.src:hover:before { display: inline; margin-top: 14px;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-authinfo::before { content: 'Authinfo'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .equation-container {
+    display: table;
+    text-align: center;
+    width: 100%;
+  }
+  .equation {
+    vertical-align: middle;
+  }
+  .equation-label {
+    display: table-cell;
+    text-align: right;
+    vertical-align: middle;
+  }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { width: 90%; }
+</style>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        displayAlign: "center",
+        displayIndent: "0em",
+
+        "HTML-CSS": { scale: 100,
+                        linebreaks: { automatic: "false" },
+                        webFont: "TeX"
+                       },
+        SVG: {scale: 100,
+              linebreaks: { automatic: "false" },
+              font: "TeX"},
+        NativeMML: {scale: 100},
+        TeX: { equationNumbers: {autoNumber: "AMS"},
+               MultLineWidth: "85%",
+               TagSide: "right",
+               TagIndent: ".8em"
+             }
+});
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS_HTML"></script>
+</head>
+<body>
+<div id="content" class="content">
+<h1 class="title">NSR Calculate</h1>
+<div id="table-of-contents" role="doc-toc">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents" role="doc-toc">
+<ul>
+<li><a href="#orgd4be884">1. Free Energy vs. Renormalize Paramaters</a>
+<ul>
+<li><a href="#org0ee3653">1.1. p-wave</a>
+<ul>
+<li><a href="#org0a1574b">1.1.1. cal</a></li>
+</ul>
+</li>
+<li><a href="#org3248349">1.2. 以 \(\varepsilon\) 为单位</a></li>
+</ul>
+</li>
+<li><a href="#orgdbc93b2">2. result</a></li>
+<li><a href="#orgd2065c4">3. code</a></li>
+</ul>
+</div>
+</div>
+<!-- toc -->
+<!-- more -->
+
+<div id="outline-container-orgd4be884" class="outline-2">
+<h2 id="orgd4be884"><span class="section-number-2">1.</span> Free Energy vs. Renormalize Paramaters</h2>
+<div class="outline-text-2" id="text-1">
+</div>
+<div id="outline-container-org0ee3653" class="outline-3">
+<h3 id="org0ee3653"><span class="section-number-3">1.1.</span> p-wave</h3>
+<div class="outline-text-3" id="text-1-1">
+</div>
+<div id="outline-container-org0a1574b" class="outline-4">
+<h4 id="org0a1574b"><span class="section-number-4">1.1.1.</span> cal</h4>
+<div class="outline-text-4" id="text-1-1-1">
+\begin{align}
+  \delta^p(\vec{q}, z) =& \mathrm{Arg}\left[ \frac{Mk_{n^2}}{2}\frac{1}{R}
+                 \left(
+             \frac{1}{4\pi}\cdot \frac{2R}{k_n^2 v}
+            + \tilde{z}\cdot\frac{1}{4\pi} 
+           + \frac{2 R}{M k_n^2}\Pi_r(\vec{q},z) 
+                 \right)
+                \right] \\
+       =& \mathrm{Arg}\left[
+             \frac{1}{4\pi}\cdot \frac{2R}{k_n^2 v}
+            + \tilde{z}\cdot\frac{1}{4\pi} 
+           + \frac{2 R}{M k_n^2}\Pi_r(\vec{q},z + \mathrm{i}0^+) 
+                \right]
+\end{align}
+<p>
+其中 \(\tilde{z}=z/E_n\) , \(E_n = k_n^2/(2M)\) , \(k_n^3 = 6\pi^2n\) , \(n =
+N/V\)
+</p>
+\begin{align}
+  \frac{2 R}{M k_n^2}\Pi_r(\vec{q},z) =& (k_n R)\cdot\Pi_r \cdot \frac{2}{Mk_n^3}\\
+  =& \tilde{R}\left[
+     \frac{2}{Mk_n^3}\left( -\frac{M}{V} \right)\sum_{\vec{k}}1
+     - \tilde{z}E_n \frac{M^2}{V}\frac{2}{Mk_n^3}\sum_{\vec{k}}\frac{1}{k^2}
+     + \frac{2}{Mk_n^3}\Pi^{l=1}(\vec{q},z)
+    \right] \\
+  =& \tilde{R}\left[ 
+           -\frac{1}{\pi^2}\int \mathrm{d}\tilde{k}\cdot \tilde{k}^2
+           -\tilde{z} \frac{1}{2\pi^2}\int \mathrm{d}\tilde{k}
+           +\tilde{\Pi}^{l=1}
+          \right]
+\end{align}
+<p>
+其中 \(\tilde{R} = k_nR\) , \(\tilde{k} = k/k_n\)
+</p>
+\begin{align}
+  \tilde{\Pi}^{l=1} = &\frac{2}{Mk_n^3}\Pi^{l=1}(\vec{q},\omega) \\
+   =& \frac{2}{Mk_n^3}\frac{1}{V}\frac{V}{(2\pi)^3}\int \mathrm{d}\tilde{k}
+    \left[
+       k^2 \cdot 4\pi |Y_{lm}(\hat{k})|^2 
+       \frac{1+n(\xi_{\vec{k}+\vec{q}/2}) + n(\xi_{-\vec{k}+\vec{q}/2})}
+          {\xi_{\vec{k}+\vec{q}/2} + \xi_{-\vec{k}+\vec{q}/2} - \omega}
+    \right] \\
+   =& \frac{2}{\pi^2}\int \mathrm{d}\tilde{k}\cdot\tilde{k}^4\left[
+           \frac{1+n(\xi_{\vec{k}+\vec{q}/2}) + n(\xi_{-\vec{k}+\vec{q}/2})}
+          {\tilde{\xi}_{\vec{k}+\vec{q}/2} + \tilde{\xi}_{-\vec{k}+\vec{q}/2} - \tilde{\omega}}
+             \right]
+\end{align}
+<p>
+其中 \(\tilde{\xi} = \xi/E_n\) , \(\tilde{\omega} = \omega/E_n\) , \(n(\xi)
+= \frac{1}{e^{\beta \xi}-1}\)
+</p>
+
+<p>
+最终
+</p>
+\begin{align}
+  \frac{\tilde{\Omega}}{N E_n} =& \frac{1}{N E_n}
+    \frac{V}{(2\pi^3)}\int \mathrm{d}^3\vec{q}
+   \cdot \int \frac{\mathrm{d}\omega}{\pi}\cdot \frac{1}{e^{\beta\omega}-1} \delta^p \\
+   =& \frac{3}{\pi} \int \mathrm{d}\tilde{q}\cdot \tilde{q}^2
+     \int_{-\infty}^{+\infty}\mathrm{d}\tilde{\omega}
+      \cdot \frac{1}{e^{\tilde{\beta}\tilde{\omega}}-1} \tilde{\delta}^p(\vec{q},z)
+\end{align}
+<p>
+其中 \(\tilde{\beta} = \beta E_n\) . 得自由能
+</p>
+\begin{align}
+  \frac{F}{NE_n} = \frac{\tilde{\Omega}}{N E_n} -\frac{\mu}{E_n}
+\end{align}
+<p>
+即
+</p>
+\begin{align}
+   f(\tilde{\mu}, \tilde{R}) = \tilde{\Omega}'(\tilde{\mu}, \tilde{R})-\tilde{\mu}
+\end{align}
+<p>
+其中 \(\tilde{\mu} = \mu/E_n\).
+</p>
+
+<p>
+\(\mu\) 由 
+</p>
+\begin{align}
+  N = - \frac{\partial\Omega}{\partial \mu}
+\end{align}
+<p>
+决定.
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org3248349" class="outline-3">
+<h3 id="org3248349"><span class="section-number-3">1.2.</span> 以 \(\varepsilon\) 为单位</h3>
+<div class="outline-text-3" id="text-1-2">
+<p>
+若以某一能量 \(\varepsilon\) 为单位, 对应的长度单位 \(k_{\varepsilon} =
+\sqrt{2M\varepsilon}\)  , 密度单位 \(n_{\varepsilon} =
+k_{\varepsilon}^3/(6\pi^2)\) , 那么
+</p>
+\begin{align}
+\frac{\Omega}{N \varepsilon} = & \frac{n_{\varepsilon}}{n}\int 
+        \mathrm{d}\tilde{q}\cdot \tilde{q}^2
+     \int_{-\infty}^{+\infty}\mathrm{d}\tilde{\omega}
+      \cdot\frac{3}{\pi}\cdot \frac{1}{e^{\tilde{\beta}\tilde{\omega}}-1} 
+       \tilde{\delta}^p(\vec{q},z) \\
+= & \frac{n_{\varepsilon}}{n}\int 
+        \mathrm{d}\tilde{q}\cdot \tilde{q}^2
+     \int_{-\infty}^{+\infty}\mathrm{d}\tilde{\omega}
+      \cdot f(\tilde{q}, \tilde{\omega}, \tilde{\mu}, \tilde{\beta})
+\end{align}
+<p>
+其中
+</p>
+\begin{align}
+  f(\tilde{q}, \tilde{\omega}, \tilde{\mu}, \tilde{\beta}) = 
+    \frac{3}{\pi}\cdot \frac{1}{e^{\tilde{\beta}\tilde{\omega}}-1} 
+       \tilde{\delta}^p(\vec{q},z)
+\end{align}
+<p>
+而
+</p>
+\begin{align}
+  \frac{n}{n_{\varepsilon}} =& - \frac{1}{n_{\varepsilon}V}
+        \frac{\partial\Omega}{\partial\mu} 
+  =- \frac{1}{n_{\varepsilon}V}
+        \frac{\partial\Omega/\mu}{\partial\tilde{\mu}}\\
+  =& - \frac{1}{n_{\varepsilon}V}
+        \frac{\partial}{\partial\tilde{\mu}}\left[
+    V n_{\varepsilon} \int 
+        \mathrm{d}\tilde{q}\cdot \tilde{q}^2
+     \int_{-\infty}^{+\infty}\mathrm{d}\tilde{\omega}
+      \cdot f(\tilde{q}, \tilde{\omega}, \tilde{\mu}, \tilde{\beta})
+    \right] \\
+ =& - \frac{\partial}{\partial\tilde{\mu}}\left[
+     \int \mathrm{d}\tilde{q}\cdot \tilde{q}^2
+     \int_{-\infty}^{+\infty}\mathrm{d}\tilde{\omega}
+      \cdot f(\tilde{q}, \tilde{\omega}, \tilde{\mu}, \tilde{\beta})
+    \right]
+\end{align}
+<p>
+所以最终要求的为
+</p>
+\begin{align}
+  \frac{\Delta F}{NE_n} =& \frac{\Omega}{NE_n} + \frac{\mu}{E_n} \\
+   =&\frac{\Omega}{N\varepsilon}\left( \frac{\varepsilon}{E_n} \right)
+     + \tilde{\mu} \left( \frac{\varepsilon}{E_n} \right) \\
+  =&  \left( \frac{n_{\varepsilon}}{n} \right)^{5/3}
+      \int\mathrm{d}\tilde{q}\cdot \tilde{q}^2
+     \int_{-\infty}^{+\infty}\mathrm{d}\tilde{\omega}
+      \cdot f(\tilde{q}, \tilde{\omega}, \tilde{\mu}, \tilde{\beta})
+     + \tilde{\mu} \left( \frac{n_{\varepsilon}}{n} \right)^{2/3} \\
+\end{align}
+<p>
+横坐标为
+</p>
+\begin{align}
+  \frac{2R}{k_n^2v} = \frac{2R}{k_{\varepsilon v}}\cdot
+  \left( \frac{n_{\varepsilon}}{n} \right)^{2/3}
+\end{align}
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgdbc93b2" class="outline-2">
+<h2 id="orgdbc93b2"><span class="section-number-2">2.</span> result</h2>
+<div class="outline-text-2" id="text-2">
+
+<div id="orgbd5fc0f" class="figure">
+<p><img src="./2019-07-03-专业笔记-NSRcal/gaussianQuadrature.png" alt="gaussianQuadrature.png" />
+</p>
+</div>
+
+
+<div id="org7e7a3f2" class="figure">
+<p><img src="./2019-07-03-专业笔记-NSRcal/large.png" alt="large.png" />
+</p>
+</div>
+
+
+<div id="orgf659cb9" class="figure">
+<p><img src="./2019-07-03-专业笔记-NSRcal/densityResult.png" alt="densityResult.png" />
+</p>
+</div>
+
+
+<div id="org8fa41f0" class="figure">
+<p><img src="./2019-07-03-专业笔记-NSRcal/integralResult.png" alt="integralResult.png" />
+</p>
+</div>
+
+
+<div id="orgf53341e" class="figure">
+<p><img src="./2019-07-03-专业笔记-NSRcal/densityResult2.png" alt="densityResult2.png" />
+</p>
+</div>
+
+
+<div id="orgd21966e" class="figure">
+<p><img src="./2019-07-03-专业笔记-NSRcal/integralResult2.png" alt="integralResult2.png" />
+</p>
+</div>
+
+
+<div id="orge825bd8" class="figure">
+<p><img src="./2019-07-03-专业笔记-NSRcal/p-wave.png" alt="p-wave.png" />
+</p>
+</div>
+
+
+<div id="org3c1c05a" class="figure">
+<p><img src="./2019-07-03-专业笔记-NSRcal/weakCoupling.png" alt="weakCoupling.png" />
+</p>
+</div>
+
+
+<div id="org4f84bfe" class="figure">
+<p><img src="./2019-07-03-专业笔记-NSRcal/strongCoupling.png" alt="strongCoupling.png" />
+</p>
+</div>
+
+
+<div id="orge2391f0" class="figure">
+<p><img src="./2019-07-03-专业笔记-NSRcal/Tmatrix.png" alt="Tmatrix.png" />
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgd2065c4" class="outline-2">
+<h2 id="orgd2065c4"><span class="section-number-2">3.</span> code</h2>
+<div class="outline-text-2" id="text-3">
+<p>
+计算 \(\Delta F\)
+</p>
+
+<div class="org-src-container">
+<pre class="src src-python">from matplotlib import pyplot as plt
+import numpy as np
+from scipy import integrate
+#from scipy.misc import derivative
+from scipy.integrate import fixed_quad
+import time
+
+start = time.process_time()
+
+nn = 10
+
+beta = 1
+er = 1e-6
+R = 1/30
+epsabs = 1e-1
+
+def xi(k, mu):
+    return k**2 - mu
+def n(k, mu):
+    x = xi(k,mu)
+#    print(x)
+    n =  1 / (np.exp(beta*x) - 1)
+    return n
+
+def z(omega, q, mu):
+    return omega - q**2/2 + 2*mu
+
+def pi(omega, q, k, mu):
+    pi = 1 + n(k+q/2, mu) + n(-k+q/2, mu)
+    pi = pi / (xi(k+q/2, mu) + xi(-k+q/2, mu) -omega)
+    pi = pi * k**4
+    pi = pi -k**2/2 - z(omega, q, mu)/4
+    pi = pi*2 / np.pi**2
+    return pi
+
+def PI(omega, q, mu):
+    zz = z(omega, q, mu)
+    if zz&lt;0:
+	PI, err = fixed_quad(lambda x: pi(omega, q, x, mu), er, 10,
+			     n=nn) 
+    else:
+	a = np.sqrt(zz/2)
+	PI1, err = fixed_quad(lambda x: pi(omega, q, x, mu), er, a-er,
+			      n=nn) 
+	PI2, err = fixed_quad(lambda x: pi(omega, q, x, mu), a+er,
+			      10, n=nn)
+	PI = PI1 + PI2
+    PI = PI * R
+    return PI
+
+def delta(omega, q, rkv, mu):
+    zz = z(omega, q, mu)
+    if zz&lt;0:
+	img = 0
+    else:
+	k = np.sqrt(zz/2)
+	img = 1 + n(k+q/2, mu) + n(-k+q/2, mu)
+	img = img * R/(2*np.pi)
+	img = img * k**3
+    rel = PI(omega, q, mu)
+    rel = rel + rkv/(4*np.pi)
+    rel = rel +zz/(4*np.pi)
+    delta = np.angle(rel + 1j*img) - np.pi
+    return delta
+def f(omega, q, rkv, mu):
+    f = 1 / (np.exp(beta*omega) - 1)
+    f = f * delta(omega, q, rkv, mu)
+    f = 3 * f /np.pi
+    return f
+
+def F(rkv, mu):
+    ff = lambda y, x: f(y, x, rkv, mu)
+    F, err = integrate.dblquad(ff, er, 3, lambda x:er, lambda x:10, epsabs
+			       = epsabs)
+    return F
+
+
+M = 1000
+N = 10
+x = np.linspace(0, 2, M)
+y = np.zeros(M*N)
+y.shape = (M, N)
+
+mu = np.linspace(-2.1, -1.2, N)
+
+for j in range(N):
+    for i in range(M):
+	y[i, j] = F(x[i], mu[j])
+	print('mu_', j, 'y_', i, '=', y[i, j])
+
+np.savetxt('y.txt', y)
+print(y)
+
+density = np.zeros(M*(N-2))
+density.shape = (M, N-2)
+dd = mu[1] - mu[0]
+
+for j in range(N-2):
+    for i in range(M):
+	density[i, j] = y[i, j+2] - y[i, j]
+	density[i, j] = - density[i, j] / (2*dd)
+	print('mu_', j, 'density_', i, '=', density[i, j])
+
+np.savetxt('density.txt', density)
+print(density)
+
+for i in range(N):
+    plt.plot(x, y[:, i], label=r'$\mu/\epsilon$=%.2f' %mu[i])
+plt.legend()
+
+end = time.process_time()
+print('time=', end-start, 'seconds')
+plt.show()
+
+</pre>
+</div>
+
+<p>
+计算 \(T_{C}\)
+</p>
+
+<div class="org-src-container">
+<pre class="src src-python">N = 100
+rkv = np.linspace(-10, -.1, N)
+
+f0 = np.zeros(N)
+f1 = np.zeros(N)
+density = np.zeros(N)
+
+for i in range(N):
+    print('rkv_', i, '=', rkv[i])
+    f0[i] = F(rkv[i], -1e-3)
+    print('f0_', i, '=', f0[i])
+    f1[i] = F(rkv[i], -.1)
+    print('f1_', i, '=', f1[i])
+    density[i] = - (f0[i] - f1[i]) / .1
+    print('density_', i, '=', density[i])
+
+np.savetxt('f0.txt', f0)
+np.savetxt('f1.txt', f1)
+np.savetxt('density.txt', density)
+
+x = np.zeros(N)
+y = np.zeros(N)
+for i in range(N):
+    x[i] = rkv[i]/(density[i]**(2/3))
+    y[i] = 1/(density[i]**(2/3))
+plt.plot(x, y)
+
+end = time.process_time()
+print('time=', end-start, 'seconds')
+plt.xlabel(r'$2R/(k_n^2 v)$')
+plt.ylabel(r'$k_BT_C/E_n$')
+plt.show()
+
+</pre>
+</div>
+
+<div class="org-src-container">
+<pre class="src src-python">def tm(omega, q, rkv, mu):
+    zz = z(omega, q, mu)
+    rel = PI(omega, q, mu)
+    rel = rel + rkv/(4*np.pi)
+    rel = rel +zz/(4*np.pi)
+    return rel
+N = 1000
+M = 20
+mu = np.linspace(-80, -1e-2, N)
+y = np.zeros(N)
+rkv = np.linspace(2, 100, M)
+muRoot = np.zeros(M)
+for j in range(M):
+    c = 0
+    for i in range(N):
+	y[i] = tm(0, 0, rkv[j], mu[i])
+	if np.abs(y[i])&lt;np.abs(y[c]):
+	    c = i
+    print('y_', c, '=', y[c])
+    muRoot[j] = mu[c]
+
+    plt.plot(mu, y, label=r'$2R/(k_{\epsilon}^2v)=%.1f$'%rkv[j])
+plt.legend()
+plt.xlabel(r'$\mu/\epsilon$')
+plt.ylabel(r'$T^{-1}$')
+print(muRoot)
+plt.show()
+
+Tc = np.zeros(M)
+Rn = np.zeros(M)
+
+dens = np.zeros(M)
+for i in range(M):
+    print(i)
+    dd = np.abs(muRoot[i]) * .1
+    print('dd=', dd)
+    f1 = F(rkv[i], muRoot[i]+dd)
+    print('f1=', f1)
+    f2 = F(rkv[i], muRoot[i]-dd)
+    print('f2=', f2)
+    nnn = - (f1 - f2) / (2*dd)
+    print('nnn=', nnn)
+    Tc[i] = 1 / (nnn**2/3)
+    print('Tc=', Tc[i])
+    Rn[i] = rkv[i] / (nnn**2/3)
+    print('Rn=', Rn[i])
+    dens[i] = nnn
+    print('dens=', dens[i])
+end = time.process_time()
+print('time is', end-start, 'secends')
+np.savetxt('density.txt', dens)
+plt.plot(Rn, Tc)
+plt.xlabel(r'$2R/(k_n^2 v)$')
+plt.ylabel(r'$k_BT_C/E_n$')
+
+plt.show()
+
+</pre>
+</div>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="date">Date: 2019-07-03 Wed 00:00</p>
+<p class="date">Created: 2022-04-16 Sat 17:43</p>
+<p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
+</div>
+</body>
+</html>

@@ -1,0 +1,834 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2022-04-16 Sat 17:42 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>ipad2018 换屏</title>
+<meta name="generator" content="Org Mode" />
+<style>
+  #content { max-width: 60em; margin: auto; }
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #e6e6e6;
+    border-radius: 3px;
+    background-color: #f2f2f2;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: auto;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    top: -8px;
+    right: 12px;
+    padding: 3px;
+    color: #555;
+    background-color: #f2f2f299;
+  }
+  pre.src:hover:before { display: inline; margin-top: 14px;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-authinfo::before { content: 'Authinfo'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .equation-container {
+    display: table;
+    text-align: center;
+    width: 100%;
+  }
+  .equation {
+    vertical-align: middle;
+  }
+  .equation-label {
+    display: table-cell;
+    text-align: right;
+    vertical-align: middle;
+  }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { width: 90%; }
+</style>
+</head>
+<body>
+<div id="content" class="content">
+<h1 class="title">ipad2018 换屏</h1>
+<div id="table-of-contents" role="doc-toc">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents" role="doc-toc">
+<ul>
+<li><a href="#orgb9da7eb">1. 引言</a></li>
+<li><a href="#orgfd8b512">2. 工具及价格</a></li>
+<li><a href="#org33c4d16">3. 过程</a>
+<ul>
+<li><a href="#org3c9b5f2">3.1. 拆</a></li>
+<li><a href="#org4d44ea6">3.2. Home 键</a></li>
+<li><a href="#orgfb87644">3.3. 清胶</a></li>
+<li><a href="#orgf0490b2">3.4. 装</a></li>
+<li><a href="#orgfe360eb">3.5. 完</a></li>
+</ul>
+</li>
+<li><a href="#org14abc69">4. Summary</a>
+<ul>
+<li><a href="#org7fb843e">4.1. 返厂和第三方的区别</a></li>
+<li><a href="#orgb572ea3">4.2. 对第三方维修的感想</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<!-- toc -->
+<!-- more -->
+
+<div id="outline-container-orgb9da7eb" class="outline-2">
+<h2 id="orgb9da7eb"><span class="section-number-2">1.</span> 引言</h2>
+<div class="outline-text-2" id="text-1">
+<p>
+事情发生两次第三方维修失败之后.
+</p>
+
+<p>
+2020 年在家度过的那个学期, 把 ipad 的屏幕摔碎了, 如图
+</p>
+
+
+<div id="org1f47e40" class="figure">
+<p><img src="2021-07-24-想说-ipad_sereen/intro1.jpg" alt="intro1.jpg" />
+</p>
+</div>
+
+<p>
+同年 9 月份开学后, 由于疫情, 校外寄修, 280元修好.
+</p>
+
+<p>
+但是过了大约半年后, 又出现了新的问题: home 键无回弹, 屏幕右侧开裂, 进到屏幕里
+边一些灰尘.
+</p>
+
+<p>
+此时我已经对此 ipad 无爱了, 已经买了 tab s7+ (体验超乎想像, 手写没有滴答滴答的声
+音, 也有一定的阻尼, 定价还比同等定位的 ipad pro 便宜特别多).
+</p>
+
+<p>
+但是, ipad 也不能扔在那不要了, 还是要修一下. 遂到校内某地下维修店咨询维修. 报价:
+清屏内的灰 + 粘缝 150块, 再要同时修好 home 键则要 400块. 我选择了 清屏内的灰 +
+粘缝 150块.
+</p>
+
+<p>
+至此两次维修已经 430 块了.
+</p>
+
+<p>
+但是, 屏幕内的灰并没有清掉, 只是把侧面用胶粘了一下. 而且, 过了一段时间又开开裂了.
+屏幕边缘又出现了一条小的裂缝.
+</p>
+
+<p>
+经对第三方维修彻底失望了!
+</p>
+
+<p>
+自己买了胶, 打算粘一边上的裂缝. 但一不小心, 裂缝又扩到了全屏(裂缝效果如图)
+</p>
+
+
+<div id="org62f3aac" class="figure">
+<p><img src="2021-07-24-想说-ipad_sereen/intro2.jpg" alt="intro2.jpg" />
+</p>
+</div>
+
+<p>
+对第三方的维修很失望, 又有些生气! 所以要自己换.
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgfd8b512" class="outline-2">
+<h2 id="orgfd8b512"><span class="section-number-2">2.</span> 工具及价格</h2>
+<div class="outline-text-2" id="text-2">
+<p>
+工具非常重要, 工具不全, 很有可能对机器造成二次伤害. 因此我准备了充足的工具. 最终
+用到的工具如下图
+</p>
+
+
+<div id="org3f2b4a7" class="figure">
+<p><img src="2021-07-24-想说-ipad_sereen/tools1.png" alt="tools1.png" />
+</p>
+</div>
+
+<p>
+胶是单独买的, 清洗液, 螺丝刀也是好久之前买的. 刀片和撬片是买屏幕和 home 键送的. 刮
+刀是之前买墙纸送的. 所以新买的物品及价格如下表
+</p>
+
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-right" />
+</colgroup>
+<tbody>
+<tr>
+<td class="org-left">物品</td>
+<td class="org-right">价格/元</td>
+</tr>
+
+<tr>
+<td class="org-left">镊子</td>
+<td class="org-right">15</td>
+</tr>
+
+<tr>
+<td class="org-left">迷你热风枪</td>
+<td class="org-right">50</td>
+</tr>
+
+<tr>
+<td class="org-left">屏幕</td>
+<td class="org-right">42</td>
+</tr>
+
+<tr>
+<td class="org-left">总计</td>
+<td class="org-right">107</td>
+</tr>
+</tbody>
+</table>
+
+<p>
+还有买了没用到的&#x2026;
+</p>
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-right" />
+</colgroup>
+<tbody>
+<tr>
+<td class="org-left">物品</td>
+<td class="org-right">价格/元</td>
+</tr>
+
+<tr>
+<td class="org-left">镊子(购物车里点了两件 &#x2026;)</td>
+<td class="org-right">15</td>
+</tr>
+
+<tr>
+<td class="org-left">home 键(屏幕带有一个, 而且原来的也没坏)</td>
+<td class="org-right">25</td>
+</tr>
+
+<tr>
+<td class="org-left">总计</td>
+<td class="org-right">40</td>
+</tr>
+</tbody>
+</table>
+
+<p>
+下图是买屏幕和 home 键送的一些工具, 但是没有用到
+</p>
+
+
+<div id="orgdf2d90c" class="figure">
+<p><img src="2021-07-24-想说-ipad_sereen/tools2.jpg" alt="tools2.jpg" />
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org33c4d16" class="outline-2">
+<h2 id="org33c4d16"><span class="section-number-2">3.</span> 过程</h2>
+<div class="outline-text-2" id="text-3">
+<p>
+下面是整个过程记录, 括号中是照片的拍摄时间.
+</p>
+</div>
+
+<div id="outline-container-org3c9b5f2" class="outline-3">
+<h3 id="org3c9b5f2"><span class="section-number-3">3.1.</span> 拆</h3>
+<div class="outline-text-3" id="text-3-1">
+<p>
+准备开始(11:50)
+</p>
+
+
+<div id="org1a3d6fb" class="figure">
+<p><img src="2021-07-24-想说-ipad_sereen/prepare1.jpg" alt="prepare1.jpg" />
+</p>
+</div>
+
+<p>
+首先关机.
+</p>
+
+<p>
+沿着屏幕没有音量键的一侧(原因是有音量键的一侧有排线)用热风枪吹一下, 用刀
+片划出缝隙, 插入撬片, 如下图(12:00)
+</p>
+
+
+<div id="org7e9d42e" class="figure">
+<p><img src="2021-07-24-想说-ipad_sereen/disassemble1.jpg" alt="disassemble1.jpg" />
+</p>
+</div>
+
+<p>
+同样吹一下上下两侧, 撬开(12:02)
+</p>
+
+
+<div id="org6f1dd9d" class="figure">
+<p><img src="2021-07-24-想说-ipad_sereen/disassemble2.jpg" alt="disassemble2.jpg" />
+</p>
+</div>
+
+<p>
+撬的过程中又出现了新的裂缝, 但是没关系, 旧屏幕不要了.
+</p>
+
+<p>
+撬开三侧的屏幕后, 把剩下的一侧也用热风枪吹一下, 掀开屏幕, 并拧下内屏四个
+角上的螺丝(图中红色圈出的) (12:03)
+</p>
+
+
+<div id="org33952e9" class="figure">
+<p><img src="2021-07-24-想说-ipad_sereen/disassemble3.jpg" alt="disassemble3.jpg" />
+</p>
+</div>
+
+<p>
+拧下内屏四个角上的螺丝后, 掀开内屏, 注意保护排线, 如下图, (第一次维修的标签还在)
+(12:06)
+</p>
+
+
+<div id="org4be3b59" class="figure">
+<p><img src="2021-07-24-想说-ipad_sereen/disassemble4.jpg" alt="disassemble4.jpg" />
+</p>
+</div>
+
+<p>
+拧开三颗螺丝(下图红圈)看见排线(12:11)
+</p>
+
+
+<div id="org8b47c0c" class="figure">
+<p><img src="2021-07-24-想说-ipad_sereen/disassemble5.jpg" alt="disassemble5.jpg" />
+</p>
+</div>
+
+<p>
+下图中红色圈出三个排线, 都要小心拔下
+</p>
+
+
+<div id="orgda6aaac" class="figure">
+<p><img src="2021-07-24-想说-ipad_sereen/disassemble6.jpg" alt="disassemble6.jpg" />
+</p>
+</div>
+
+<p>
+用镊子撬起左边两个(12:13)
+</p>
+
+
+<div id="orgc1869b6" class="figure">
+<p><img src="2021-07-24-想说-ipad_sereen/disassemble7.jpg" alt="disassemble7.jpg" />
+</p>
+</div>
+
+<p>
+右边一个, 揭下上面的一块黑色胶布, 向下图中右侧方向拉出即可 (12:14)
+</p>
+
+
+<div id="org39d6e72" class="figure">
+<p><img src="2021-07-24-想说-ipad_sereen/disassemble8.jpg" alt="disassemble8.jpg" />
+</p>
+</div>
+
+<p>
+所有排线都已拆下, 此时内外屏可以一起拿下来了 (12:15)
+</p>
+
+
+<div id="orgf42d38a" class="figure">
+<p><img src="2021-07-24-想说-ipad_sereen/disassemble9.jpg" alt="disassemble9.jpg" />
+</p>
+</div>
+
+<p>
+所以, 一个像我一样没有任何拆机经验的人, 在准备好工具, 看过一些教程后, 25分钟可以
+拆下屏幕. 此过程没有任何难度, 只要注意排线即可.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org4d44ea6" class="outline-3">
+<h3 id="org4d44ea6"><span class="section-number-3">3.2.</span> Home 键</h3>
+<div class="outline-text-3" id="text-3-2">
+<p>
+新屏幕上集成一个 home 键, 但是没有指纹功能. 所以要换原来的 home 键.
+</p>
+
+<p>
+用热风枪吹一下, 用镊子取下旧屏幕的原装的 home 键 (12:16)
+</p>
+
+
+<div id="org127db36" class="figure">
+<p><img src="2021-07-24-想说-ipad_sereen/homekey1.jpg" alt="homekey1.jpg" />
+</p>
+</div>
+
+
+<p>
+把新屏幕上的也用热风枪吹一下, 用镊子取下. 因为粘的比较
+结实, 所以一开始用力大了点, 听到一点响声, 还以为屏幕碎了, 好在不是. 之后拆的就比
+较温柔了(12:26)
+</p>
+
+
+<div id="org3df1ef2" class="figure">
+<p><img src="2021-07-24-想说-ipad_sereen/homekey2.jpg" alt="homekey2.jpg" />
+</p>
+</div>
+
+<p>
+取下之后, 发现原来的 home 是有回弹的. 但是放进屏幕上的坑里又没有回弹了.
+</p>
+
+<p>
+我以为是上面残胶导致没有贴合好, 就用热风枪吹一下, 用镊子取下殘胶
+(12:34)
+</p>
+
+
+<div id="org8a98219" class="figure">
+<p><img src="2021-07-24-想说-ipad_sereen/homekey3.jpg" alt="homekey3.jpg" />
+</p>
+</div>
+
+<p>
+残胶已经取下(12:36)
+</p>
+
+
+<div id="org06bfa59" class="figure">
+<p><img src="2021-07-24-想说-ipad_sereen/homekey4.jpg" alt="homekey4.jpg" />
+</p>
+</div>
+
+<p>
+但是装到坑里还是没有回弹. 我也终于发现了原因!
+</p>
+
+<p>
+如下图, 回弹的装置是 B 处的微动开关. 如果 A, C 两处完全没有缝隙地粘合到屏幕上,
+就会使 B 处的微动开关一直处于按下状态. 因此 A, C 两处应留有一定的缝隙!
+</p>
+
+<p>
+我的处理方法是, 在 C 处的屏幕上滴上几滴胶(A处有残留的双面胶, 就不滴胶了), 然后准
+B 处, 使 B 处接触但微动开关处于不按下的状态, 静置, 等胶表面凝固
+</p>
+
+
+<div id="org11bb668" class="figure">
+<p><img src="2021-07-24-想说-ipad_sereen/figure1.jpg" alt="figure1.jpg" />
+</p>
+</div>
+
+<p>
+在此附上三个 home 键的对比 (12:37)
+</p>
+
+
+<div id="org43087d9" class="figure">
+<p><img src="2021-07-24-想说-ipad_sereen/homekey5.jpg" alt="homekey5.jpg" />
+</p>
+</div>
+
+<p>
+可以发现, 原装的和第三方生产的 home 键结构不一样. 第三方的 home 键微动开关是一体
+的, 因此比较好安装. 但是第三方的没有指纹功能.
+</p>
+
+<p>
+为了保险起见, 在 A处也上了一些胶 (12:47)
+</p>
+
+
+<div id="org85579b5" class="figure">
+<p><img src="2021-07-24-想说-ipad_sereen/homekey6.jpg" alt="homekey6.jpg" />
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgfb87644" class="outline-3">
+<h3 id="orgfb87644"><span class="section-number-3">3.3.</span> 清胶</h3>
+<div class="outline-text-3" id="text-3-3">
+<p>
+home 键上的胶外表固化需要一些时间. 此时可以清理主机上的殘胶 (不得不说, 这项工作还有
+点解压&#x2026; 将整块的胶撕下&#x2026;)  (12:54)
+</p>
+
+
+<div id="org22db455" class="figure">
+<p><img src="2021-07-24-想说-ipad_sereen/clean1.jpg" alt="clean1.jpg" />
+</p>
+</div>
+
+<p>
+意外地发现, 磁吸就是这几块磁铁的作用 (13:00)
+</p>
+
+
+<div id="orgd4aec3d" class="figure">
+<p><img src="2021-07-24-想说-ipad_sereen/clean2.jpg" alt="clean2.jpg" />
+</p>
+</div>
+
+<p>
+四周的残胶全部清理干净! (13:09)
+</p>
+
+
+<div id="org9093a66" class="figure">
+<p><img src="2021-07-24-想说-ipad_sereen/clean3.jpg" alt="clean3.jpg" />
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgf0490b2" class="outline-3">
+<h3 id="orgf0490b2"><span class="section-number-3">3.4.</span> 装</h3>
+<div class="outline-text-3" id="text-3-4">
+<p>
+清完残胶后, 试了一下粘合的 home 键, 但是貌似没有完全干好, 但是也没有关系, 直接安上
+吧.
+</p>
+
+<p>
+接上新屏幕的排线 (13:17)
+</p>
+
+
+<div id="org5fd6844" class="figure">
+<p><img src="2021-07-24-想说-ipad_sereen/assemble1.jpg" alt="assemble1.jpg" />
+</p>
+</div>
+
+
+<p>
+稍稍拧上内屏螺丝. 合上屏幕. 过程中发现需要把排线折一下, 才能把屏幕合上. 这样一来
+这边的屏幕就会被顶着, 这边容易开胶的原因就在此!
+</p>
+
+<p>
+像其它教程中一样, 拖动一个图标四处划一下测试触屏. 顺便还测试了回弹和指纹, 都正常.
+(13:29)
+</p>
+
+
+<div id="orga084946" class="figure">
+<p><img src="2021-07-24-想说-ipad_sereen/assemble2.jpg" alt="assemble2.jpg" />
+</p>
+</div>
+
+<p>
+把内屏的四颗螺丝拧紧. 擦干净内屏. 擦内屏这个活, 我擦了 20 分钟, 但总不能完全擦干
+净. 也许没有办法做到完全干净的, 但其实也没有大的影响.
+</p>
+
+<p>
+把外屏幕上的双面胶和内部的膜撕掉, 粘结实.
+</p>
+
+<p>
+再测试一下, 所有功能都没问题, 完美. 放个视频, 试一下声音也没问题(重影不是屏幕的
+原因, 是因为西片受到了惊吓&#x2026;) (13:50)
+</p>
+
+
+<div id="org676dba1" class="figure">
+<p><img src="2021-07-24-想说-ipad_sereen/assemble3.jpg" alt="assemble3.jpg" />
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgfe360eb" class="outline-3">
+<h3 id="orgfe360eb"><span class="section-number-3">3.5.</span> 完</h3>
+<div class="outline-text-3" id="text-3-5">
+<p>
+顺便把送的膜也贴上了! 不太放心有排线的一侧, 然后又上了一下胶, 过后再清掉多余的.
+找几本书压一下吧! ^ _ ^ (14:03)
+</p>
+
+
+<div id="org4334d57" class="figure">
+<p><img src="2021-07-24-想说-ipad_sereen/complete1.jpg" alt="complete1.jpg" />
+</p>
+</div>
+
+<p>
+总共用时两小时十三分钟. 如果再来一次的话, 大概一个小时即可. 内屏的灰也没了, home
+键也有回弹了!
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org14abc69" class="outline-2">
+<h2 id="org14abc69"><span class="section-number-2">4.</span> Summary</h2>
+<div class="outline-text-2" id="text-4">
+</div>
+<div id="outline-container-org7fb843e" class="outline-3">
+<h3 id="org7fb843e"><span class="section-number-3">4.1.</span> 返厂和第三方的区别</h3>
+<div class="outline-text-3" id="text-4-1">
+<p>
+返厂大概要 1000 多, 对于这个 ipad 确实已经不值这个价钱了. 经过这次自己换屏的经历,
+我想返厂和第三方如此大的差价的原因是
+</p>
+
+<ol class="org-ol">
+<li>官方维修工艺有保证, 不会出现后续的 home 键失灵, 翘边, 进灰这一系列的后续
+问题, 这真的很影响心情.</li>
+<li>ipad 受众比较广, 屏幕的市场比较大, 这使得生产成本比较低, 在网上只要三四十块就
+可以买到.</li>
+</ol>
+
+<p>
+如果 ipad 本身有 4000 以上的话, 我觉得花 1000 多官方维修还是值得的! 但我这个只有本
+身也只有 2000 多, 就算了.
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgb572ea3" class="outline-3">
+<h3 id="orgb572ea3"><span class="section-number-3">4.2.</span> 对第三方维修的感想</h3>
+<div class="outline-text-3" id="text-4-2">
+<p>
+我一开始想的是, 不用自己折腾, 省心, 省时间, 多花点钱找人修是不错的! 但是, 维修结
+果非常之令人失望, 完全对不起它们的价格!
+</p>
+
+<p>
+第一次换屏 280, 如果能够工艺好一些, 之后不出问题, 我觉得是可以接受的, 实际后来出
+了问题我觉得也还正常, 毕竟工艺水平有限, 人工劳力成本也很高. 后来裂了, 我不愿意再
+去校外找他们售后了, 麻烦, 心累.
+</p>
+
+<p>
+令人恼火的是第二次在校内某地下的维修! 只收钱不办事, 还漫天要价!
+</p>
+
+<ul class="org-ul">
+<li>只收钱不办事, 是说他们收了 150, 而所做的工作只是用胶沾了一下侧边, 他们几乎没有
+任何的物料和人工成本, 两分钟就完事. 屏幕内的灰根本没有清理掉!</li>
+<li>漫天要价是说他们对于修 home 键的 400块的要价. 我自己换, 才知道第三方根本
+没有带指纹的 home 键. 所以如果我给他们 400 块, 它们只有两种可能. 一, 像我一样
+拆开屏幕重新安装; 二, 用不带指纹的 home 键. 就假设他们技术不行, 碎掉一块屏幕,
+物料成本的上限就是 40 块. 我认为人工成本不值360.</li>
+</ul>
+
+<p>
+我尊重维修付出的劳动, 我愿意为劳动付费, 但是不可以太过份! 心情已经坏了, 我不愿意
+再和他们吵, 宁愿自己动手.
+</p>
+
+<p>
+大四的时候, 我的笔记本不能亮屏了, 也过了保修期, 是找的校内维修, 200块修好了. 但过
+了一段时间后, 开机有一半以上的概率各种报错, 虽然最终都能打开. 同时, 触摸板和
+Trackpoint 也不能用了.
+</p>
+
+<p>
+之前爸爸的 Redmi K20 摔坏过两次屏幕, 都是 500 块官方维修, 之后没有任何问题.
+xps13 去年在家屏幕有问题, 由于还在保, 售后派人从市里坐大巴到我们家上门免费换了新的屏幕.
+</p>
+
+<p>
+因此以我的经历总结一下就是, 第三方维修会给你修好, 但是之后会莫名出各种问题. 鉴于
+与官方维修相比价格便宜许多, 工艺有限, 这是可以理解的. 但是如果像我一样碰到第二家
+比较黑心的维修商, 那就又花钱多又修不好了. 官方维修过保后虽然贵, 但是省心!
+</p>
+
+<p>
+我又联想到大一时, 当时没钱, 我们宿舍几个人, 一人买了一辆 100 多块的自行车. 之后出了问题,
+去修车, 每次去, 修车的大爷都告诉我哪个地方又快不行了&#x2026; 掉入无限修车的恐惧! 最终,
+我还是扔了不要的.
+</p>
+
+<p>
+而这两次修 ipad 的经历, 我终于又回想起了曾经被修车支配的恐惧, 以及一次次被修车大
+爷指出新问题的耻辱&#x2026;
+</p>
+</div>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="date">Date: 2021-07-24 Sat 00:00</p>
+<p class="date">Created: 2022-04-16 Sat 17:42</p>
+<p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
+</div>
+</body>
+</html>

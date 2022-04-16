@@ -1,0 +1,741 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2022-04-16 Sat 17:42 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Atomic and Optical Physics I, 05 Resonance V and Atoms I</title>
+<meta name="generator" content="Org Mode" />
+<style>
+  #content { max-width: 60em; margin: auto; }
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #e6e6e6;
+    border-radius: 3px;
+    background-color: #f2f2f2;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: auto;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    top: -8px;
+    right: 12px;
+    padding: 3px;
+    color: #555;
+    background-color: #f2f2f299;
+  }
+  pre.src:hover:before { display: inline; margin-top: 14px;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-authinfo::before { content: 'Authinfo'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .equation-container {
+    display: table;
+    text-align: center;
+    width: 100%;
+  }
+  .equation {
+    vertical-align: middle;
+  }
+  .equation-label {
+    display: table-cell;
+    text-align: right;
+    vertical-align: middle;
+  }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { width: 90%; }
+</style>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        displayAlign: "center",
+        displayIndent: "0em",
+
+        "HTML-CSS": { scale: 100,
+                        linebreaks: { automatic: "false" },
+                        webFont: "TeX"
+                       },
+        SVG: {scale: 100,
+              linebreaks: { automatic: "false" },
+              font: "TeX"},
+        NativeMML: {scale: 100},
+        TeX: { equationNumbers: {autoNumber: "AMS"},
+               MultLineWidth: "85%",
+               TagSide: "right",
+               TagIndent: ".8em"
+             }
+});
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS_HTML"></script>
+</head>
+<body>
+<div id="content" class="content">
+<h1 class="title">Atomic and Optical Physics I, 05 Resonance V and Atoms I</h1>
+<div id="table-of-contents" role="doc-toc">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents" role="doc-toc">
+<ul>
+<li><a href="#org6fd7917">1. Information</a></li>
+<li><a href="#org1a28afc">2. Need for Density Operator</a></li>
+<li><a href="#org7dccab4">3. Density Operator</a></li>
+<li><a href="#org4de214f">4. Density Matrix for Arbitrary Two-level System</a></li>
+<li><a href="#org85a391d">5. Bloch Equation (1946), Relaxation</a></li>
+<li><a href="#org1a241ec">6. Atoms Sayllabus</a></li>
+<li><a href="#orge568c50">7. Hydrogen atoms</a></li>
+<li><a href="#org3a5837e">8. Hydrogen-like atoms</a></li>
+<li><a href="#org9cbe220">9. Reference</a></li>
+</ul>
+</div>
+</div>
+<!-- toc -->
+<!-- more -->
+
+<div id="outline-container-org6fd7917" class="outline-2">
+<h2 id="org6fd7917"><span class="section-number-2">1.</span> Information</h2>
+<div class="outline-text-2" id="text-1">
+<ul class="org-ul">
+<li>官方介绍:
+<a href="https://ocw.mit.edu/courses/physics/8-421-atomic-and-optical-physics-i-spring-2014/">https://ocw.mit.edu/courses/physics/8-421-atomic-and-optical-physics-i-spring-2014/</a></li>
+
+<li>视频列表地址: <a href="https://www.youtube.com/playlist?list=PLUl4u3cNGP62FPGcyFJkzhqq9c5cHCK32">https://www.youtube.com/playlist?list=PLUl4u3cNGP62FPGcyFJkzhqq9c5cHCK32</a></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org1a28afc" class="outline-2">
+<h2 id="org1a28afc"><span class="section-number-2">2.</span> Need for Density Operator</h2>
+<div class="outline-text-2" id="text-2">
+<p>
+Schrodinger Equations deals only with pure states, can not describe loss and
+coherence.
+</p>
+
+<p>
+Exception:
+<img src="2021-11-24-专业笔记-MITAMO05/loss.png" alt="loss.png" />
+</p>
+
+<p>
+can be still use a Hamiltonian with complex eigenvalues. 因为这种情况下我们只关
+心 \(|e\rangle, |g\rangle\) 两个态, 不关心 decay 到的态
+</p>
+\begin{align}
+  E_g \rightarrow E_g + \frac{\mathrm{i}\Gamma_{gl}}{2}
+\end{align}
+
+<p>
+However, many other proceesses require density matrix, such as spontaneous
+emission
+<img src="2021-11-24-专业笔记-MITAMO05/spontaneous.png" alt="spontaneous.png" />
+因为此时我们对两个态都关心.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org7dccab4" class="outline-2">
+<h2 id="org7dccab4"><span class="section-number-2">3.</span> Density Operator</h2>
+<div class="outline-text-2" id="text-3">
+<p>
+把态 \(|\psi\rangle\) 在基底下展开
+</p>
+\begin{align}
+|\psi(t)\rangle = \sum_n c_n(t) |\psi_n\rangle
+\end{align}
+<p>
+Operator \(A\) 的期望为
+</p>
+\begin{align}
+\langle A\rangle_t =& \langle \psi(t) | A | \psi(t)\rangle = \sum_{m, n} c_m(t) c_n^{*}(t)A_{nm} \\
+  =& \sum_{m, n} \rho_{mn}(t) A_{nm} = \mathrm{Tr}(\rho(t) A)
+\end{align}
+<p>
+where
+</p>
+\begin{align}
+A_{nm} =& \langle \psi_n |A|\psi_m\rangle \\
+\rho_{mn} =& c_m(t) c_n^{*}(t) \\
+\rho(t) =& |\psi(t)\rangle \langle\psi(t)|
+\end{align}
+<p>
+\(\rho_{mn}\) : populations, \(\rho_{mm}\) : coherence.
+</p>
+
+<p>
+Now, 考虑一个混合态 \(\sum_i P_i|\psi_i(t)\rangle = \sum_i\sum_n P_ic_n^i(t)|\psi_n\rangle\) , 相应的
+</p>
+\begin{align}
+\rho(t) = \sum_i P_i |\psi_i(t)\rangle \langle\psi_i(t)|
+\end{align}
+<p>
+此时 \(A\) 的期望为还可以写为
+</p>
+\begin{align}
+\langle A\rangle_t = \mathrm{Tr}(\rho(t) A)
+\end{align}
+<p>
+不过此时 \(\langle A\rangle\) 有 two averages: quantum average, ensemble average with \(P_i\)
+. The advantage of the density matrix formalism is that two kinds of averages
+can be done simultaneously in a very compact formalism!
+</p>
+
+<p>
+Apply Schrodinger equation to each \(\psi_i\) , we get
+</p>
+\begin{align}
+\mathrm{i}\hbar \dot{\rho} = [H, \rho]
+\end{align}
+
+<p>
+Properties
+</p>
+\begin{align}
+\mathrm{Tr} \rho =& \sum_iP_i = 1 \\
+\mathrm{Tr} \rho^2 =& \sum_i P_i^2 \le 1 \\
+               =& 1 \quad \mathrm{for\,pure\,state}
+\end{align}
+
+<p>
+So far, I've presented you the density matrix just as an elgent way of
+integrating the two averages into one formalism. And in essence, this is what it
+is. But you can now also use the density if the wholes system undergoes a time
+evolution, which is no longer unitary, no longer described by Hermition
+operator. Because you're interested in the time evolution or a small system,
+which is a part of a bigger system. The bigger system is always described by
+unitary time evolution, but smaller system is usually not described by unitary
+time evolution. And that's when the density matrix becomes crucial.
+</p>
+
+<p>
+Next: use \(\rho\) for no-unitary time evolution. Often open systems (small system,
+but open to a bigger system. Like we are interested to describe an atom, but
+the atom can spontaneously emit photons into other parts of Hilbert space, and
+we're not interested in thoses other parts.) Where we limit our description to a
+small part of larger system. An atom interacting with all the modes of the
+electromagnetic field, but we are simply want to describe the atom. And then, we
+cannot use a wave function anymore. We have to use the density matrix.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org4de214f" class="outline-2">
+<h2 id="org4de214f"><span class="section-number-2">4.</span> Density Matrix for Arbitrary Two-level System</h2>
+<div class="outline-text-2" id="text-4">
+<p>
+General Hamiltonian for two-level System
+</p>
+\begin{align}
+H = \frac{\hbar}{2}\left(\bar{\omega} I + \omega_{1}\sigma_{x} + \omega_2\sigma_y + \omega_3\sigma_z \right)
+\end{align}
+<p>
+By appropriately shifting what is the zero point of energy, we can set \(\bar{\omega}
+= 0\)
+</p>
+\begin{align}
+H = \frac{\hbar}{2}\left(\omega_{1}\sigma_{x} + \omega_2\sigma_y + \omega_3\sigma_z \right) = \frac{\hbar}{2} \vec{\omega} \cdot\vec{\sigma}
+\end{align}
+<p>
+General density matrix
+</p>
+\begin{align}
+\rho = \frac{1}{2} \left( r_0 I + r_1\sigma_x + r_2\sigma_y +r_3\sigma_z \right)
+\end{align}
+<p>
+Of course, this time we cannot throw away the unity matrix, because otherwise
+the density matrix would have no trace. 但是 \(\mathrm{Tr}\rho = 1\) , 所以 \(r_0 =
+1\)
+</p>
+\begin{align}
+\rho = \frac{1}{2} \left( I + \vec{r}\cdot\vec{\sigma} \right)
+\end{align}
+<p>
+\(\vec{r}\) is called <b>Bloch Vector</b> . Use equation of motion \(\mathrm{i}\hbar\dot{\rho}
+= [H, \rho]\) we get (checked! Exercise)
+</p>
+\begin{align}
+\dot{\vec{r}} = \vec{\omega}\times \vec{r}
+\end{align}
+<p>
+We see, the length of \(\vec{r}\) is a constant. It is a precession! We
+generalizes our previous result \(\dot{\vec{S}} = \vec{\omega} \times \vec{S}\) .
+</p>
+
+<blockquote>
+<p>
+Feynman, R. P., Vernon, F. L. &amp; Hellwarth, R. W. Geometrical Representation of
+the Schrödinger Equation for Solving Maser Problems. Journal of Applied Physics
+28, 49–52 (1957).
+</p>
+
+<p>
+Theory by Feymman, Vernon and Hellwarth:
+</p>
+
+<p>
+The time evolution of the density matrix for the most general two-level system
+is isomorphic to the behavior of classical moment in a suitable time dependent
+magnetic field.
+</p>
+</blockquote>
+
+<p>
+Note: Pure state will stay pure forever. Because
+</p>
+\begin{align}
+\mathrm{Tr}\rho^2 = \frac{1}{2}(r_0^2 + |\vec{r}|^2) = \mathrm{const.}
+\end{align}
+<p>
+Does not describe loss of coherence.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org85a391d" class="outline-2">
+<h2 id="org85a391d"><span class="section-number-2">5.</span> Bloch Equation (1946), Relaxation</h2>
+<div class="outline-text-2" id="text-5">
+<p>
+Everything has to come to thermal equilibrium.
+</p>
+
+<p>
+The density matrix of thermal equilibrium, which has only diagonal matrix
+elements, the populations follow the Boltzmann factor
+</p>
+\begin{align}
+\rho^T = \frac{1}{z} e^{-\frac{H}{k_B T}}
+\end{align}
+<p>
+Relaxation will restore \(\rho\) to \(\rho^T\) .
+</p>
+
+<p>
+Phenomenological treatment of damping:
+</p>
+\begin{align}
+ \dot{\rho} = \frac{1}{\mathrm{i}\hbar} [H, \rho] - \frac{\rho - \rho^T}{T_e}
+\end{align}
+<p>
+where \(T_e\) is equilibrium time. The second term will damp the density matrix to
+the thermal equilibrium density.
+</p>
+
+<p>
+In many cases, there are two relation times
+</p>
+
+<ul class="org-ul">
+<li>\(T_1\) : population different energy decay time, \(\dot{r}_z = (\vec{\omega}\times
+  \vec{r})_z - (r_z - r_z^T)/T_1\) .</li>
+
+<li>\(T_2\) : coherence, dephasing time, \(r_1, r_2\) .</li>
+</ul>
+
+<p>
+whem quantum system lose its memory of phase, the \(r_1, r_2\) components of the
+Bloch vector goes to \(0\) . \(r_1, r_2\) only nonzero if you have two states populated with a
+well-defined relative phase.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org1a241ec" class="outline-2">
+<h2 id="org1a241ec"><span class="section-number-2">6.</span> Atoms Sayllabus</h2>
+<div class="outline-text-2" id="text-6">
+<blockquote>
+<p>
+Kleppner, D. The Yin and Yang of Hydrogen. Physics Today 52, 11–13 (1999).
+</p>
+</blockquote>
+
+<p>
+First: electronic structure:
+</p>
+
+<ul class="org-ul">
+<li>1 e, H</li>
+
+<li>2 e, He</li>
+</ul>
+
+<p>
+Then:
+</p>
+
+<ul class="org-ul">
+<li>Fine structure</li>
+
+<li>Lamb shift</li>
+
+<li>HFS: nucleus</li>
+
+<li>External field, B, E, EM field.</li>
+</ul>
+
+<p>
+Import physics system
+</p>
+
+<ul class="org-ul">
+<li>Harmonic oscillator</li>
+
+<li>Two-level system</li>
+
+<li>Hydrogen</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-orge568c50" class="outline-2">
+<h2 id="orge568c50"><span class="section-number-2">7.</span> Hydrogen atoms</h2>
+<div class="outline-text-2" id="text-7">
+<p>
+Rydberg formula follows from the simple Bohr model, also from Schrodinger
+equation
+</p>
+
+\begin{align}
+E_n = - \left(\frac{1}{2}\frac{me^4}{\hbar^2}\frac{M}{M+m} \right)\frac{1}{n^2}
+\end{align}
+
+<p>
+where Rydberg constant \(R_{\infty} = \frac{1}{2}\frac{me^4}{\hbar^2}\) which describes the
+spectrum of a hydrogen atom where the nucleus has infinite mass, reduced mass factor
+\(\frac{M}{M + m}\) . Rydberg constant with reduced mass factor call \(R_{H}\)
+, which determines the spectrum of hydrogen.
+</p>
+
+<blockquote>
+<p>
+小结:
+</p>
+
+\begin{align}
+  E_n = - \frac{R}{n^2}
+\end{align}
+<p>
+其中 \(R = \frac{\mu e^4}{2\hbar^2}\) 有时也记作 \(R_H = \frac{\mu e^4}{2\hbar^2}\), 其中 \(\mu\) 是
+reduced mass \(\mu = \frac{m M}{m + M}\) . 如果 \(M\to \infty\) 那么 \(R_{\infty} =
+\frac{me^4}{2\hbar^2}\)
+</p>
+</blockquote>
+
+<p>
+Solution of Schrodinger Equation
+</p>
+\begin{align}
+\psi_{nlm} = R_nl(r)Y_{lm}(\theta, \phi)
+\end{align}
+
+<p>
+There are a number of noteworthy results.
+</p>
+\begin{align}
+E_n = - \frac{R_H}{n^2}
+\end{align}
+<p>
+Intuition for the size of the hydrogen atom, the size of hydrogen-like
+atoms. The radius or the expectation value of the position of the electron
+</p>
+\begin{align}
+\langle r_{nl}\rangle = n^2 a_0 \left\{1 + \frac{1}{2}
+            \left[ 1 - \frac{l(l + 1)}{n^{2}} \right] \right\}
+\end{align}
+<p>
+It's important to distinguish between the expectation value for the radius and
+the inverse radius
+</p>
+\begin{align}
+\langle \frac{1}{r_{nl}} \rangle = \frac{1}{n^2 a_0}
+\end{align}
+<p>
+where \(a_0 = \frac{\hbar^2}{\mu e^2}\)
+</p>
+<blockquote>
+<p>
+Virial Theorem
+</p>
+
+\begin{align}
+\langle T \rangle = \frac{1}{2} \langle \vec{r} \cdot \nabla V(\vec{r}) \rangle
+\end{align}
+<p>
+for \(V = r^n\) , \(2\langle T \rangle = n\langle V\rangle\)
+</p>
+</blockquote>
+<p>
+\(\langle \frac{1}{r_{nl}} \rangle\) 的形式这样简单, 可以从 virial theorem 来理解. 总的能量的
+形式 \(E_n\sim \frac{1}{n^2}\) , 库仑势能 \(\langle V\rangle \sim \langle \frac{1}{r}\rangle\) , 而根据 virial
+theorm 有 \(\langle T\rangle = -\frac{1}{2}\langle V\rangle\) ,
+因此 \(\langle \frac{1}{r}\rangle \sim \frac{1}{n^2}\) . 精确来讲
+</p>
+\begin{align}
+& -\frac{R_H}{n^2} = E_n = \langle T\rangle + \langle V\rangle
+ = \frac{1}{2}\langle V\rangle = - \frac{1}{2}e^2\langle \frac{1}{r}\rangle \\
+\Rightarrow& \langle \frac{1}{r_{nl}} \rangle = \frac{1}{n^2 a_0}
+\end{align}
+<p>
+In CGS units
+</p>
+\begin{align}
+R_H = \frac{1}{2} \frac{e^2}{a_0}
+\end{align}
+<p>
+is one half of the Coulomb energy at the Bohr radius, which is called <b>one
+Hartree</b> \(\frac{\mu e^4}{\hbar^2} = \frac{e^2}{a_0}\)
+</p>
+
+<p>
+The fundamental energy of the hydrogen atom, the fundamental unit of energy is
+whatever energy you can construct using the electron mass, the electron charge
+and \(\hbar\) , and what you get is \(1\) Hartree. If you ever wondered why the Rydberg
+is \(1/2\) Hartree, what happens is in the ground state of hydrogen, you have \(1\)
+Hartree worth of Coulomb energy. But then because of the Virial theorem, you
+have \(-1/2\) of it as kinetic energy, and therefore, the binding energy in the
+\(n=1\) ground state, which is \(1\) Rydberg, is \(1/2\) Hartree. So this factor of
+\(1/2\) of the Virial theorem is responsible for this factor of \(2\) for those two
+energies.
+</p>
+
+<p>
+In SI units: \(e^2 \to \frac{e^2}{4\pi\epsilon_0}\)
+</p>
+</div>
+</div>
+
+<div id="outline-container-org3a5837e" class="outline-2">
+<h2 id="org3a5837e"><span class="section-number-2">8.</span> Hydrogen-like atoms</h2>
+<div class="outline-text-2" id="text-8">
+<p>
+How do things depend on the nuclear charge \(Z\) ? Because of the stronger Coulomb
+attraction, all the length scales are divided by \(Z\) . So everything is smaller
+by factor of \(Z\) . So what does that now imply for the energy? Well, you have a
+Coulomb field which is \(Z\) times stronger, but you probe it now at a \(Z\) times
+smaller radius. So therefore, the energies scale with \(Z^2\)
+</p>
+\begin{align}
+E_n = - \frac{R_H Z^2}{n^2}
+\end{align}
+
+<p>
+If you have a hydrogen-like atom, and the electron is in a state with principal
+quantum number, no angular momentum. The probability for the electron to be at
+the nucleus
+</p>
+\begin{align}
+|\psi_{n00}(0)|^2
+\end{align}
+<p>
+This will be very important later on, when we discuss hyperfine structure
+because what is responsible is the fact that the electron can overlap with
+nucleus. So this factor will appear in our discussion of hyperfine structure,
+and what I want to ask you is how does this quantity depend on the principal
+quantum number \(n\) and on \(Z\) ?
+</p>
+
+<ul class="org-ul">
+<li>A. \(\frac{Z^3}{a_0^3 n^6}\)</li>
+
+<li>B. \(\frac{Z}{a_0^3 n^2}\)</li>
+
+<li>C. \(\frac{Z^3}{a_0^3 n^3}\)</li>
+
+<li>D. \(\frac{Z^2}{a_0 n ^2}\)</li>
+</ul>
+
+<p>
+The exact answer is \(|\psi_{n00}(0)|^2 = \frac{Z^3}{\pi a_0^3 n^3}\)
+</p>
+
+<p>
+Z scaling: \(e^2 \to Ze^2\) , \(a_0 = \frac{\hbar^2}{m e^2}\to \frac{a_0}{Z}\) .
+So if all length scales go as \(\frac{1}{Z}\) . So the density goes \(Z^3\)
+</p>
+
+<p>
+When we talk about the wave functions with principal quantum number \(n\) , there
+are two length scale. \(\langle \frac{1}{r_{nl}}\rangle = \frac{Z}{a_0 n^2}\) scales with \(n^2\)
+BUT, the characteristic length in the exponential decay of wave function is
+\(\frac{n a_0}{Z}\) scales with \(n\) .
+</p>
+
+<p>
+That is important for quantum defect and hyperfine structure.
+</p>
+
+<p>
+For \(l\neq 0\) , \(\psi\propto r^l\) , \(|\psi|\propto r^{2l}\) . For large \(n\) , \(|\psi|\propto
+r^{2l}\frac{1}{n^3}\) .
+</p>
+</div>
+</div>
+
+<div id="outline-container-org9cbe220" class="outline-2">
+<h2 id="org9cbe220"><span class="section-number-2">9.</span> Reference</h2>
+<div class="outline-text-2" id="text-9">
+<ul class="org-ul">
+<li>Feynman, R. P., Vernon, F. L. &amp; Hellwarth, R. W. Geometrical Representation of the Schrödinger Equation for Solving Maser Problems. Journal of Applied Physics 28, 49–52 (1957).</li>
+
+<li>Kleppner, D. The Yin and Yang of Hydrogen. Physics Today 52, 11–13 (1999).</li>
+
+<li>Friedrich, H. Theoretical Atomic Physics. (Springer International Publishing,
+2017). Chap 2.1.1 The Hydrogen Atom</li>
+
+<li><a href="https://en.wikipedia.org/wiki/Virial_theorem">wikipedia: Virial theorem</a></li>
+
+<li><a href="https://en.wikipedia.org/wiki/Hartree">wikipedia: Hartree</a></li>
+</ul>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="date">Date: 2021-11-24 Wed 00:00</p>
+<p class="date">Created: 2022-04-16 Sat 17:42</p>
+<p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
+</div>
+</body>
+</html>

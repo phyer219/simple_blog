@@ -1,0 +1,70 @@
+ <head>
+  <meta charset="UTF-8">
+  <meta name="description" content="Free Web tutorials">
+  <meta name="keywords" content="HTML, CSS, JavaScript">
+  <meta name="author" content="John Doe">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ </head>
+ 
+<hr />
+<p>title: 对易与反对易公式(update 09/July/2020)
+date: 2018/09/26
+categories: 专业笔记
+tags: [物理, 量子力学, 对易, 反对易]</p>
+<hr />
+<!-- toc -->
+
+<!-- more -->
+
+<p>在运动方程中, 经常要计算各种产生湮灭算符之间的对易关系. 而对于 Fermion 来说, 它满足的是反对易关系, 因此在最后一步中, 需要用下述关系, 写成反对易子的形式
+$$
+\begin{split}
+[AB, C] =&amp; A{B, C} - {A,C}B\
+[A,BC] =&amp;{A, B} C -B{A,C} 
+\end{split}
+$$</p>
+<h1>Boson</h1>
+<p>Boson 满足对易关系
+$$
+[a_k, a^{\dagger}<em>{k'}] = \delta</em>{kk'}
+$$</p>
+<p>$$
+\sum_{k'}[a^{\dagger}<em>{k3}a</em>{k3},a^{\dagger}<em>{k'2}a</em>{k'3}] 
+    = -a^{\dagger}<em>{k2}a</em>{k3}
+$$</p>
+<p>$$
+\sum_{k'}[a^{\dagger}<em>{k3}a</em>{k3},a^{\dagger}<em>{k'3}a</em>{k'2}] 
+    =  a^{\dagger}<em>{k3}a</em>{k2}
+$$</p>
+<h1>Fermion</h1>
+<p>Fermion 满足反对易关系
+$$
+{a_k, a^{\dagger}<em>{k'}} = \delta</em>{kk'}
+$$</p>
+<p>$$
+\sum_{k'}[a^{\dagger}<em>{k3}a</em>{k3},a^{\dagger}<em>{k'2}a</em>{k'3}] 
+    = -a^{\dagger}<em>{k2}a</em>{k3}
+$$</p>
+<p>$$
+\sum_{k'}[a^{\dagger}<em>{k3}a</em>{k3},a^{\dagger}<em>{k'3}a</em>{k'2}] 
+    =  a^{\dagger}<em>{k3}a</em>{k2}
+$$</p><script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      },
+      TeX: {equationNumbers: { autoNumber: "AMS" }}
+    });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+      var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+<script type="text/javascript" src="//cdn.jsdelivr.net/npm/mathjax@2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>

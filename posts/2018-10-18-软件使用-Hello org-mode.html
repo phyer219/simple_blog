@@ -1,0 +1,779 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2022-04-16 Sat 17:43 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Hello org-mode</title>
+<meta name="generator" content="Org Mode" />
+<style>
+  #content { max-width: 60em; margin: auto; }
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #e6e6e6;
+    border-radius: 3px;
+    background-color: #f2f2f2;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: auto;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    top: -8px;
+    right: 12px;
+    padding: 3px;
+    color: #555;
+    background-color: #f2f2f299;
+  }
+  pre.src:hover:before { display: inline; margin-top: 14px;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-authinfo::before { content: 'Authinfo'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .equation-container {
+    display: table;
+    text-align: center;
+    width: 100%;
+  }
+  .equation {
+    vertical-align: middle;
+  }
+  .equation-label {
+    display: table-cell;
+    text-align: right;
+    vertical-align: middle;
+  }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { width: 90%; }
+</style>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        displayAlign: "center",
+        displayIndent: "0em",
+
+        "HTML-CSS": { scale: 100,
+                        linebreaks: { automatic: "false" },
+                        webFont: "TeX"
+                       },
+        SVG: {scale: 100,
+              linebreaks: { automatic: "false" },
+              font: "TeX"},
+        NativeMML: {scale: 100},
+        TeX: { equationNumbers: {autoNumber: "AMS"},
+               MultLineWidth: "85%",
+               TagSide: "right",
+               TagIndent: ".8em"
+             }
+});
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS_HTML"></script>
+</head>
+<body>
+<div id="content" class="content">
+<h1 class="title">Hello org-mode</h1>
+<div id="table-of-contents" role="doc-toc">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents" role="doc-toc">
+<ul>
+<li><a href="#org0c15d7a">1. 符号说明</a></li>
+<li><a href="#org84fd8a7">2. 视图优化</a></li>
+<li><a href="#orgb9ada0b">3. 插入代码</a>
+<ul>
+<li><a href="#org0aec024">3.1. 行间代码(org9.2 更新后, 默认以下方法不可行, 新方法 <code>C-c C-</code> , 见 https://emacs.stackexchange.com/questions/46988/why-do-easy-templates-e-g-s-tab-in-org-9-2-not-work)</a></li>
+<li><a href="#org6917d88">3.2. 行内代码</a></li>
+</ul>
+</li>
+<li><a href="#org7ab4006">4. \(\LaTeX\) 公式</a>
+<ul>
+<li><a href="#orgb363729">4.1. cdlatex 插件以简化输入</a></li>
+<li><a href="#org08d1e68">4.2. 特殊的行内公式语法</a></li>
+</ul>
+</li>
+<li><a href="#org64d7ccb">5. 链接</a>
+<ul>
+<li><a href="#org713763e">5.1. 网页链接示例</a></li>
+<li><a href="#org6d8667a">5.2. 图片示例</a></li>
+<li><a href="#org98bf6e0">5.3. 文件示例</a>
+<ul>
+<li><a href="#org44b60cf">5.3.1. pdf文件</a></li>
+<li><a href="#org7b03cf1">5.3.2. python程序</a></li>
+<li><a href="#orgd22156e">5.3.3. 内部链接</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#org2500075">6. 列表</a>
+<ul>
+<li><a href="#orgfb061ce">6.1. Description list</a></li>
+<li><a href="#org8279f0f">6.2. 抽屉(Drawers)</a></li>
+</ul>
+</li>
+<li><a href="#org19afcf7">7. Tags&#xa0;&#xa0;&#xa0;<span class="tag"><span class="__">标签</span></span></a></li>
+<li><a href="#org3f38e7d">8. 表格&#xa0;&#xa0;&#xa0;<span class="tag"><span class="table">table</span></span></a>
+<ul>
+<li><a href="#orgce3ec98">8.1. 表格示例</a></li>
+<li><a href="#orgab0a19b">8.2. table.el</a></li>
+</ul>
+</li>
+<li><a href="#org9a574d2">9. 内容示例</a>
+<ul>
+<li><a href="#org96eb559">9.1. python 代码块示例</a></li>
+<li><a href="#org6a1a258">9.2. 手册上的例子(release 9.4)</a>
+<ul>
+<li><a href="#org055efeb">9.2.1. page13</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#orga8f2843">10. Properties(e.g. CD Collection)</a></li>
+<li><a href="#orgfbe02b1">11. Column view</a></li>
+<li><a href="#org4bed236">12. Date and times</a>
+<ul>
+<li><a href="#org8c5542c">12.1. Deadline</a></li>
+<li><a href="#org9eca91c">12.2. Schedule</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<!-- toc -->
+<!-- more -->
+
+
+<div id="outline-container-org0c15d7a" class="outline-2">
+<h2 id="org0c15d7a"><span class="section-number-2">1.</span> 符号说明</h2>
+<div class="outline-text-2" id="text-1">
+<ul class="org-ul">
+<li><code>M</code> : Mate 键</li>
+<li><code>S</code> : Shift 键</li>
+<li><code>C</code> : Ctrl 键</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org84fd8a7" class="outline-2">
+<h2 id="org84fd8a7"><span class="section-number-2">2.</span> 视图优化</h2>
+<div class="outline-text-2" id="text-2">
+<ul class="org-ul">
+<li>使列表有缩进: <code>M-x org-indent-mode</code></li>
+</ul>
+</div>
+</div>
+
+
+<div id="outline-container-orgb9ada0b" class="outline-2">
+<h2 id="orgb9ada0b"><span class="section-number-2">3.</span> 插入代码</h2>
+<div class="outline-text-2" id="text-3">
+</div>
+<div id="outline-container-org0aec024" class="outline-3">
+<h3 id="org0aec024"><span class="section-number-3">3.1.</span> 行间代码(org9.2 更新后, 默认以下方法不可行, 新方法 <code>C-c C-</code> , 见 <a href="https://emacs.stackexchange.com/questions/46988/why-do-easy-templates-e-g-s-tab-in-org-9-2-not-work">https://emacs.stackexchange.com/questions/46988/why-do-easy-templates-e-g-s-tab-in-org-9-2-not-work</a>)</h3>
+<div class="outline-text-3" id="text-3-1">
+<p>
+在空白行输入
+</p>
+<div class="org-src-container">
+<pre class="src src-org-mode">&lt; s TAB
+</pre>
+</div>
+<p>
+或者
+</p>
+<div class="org-src-container">
+<pre class="src src-org-mode">&lt; e TAB
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-org6917d88" class="outline-3">
+<h3 id="org6917d88"><span class="section-number-3">3.2.</span> 行内代码</h3>
+<div class="outline-text-3" id="text-3-2">
+<p>
+将代码夹在两个 "=" 之间
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-org7ab4006" class="outline-2">
+<h2 id="org7ab4006"><span class="section-number-2">4.</span> \(\LaTeX\) 公式</h2>
+<div class="outline-text-2" id="text-4">
+</div>
+<div id="outline-container-orgb363729" class="outline-3">
+<h3 id="orgb363729"><span class="section-number-3">4.1.</span> cdlatex 插件以简化输入</h3>
+<div class="outline-text-3" id="text-4-1">
+<p>
+想要插入 "'" 或者 "`" 时, 可以先按 <code>C-q</code> 之后再输入
+</p>
+</div>
+</div>
+<div id="outline-container-org08d1e68" class="outline-3">
+<h3 id="org08d1e68"><span class="section-number-3">4.2.</span> 特殊的行内公式语法</h3>
+<div class="outline-text-3" id="text-4-2">
+<p>
+只有在下列情况下,美元符号 "$" 才被认为是行内公式的标志:
+</p>
+<ul class="org-ul">
+<li>是封闭的. 也就是开关的结尾各有一个美元符号.</li>
+<li>行内公式不能出现两个以上的断行.</li>
+<li>行内公式的美元符号要和正文之间有空格, 或者是英文标点.</li>
+</ul>
+</div>
+</div>
+</div>
+
+
+
+<div id="outline-container-org64d7ccb" class="outline-2">
+<h2 id="org64d7ccb"><span class="section-number-2">5.</span> 链接</h2>
+<div class="outline-text-2" id="text-5">
+<p>
+都采用两个方括号. 对于 Hexo, 只有放在与文章文件名同名的文件夹下才可以正常访问.
+</p>
+</div>
+
+<div id="outline-container-org713763e" class="outline-3">
+<h3 id="org713763e"><span class="section-number-3">5.1.</span> 网页链接示例</h3>
+<div class="outline-text-3" id="text-5-1">
+<div class="org-src-container">
+<pre class="src src-shell">[[https://phyer219.github.io/]]
+</pre>
+</div>
+<p>
+效果为
+</p>
+
+<p>
+<a href="https://phyer219.github.io/">https://phyer219.github.io/</a>
+</p>
+</div>
+</div>
+
+<div id="outline-container-org6d8667a" class="outline-3">
+<h3 id="org6d8667a"><span class="section-number-3">5.2.</span> 图片示例</h3>
+<div class="outline-text-3" id="text-5-2">
+<div class="org-src-container">
+<pre class="src src-shell">[[file:./2018-10-18-软件使用-Hello org-mode/cpho.jpeg]]
+</pre>
+</div>
+<p>
+效果为
+</p>
+
+
+<div id="org317f695" class="figure">
+<p><img src="./2018-10-18-软件使用-Hello org-mode/cpho.jpeg" alt="cpho.jpeg" />
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org98bf6e0" class="outline-3">
+<h3 id="org98bf6e0"><span class="section-number-3">5.3.</span> 文件示例</h3>
+<div class="outline-text-3" id="text-5-3">
+</div>
+<div id="outline-container-org44b60cf" class="outline-4">
+<h4 id="org44b60cf"><span class="section-number-4">5.3.1.</span> pdf文件</h4>
+<div class="outline-text-4" id="text-5-3-1">
+<div class="org-src-container">
+<pre class="src src-shell">[[file:./2018-10-18-软件使用-Hello org-mode/Friedel Oscillations1.pdf]]
+</pre>
+</div>
+<p>
+效果为
+</p>
+
+<p>
+<a href="./2018-10-18-软件使用-Hello org-mode/Friedel Oscillations1.pdf">./2018-10-18-软件使用-Hello org-mode/Friedel Oscillations1.pdf</a>
+</p>
+</div>
+</div>
+
+<div id="outline-container-org7b03cf1" class="outline-4">
+<h4 id="org7b03cf1"><span class="section-number-4">5.3.2.</span> python程序</h4>
+<div class="outline-text-4" id="text-5-3-2">
+<div class="org-src-container">
+<pre class="src src-shell">[[file:./2018-10-18-软件使用-Hello org-mode/plot.py]]
+</pre>
+</div>
+<p>
+效果为
+</p>
+
+<p>
+<a href="./2018-10-18-软件使用-Hello org-mode/plot.py">./2018-10-18-软件使用-Hello org-mode/plot.py</a>
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgd22156e" class="outline-4">
+<h4 id="orgd22156e"><span class="section-number-4">5.3.3.</span> 内部链接</h4>
+<div class="outline-text-4" id="text-5-3-3">
+<p>
+如
+</p>
+
+<p>
+<code>[[*pdf文件]]</code>
+</p>
+
+<p>
+效果为
+</p>
+
+<p>
+<a href="#org44b60cf">5.3.1</a>
+</p>
+</div>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org2500075" class="outline-2">
+<h2 id="org2500075"><span class="section-number-2">6.</span> 列表</h2>
+<div class="outline-text-2" id="text-6">
+</div>
+<div id="outline-container-orgfb061ce" class="outline-3">
+<h3 id="orgfb061ce"><span class="section-number-3">6.1.</span> Description list</h3>
+<div class="outline-text-3" id="text-6-1">
+<dl class="org-dl">
+<dt>项目一</dt><dd>内容</dd>
+
+<dt>项目二</dt><dd>内容</dd>
+</dl>
+</div>
+</div>
+
+<div id="outline-container-org8279f0f" class="outline-3">
+<h3 id="org8279f0f"><span class="section-number-3">6.2.</span> 抽屉(Drawers)</h3>
+<div class="outline-text-3" id="text-6-2">
+<ul class="org-ul">
+<li>Note taken on <span class="timestamp-wrapper"><span class="timestamp">[2021-02-05 Fri 22:26] </span></span> <br />
+( <code>C-c</code> <code>C-z</code> )note here 这个功能不错. 可以标记什么时候做的 note.</li>
+</ul>
+
+<p>
+内容
+</p>
+</div>
+</div>
+</div>
+
+
+
+<div id="outline-container-org19afcf7" class="outline-2">
+<h2 id="org19afcf7"><span class="section-number-2">7.</span> Tags&#xa0;&#xa0;&#xa0;<span class="tag"><span class="__">标签</span></span></h2>
+<div class="outline-text-2" id="text-7">
+<p>
+<code>C-c</code> <code>C-q</code>
+</p>
+</div>
+</div>
+
+<div id="outline-container-org3f38e7d" class="outline-2">
+<h2 id="org3f38e7d"><span class="section-number-2">8.</span> 表格&#xa0;&#xa0;&#xa0;<span class="tag"><span class="table">table</span></span></h2>
+<div class="outline-text-2" id="text-8">
+<ul class="org-ul">
+<li>将内容移到下一行: M-down</li>
+<li>在光标上面插入一行: M-S-up</li>
+</ul>
+</div>
+
+<div id="outline-container-orgce3ec98" class="outline-3">
+<h3 id="orgce3ec98"><span class="section-number-3">8.1.</span> 表格示例</h3>
+<div class="outline-text-3" id="text-8-1">
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">name</th>
+<th scope="col" class="org-right">phone</th>
+<th scope="col" class="org-right">age</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left">Peter</td>
+<td class="org-right">1234</td>
+<td class="org-right">17</td>
+</tr>
+</tbody>
+<tbody>
+<tr>
+<td class="org-left">Alice</td>
+<td class="org-right">2345</td>
+<td class="org-right">18</td>
+</tr>
+
+<tr>
+<td class="org-left">Bob</td>
+<td class="org-right">3456</td>
+<td class="org-right">16</td>
+</tr>
+
+<tr>
+<td class="org-left">Cindy</td>
+<td class="org-right">&#xa0;</td>
+<td class="org-right">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">a very long line</td>
+<td class="org-right">&#xa0;</td>
+<td class="org-right">&#xa0;</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+
+<div id="outline-container-orgab0a19b" class="outline-3">
+<h3 id="orgab0a19b"><span class="section-number-3">8.2.</span> table.el</h3>
+<div class="outline-text-3" id="text-8-2">
+<p>
+<code>C-c</code> <code>~</code> 插入 table.el
+</p>
+
+<p>
+<code>C-c</code> <code>'</code> 进行编辑
+</p>
+
+<!-- This HTML table template is generated by emacs 28.1 -->
+<table border="1">
+  <tr>
+    <td align="left" valign="top">
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    </td>
+    <td align="left" valign="top">
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    </td>
+    <td align="left" valign="top">
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    </td>
+  </tr>
+  <tr>
+    <td align="left" valign="top">
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    </td>
+    <td align="left" valign="top">
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    </td>
+    <td align="left" valign="top">
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    </td>
+  </tr>
+  <tr>
+    <td align="left" valign="top">
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    </td>
+    <td align="left" valign="top">
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    </td>
+    <td align="left" valign="top">
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    </td>
+  </tr>
+</table>
+</div>
+</div>
+</div>
+
+
+<div id="outline-container-org9a574d2" class="outline-2">
+<h2 id="org9a574d2"><span class="section-number-2">9.</span> 内容示例</h2>
+<div class="outline-text-2" id="text-9">
+</div>
+<div id="outline-container-org96eb559" class="outline-3">
+<h3 id="org96eb559"><span class="section-number-3">9.1.</span> python 代码块示例</h3>
+<div class="outline-text-3" id="text-9-1">
+<div class="org-src-container">
+<pre class="src src-python">import matplotlib.pyplot as plt
+import numpy as np
+x = np.linspace(-2,2,1000)
+f = np.e**(-(1/(1-x**2)))
+y = np.piecewise(x,[x&lt;=-1,x&gt;-1],[0,1])*np.piecewise(x,[x&lt;=1,x&gt;1],[1,0])*f
+plt.plot(x,y)
+plt.show()
+</pre>
+</div>
+
+<div class="org-src-container">
+<pre class="src src-python">import matplotlib.pyplot as plt
+import numpy as np
+
+c = 2
+d = 3
+x = np.linspace(c-1,d+1,1000)
+f = np.e**(-((1/(x-c))+(1/(d-x))))
+y = np.piecewise(x,[x&lt;=c,x&gt;c],[0,1])*np.piecewise(x,[x&lt;=d,x&gt;d],[1,0])*f 
+plt.plot(x,y)
+plt.show()
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org6a1a258" class="outline-3">
+<h3 id="org6a1a258"><span class="section-number-3">9.2.</span> 手册上的例子(release 9.4)</h3>
+<div class="outline-text-3" id="text-9-2">
+</div>
+<div id="outline-container-org055efeb" class="outline-4">
+<h4 id="org055efeb"><span class="section-number-4">9.2.1.</span> page13</h4>
+<div class="outline-text-4" id="text-9-2-1">
+</div>
+<ol class="org-ol">
+<li><a id="org56aa110"></a>Lord of the Rings<br />
+<div class="outline-text-5" id="text-9-2-1-1">
+<p>
+My favorite scenes are (in this order)
+</p>
+<ol class="org-ol">
+<li>The attack of the Rohirrim</li>
+<li>Eowyn's fight with the witch king</li>
+<li>this was already my favorite scene in the book</li>
+<li>I really like Miranda Otto.</li>
+<li>Peter Jackson being shot by Legolas</li>
+<li>on DVD only</li>
+</ol>
+<p>
+He makes a really funny face when it happens.
+But in the end, no individual scenes matter but the film as a whole.
+Important actors in this film are:
+</p>
+<dl class="org-dl">
+<dt>Elijah Wood</dt><dd>He plays Frodo</dd>
+<dt>Sean Astin</dt><dd>He plays Sam, Frodo's friend. I still remember him</dd>
+</dl>
+<p>
+very well from his role as Mikey Walsh in <i>The Goonies</i>.
+</p>
+</div>
+</li>
+</ol>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orga8f2843" class="outline-2">
+<h2 id="orga8f2843"><span class="section-number-2">10.</span> Properties(e.g. CD Collection)</h2>
+<div class="outline-text-2" id="text-10">
+</div>
+</div>
+
+<div id="outline-container-orgfbe02b1" class="outline-2">
+<h2 id="orgfbe02b1"><span class="section-number-2">11.</span> Column view</h2>
+<div class="outline-text-2" id="text-11">
+<p>
+:COLUMNS: %25ITEM %9Approved(Approved?){X} %Owner %11Status \
+%10Time<sub>Estimate</sub>{:} %CLOCKSUM %CLOCKSUM<sub>T</sub>
+:Owner<sub>ALL</sub>:
+Tammy Mark Karl Lisa Don
+:Status<sub>ALL</sub>:
+"In progress" "Not started yet" "Finished" ""
+:Approved<sub>ALL</sub>: "[ ]" "[X]"
+</p>
+
+
+<p>
+<code>C-c</code> <code>C-x</code> <code>p</code> 添加 properties.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org4bed236" class="outline-2">
+<h2 id="org4bed236"><span class="section-number-2">12.</span> Date and times</h2>
+<div class="outline-text-2" id="text-12">
+<p>
+<code>C-c .</code>
+</p>
+
+<p>
+<span class="timestamp-wrapper"><span class="timestamp">&lt;2021-02-06 Sat&gt;</span></span>
+</p>
+</div>
+
+<div id="outline-container-org8c5542c" class="outline-3">
+<h3 id="org8c5542c"><span class="section-number-3">12.1.</span> Deadline</h3>
+<div class="outline-text-3" id="text-12-1">
+<p>
+<code>C-c C-d</code>
+</p>
+
+<p>
+DEADLINE: <span class="timestamp-wrapper"><span class="timestamp">&lt;2021-02-06 Sat&gt;</span></span>
+</p>
+</div>
+</div>
+
+<div id="outline-container-org9eca91c" class="outline-3">
+<h3 id="org9eca91c"><span class="section-number-3">12.2.</span> Schedule</h3>
+<div class="outline-text-3" id="text-12-2">
+<p>
+<code>C-c C-s</code>
+</p>
+
+<p>
+SCHEDULED: <span class="timestamp-wrapper"><span class="timestamp">&lt;2021-02-06 Sat&gt;</span></span>
+</p>
+</div>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="date">Date: 2018-10-18 Thu 00:00</p>
+<p class="date">Created: 2022-04-16 Sat 17:43</p>
+<p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
+</div>
+</body>
+</html>

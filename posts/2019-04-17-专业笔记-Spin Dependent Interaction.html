@@ -1,0 +1,383 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2022-04-16 Sat 17:43 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Cold Atom Physics Note: Spin Dependent Interaction</title>
+<meta name="generator" content="Org Mode" />
+<style>
+  #content { max-width: 60em; margin: auto; }
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #e6e6e6;
+    border-radius: 3px;
+    background-color: #f2f2f2;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: auto;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    top: -8px;
+    right: 12px;
+    padding: 3px;
+    color: #555;
+    background-color: #f2f2f299;
+  }
+  pre.src:hover:before { display: inline; margin-top: 14px;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-authinfo::before { content: 'Authinfo'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .equation-container {
+    display: table;
+    text-align: center;
+    width: 100%;
+  }
+  .equation {
+    vertical-align: middle;
+  }
+  .equation-label {
+    display: table-cell;
+    text-align: right;
+    vertical-align: middle;
+  }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { width: 90%; }
+</style>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        displayAlign: "center",
+        displayIndent: "0em",
+
+        "HTML-CSS": { scale: 100,
+                        linebreaks: { automatic: "false" },
+                        webFont: "TeX"
+                       },
+        SVG: {scale: 100,
+              linebreaks: { automatic: "false" },
+              font: "TeX"},
+        NativeMML: {scale: 100},
+        TeX: { equationNumbers: {autoNumber: "AMS"},
+               MultLineWidth: "85%",
+               TagSide: "right",
+               TagIndent: ".8em"
+             }
+});
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS_HTML"></script>
+</head>
+<body>
+<div id="content" class="content">
+<h1 class="title">Cold Atom Physics Note: Spin Dependent Interaction</h1>
+<div id="table-of-contents" role="doc-toc">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents" role="doc-toc">
+<ul>
+<li><a href="#orgf333bba">1. 问题</a></li>
+<li><a href="#orgaa774b9">2. 投影算符</a></li>
+<li><a href="#org4754192">3. 密度密度相互作用和自旋交换相互作用</a></li>
+<li><a href="#org4661616">4. Supplementary</a></li>
+</ul>
+</div>
+</div>
+<!-- toc -->
+<!-- more -->
+
+<div id="outline-container-orgf333bba" class="outline-2">
+<h2 id="orgf333bba"><span class="section-number-2">1.</span> 问题</h2>
+<div class="outline-text-2" id="text-1">
+<p>
+两个全同 Boson , 它们的自旋都是 \(1\) , 即 \(f_1 =1, f_2= 1\). 它们的总自
+旋可以是 \(F = 0, 1, 2\). 如果它们之间的相互作用是一个李黄杨
+Pseudopotential, 那么当 \(F = 1\) 时它们的自旋波函数是反对称的
+(Supplementary 中有证明), 那么它们
+的轨道波函数就必须是反对称的. 这意味着当两个原子相碰的时候波函数必须为
+零. 那这个接触相互作用就对它没有作用了. 所以它们之间的相互作用可以在不
+同的 \(F\) 子空间分别写出. 不同的子空间对应着不同的散射长度. 即
+</p>
+\begin{align}
+  V = \frac{2\pi\hbar^2}{m}\delta^3(\vec{r})
+  \frac{\partial}{\partial r} r \sum_{F= 0,2}a_F \mathcal{P}_{F}
+\end{align}
+<p>
+其中 \(F=0\) 的求和项由前面的分析可以知道是 \(0\) .
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgaa774b9" class="outline-2">
+<h2 id="orgaa774b9"><span class="section-number-2">2.</span> 投影算符</h2>
+<div class="outline-text-2" id="text-2">
+<p>
+下面要求的是投影算符 \(\mathcal{P}\) 的具体形式. 它可以用算符 \(f_1\cdot
+f_2\) 来表示. 对于 \(f_1 = f_2 = 1\) 的情况有
+</p>
+\begin{align*}
+  \vec{f}_1 \cdot \vec{f}_2 =& \frac{1}{2}
+    \left[ (\vec{f}_1 + \vec{f}_2)^2 -\vec{f}_1^2 -\vec{f}^2 \right]\\
+   =& \frac{F(F+1)}{2} - f(f+1)
+\end{align*}
+<p>
+当 \(F = 0\) 时 \(\vec{f}_1 \cdot \vec{f}_2 = -2\) , 当 \(F=2\) 时 \(\vec{f}_1 \cdot
+\vec{f}_2 =1\) , 即
+</p>
+\begin{align}
+  \vec{f}_1 \cdot \vec{f}_2 = -2 \mathcal{P}_0 + \mathcal{P}_2
+\end{align}
+<p>
+又有
+</p>
+\begin{align}
+  \mathcal{P}_0 + \mathcal{P}_2 = 1
+\end{align}
+<p>
+其中 \(1\) 表示单位算符. 联立以上二式可得
+</p>
+\begin{align*}
+  \mathcal{P}_0 =& \frac{1}{3} - \frac{1}{3}\vec{f}_1 \cdot \vec{f}_2 \\
+  \mathcal{P}_2 =& \frac{2}{3} + \frac{1}{3}\vec{f}_1 \cdot \vec{f}_2
+\end{align*}
+</div>
+</div>
+
+<div id="outline-container-org4754192" class="outline-2">
+<h2 id="org4754192"><span class="section-number-2">3.</span> 密度密度相互作用和自旋交换相互作用</h2>
+<div class="outline-text-2" id="text-3">
+<p>
+用以上结果可以重写李黄杨 Pseudopotential
+</p>
+
+\begin{align*}
+  V =& \frac{2\pi\hbar^2}{m}\delta^3(\vec{r})
+  \frac{\partial}{\partial r} r \sum_{F= 0,2}
+  (a_0 \mathcal{P}_0 + a_2 \mathcal{P}_2) \\
+   =&  \frac{2\pi\hbar^2}{m}\delta^3(\vec{r})
+  \frac{\partial}{\partial r} r \sum_{F= 0,2}
+  \left( \frac{a_0+a_2}{3} + \frac{a_2-a_0}{3}
+  \vec{f}_1 \cdot \vec{f}_2 \right) \\
+  =&   \frac{2\pi\hbar^2}{m}\delta^3(\vec{r})
+  \frac{\partial}{\partial r} r \sum_{F= 0,2}
+  \left( a_n + a_s
+  \vec{f}_1 \cdot \vec{f}_2 \right) 
+\end{align*}
+<p>
+\(a_n\) 代表密度密度相互作用, \(a_s\) 代表自旋交换相互作用.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org4661616" class="outline-2">
+<h2 id="org4661616"><span class="section-number-2">4.</span> Supplementary</h2>
+<div class="outline-text-2" id="text-4">
+<p>
+两个自旋为 \(1\) 的角动量偶合. 它们各自的态用 \(| f,f_z\rangle\) 来标记,
+偶合后构成一个新的 9 维 Hilbert 空间, 即
+</p>
+\begin{align}
+  \mathcal{H} = \mathcal{H}_1 \otimes \mathcal{H}_2
+  = \{ |1\rangle ,|0\rangle , |-1 \rangle \} \otimes
+   \{ |1\rangle ,|0\rangle , |-1 \rangle \}
+\end{align}
+<p>
+在新的 Hilbert 空间中, 好量子数是 \(F, F_z\) .因此, 在旧的直积基底下写出
+算符 \(\vec{F}^2, F_z\) 的一个 \(9\times 9\) 的矩阵, 然后将其对角化, 即可
+得到偶合后的本征态, 而且是在直积基底下写出的, 可以方便地观察交换两个粒
+子的自旋是对称还是反对称的. 算符 \(\vec{F}^2\) 可以如下写出
+</p>
+\begin{align*}
+  \vec{F}^2 =& (\vec{f}_1+ \vec{f}_2)^2 \\
+   =& \vec{f}_1^2 +\vec{f}_2^2 + 2 \vec{f}_1\cdot \vec{f}_2  \\
+   =& \vec{f}_1^2 +\vec{f}_2^2 + 2 f_{1z}f_{2z} +f_1^ + f_2^- 
+     +f_1^ - f_2^ + 
+\end{align*}
+<p>
+幸运的是, \(F_z\) 是好量子数, 所以新的本征态只会偶合 \(F_z\) 相等的态. 所以
+可以分别对角化 \(F_z = -2,-1,0,1,2\) 对应的子空间的矩阵. 下面以 \(F_z=0\)
+为例, 求出新的本征态.
+</p>
+
+<p>
+在直积空间的子空间 \(|1,-1 \rangle , |-1,1 \rangle |0,0 \rangle\) 中,
+\(\vec{F}^2\) 的矩阵为
+</p>
+\begin{align}
+  \vec{F}^2 =
+  \begin{pmatrix}
+   2 & 0 & 2 \\
+   0 & 2 & 2 \\
+   2 & 2 & 4 \\
+  \end{pmatrix}
+\end{align}
+<p>
+对角化后的本征值和本征向量为
+</p>
+\begin{align*}
+  F(F+1) =& 6 , \quad |F=2,F_z=0\rangle =1\cdot |1,-1 \rangle
+   +1\cdot |-1,1 \rangle + 2\cdot|0,0 \rangle \\
+  F(F+1) =& 2 , \quad |F=1,F_z=0\rangle =-1\cdot |1,-1 \rangle
+   +1\cdot |-1,1 \rangle + 0\cdot|0,0 \rangle \\
+  F(F+1) =& 0 , \quad |F=0,F_z=0\rangle =-1\cdot |1,-1 \rangle
+   -1\cdot |-1,1 \rangle + 1\cdot|0,0 \rangle 
+\end{align*}
+<p>
+可以看出, \(F=0,2\) 的两个本征态是交换对称的, 而 \(F=1\) 的本征态是交换反
+对称的.
+</p>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="date">Date: 2019-04-17 Wed 00:00</p>
+<p class="date">Created: 2022-04-16 Sat 17:43</p>
+<p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
+</div>
+</body>
+</html>

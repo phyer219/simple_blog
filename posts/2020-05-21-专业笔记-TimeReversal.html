@@ -1,0 +1,643 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2022-04-16 Sat 17:43 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>读书笔记: Time Reversal and Kramer's Degeneracy</title>
+<meta name="generator" content="Org Mode" />
+<style>
+  #content { max-width: 60em; margin: auto; }
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #e6e6e6;
+    border-radius: 3px;
+    background-color: #f2f2f2;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: auto;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    top: -8px;
+    right: 12px;
+    padding: 3px;
+    color: #555;
+    background-color: #f2f2f299;
+  }
+  pre.src:hover:before { display: inline; margin-top: 14px;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-authinfo::before { content: 'Authinfo'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .equation-container {
+    display: table;
+    text-align: center;
+    width: 100%;
+  }
+  .equation {
+    vertical-align: middle;
+  }
+  .equation-label {
+    display: table-cell;
+    text-align: right;
+    vertical-align: middle;
+  }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { width: 90%; }
+</style>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        displayAlign: "center",
+        displayIndent: "0em",
+
+        "HTML-CSS": { scale: 100,
+                        linebreaks: { automatic: "false" },
+                        webFont: "TeX"
+                       },
+        SVG: {scale: 100,
+              linebreaks: { automatic: "false" },
+              font: "TeX"},
+        NativeMML: {scale: 100},
+        TeX: { equationNumbers: {autoNumber: "AMS"},
+               MultLineWidth: "85%",
+               TagSide: "right",
+               TagIndent: ".8em"
+             }
+});
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS_HTML"></script>
+</head>
+<body>
+<div id="content" class="content">
+<h1 class="title">读书笔记: Time Reversal and Kramer's Degeneracy</h1>
+<div id="table-of-contents" role="doc-toc">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents" role="doc-toc">
+<ul>
+<li><a href="#org426d384">1. 引言: 时间反演概述与 Kramer's Degeneracy</a></li>
+<li><a href="#orgc5abeb3">2. 时间反演的含义</a></li>
+<li><a href="#org58422e3">3. 时间反演算符是 antiunitary 的</a></li>
+<li><a href="#org59a95d0">4. 可观测量在时间反演下的奇偶</a></li>
+<li><a href="#orgbeddd12">5. 对易关系与时间反演的奇偶</a></li>
+<li><a href="#org2f41713">6. 角动量时间反演作用下的结果</a></li>
+<li><a href="#org3097371">7. 整数角动量</a></li>
+<li><a href="#orge271440">8. 半整数角动量</a></li>
+<li><a href="#orgae7a1e2">9. Supplementary</a></li>
+<li><a href="#orgf865969">10. Reference</a></li>
+</ul>
+</div>
+</div>
+<!-- toc -->
+<!-- more -->
+
+<div id="outline-container-org426d384" class="outline-2">
+<h2 id="org426d384"><span class="section-number-2">1.</span> 引言: 时间反演概述与 Kramer's Degeneracy</h2>
+<div class="outline-text-2" id="text-1">
+<p>
+对于牛顿力学
+</p>
+\begin{align}
+  m \frac{\mathrm{d}}{\mathrm{d}t} \vec{x}(t) = - \nabla V(\vec{x})
+\end{align}
+<p>
+\(x(-t)\) 也是它的一个解.
+</p>
+
+<p>
+但是对于 Schrodinger 方程( \(H\) 不含时)
+</p>
+\begin{align}
+  \mathrm{i} \frac{\partial}{\partial t} \psi(t) = H \psi(t)
+\end{align}
+<p>
+由于上式中有对时间的一阶导数,  \(\psi(- t)\) 不是它的解. 但是 \(\psi^{*}(- t)\) 是它的解.
+因为将上式取复共轭 
+</p>
+\begin{align}
+  -\mathrm{i}\frac{\partial}{\partial t} \psi^{*}(t) =& H \psi^{*}(t) \\
+                         \Downarrow& \\
+  \mathrm{i}\frac{\partial}{\partial t'} \psi^{*}(-t') =& H \psi^{*}(-t')
+\end{align}
+<p>
+因此 \(\psi^{*}(-t)\) 还是 Schrodinger 方程的解. 
+</p>
+<blockquote>
+<p>
+对于一个在平面波态 \(\psi(t) =
+e^{\mathrm{i} (\vec{p}\cdot \vec{x} - Et)}\) spinless 的 
+粒子, \(\psi^{*}(-t) = e^{-\mathrm{i} (-\vec{p}\cdot \vec{x} - Et)}\) 是反向传播的平面波,
+还是 Schrodinger 方程的解.
+</p>
+</blockquote>
+<p>
+定义时间反演算符 \(T \psi(t) = \psi^{*}(-t)\) , 这是一种对称操作. 如果波函数破缺了这种
+对称性, 它也会引起简并. 具体地说:
+</p>
+
+<p>
+如果 \([H, T] = 0\) , 也就是说 Hamiltonian 具有时间反演对称性, 那么
+</p>
+\begin{align}
+  HT\psi = TH\psi = TE\Psi = E T\psi
+\end{align}
+<p>
+从上式可以看出, 如果 \(\psi\) 不具有时间反演对称性, 那么就会有简并.
+</p>
+
+<blockquote>
+<p>
+Example: 
+</p>
+
+<p>
+对于一个静电场中的电子, 它的 Hamiltonian 中有关相互作用的部分为
+</p>
+\begin{align}
+  H = e\phi(\vec{x})
+\end{align}
+<p>
+\(\phi(\vec{x})\) 是位置 \(\vec{x}\) 的实函数, 由于 \(\vec{x}\) 在时间反演下是不变的, 所
+以这个系统的 Hamiltonian \([H, T] = 0\) . 
+</p>
+
+<p>
+同时, 时间反演对 spin \(1/2\) 作用的结果为
+\(T^2 |\rangle = - |\rangle\)
+所以 \(T\) 作用在自旋上会使原来的态变成另一个态. 如果 \(T\) 作用的结果仅仅是一个相伴
+的化, 就会有 \(T^2 = 1\) .
+</p>
+
+<p>
+因此, 在这个系统中, Hamiltonian 具有时间反演对称性, 而系统的态不具有时间反演对称
+性, 所以会产生简并, 这就是 Kramer's Degeneracy
+</p>
+</blockquote>
+</div>
+</div>
+
+<div id="outline-container-orgc5abeb3" class="outline-2">
+<h2 id="orgc5abeb3"><span class="section-number-2">2.</span> 时间反演的含义</h2>
+<div class="outline-text-2" id="text-2">
+<p>
+时间反演的含义, 就是使运动往时间减小的方向演化.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org58422e3" class="outline-2">
+<h2 id="org58422e3"><span class="section-number-2">3.</span> 时间反演算符是 antiunitary 的</h2>
+<div class="outline-text-2" id="text-3">
+<p>
+假设一个一维自由波包, 动量为 \(p\) , 方向水平向右为正. 在 \(t=0\) 时刻, 波包中心在
+\(x=0\) 处, 将此时的态记为 
+</p>
+\begin{align}
+|\alpha\rangle = |p, 0\rangle
+\end{align}
+
+<p>
+考虑这样一个过程.
+</p>
+<blockquote>
+<p>
+我们对它进行一个时间反演的操作, 根据时间反演的含义, 它应该变成向左的动量, 也就是
+\(|-p, 0\rangle\) 也就是
+</p>
+\begin{align}
+T |p, 0\rangle = |-p, 0\rangle
+\end{align}
+<p>
+然后让 \(T|-p, 0\rangle\) 经过一段小时间后, 它会按动量 \(-p\) 向左传播, 记经过
+\(\delta t\) 时间后, 波包中心到了 \(-\delta x\) , 记为态 \(|\beta\rangle = |-p, -\delta x\rangle\) , 也就是
+</p>
+\begin{align}
+  \left[1 - \frac{\mathrm{i}}{\hbar} H\, \delta t\right] T |p, 0\rangle = |-p, -\delta x\rangle = |\beta \rangle
+\end{align}
+</blockquote>
+<p>
+再考虑另一个过程
+</p>
+<blockquote>
+<p>
+先让这个粒子演化 \(- \delta t\) 的时间, 相当于往左后退, 它应该变成态 \(| p , -\delta x\rangle\) ,
+也就是
+</p>
+\begin{align}
+  \left[1 - \frac{\mathrm{i}}{\hbar} H\, (-\delta t)\right] |p, 0\rangle = |p, -\delta x\rangle
+\end{align}
+<p>
+再做一个时间反演操作, 使它的动量反向, 也就是
+</p>
+\begin{align}
+  T\left[1 - \frac{\mathrm{i}}{\hbar} H\, (-\delta t)\right] |p, 0\rangle = |-p, -\delta x\rangle = |\beta\rangle
+\end{align}
+</blockquote>
+<p>
+对比两个过程, 它们的初末态是一样的, 所以两个演化过程是等价的, 也就是说
+</p>
+\begin{align}
+  T\left[1 - \frac{\mathrm{i}}{\hbar} H\, (-\delta t)\right] = \left[1 - \frac{\mathrm{i}}{\hbar} H\, \delta t\right]T
+\end{align}
+<p>
+即
+</p>
+\begin{align}
+T \,\mathrm{i}H = - \mathrm{i}H\, T
+\end{align}
+<p>
+如果 \(T\) 是幺正的, 一定有
+</p>
+\begin{align}
+  H T = - T H
+\end{align}
+<p>
+这是非物理的, 因为对于能量本征态 \(H|n\rangle = E_n|n\rangle\) 一定有
+</p>
+\begin{align}
+    H T |n\rangle= - T H|n\rangle= (-E_n) T |n\rangle
+\end{align}
+<p>
+得出的结论是态 \(T |n\rangle\) 具有负能量, 但这对于一个自由波包来说是非物理的.
+</p>
+
+<p>
+因此, \(T\) 只能是反幺正的, 就也是 $T\mathrm{i} = -\mathrm{i}T $ 那么就有 \(TH =
+HT\) , 这才是物理的.
+</p>
+<blockquote>
+<p>
+关于 antiunitary 的定义, 高量书上给出了两个条件.
+</p>
+
+<p>
+反幺正算符作用在态 \(|\alpha\rangle, |\beta\rangle\) 上
+</p>
+\begin{align}
+|\alpha\rangle \to |\tilde{\alpha}\rangle = \theta |\alpha\rangle, \quad |\beta\rangle \to |\tilde{\beta}\rangle = \theta |\beta\rangle
+\end{align}
+<p>
+有两个性质
+</p>
+\begin{align}
+\langle \tilde{\beta} | \tilde{\alpha} \rangle &= \langle \beta|\alpha \rangle^{*} \\
+\theta \left(c_1|\alpha\rangle + c_2|\beta\rangle  \right) &= c^{*}_1\theta|\alpha\rangle + c^{*}_2\theta|\beta\rangle 
+\end{align}
+<p>
+第二条单列出来叫做 antilinear. 
+</p>
+</blockquote>
+<p>
+有一个重要的 identity:
+</p>
+<blockquote>
+<p>
+Exercise: 证明对于线性算符 \(A\) 有
+</p>
+\begin{align}
+  \langle \beta | \hat{A} | \alpha \rangle = \langle \tilde{\alpha} | T \hat{A}^{\dagger} T^{-1} | \tilde{\beta} \rangle
+\end{align}
+</blockquote>
+</div>
+</div>
+
+<div id="outline-container-org59a95d0" class="outline-2">
+<h2 id="org59a95d0"><span class="section-number-2">4.</span> 可观测量在时间反演下的奇偶</h2>
+<div class="outline-text-2" id="text-4">
+<p>
+定义在 time reversal 作用下 observables 的 odd 与 even. 如果 observeral 满足
+</p>
+\begin{align}
+  \langle \alpha | \hat{A} |\alpha\rangle = \pm \langle \tilde{\alpha} | \hat{A} | \tilde{\alpha}\rangle
+\end{align}
+<p>
+那么 \(+\) 为 even, \(-\) 为 odd. 根据那个重要的 identity, 并且 observable \(\hat{A}\) 是厄
+米的, 上述定义等价于 \(T \hat{A} T^{-1} = \pm \hat{A}\)
+</p>
+\begin{align}
+  \langle \alpha | \hat{A} |\alpha\rangle =& \langle \tilde{\alpha} |T \hat{A}T^{-1} | \tilde{\alpha}\rangle\\
+   \Downarrow& \\
+  \langle \alpha | \hat{A} |\alpha\rangle = \pm \langle \tilde{\alpha} | \hat{A} | \tilde{\alpha}\rangle\quad \Leftrightarrow& \quad 
+  T \hat{A} T^{-1} = \pm \hat{A} 
+\end{align}
+</div>
+</div>
+
+<div id="outline-container-orgbeddd12" class="outline-2">
+<h2 id="orgbeddd12"><span class="section-number-2">5.</span> 对易关系与时间反演的奇偶</h2>
+<div class="outline-text-2" id="text-5">
+<p>
+角动量的对易关系为
+</p>
+\begin{align}
+  [J_i, J_j] = \mathrm{i}\hbar\epsilon_{ijk}J_k
+\end{align}
+<p>
+那么
+</p>
+\begin{align} 
+  T[J_i, J_j]T^{-1} =&T \,\mathrm{i}\hbar\epsilon_{ijk}J_kT^{-1} \\
+  \Downarrow& \\
+  [(TJ_iT^{-1}), (TJ_jT^{-1})] =&-\mathrm{i}\hbar\epsilon_{ijk} (T J_kT^{-1}) \\
+  \Downarrow& \\
+  T \vec{J} T^{-1} = - \vec{J}
+\end{align}
+<p>
+角动量在时间反演下反号, 这是符合物理的.
+</p>
+<blockquote>
+<p>
+Exercise: 由 \(\vec{x}\) 是时间反演不变的, 以及位置与动量的对易关系, 得出动量在时
+间反演下是反号的.
+</p>
+</blockquote>
+</div>
+</div>
+
+<div id="outline-container-org2f41713" class="outline-2">
+<h2 id="org2f41713"><span class="section-number-2">6.</span> 角动量时间反演作用下的结果</h2>
+</div>
+
+<div id="outline-container-org3097371" class="outline-2">
+<h2 id="org3097371"><span class="section-number-2">7.</span> 整数角动量</h2>
+<div class="outline-text-2" id="text-7">
+<p>
+态 \(|\alpha\rangle\) 在坐标表象下的波函数 \(\psi_{\alpha}(x) = \langle x|\alpha\rangle\)
+</p>
+\begin{align}
+T \psi_{\alpha}(x) \equiv \langle x |T|\alpha\rangle = \langle \tilde{x}|T|\alpha\rangle =\langle \tilde{x} |\tilde{\alpha}\rangle = \langle x |\alpha\rangle^{*} =  \psi_{\alpha}(x)^{*}
+\end{align}
+<p>
+因此, 对于 \(l\in \mathbb{N}\) 角动量, 本征函数
+</p>
+\begin{align}
+ T Y^m_l(\theta, \phi) =  Y^{m*}_l(\theta, \phi) = (-1)^mY^{-m}_l(\theta, \phi)
+\end{align}
+<p>
+也就是说
+</p>
+\begin{align}
+  T | l , m \rangle = (-1)^m |l, -m\rangle
+\end{align}
+<p>
+它会出现一个相位. 如果作用两次, 会有
+</p>
+\begin{align}
+  T | l , m \rangle =  |l, m\rangle
+\end{align}
+<p>
+就会回到原来的态.
+</p>
+</div>
+</div>
+
+<div id="outline-container-orge271440" class="outline-2">
+<h2 id="orge271440"><span class="section-number-2">8.</span> 半整数角动量</h2>
+<div class="outline-text-2" id="text-8">
+<p>
+对于 \(l\) 是半整数的情况, 以 spin \(1/2\) 为例, 它也会出现一个相位. 我们并不知
+道相位是多少, 只知道它会使 \(m\) 量子数反号, 因此假设它产生的相位是 \(\eta\) . 也就是
+说 
+</p>
+\begin{align}
+  T |\uparrow\rangle = \eta |\downarrow \rangle
+\end{align}
+<p>
+同时根据自旋的定义, 翻转自旋相当于绕 \(y\) 轴转 \(pi\) 的角度, 也就是
+</p>
+\begin{align}
+  e^{-\mathrm{i}\pi S_y/\hbar}|\downarrow\rangle = |\uparrow\rangle
+\end{align}
+<p>
+将 \(T\) 写成 \(T=UK\) 的形式( Supplementary 中证明 ), 其中 \(U\) 是一个幺正算符, \(U\) 是取共轭. 再结合以上两式
+可得
+</p>
+\begin{align}
+  \eta |\downarrow \rangle = UK |\uparrow\rangle =& UK e^{-\mathrm{i}\pi S_y/\hbar} |\downarrow\rangle = e^{\mathrm{i}\pi S_y/\hbar} U|\downarrow\rangle\\
+  \Downarrow & \\
+  U =& \eta e^{-\mathrm{i}\pi S_y/\hbar}\\
+  \Downarrow & \\
+  T =& \eta e^{-\mathrm{i}\pi S_y/\hbar} K = -\mathrm{i}\eta \left( \frac{2S_y}{\hbar} \right)K
+\end{align}
+<p>
+因此我们找到了 \(T\) 的具体形式. 但是相位 \(\eta\) 是未知的. 如果作用两次
+</p>
+\begin{align}
+  T^2 |\uparrow\rangle = T\eta |\downarrow\rangle = \eta^{*}T|\downarrow\rangle = \eta^{*} (-\mathrm{i})\cdot \eta \left( \frac{2S_y}{\hbar} \right)K  |\downarrow\rangle
+  = \eta^{*}\cdot(-\mathrm{i})\eta \left( \frac{2S_y}{\hbar} \right) |\downarrow\rangle = -|\uparrow\rangle
+\end{align}
+</div>
+</div>
+
+<div id="outline-container-orgae7a1e2" class="outline-2">
+<h2 id="orgae7a1e2"><span class="section-number-2">9.</span> Supplementary</h2>
+<div class="outline-text-2" id="text-9">
+<p>
+\(T\) 可以写成 \(T=UK\) ,那么 \(UK\) 应该满足它的两人条件
+</p>
+\begin{align}
+\langle \tilde{\beta} | \tilde{\alpha} \rangle &= \langle \beta|\alpha \rangle^{*} \\
+\theta \left(c_1|\alpha\rangle + c_2|\beta\rangle  \right) &= c^{*}_1\theta|\alpha\rangle + c^{*}_2\theta|\beta\rangle 
+\end{align}
+<p>
+第二条比较明显是满足的. 下面说明第一条.
+</p>
+
+<p>
+将 \(|\alpha\rangle\) 在一组基底下展开
+</p>
+\begin{align}
+  |\alpha\rangle = \sum_a|a\rangle\langle a|\alpha\rangle
+\end{align}
+<p>
+那么
+</p>
+\begin{align}
+  |\tilde{\alpha}\rangle = \sum_aUK|a\rangle\langle a|\alpha\rangle = \sum_aU|a\rangle\langle a|\alpha\rangle^{*}
+\end{align}
+<p>
+同理
+</p>
+\begin{align}
+  |\tilde{\beta}\rangle =&  \sum_b U|b\rangle\langle b|\beta\rangle^{*} \\
+  \Downarrow&\mathrm{D.C.}\\
+  \langle \tilde{\beta} | =& \sum_b \langle b|\beta \rangle \langle b| U^{\dagger}
+\end{align}
+<p>
+所以
+</p>
+\begin{align}
+  \langle \tilde{\beta} |\tilde{\alpha}\rangle = \sum_a\sum_b \langle b|\beta \rangle \langle b| U^{\dagger}U|a\rangle\langle a|\alpha\rangle^{*} 
+  = \langle \tilde{\beta} |\tilde{\alpha}\rangle^{*}
+\end{align}
+</div>
+</div>
+
+<div id="outline-container-orgf865969" class="outline-2">
+<h2 id="orgf865969"><span class="section-number-2">10.</span> Reference</h2>
+<div class="outline-text-2" id="text-10">
+<ul class="org-ul">
+<li>Jun John Sakurai, Jim Napolitano, Modern Quantum Mechanics, 2017, Cambridge
+University Press, Chap 4.4</li>
+
+<li>A. Zee, Group Theory in a Nutshell for Physicists, 2016, Princeton University
+Press</li>
+
+<li><a href="https://en.wikipedia.org/wiki/Kramers_theorem">https://en.wikipedia.org/wiki/Kramers_theorem</a></li>
+</ul>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="date">Date: 2020-05-21 Thu 00:00</p>
+<p class="date">Created: 2022-04-16 Sat 17:43</p>
+<p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
+</div>
+</body>
+</html>

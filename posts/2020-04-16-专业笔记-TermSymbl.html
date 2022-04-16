@@ -1,0 +1,367 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2022-04-16 Sat 17:43 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Term Symbol</title>
+<meta name="generator" content="Org Mode" />
+<style>
+  #content { max-width: 60em; margin: auto; }
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #e6e6e6;
+    border-radius: 3px;
+    background-color: #f2f2f2;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: auto;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    top: -8px;
+    right: 12px;
+    padding: 3px;
+    color: #555;
+    background-color: #f2f2f299;
+  }
+  pre.src:hover:before { display: inline; margin-top: 14px;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-authinfo::before { content: 'Authinfo'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .equation-container {
+    display: table;
+    text-align: center;
+    width: 100%;
+  }
+  .equation {
+    vertical-align: middle;
+  }
+  .equation-label {
+    display: table-cell;
+    text-align: right;
+    vertical-align: middle;
+  }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { width: 90%; }
+</style>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        displayAlign: "center",
+        displayIndent: "0em",
+
+        "HTML-CSS": { scale: 100,
+                        linebreaks: { automatic: "false" },
+                        webFont: "TeX"
+                       },
+        SVG: {scale: 100,
+              linebreaks: { automatic: "false" },
+              font: "TeX"},
+        NativeMML: {scale: 100},
+        TeX: { equationNumbers: {autoNumber: "AMS"},
+               MultLineWidth: "85%",
+               TagSide: "right",
+               TagIndent: ".8em"
+             }
+});
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS_HTML"></script>
+</head>
+<body>
+<div id="content" class="content">
+<h1 class="title">Term Symbol</h1>
+<div id="table-of-contents" role="doc-toc">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents" role="doc-toc">
+<ul>
+<li><a href="#orgb5880d3">1. Term Symbol</a></li>
+<li><a href="#org8e55d90">2. 用 Term Symbol 表示原子的基态</a></li>
+<li><a href="#org6db7373">3. Alkali Atoms</a>
+<ul>
+<li><a href="#org154ff5e">3.1. 基态</a></li>
+<li><a href="#org79d8a4b">3.2. 激发态</a></li>
+</ul>
+</li>
+<li><a href="#orgda6fe7a">4. Alkaline-Earth(like) Atoms.</a>
+<ul>
+<li><a href="#orge291991">4.1. 基态</a></li>
+<li><a href="#org5149852">4.2. 激发态</a></li>
+</ul>
+</li>
+<li><a href="#org731b5f3">5. Reference</a></li>
+</ul>
+</div>
+</div>
+<!-- toc -->
+<!-- more -->
+
+<div id="outline-container-orgb5880d3" class="outline-2">
+<h2 id="orgb5880d3"><span class="section-number-2">1.</span> Term Symbol</h2>
+<div class="outline-text-2" id="text-1">
+<p>
+Term Symbol 用来描述一个多电子原子的(总)角动量量子数, 也可以用来描述单个电子.
+</p>
+
+<p>
+原子的每个能级不仅由 electron configuration(电子所处的轨道) 来描述, 也由 term
+symbol 来描述. 因为原子的能级不仅仅依赖于 electron configuration, 还依赖于 它们
+的总角动量(spin orbital coupling).
+</p>
+
+<p>
+记号
+</p>
+\begin{align}
+  ^{2S+1}L_{J}
+\end{align}
+<p>
+\(S\) 是总的自旋量子数. \(2S+1\) 是 spin multiplicity, ( \(L\le S\) 时)表示给定 \(L, S\)
+时, \(J\) 可能取值的个数. \(L\) 是轨道量子数, \(J\) 是总的角动量量子数.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org8e55d90" class="outline-2">
+<h2 id="org8e55d90"><span class="section-number-2">2.</span> 用 Term Symbol 表示原子的基态</h2>
+<div class="outline-text-2" id="text-2">
+<ol class="org-ol">
+<li>找到最稳定的 electron configuration. 把 full shells and subshells 去掉, 因为
+它们对总角动量没有贡献. 比如
+对于 fluorine F , 第九号元素, 它的原子最稳定的组态是 \(1s^22s^22p^{5}\) , 它的 \(1s\)
+和 \(2s\) 轨道都被填满, \(2p\) 轨道可以填六个电子, 这里只填了五个, 所以只用这个不
+満壳层的电子来表示原子的基态.</li>
+<li>由于 Pauli 不相容原理, \(L=-1, 0 , 1\) 三个轨道上有两个填上一对自旋相反的电子,
+另一个轨道上只有一个电子. 根据 Hund's rule, 要让 \(S, L\) 最大, 所以 \(L=-1\) 是
+那个填一个电子的态. 这样, 总的自旋是 \(1/2\) 总的轨道角动量是 \(1\) .</li>
+<li>这样, 总的角动量 \(J = 1/2\) 或者 \(J=3/2\) .再根据 Hund's rule, \(J=3/2\) 能量更低,
+所以它的基态为</li>
+</ol>
+\begin{align}
+  ^2P_{\frac{3}{2}}
+\end{align}
+</div>
+</div>
+
+<div id="outline-container-org6db7373" class="outline-2">
+<h2 id="org6db7373"><span class="section-number-2">3.</span> Alkali Atoms</h2>
+<div class="outline-text-2" id="text-3">
+</div>
+<div id="outline-container-org154ff5e" class="outline-3">
+<h3 id="org154ff5e"><span class="section-number-3">3.1.</span> 基态</h3>
+<div class="outline-text-3" id="text-3-1">
+<p>
+Alkali atoms 在最外层的非满壳层只有一个电子, 那么它的基态就是这个电子在 \(s\) 轨道
+上, 所以 \(S=1/2, L=0, J=1/2\) , 用 term symbol 表示就是 \(^2S_{1/2}\) .
+</p>
+</div>
+</div>
+
+<div id="outline-container-org79d8a4b" class="outline-3">
+<h3 id="org79d8a4b"><span class="section-number-3">3.2.</span> 激发态</h3>
+<div class="outline-text-3" id="text-3-2">
+<p>
+Alkali atoms 的激发态, 这个电子被激发到 \(p\) 轨道上, 那么 \(S=1/2, L=1, J=1/2\) ,或
+者 \(S=1/2, L=1, J=3/2\) , 用 term symbol 表示就是 \(^2P_{1/2}\) 或者 \(^2P_{3/2}\) .
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgda6fe7a" class="outline-2">
+<h2 id="orgda6fe7a"><span class="section-number-2">4.</span> Alkaline-Earth(like) Atoms.</h2>
+<div class="outline-text-2" id="text-4">
+</div>
+<div id="outline-container-orge291991" class="outline-3">
+<h3 id="orge291991"><span class="section-number-3">4.1.</span> 基态</h3>
+<div class="outline-text-3" id="text-4-1">
+<p>
+Alkaline-Earth(like) Atoms 在最外层的非满壳层有两个电子, 那么它的基态, 两个电子都在 \(s\) 轨道上,
+所以 \(S=0, L=0, J=0\) 用 term symbol 表示就是 \(^1S_0\) .
+</p>
+
+<p>
+所有 Boson 的碱土原子的同位素的 nuclear spin 都是 \(0\) , 而 Fermion 都是非零的.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org5149852" class="outline-3">
+<h3 id="org5149852"><span class="section-number-3">4.2.</span> 激发态</h3>
+<div class="outline-text-3" id="text-4-2">
+<p>
+Alkaline-Earth(like) Atoms 的激发态, 一个电子待在 \(s\) 轨道上, 另一个电子被激发到
+\(p\) 轨道上, 所以 \(L=1\) , 根据 Hund's rule \(S=1\) 的能量要比 \(S=0\) 的能量低. 那么
+有 \(S=1, L=1, J=0, 1, 2\)  用 term symbol 表示就是 \(^3P_{0}, ^3P_{1}, ^3P_2\) .
+</p>
+
+<p>
+由于 dipole transion 是不改变自旋的, 所以从基态到激发态是 spin forbidden 的. 它
+耦合的是基态和 \(^1P_1\) .
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org731b5f3" class="outline-2">
+<h2 id="org731b5f3"><span class="section-number-2">5.</span> Reference</h2>
+<div class="outline-text-2" id="text-5">
+<ul class="org-ul">
+<li>[1] <a href="https://en.wikipedia.org/wiki/Term_symbol">https://en.wikipedia.org/wiki/Term_symbol</a></li>
+</ul>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="date">Date: 2020-04-16 Thu 00:00</p>
+<p class="date">Created: 2022-04-16 Sat 17:43</p>
+<p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
+</div>
+</body>
+</html>

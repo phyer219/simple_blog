@@ -1,0 +1,61 @@
+ <head>
+  <meta charset="UTF-8">
+  <meta name="description" content="Free Web tutorials">
+  <meta name="keywords" content="HTML, CSS, JavaScript">
+  <meta name="author" content="John Doe">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ </head>
+ 
+<hr />
+<p>title: 特殊二阶矩阵的本征值求解
+date: 2018/09/07
+categories: 专业笔记
+tags: [数学, 矩阵]</p>
+<hr />
+<!-- toc -->
+
+<!-- more -->
+
+<h2>对角矩阵元相等</h2>
+<p>形如
+$$
+H = \left( \begin{array}{cc}
+        a   &amp;   b\\
+        b   &amp;   c
+        \end{array}\right)
+$$
+与以下自旋问题类比：</p>
+<p>在 $x-z$ 平面内任意方向加磁场 $\vec{a} = (a_1, 0, a_3)$ 求解能量本征值，Hamiltonian写为
+$$
+H = a_0 + \vec{\sigma}\cdot\vec{a} = \left(\begin{array}{cc}
+                                a_0+a_3 &amp;   a_1\\
+                                a_1     &amp;   a_0-a_3
+                            \end{array}\right)
+$$
+沿 $y$ 轴转动坐标系，将 $z$ 轴转到磁场的方向，由物理意义直接解得能量本征值为
+$$
+E = a_0 \pm \sqrt{a_1^2 +a_3^2}
+$$</p>
+<p>所以原问题的本征值可直接写出为
+$$
+\lambda = \frac{a+c}{2} \pm \sqrt{b^2 +\frac{(a - c)^2}{4}}
+$$</p><script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      },
+      TeX: {equationNumbers: { autoNumber: "AMS" }}
+    });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+      var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+<script type="text/javascript" src="//cdn.jsdelivr.net/npm/mathjax@2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>

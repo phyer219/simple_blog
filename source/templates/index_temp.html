@@ -1,11 +1,58 @@
-<!DOCTYPE html>
+<!DOCTYPE html> 
 <html>
-<head>
-<meta charset="utf-8">
-<title>从冰上的水</title>
-</head>
-<body>
-    <h1><a href="{path}">{title}</a></h1>
-    <p>我的第一个段落。</p>
-</body>
-</html>
+
+
+  <html>
+    <center>
+      <head> 
+        <meta charset="utf-8"> 
+        <title>从冰上的水</title> 
+        </head>
+        <body>
+        <div id="container" style="width:1080px">
+          
+          <div id="header" style="background-color:#ffffff;">
+          <h1 style="margin-bottom:0;">从冰上的水</h1></div>
+
+          <div id="comment" style="background-color:#ffffff;width:800px;float:left;">
+            <h2 align="left">改版说明</a></h2>
+            <p>
+              由于 Hexo 升级带来各种兼容性问题，org-mode 也无法正常渲染。因此弃用 Hexo。
+            </p>
+            <p>
+              之后本博客将采用<a href="https://github.com/phyer219/phyer219.github.io/blob/main/s.py">100 行左右的 python 脚本</a>直接生成 html。
+              因此不依赖于任何其他静态博客生成程序，可以说是从根本上杜绝了一切兼容性问题。
+            </p>
+            <p>
+              缺点在于一切动要自己写，就显得比较简陋。但这正体现了本博客极简实用的精神。
+            </p>
+            <p>
+                目前正在以非常慢的速度建设中，任何建议请直接 email 博主：zeqing6688@126.com
+            </p>
+            <p>
+              <a href="https://zqw.ink/old_version_blog/">旧版</a>目前仍可访问。
+            </p>
+          </div>
+
+
+          <div id="content" style="background-color:#ffffff;width:800px;float:left;">
+            <h3 align="left"><a href="{path}">{title}</a></h3>
+          </div>
+
+
+          <div id="menu" style="background-color:#ffffff;height:280px;width:100px;float:left;">
+            <b>导航</b><br>
+            分类<br>
+            标签<br>
+            关于</div>
+
+          <div id="footer" style="background-color:#ffffff;clear:both;text-align:center;">
+            ©2018–2022 ZQW</div>
+
+
+
+        </div>
+        </body>
+    </center> 
+
+    </html>

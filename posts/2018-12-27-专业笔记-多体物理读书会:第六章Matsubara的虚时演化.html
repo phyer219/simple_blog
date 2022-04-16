@@ -1,0 +1,758 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2022-04-16 Sat 17:43 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>多体物理读书会:第六章Matsubara的虚时演化</title>
+<meta name="generator" content="Org Mode" />
+<style>
+  #content { max-width: 60em; margin: auto; }
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #e6e6e6;
+    border-radius: 3px;
+    background-color: #f2f2f2;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: auto;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    top: -8px;
+    right: 12px;
+    padding: 3px;
+    color: #555;
+    background-color: #f2f2f299;
+  }
+  pre.src:hover:before { display: inline; margin-top: 14px;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-authinfo::before { content: 'Authinfo'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .equation-container {
+    display: table;
+    text-align: center;
+    width: 100%;
+  }
+  .equation {
+    vertical-align: middle;
+  }
+  .equation-label {
+    display: table-cell;
+    text-align: right;
+    vertical-align: middle;
+  }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { width: 90%; }
+</style>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        displayAlign: "center",
+        displayIndent: "0em",
+
+        "HTML-CSS": { scale: 100,
+                        linebreaks: { automatic: "false" },
+                        webFont: "TeX"
+                       },
+        SVG: {scale: 100,
+              linebreaks: { automatic: "false" },
+              font: "TeX"},
+        NativeMML: {scale: 100},
+        TeX: { equationNumbers: {autoNumber: "AMS"},
+               MultLineWidth: "85%",
+               TagSide: "right",
+               TagIndent: ".8em"
+             }
+});
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS_HTML"></script>
+</head>
+<body>
+<div id="content" class="content">
+<h1 class="title">多体物理读书会:第六章Matsubara的虚时演化</h1>
+<div id="table-of-contents" role="doc-toc">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents" role="doc-toc">
+<ul>
+<li><a href="#org380e37e">1. 引入</a>
+<ul>
+<li><a href="#org13b7829">1.1. 引入一</a></li>
+<li><a href="#org09247d7">1.2. 引入二</a></li>
+<li><a href="#orga1fe79c">1.3. 引入三</a></li>
+</ul>
+</li>
+<li><a href="#orgcea7752">2. Modified Heisenberg Representation</a></li>
+<li><a href="#org13373f9">3. Matsubara function</a>
+<ul>
+<li><a href="#orgeb031bf">3.1. Defination</a></li>
+<li><a href="#org04f1f20">3.2. 周期性</a></li>
+<li><a href="#org0c92fb0">3.3. Fourier Transform</a></li>
+<li><a href="#org61799ef">3.4. Relation to the Green's Function</a></li>
+</ul>
+</li>
+<li><a href="#org82385d7">4. Grand Canonical Partition Function</a>
+<ul>
+<li><a href="#orgd6eade3">4.1. Dirac Representation</a></li>
+<li><a href="#org893bcaf">4.2. Grand Canonical Partition Function</a></li>
+</ul>
+</li>
+<li><a href="#org3cce4a9">5. Single-Particle Matsubara function</a>
+<ul>
+<li><a href="#orgc45f3d5">5.1. Defination</a></li>
+<li><a href="#orgd911727">5.2. Start Point of Digramatic Perturbation Theory</a></li>
+</ul>
+</li>
+<li><a href="#org79213a4">6. 致谢</a></li>
+</ul>
+</div>
+</div>
+<!-- toc -->
+<!-- more -->
+<p>
+PDF: <a href="./2018-12-27-专业笔记-多体物理读书会:第六章Matsubara的虚时演化/2018-12-27-专业笔记-多体物理读书会:第六章Matsubara的虚时演化.pdf">./2018-12-27-专业笔记-多体物理读书会:第六章Matsubara的虚时演化/2018-12-27-专业笔记-多体物理读书会:第六章Matsubara的虚时演化.pdf</a>
+</p>
+
+<div id="outline-container-org380e37e" class="outline-2">
+<h2 id="org380e37e"><span class="section-number-2">1.</span> 引入</h2>
+<div class="outline-text-2" id="text-1">
+</div>
+<div id="outline-container-org13b7829" class="outline-3">
+<h3 id="org13b7829"><span class="section-number-3">1.1.</span> 引入一</h3>
+<div class="outline-text-3" id="text-1-1">
+<p>
+格林函数的定义中有两项, 是
+</p>
+\begin{align*}
+  \langle A(t) B(t') \rangle\quad,\quad \langle B(t') A(t) \rangle
+\end{align*}
+<p>
+但是, 如果时间不是一个实数, 而可以是复数, 允许有虚部的话, 那么这两项就不是相互独立的了. 因为
+</p>
+\begin{align*}
+  \Xi \langle A(t) B(0) \rangle =& \mathrm{Tr} \left\{ e^{-\beta H} \cdot
+  e^{-\frac{1}{\mathrm{i}\hbar}Ht} A(0) e^{\frac{1}{\mathrm{i}\hbar}Ht}
+  \cdot B(0)\right\} \\
+  =& \mathrm{Tr} \left\{ e^{-\frac{1}{\mathrm{i}\hbar}H(t+\mathrm{i}\hbar \beta)}
+  A(0) e^{\frac{1}{\mathrm{i}\hbar}H(t+\mathrm{i} \hbar \beta) }\cdot e^{-\beta H}
+  \cdot B(0)\right\} \\
+  =& \mathrm{Tr} \left\{ e^{-\beta H}
+  \cdot B(0) \cdot e^{-\frac{1}{\mathrm{i}\hbar}H(t+\mathrm{i}\hbar \beta)}
+  A(0) e^{\frac{1}{\mathrm{i}\hbar}H(t+\mathrm{i} \hbar \beta) }\right\} \\
+  =& \Xi \langle B(0) A(t+\mathrm{i}\hbar\beta)
+\end{align*}
+<p>
+也就是
+</p>
+\begin{align}
+  \label{eq:p}
+  \langle A(t)B(0)\rangle = \langle B(0)A(t+\mathrm{i}\hbar\beta)
+\end{align}
+
+<p>
+因此,引入复数时间将会使格林函数的定义更加精简? 这和其周期性有什么关系?
+</p>
+</div>
+</div>
+
+<div id="outline-container-org09247d7" class="outline-3">
+<h3 id="org09247d7"><span class="section-number-3">1.2.</span> 引入二</h3>
+<div class="outline-text-3" id="text-1-2">
+<p>
+时间演化算符
+</p>
+\begin{align}
+U(t,0) = e^{\frac{1}{\mathrm{i}\hbar}Ht}
+\end{align}
+<p>
+和巨正则系综的密度算符
+</p>
+\begin{align*}
+\rho =\frac{1}{\Xi} e^{-\beta H} \\
+\rho \Xi =e^{-\beta H}
+\end{align*}
+<p>
+(其中 \(H\) 包含了化学势)
+十分相似. 也可以说巨正则系综的密度算符是一个特殊的时间演化算符
+</p>
+\begin{align*}
+U(t,0) &\rightarrow e^{\frac{1}{\mathrm{i}\hbar}Ht}\\
+\rho \Xi &\rightarrow e^{-\beta H} \\
+\Downarrow \\
+\rho \Xi &= U(-i\hbar \beta,0) = e^{-\beta H}
+\end{align*}
+
+<p>
+所以得出结论:
+</p>
+
+<p>
+\(\rho \Xi\) 是时间
+</p>
+\begin{align}
+t=-i\hbar \beta
+\end{align}
+<p>
+的时间演化算符, 对应一个虚数时间.
+它将系统从无穷高的温度 \(T\to +\infty\) 演化到 \(T = \frac{1}{k \beta}\) .
+</p>
+
+<p>
+这最先由 Kubo 在 1950s 早期发现.
+接下来呢, Matsubara 就 pick up 了 Kubo 的这个发现,
+写下了第一个有限温多体问题的虚时方程!
+</p>
+
+<p>
+知道了配分函数, 就知道了一切.
+而配分函数不过是演化算符的求迹!
+</p>
+\begin{align}
+\Xi = \mathrm{Tr} [ U(-\mathrm{i}\hbar \beta, 0)]
+\end{align}
+</div>
+</div>
+
+<div id="outline-container-orga1fe79c" class="outline-3">
+<h3 id="orga1fe79c"><span class="section-number-3">1.3.</span> 引入三</h3>
+<div class="outline-text-3" id="text-1-3">
+<p>
+对于非零温的情况, 微扰 \(V\) 不仅出现在演化算符中, 还出现在密度算符中. 虚时
+的引入, 可以使得两部分合并, 在对 \(V\) 进行展开时只进行一次展开即可.
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgcea7752" class="outline-2">
+<h2 id="orgcea7752"><span class="section-number-2">2.</span> Modified Heisenberg Representation</h2>
+<div class="outline-text-2" id="text-2">
+<p>
+一个纯虚的时间, 对应于温度的演化, 与真实的时间无关. 如果时间是虚, 那么可以定义
+</p>
+\begin{align*}
+  \tau = \mathrm{i}t
+\end{align*}
+<p>
+是一个实数.
+</p>
+
+<p>
+由虚时演化的 Heisenberg Representation 叫做 Modified Heisenberg Representation ,在此
+表象下的算符为
+</p>
+\begin{align*}
+  A(\tau) = e^{\frac{1}{\hbar}H\tau} A(0) e^{-\frac{1}{\hbar}H\tau}
+\end{align*}
+<p>
+此算符关于虚时间,实数 \(\tau\) 对应的运动方程为
+</p>
+\begin{align*}
+  \mathrm{i}\hbar \frac{\partial}{\partial t}A(t) =& [A(t),H] \\
+  \Downarrow & \\
+  -\hbar \frac{\partial}{\partial \mathrm{i}t}A(\tau) =& [A(\tau),H] \\
+  \Downarrow &\\
+  -\hbar \frac{\partial}{\partial \tau}A(\tau) =& [A(\tau),H] \\
+\end{align*}
+</div>
+</div>
+
+<div id="outline-container-org13373f9" class="outline-2">
+<h2 id="org13373f9"><span class="section-number-2">3.</span> Matsubara function</h2>
+<div class="outline-text-2" id="text-3">
+</div>
+<div id="outline-container-orgeb031bf" class="outline-3">
+<h3 id="orgeb031bf"><span class="section-number-3">3.1.</span> Defination</h3>
+<div class="outline-text-3" id="text-3-1">
+<p>
+与因果格林函数一样的定义, 只不过由于时间是虚的, \(\mathrm{i}\) 被 \(t\) 吸收变成
+实数 \(\tau\) , 定义中不再有 \(\mathrm{i}\) 出现
+</p>
+\begin{align*}
+  G_{AB}^M(t,t') = -\langle T_{\varepsilon}(A(\tau)B(\tau))\rangle
+\end{align*}
+
+<p>
+对应的运动方程为
+</p>
+\begin{align*}
+  -\hbar \frac{\partial}{\partial \tau}G_{AB}^M (\tau, \tau') =
+  \hbar \delta(\tau-\tau')\langle [A,B]_{-\varepsilon}\rangle
+  +\langle \langle \,[A(\tau),H] \,;\,B(\tau') \, \rangle\rangle^M
+\end{align*}
+
+<p>
+有一疑问, 定义中是否要加一限制 \(\tau-\tau'\in [-\hbar\beta,\hbar\beta]\) ?为什么加? 这里
+暂且假设是. 下面的推导也说得通.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org04f1f20" class="outline-3">
+<h3 id="org04f1f20"><span class="section-number-3">3.2.</span> 周期性</h3>
+<div class="outline-text-3" id="text-3-2">
+<p>
+Matsubara function 在区间 \([-\hbar\beta,\hbar\beta]\) 之间, 对于 Boson 是
+关于原点对称的, Fermion 关于原点是反对称的. 证明如下
+</p>
+\begin{align*}
+  \mathrm{For} \tau < 0 &, \quad \mathrm{then} \quad \tau+\hbar\beta > 0\\
+  \Xi G(\tau+\hbar\beta) =& -\mathrm{Tr} \left\{
+  e^{-\beta H}\cdot e^{\frac{1}{\hbar}H(\tau+\hbar\beta)}A(0)
+   e^{-\frac{1}{\hbar}H(\tau+\hbar\beta)}\cdot B(0) \right\} \\
+  =& -\mathrm{Tr} \left\{
+  e^{\frac{1}{\hbar}H\tau}A(0)
+   e^{-\frac{1}{\hbar}H\tau}\cdot e^{-\beta H}\cdot B(0) \right\} \\
+    =& -\mathrm{Tr} \left\{ e^{-\beta H}\cdot B(0)\cdot
+  e^{\frac{1}{\hbar}H\tau}A(0)
+   e^{-\frac{1}{\hbar}H\tau}  \right\} \\
+    =& -\varepsilon\mathrm{Tr} \left\{ T_{\varepsilon}(A(\tau)  \cdot B(0))\right\} \\
+   =& \varepsilon\Xi G(\tau)
+\end{align*}
+<p>
+也可以利用关系 \eqref{eq:p} 的变形
+</p>
+\begin{align*}
+  \langle A(\tau)B(\tau')\rangle = \langle B(\tau')A(\tau-\hbar\beta)\rangle
+\end{align*}
+<p>
+即
+</p>
+\begin{align*}
+   \mathrm{For} \tau < 0 &, \quad \mathrm{then} \quad \tau+\hbar\beta > 0\\
+   G(\tau+\hbar\beta) =& -\langle A(\tau+\hbar\beta) B(t) \rangle \\
+                      =& -\langle B(0) A(\tau)\rangle \\
+                      =& -\varepsilon \langle T_{\tau} A(\tau)B(0) \rangle \\
+                      =& \varepsilon G(\tau)
+\end{align*}
+<p>
+所以关系 \eqref{eq:p} 与 Matsubara function 的对称与反对称性是相关的.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org0c92fb0" class="outline-3">
+<h3 id="org0c92fb0"><span class="section-number-3">3.3.</span> Fourier Transform</h3>
+<div class="outline-text-3" id="text-3-3">
+<p>
+Matsubara function 按区间 \([-\hbar\beta,\hbar\beta]\) 延拓成周期为 \(2\hbar\beta\) 的
+周期函数. 对周期函数的 Fourier Transform , 其结果是离散的
+</p>
+\begin{align*}
+  \omega_n = n\frac{2\pi}{2\hbar\beta} = \frac{n\pi}{\hbar\beta}
+\end{align*}
+<p>
+Fourier 展开为
+</p>
+\begin{align*}
+  G(\tau) = \sum_{n=-\infty}^{\infty} C_n
+  e^{-\mathrm{i}\omega_n\tau}
+\end{align*}
+<p>
+where
+</p>
+\begin{align*}
+  C_n =\frac{1}{2\hbar\beta} \int_{-\hbar\beta}^{\hbar\beta}\mathrm{d}\cdot\tau
+  G(\tau) e^{\mathrm{i}\omega_n\tau}
+\end{align*}
+<p>
+记
+</p>
+\begin{align*}
+  E_n =& \hbar\omega = \frac{n\pi}{\beta} \\
+  G(E_n) =& \hbar\beta C_n
+\end{align*}
+<p>
+则得到书上的形式
+</p>
+\begin{align*}
+  G(\tau) =& \frac{1}{\hbar\beta}\sum_{n=-\infty}^{\infty}e^{-\frac{\mathrm{i}}{\hbar}E_n\tau}
+  G(E_n) \\
+  G(E_n) =& \frac{1}{2}\int_{-\hbar\beta}^{\hbar\beta}\mathrm{d}\tau\cdot
+  G(\tau)e^{\frac{\mathrm{i}}{\hbar}E_n\tau}
+\end{align*}
+
+<p>
+对于 Boson, 其周期实际为 \(\hbar\beta\) ,所以其变换为
+</p>
+
+\begin{align*}
+  G(\tau) =& \frac{1}{\hbar\beta}\sum_{n=-\infty}^{\infty}e^{-\frac{\mathrm{i}}{\hbar}E_n\tau}
+  G(E_n) \\
+  G(E_n) =& \int_{0}^{\hbar\beta}\mathrm{d}\tau\cdot
+  G(\tau)e^{\frac{\mathrm{i}}{\hbar}E_n\tau} \\
+  E_n =& n\frac{2\pi}{\hbar\beta} = \frac{2n\pi}{\hbar\beta}
+\end{align*}
+
+<p>
+而对于 Fermion
+</p>
+\begin{align*}
+  & \int_{-\hbar\beta}^{0}\mathrm{d}\tau\cdot
+  G(\tau)e^{\frac{\mathrm{i}}{\hbar}E_n\tau} \\
+  =& \int_{0}^{\hbar\beta}\mathrm{d}\tau'\cdot
+  G(\tau+\hbar\beta)e^{\frac{\mathrm{i}}{\hbar}E_n\tau}
+  \cdot e^{\frac{\mathrm{i}}{\hbar}E_n\hbar\beta} \\
+  =& \int_{0}^{\hbar\beta}\mathrm{d}\tau\cdot
+  (-G(\tau))e^{\frac{\mathrm{i}}{\hbar}E_n\tau}
+  \cdot e^{\mathrm{i}\cdot n\pi} \\
+\end{align*}
+<p>
+只有 \(E_n=(2n+1)\pi/\beta\) 时 \(G_n\) 才不为零.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org61799ef" class="outline-3">
+<h3 id="org61799ef"><span class="section-number-3">3.4.</span> Relation to the Green's Function</h3>
+<div class="outline-text-3" id="text-3-4">
+<p>
+它们的关系可以由 Spectral function 联系.
+</p>
+
+\begin{align*}
+  \langle A(\tau) B(0) \rangle = \frac{1}{\Xi}
+  \sum_{nm} \langle E_n | A |E_m \rangle \langle E_m
+  |B |E_n\rangle e^{\frac{1}{\hbar}(E_n-E_m)\tau}e^{-\beta E_n}
+\end{align*}
+\begin{align*}
+  S_{AB}(E) = \frac{\hbar}{\Xi}
+  \sum_{nm} \langle E_n | A |E_m \rangle \langle E_m
+  |B |E_n\rangle e^{-\beta E_n}(1-\varepsilon e^{-\beta E})
+  \delta[E-(E_m-E_n)]
+\end{align*}
+<p>
+比较以上两式可得
+</p>
+\begin{align*}
+  \langle A(\tau) B(0) \rangle = \frac{1}{\hbar}\int \mathrm{d}E\cdot
+  \frac{S_{AB}(E)}{1-\varepsilon e^{-\beta E}}e^{-\frac{1}{\hbar}E\tau}
+\end{align*}
+
+<p>
+知道了 \(\langle A(\tau)B(0)\rangle\) , 便可求得 Matsubara function
+</p>
+\begin{align*}
+  G_{AB}(E_n) =& -\int_0^{\hbar\beta}e^{\frac{\mathrm{i}}{\hbar}E_n\tau}
+  \langle A(\tau)B(0)\rangle \cdot\mathrm{d}\tau \\
+  =& \int \mathrm{d}E\cdot \frac{S_{AB}}{\mathrm{i}E_n-E}
+\end{align*}
+<p>
+第一个等号是因为积分区间中 \(\tau > 0\) ,所以 \(G(\tau) = -\langle A(\tau)B(0)\rangle\) .
+ 与 Grenn's function 相比, 只是把原来的 \(E\pm\mathrm{i}0^+\) 换成了
+ \(\mathrm{i}E_n\) . 从原来的实轴附近变到了虚轴. 原因大概是与能量共轭的量
+时间也从实轴变到了虚轴.
+</p>
+</div>
+</div>
+</div>
+
+
+
+<div id="outline-container-org82385d7" class="outline-2">
+<h2 id="org82385d7"><span class="section-number-2">4.</span> Grand Canonical Partition Function</h2>
+<div class="outline-text-2" id="text-4">
+</div>
+<div id="outline-container-orgd6eade3" class="outline-3">
+<h3 id="orgd6eade3"><span class="section-number-3">4.1.</span> Dirac Representation</h3>
+<div class="outline-text-3" id="text-4-1">
+<p>
+对应于实时, 虚时也可以定义 Dirac Representation .
+</p>
+\begin{align*}
+  A_D(\tau) = e^{\frac{1}{\hbar}H_0\tau} A_S e^{-\frac{1}{\hbar}H_0\tau}
+\end{align*}
+
+<p>
+运动方程
+</p>
+\begin{align*}
+  -\hbar \frac{\partial}{\partial t}U_D(\tau,\tau') = V_D(\tau)U_D(\tau,\tau')
+\end{align*}
+
+<p>
+一切都与实时相类似. 虚时同样有
+</p>
+\begin{align*}
+  U_D(\tau,\tau') = T_{\tau}e^{-\frac{1}{\hbar}\int_{\tau'}^{\tau}\mathrm{d}\tau''
+  \cdot V_D(\tau'')}
+\end{align*}
+</div>
+</div>
+
+<div id="outline-container-org893bcaf" class="outline-3">
+<h3 id="org893bcaf"><span class="section-number-3">4.2.</span> Grand Canonical Partition Function</h3>
+<div class="outline-text-3" id="text-4-2">
+\begin{align*}
+  e^{-\frac{1}{\hbar}H\tau} = e^{-\frac{1}{\hbar}H_0\tau}U_D(\tau,0)
+\end{align*}
+
+<p>
+所以 Grand Canonical Partition Function 就表示为 Diarc 演化算符在无相互作用系统下的迹
+</p>
+\begin{align*}
+  \Xi =\mathrm{Tr} e^{-\frac{1}{\hbar}H_0\tau}U_D(\tau,0)
+  = \mathrm{Tr} \left\{ e^{-\beta H_0} U(\hbar \beta,0) \right\}
+\end{align*}
+<p>
+展开后就是
+</p>
+\begin{align*}
+  \Xi =&  \mathrm{Tr} \left\{ e^{-\beta H_0} U(\hbar \beta,0) \right\} \\
+  =&\sum_{n=0}^{\infty} \frac{1}{n!}\left( -\frac{1}{\hbar} \right)^n
+  \int_0^{\hbar\beta} \cdots \int_0^{\hbar\beta} \mathrm{d}\tau_1\cdots \mathrm{d}\tau_n
+  \mathrm{Tr}\left\{ e^{-\beta H_0} T_{\tau}(V_D(\tau_1)\cdots V_D(\tau_n)) \right\}
+\end{align*}
+</div>
+</div>
+</div>
+
+<div id="outline-container-org3cce4a9" class="outline-2">
+<h2 id="org3cce4a9"><span class="section-number-2">5.</span> Single-Particle Matsubara function</h2>
+<div class="outline-text-2" id="text-5">
+</div>
+<div id="outline-container-orgc45f3d5" class="outline-3">
+<h3 id="orgc45f3d5"><span class="section-number-3">5.1.</span> Defination</h3>
+<div class="outline-text-3" id="text-5-1">
+<p>
+Single-Particle Matsubara function 定义为
+</p>
+\begin{align*}
+  G_k(\tau) = -\langle T_{\tau}(a_k(\tau)a_k^{\dagger}(0))  \rangle
+\end{align*}
+<p>
+它也满足 Dyson equation
+</p>
+\begin{align*}
+  G_k(E_n) = \frac{\hbar}{\mathrm{i}E_n -(\varepsilon(\vec{k})-\mu)-\Sigma^M(k,E_n)}
+\end{align*}
+
+<p>
+Equation of Motion
+</p>
+
+<p>
+类似实时, 由 Heisenberg 运动方程可以得到产生和消灭算符的虚时演化
+</p>
+\begin{align*}
+  a_k(\tau) =&a_k e^{-\frac{1}{\hbar}(\varepsilon(\vec{k})-\mu)\tau}\\
+  a_k^{\dagger}(\tau) =&a_k^{\dagger} e^{\frac{1}{\hbar}(\varepsilon(\vec{k})-\mu)\tau}
+\end{align*}
+<p>
+注意二者并不互为厄米!
+由单粒子的谱函数, 可以得到 Single-Particle Matsubara function 的
+具体形式
+</p>
+\begin{align*}
+  G_k^{0,M}(E_n) = \frac{\hbar}{\mathrm{i}E_n-(\varepsilon(\vec{k})-\mu)}
+\end{align*}
+<p>
+当然也可由 \(G_k^{0,\alpha}(E)\) 做 \(E\pm \mathrm{i}0^+ \rightarrow \mathrm{i}E_n\) 的
+替换得到上述结果.
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgd911727" class="outline-3">
+<h3 id="orgd911727"><span class="section-number-3">5.2.</span> Start Point of Digramatic Perturbation Theory</h3>
+<div class="outline-text-3" id="text-5-2">
+<p>
+微扰 \(V\) 存在的情况下, Single-Particle Matsubara function 为
+</p>
+\begin{align*}
+  G_k^M (\tau_1,\tau_2) = -\frac{1}{\Xi}\mathrm{Tr}\left\{
+  e^{-\beta H_0} U_D(\hbar\beta,0) T_{\tau}[a_k(\tau_1)
+  a_k^{\dagger}(\tau_2)] \right\}
+\end{align*}
+<p>
+将其从 Heisenberg 表象换到 Dirac 表象
+</p>
+\begin{align*}
+  T_{\tau}[a_k(\tau_1)a_k^{\dagger}(\tau_2)]=&
+  T_{\tau}[U(0,\tau_1)a_k^D(\tau_1)U(\tau_1,0)U(0,\tau_2)
+  a_k^{\dagger D}(\tau_2)U(\tau_2,0)]\\
+  =&   T_{\tau}[a_k^D(\tau_1)
+  a_k^{\dagger D}(\tau_2)]
+\end{align*}
+\begin{align*}
+  G_k^M (\tau_1,\tau_2) =& -\frac{1}{\Xi}\mathrm{Tr}\left\{
+  e^{-\beta H_0} U_D(\hbar\beta,0) T_{\tau}[a_k^D(\tau_1)
+  a_k^{\dagger D}(\tau_2)] \right\}\\
+  =& -\frac{\mathrm{Tr}\left\{
+  e^{-\beta H_0} T_{\tau}[ U_D(\hbar\beta,0)a_k^D(\tau_1)
+  a_k^{\dagger D}(\tau_2)] \right\}}{\mathrm{Tr}\left\{
+  e^{-\beta H_0} T_{\tau} U_D(\hbar\beta,0)\right\}} \\
+\end{align*}
+<p>
+为什么把 \(U_D(\hbar\beta,0)\) 扔进了编时里边? 如果给 \(U_D(\hbar\beta,0)\)
+编时的话, 按 \(0\) 算还是按 \(\tau\) 算?
+这和零温的情况很类似. 如果求迹也有 Wick 定理, 那么就可以发展非零温的
+ Digramatic Perturbation Theory .
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org79213a4" class="outline-2">
+<h2 id="org79213a4"><span class="section-number-2">6.</span> 致谢</h2>
+<div class="outline-text-2" id="text-6">
+<p>
+除了 Wolfgang Nolting 的书外,
+ 还参考了 Piers Coleman 的 Introduction to Many-Body Physics 一书.
+</p>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="date">Date: 2018-12-27 Thu 00:00</p>
+<p class="date">Created: 2022-04-16 Sat 17:43</p>
+<p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
+</div>
+</body>
+</html>
