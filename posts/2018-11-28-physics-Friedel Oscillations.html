@@ -1,0 +1,811 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2022-04-16 Sat 23:05 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Friedel Oscillations疑问</title>
+<meta name="generator" content="Org Mode" />
+<style>
+  #content { max-width: 60em; margin: auto; }
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #e6e6e6;
+    border-radius: 3px;
+    background-color: #f2f2f2;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: auto;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    top: -8px;
+    right: 12px;
+    padding: 3px;
+    color: #555;
+    background-color: #f2f2f299;
+  }
+  pre.src:hover:before { display: inline; margin-top: 14px;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-authinfo::before { content: 'Authinfo'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .equation-container {
+    display: table;
+    text-align: center;
+    width: 100%;
+  }
+  .equation {
+    vertical-align: middle;
+  }
+  .equation-label {
+    display: table-cell;
+    text-align: right;
+    vertical-align: middle;
+  }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { width: 90%; }
+</style>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        displayAlign: "center",
+        displayIndent: "0em",
+
+        "HTML-CSS": { scale: 100,
+                        linebreaks: { automatic: "false" },
+                        webFont: "TeX"
+                       },
+        SVG: {scale: 100,
+              linebreaks: { automatic: "false" },
+              font: "TeX"},
+        NativeMML: {scale: 100},
+        TeX: { equationNumbers: {autoNumber: "AMS"},
+               MultLineWidth: "85%",
+               TagSide: "right",
+               TagIndent: ".8em"
+             }
+});
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS_HTML"></script>
+</head>
+<body>
+<div id="content" class="content">
+<h1 class="title">Friedel Oscillations疑问</h1>
+<div id="table-of-contents" role="doc-toc">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents" role="doc-toc">
+<ul>
+<li><a href="#orgef8020d">1. 问题</a></li>
+<li><a href="#org669b872">2. Thomas-Fermi 近似的结果</a>
+<ul>
+<li><a href="#org961d416">2.1. 问题1</a></li>
+<li><a href="#orgc4a1185">2.2. 问题2</a></li>
+</ul>
+</li>
+<li><a href="#org418b784">3. RPA 的结果</a>
+<ul>
+<li><a href="#org48698fe">3.1. 级数展开</a></li>
+<li><a href="#orgba8c6e4">3.2. 问题3: 接下来该怎么做? 所有的展开项代入积分都是发散的.</a></li>
+<li><a href="#org351b483">3.3. 正确的级数展开</a></li>
+</ul>
+</li>
+<li><a href="#org11260c4">4. 数值计算 RPA 的结果</a>
+<ul>
+<li><a href="#org53fc9c3">4.1. 问题分析</a></li>
+<li><a href="#org8fc5ac3">4.2. 构造新的被积函数</a></li>
+<li><a href="#orga093509">4.3. 数值积分</a></li>
+<li><a href="#org7811dc1">4.4. 结果对比</a></li>
+</ul>
+</li>
+<li><a href="#org9798882">5. 参考文献</a></li>
+<li><a href="#org2e744d8">6. 致谢</a></li>
+</ul>
+</div>
+</div>
+<!-- toc -->
+<!-- more -->
+<div id="outline-container-orgef8020d" class="outline-2">
+<h2 id="orgef8020d"><span class="section-number-2">1.</span> 问题</h2>
+<div class="outline-text-2" id="text-1">
+<p>
+动量空间中电势为
+</p>
+
+\begin{align}
+\varphi (\vec{q})= \frac{\varphi_{ext(\vec{q})}}{\varepsilon(\vec{q})}
+\end{align}
+
+<p>
+其中
+</p>
+
+\begin{align}
+\varphi_{ext}(\vec{q}) = \frac{-e}{\varepsilon_0 V q^2 }
+\end{align}
+
+<p>
+所以
+</p>
+
+\begin{equation}
+\label{eq:1}
+\varphi (\vec{q})= \frac{-e}{\varepsilon_0 V q^2 {\varepsilon(\vec{q})}}
+\end{equation}
+</div>
+</div>
+
+<div id="outline-container-org669b872" class="outline-2">
+<h2 id="org669b872"><span class="section-number-2">2.</span> Thomas-Fermi 近似的结果</h2>
+<div class="outline-text-2" id="text-2">
+<p>
+Thomas-Fermi 近似给出
+</p>
+
+\begin{align}
+\varepsilon_{TF}(\vec{q}) = 1 +\frac{q_{TF}^2}{q^2}
+\end{align}
+
+<p>
+将上式代入 \(\varphi(\vec{q})\) 有
+</p>
+
+\begin{equation}
+\varphi (\vec{q})= \frac{-e}{\varepsilon_0 V q^2 \left(1 +\frac{q_{TF}^2}{q^2}\right)} 
+=\frac{-e}{\varepsilon_0 V \left(q^2 +q_{TF}^2\right)} 
+\end{equation}
+
+<p>
+对其 Fourier Transform
+</p>
+
+\begin{align}
+\varphi(\vec{r}) =& \int_{-\infty}^{+\infty} e^{i \vec{q}\cdot \vec{r}} \varphi (\vec{q}) \mathrm{d}^3 q \\
+=& \frac{-e}{2 \pi^2 \varepsilon_0} \cdot \frac{1}{r} \int_0^{+\infty} \sin(qr)\cdot \frac{q}{q^2+q_{TF}^2} \mathrm{d}q\\
+=& \frac{-e}{4 \pi \varepsilon_0} \cdot \frac{1}{r} \cdot \frac{2}{\pi}\int_0^{+\infty} \sin(qr)\cdot \frac{q}{q^2+q_{TF}^2} \mathrm{d}q
+\end{align}
+
+<p>
+对
+</p>
+\begin{align}
+\frac{q}{q^2+q_{TF}^2}
+\end{align}
+<p>
+在 \(q \rightarrow +\infty\) 展开(与在 \(q_{TF}\rightarrow 0\) 时对 \(q_{TF}\) 展开相同):
+</p>
+
+<div class="org-src-container">
+<pre class="src src-python">import sympy as sym
+q = sym.Symbol('q')
+q_tf = sym.Symbol('q_TF')
+s = sym.series(q/(q**2+q_tf**2),q,sym.oo,5)
+print(sym.latex(s))
+</pre>
+</div>
+
+<ul class="org-ul">
+<li>\frac{q<sub>TF</sub><sup>2</sup>}{q<sup>3</sup>} + \frac{1}{q} + O\left(\frac{1}{q<sup>5</sup>}; q&rarr; &infin;\right)</li>
+</ul>
+
+
+\begin{align}
+\frac{q}{q^2+q_{TF}^2}  =\frac{q_{TF}^{2}}{q^{3}} + \frac{1}{q} + O\left(\frac{1}{q^{5}}; q\rightarrow \infty\right)
+\end{align}
+
+<p>
+计算 leading order
+</p>
+
+\begin{align}
+ \int_0^{+\infty} \sin(qr)\cdot \frac{1}{q}\mathrm{d}q = \frac{1}{2i} \int_{-\infty}^{+\infty} e^{iqr}\cdot \frac{1}{q} \mathrm{d}
+q = \frac{1}{2i} \cdot \pi i \cdot 1 = \frac{\pi}{2}
+\end{align}
+
+<p>
+这正好是精确结果 
+</p>
+\begin{align}
+\frac{-e}{4 \pi \varepsilon_0} \cdot \frac{e^{-q_{TF} r}}{r}
+\end{align}
+<p>
+在 \(q_{TF}\rightarrow 0\) 时对 \(q_{TF}\) 展开的结果的 leading order 相同.
+</p>
+</div>
+
+<div id="outline-container-org961d416" class="outline-3">
+<h3 id="org961d416"><span class="section-number-3">2.1.</span> 问题1</h3>
+<div class="outline-text-3" id="text-2-1">
+<p>
+Thomas-Fermi 近似结果与精确结果的 \(q_{TF}^2\) 的系数不同?
+</p>
+
+<p>
+答: 因为展开后的结果中出现了发散项, 所以问题本身就不能展开.
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgc4a1185" class="outline-3">
+<h3 id="orgc4a1185"><span class="section-number-3">2.2.</span> 问题2</h3>
+<div class="outline-text-3" id="text-2-2">
+<p>
+为什么要对 \(q\) 在 \(q\rightarrow +\infty\) 展开? 积分的区间不是整个实轴吗?
+</p>
+
+<p>
+答: 我之前对展开的目的理解有误. 展开的目的不是为了一阶一阶地计算积分. 展开目的是为了数值的计算积分. Thomas-Fermi 的积分本身可以精确解出, 没必要数值积分, 因此不必做展开. 展开的意义会在下面 RPA 的计算过程中体现. 
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org418b784" class="outline-2">
+<h2 id="org418b784"><span class="section-number-2">3.</span> RPA 的结果</h2>
+<div class="outline-text-2" id="text-3">
+<p>
+RPA 给出
+</p>
+
+\begin{align}
+\varepsilon (\vec{q}) = 1+ \frac{q_{TF}^2}{q^2}g\left( \frac{q}{2k_F} \right)
+\end{align}
+
+<p>
+将上式代入 \(\phi (\vec{q})\) 有
+</p>
+
+\begin{equation}
+\varphi (\vec{q})= \frac{-e}{\varepsilon_0 V q^2 \left(1 +\frac{q_{TF}^2}{q^2}\right)} 
+=\frac{-e}{\varepsilon_0 V \left(q^2 +q_{TF}^2 g\left( \frac{q}{2k_F} \right) \right)} 
+\end{equation}
+
+<p>
+其中
+</p>
+
+\begin{align}
+g(u) = \frac{1}{2} \left( 1+\frac{1}{2u}(1-u^2)\ln \left| \frac{1+u}{1-u} \right| \right)
+\end{align}
+
+<p>
+对 \(\phi (\vec{q})\) 作 Fourier Transform  
+</p>
+
+\begin{align}
+\varphi(\vec{r}) =\frac{-e}{2 \pi^2 \varepsilon_0} \cdot \frac{1}{r} \int_0^{+\infty}  \sin(qr)\cdot \frac{q}{q^2+q_{TF}^2g( \frac{q}{2k_F} )} \mathrm{d}q
+\end{align}
+</div>
+
+<div id="outline-container-org48698fe" class="outline-3">
+<h3 id="org48698fe"><span class="section-number-3">3.1.</span> 级数展开</h3>
+<div class="outline-text-3" id="text-3-1">
+<p>
+对 
+</p>
+\begin{align}
+\frac{q}{q^2+q_{TF}^2g( \frac{q}{2k_F} )}
+\end{align} 
+<p>
+在 \(q\rightarrow +\infty\) 展开
+</p>
+
+
+<div class="org-src-container">
+<pre class="src src-python">import sympy as sym
+q = sym.Symbol('q')
+q_tf = sym.Symbol('q_TF')
+kf = sym.Symbol('k_F')
+u = q/(2*kf)
+*g=1
+g = sym.Rational(1,2)*( 1+(1-u**2)/(2*u)*sym.log((u+1)/(u-1) ) )
+s = sym.series(q/(q**2+q_tf**2)*g,q,sym.oo,10)
+print(sym.latex(s))
+</pre>
+</div>
+
+<ul class="org-ul">
+<li>\frac{\frac{256 k<sub>F</sub><sup>8</sup>}{63} - \frac{64 k<sub>F</sub><sup>6</sup> q<sub>TF</sub><sup>2</sup>}{35} + \frac{16 k<sub>F</sub><sup>4</sup> q<sub>TF</sub><sup>4</sup>}{15}}{q<sup>9</sup>} + \frac{\frac{64 k<sub>F</sub><sup>6</sup>}{35} - \frac{16 k<sub>F</sub><sup>4</sup> q<sub>TF</sub><sup>2</sup>}{15} + \frac{4 k<sub>F</sub><sup>2</sup> q<sub>TF</sub><sup>4</sup>}{3}}{q<sup>7</sup>} + \frac{\frac{16 k<sub>F</sub><sup>4</sup>}{15} - \frac{4 k<sub>F</sub><sup>2</sup> q<sub>TF</sub><sup>2</sup>}{3}}{q<sup>5</sup>} + \frac{4 k<sub>F</sub><sup>2</sup>}{3 q<sup>3</sup>} + O\left(\frac{1}{q<sup>10</sup>}; q&rarr; &infin;\right)</li>
+</ul>
+
+
+\begin{align}
+\frac{q}{q^2+q_{TF}^2g( \frac{q}{2k_F} )} = \frac{\frac{256 k_{F}^{8}}{63} - \frac{64 k_{F}^{6} q_{TF}^{2}}{35} + \frac{16 k_{F}^{4} q_{TF}^{4}}{15}}{q^{9}} + \frac{\frac{64 k_{F}^{6}}{35} - \frac{16 k_{F}^{4} q_{TF}^{2}}{15} + \frac{4 k_{F}^{2} q_{TF}^{4}}{3}}{q^{7}} + \frac{\frac{16 k_{F}^{4}}{15} - \frac{4 k_{F}^{2} q_{TF}^{2}}{3}}{q^{5}} + \frac{4 k_{F}^{2}}{3 q^{3}} + O\left(\frac{1}{q^{10}}; q\rightarrow \infty\right)
+\end{align}
+</div>
+</div>
+
+<div id="outline-container-orgba8c6e4" class="outline-3">
+<h3 id="orgba8c6e4"><span class="section-number-3">3.2.</span> 问题3: 接下来该怎么做? 所有的展开项代入积分都是发散的.</h3>
+<div class="outline-text-3" id="text-3-2">
+<p>
+答: 展开算错了. 程序中把公式抄错了. 看来最好还是手算 check 一下比较好, 不然不会出现这么低级的错误. 级数展开的计算能力还有待提高&#x2026; 
+</p>
+</div>
+</div>
+
+<div id="outline-container-org351b483" class="outline-3">
+<h3 id="org351b483"><span class="section-number-3">3.3.</span> 正确的级数展开</h3>
+<div class="outline-text-3" id="text-3-3">
+<div class="org-src-container">
+<pre class="src src-python">import sympy as sym
+q = sym.Symbol('q')
+q_tf = sym.Symbol('q_TF')
+kf = sym.Symbol('k_F')
+u = q/(2*kf)
+g = sym.Rational(1,2)*( 1+(1-u**2)/(2*u)*sym.log(sym.Abs((u+1)/(u-1)) ) )
+s = sym.series(q/(q**2+q_tf**2*g),q,sym.oo,10)
+print(sym.latex(s))
+</pre>
+</div>
+
+<ul class="org-ul">
+<li>\frac{1}{q} - \frac{4 k<sub>F</sub><sup>2</sup> q<sub>TF</sub><sup>2</sup>}{3 q<sup>5</sup>} - \frac{16 k<sub>F</sub><sup>4</sup> q<sub>TF</sub><sup>2</sup>}{15 q<sup>7</sup>} - \frac{64 k<sub>F</sub><sup>6</sup> q<sub>TF</sub><sup>2</sup>}{35 q<sup>9</sup>} + O\left(\frac{1}{q<sup>10</sup>}; q&rarr; &infin;\right)</li>
+</ul>
+
+\begin{align}
+\frac{q}{q^2+q_{TF}^2g( \frac{q}{2k_F} )} = \frac{1}{q} - \frac{4 k_{F}^{2} q_{TF}^{2}}{3 q^{5}} - \frac{16 k_{F}^{4} q_{TF}^{2}}{15 q^{7}} - \frac{64 k_{F}^{6} q_{TF}^{2}}{35 q^{9}} + O\left(\frac{1}{q^{10}}; q\rightarrow \infty\right)
+\end{align}
+</div>
+</div>
+</div>
+
+<div id="outline-container-org11260c4" class="outline-2">
+<h2 id="org11260c4"><span class="section-number-2">4.</span> 数值计算 RPA 的结果</h2>
+<div class="outline-text-2" id="text-4">
+</div>
+<div id="outline-container-org53fc9c3" class="outline-3">
+<h3 id="org53fc9c3"><span class="section-number-3">4.1.</span> 问题分析</h3>
+<div class="outline-text-3" id="text-4-1">
+<p>
+首先, 积分 
+</p>
+\begin{align}
+\varphi(\vec{r}) =\frac{-e}{2 \pi^2 \varepsilon_0} \cdot \frac{1}{r} \int_0^{+\infty}  \sin(qr)\cdot \frac{q}{q^2+q_{TF}^2g( \frac{q}{2k_F} )} \mathrm{d}q
+\end{align}
+<p>
+难以解析地计算, 因此想要数值地计算.
+</p>
+
+<p>
+其次, 被积函数收敛不够快.
+</p>
+
+<p>
+经过前面对被积函数级数展开的分析, 发现被积分函数在远处的 leading order 为
+</p>
+
+\begin{equation}
+\label{eq:leading}
+\frac{\sin(qr)}{q}
+\end{equation}
+
+<p>
+也就是说, 被积函数在远处的贡献主要来自于 leading order 项 (\ref{eq:leading}), 而且这一项是可以解析地计算出结果的. 如果我们从被函数中把这项减去, 那么被积函数在远处就近似为 \(0\) 了, 也就是说积分会更快地收敛. 这就解决了积分收敛不够快的问题.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org8fc5ac3" class="outline-3">
+<h3 id="org8fc5ac3"><span class="section-number-3">4.2.</span> 构造新的被积函数</h3>
+<div class="outline-text-3" id="text-4-2">
+<p>
+构造函数
+</p>
+
+\begin{equation}
+F(q) = \sin(qr)\cdot \frac{q}{q^2+q_{TF}^2g( \frac{q}{2k_F} )} - \frac{\sin(qr)}{q}
+\end{equation}
+
+<p>
+新的 \(F(q)\) 函数会很快地收敛.
+</p>
+
+<p>
+原来的积分就可以分解为
+</p>
+
+\begin{align}
+\varphi(\vec{r}) =&\frac{-e}{2 \pi^2 \varepsilon_0} \cdot \frac{1}{r} \int_0^{+\infty}  \sin(qr)\cdot \frac{q}{q^2+q_{TF}^2g( \frac{q}{2k_F} )} \mathrm{d}q \\
+=& \frac{-e}{2 \pi^2 \varepsilon_0} \cdot \frac{1}{r} \int_0^{+\infty} \left( F(q) +  \frac{\sin(qr)}{q} \right)\mathrm{d}q \\
+=& \frac{-e}{2 \pi^2 \varepsilon_0} \cdot \frac{1}{r} \left(  \int_0^{+\infty}  F(q) \mathrm{d}q + \frac{\pi}{2} \right)
+\end{align}
+</div>
+</div>
+
+<div id="outline-container-orga093509" class="outline-3">
+<h3 id="orga093509"><span class="section-number-3">4.3.</span> 数值积分</h3>
+<div class="outline-text-3" id="text-4-3">
+<p>
+下面数值地计算
+</p>
+
+\begin{align}
+ \int_0^{+\infty}  F(q) \mathrm{d}q 
+\end{align}
+
+<p>
+python 程序如下
+</p>
+
+<div class="org-src-container">
+<pre class="src src-python">#导入数值计算包, 画图包, 积分包
+import numpy as np
+import matplotlib.pyplot as plt
+from scipy import integrate
+
+#设置物理参量
+qtf = 3/4
+kf = 1/2
+
+#数值积分的区间:(0,end)
+end = 5
+
+#定义函数 phi_r, g(u), phi_q, lo(q)是phi_q 的 leading order, F(q)是从 phi(q) 里边减去 leading order
+def phi_r(r):
+    def g(u):
+	return 1/2*(1+1/(2*u)*(1-u**2)*np.log(np.abs((1+u)/(1-u))))
+    def phi(q):
+	phi = np.sin(q*r)*q/(q**2+qtf**2*g(q/(2*kf)))
+	return phi
+    def lo(q):
+	lo = np.sin(q*r)/q
+	return lo
+    def F(q):
+	F = phi(q) - lo(q)
+	return F
+    (Fres,err) = integrate.quad(F,0,end)
+    phir = Fres + np.pi/2
+    return phir
+
+
+#计算N个不同的 r 的取值的数值积分 
+N = 100
+
+
+#画六个图中的第一个图
+plt.subplot(321) #(321)的意思是整个图是3行2列,这个图画在第1个位置
+a = 0.1 #画图的区间为[a,b],这里第一个图为 r 取 [0,10]
+b = a+10
+r = np.linspace(a,b,N)
+
+#进行 N 次数值积分, 然后把 N 个点的数值积分的结果保存在数组 s 中
+s = np.linspace(0,0,N)
+for i in range(N):
+    s[i-1] = phi_r(r[i-1])
+#画图, 指定线的颜色和图例
+plt.plot(r, s, color="red", label="Numerical Result")
+#我们想要将数值的结果和 Friedel Oscillations 的结果做比较, 但它们之间会差一个常数k, 现在把这个常数 k 取 N 次数值积分中第一个点的比值
+k = phi_r(a)/(1/(a**3)*np.cos(2*kf*a))
+fo = k*1/(r**3)*np.cos(2*kf*r) #这是 Friedel Oscillations 的结果
+plt.plot(r,fo, "--", color="blue", label="Friedel Oscillation") #画出 Friedel Oscillations 的结果
+
+plt.xlabel("$r$") #设置横坐标的物理量
+plt.ylabel("$\phi(r)$") #设置纵坐标的物理量
+
+#以下三行是为了让坐标的数值以科学计数法显示
+ax = plt.gca()  # 获取当前图像的坐标轴信息
+ax.yaxis.get_major_formatter().set_powerlimits((0,1)) # 将坐标轴的base number设置为一位。
+plt.legend()
+
+
+
+#与画第一个图同样的方法, 画出剩下的5个图, 它们的区别在于 r 的区间不同
+plt.subplot(322)
+a = 10
+b = a+10
+r = np.linspace(a,b,N)
+
+s = np.linspace(0,0,N)
+for i in range(N):
+    s[i-1] = phi_r(r[i-1])
+plt.plot(r, s, color="red", label="Numerical Result")
+
+k = phi_r(a)/(1/(a**3)*np.cos(2*kf*a))
+fo = k*1/(r**3)*np.cos(2*kf*r)
+plt.plot(r,fo, "--", color="blue", label="Friedel Oscillation")
+
+plt.xlabel("$r$")
+plt.ylabel("$\phi(r)$")
+
+ax = plt.gca()  # 获取当前图像的坐标轴信息
+ax.yaxis.get_major_formatter().set_powerlimits((0,1)) # 将坐标轴的base number设置为一位。
+
+plt.subplot(323)
+a = 20
+b = a+10
+r = np.linspace(a,b,N)
+
+s = np.linspace(0,0,N)
+for i in range(N):
+    s[i-1] = phi_r(r[i-1])
+plt.plot(r, s, color="red", label="Numerical Result")
+
+k = phi_r(a)/(1/(a**3)*np.cos(2*kf*a))
+fo = k*1/(r**3)*np.cos(2*kf*r)
+plt.plot(r,fo, "--", color="blue", label="Friedel Oscillation")
+
+plt.xlabel("$r$")
+plt.ylabel("$\phi(r)$")
+
+ax = plt.gca()  # 获取当前图像的坐标轴信息
+ax.yaxis.get_major_formatter().set_powerlimits((0,1)) # 将坐标轴的base number设置为一位。
+
+
+plt.subplot(324)
+a = 50
+b = a+10
+r = np.linspace(a,b,N)
+
+s = np.linspace(0,0,N)
+for i in range(N):
+    s[i-1] = phi_r(r[i-1])
+plt.plot(r, s, color="red", label="Numerical Result")
+
+k = phi_r(a)/(1/(a**3)*np.cos(2*kf*a))
+fo = k*1/(r**3)*np.cos(2*kf*r)
+plt.plot(r,fo, "--", color="blue", label="Friedel Oscillation")
+
+plt.xlabel("$r$")
+plt.ylabel("$\phi(r)$")
+
+ax = plt.gca()  # 获取当前图像的坐标轴信息
+ax.yaxis.get_major_formatter().set_powerlimits((0,1)) # 将坐标轴的base number设置为一位。
+
+
+plt.subplot(325)
+a = 100
+b = a+10
+r = np.linspace(a,b,N)
+
+s = np.linspace(0,0,N)
+for i in range(N):
+    s[i-1] = phi_r(r[i-1])
+plt.plot(r, s, color="red", label="Numerical Result")
+
+k = phi_r(a)/(1/(a**3)*np.cos(2*kf*a))
+fo = k*1/(r**3)*np.cos(2*kf*r)
+plt.plot(r,fo, "--", color="blue", label="Friedel Oscillation")
+
+plt.xlabel("$r$")
+plt.ylabel("$\phi(r)$")
+
+ax = plt.gca()  # 获取当前图像的坐标轴信息
+ax.yaxis.get_major_formatter().set_powerlimits((0,1)) # 将坐标轴的base number设置为一位。
+
+
+plt.subplot(326)
+a = 200
+b = a+10
+r = np.linspace(a,b,N)
+
+s = np.linspace(0,0,N)
+for i in range(N):
+    s[i-1] = phi_r(r[i-1])
+plt.plot(r, s, color="red", label="Numerical Result")
+
+k = phi_r(a)/(1/(a**3)*np.cos(2*kf*a))
+fo = k*1/(r**3)*np.cos(2*kf*r)
+plt.plot(r,fo, "--", color="blue", label="Friedel Oscillation")
+
+plt.xlabel("$r$")
+plt.ylabel("$\phi(r)$")
+
+ax = plt.gca()  # 获取当前图像的坐标轴信息
+ax.yaxis.get_major_formatter().set_powerlimits((0,1)) # 将坐标轴的base number设置为一位。
+
+
+
+plt.suptitle("The Results of RPA") #画出整个图的标题
+plt.show() #显示图片
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org7811dc1" class="outline-3">
+<h3 id="org7811dc1"><span class="section-number-3">4.4.</span> 结果对比</h3>
+<div class="outline-text-3" id="text-4-4">
+<p>
+将数值结果与 Friedel Oscillations 的结果
+</p>
+
+\begin{align}
+\varphi(\vec{r}) \sim \frac{1}{r^3} \cos (2 k_fr)
+\end{align}
+
+<p>
+进行对比
+</p>
+
+
+<div id="org247ae1b" class="figure">
+<p><img src="./2018-11-28-专业笔记-Friedel Oscillations/friedel_oscillations.png" alt="friedel_oscillations.png" />
+</p>
+</div>
+
+<p>
+可以看出, Friedel Oscillations 的结果在 \(r\) 较大时的结果比较好.
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org9798882" class="outline-2">
+<h2 id="org9798882"><span class="section-number-2">5.</span> 参考文献</h2>
+<div class="outline-text-2" id="text-5">
+<p>
+Friedel Oscillation 的原始文献 the shielding of a fixed charge in a high-density electron gas <a href="http://www.doc88.com/p-9512851691956.html">http://www.doc88.com/p-9512851691956.html</a> 
+</p>
+
+<p>
+Wolfgang Nolting, Fundamentals of Many-body Physics
+</p>
+</div>
+</div>
+
+<div id="outline-container-org2e744d8" class="outline-2">
+<h2 id="org2e744d8"><span class="section-number-2">6.</span> 致谢</h2>
+<div class="outline-text-2" id="text-6">
+<p>
+感谢导师 Ran Qi 的指导
+</p>
+
+<p>
+感谢 Fan Yang 师兄的讨论
+</p>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="date">Date: 2018-11-28 Wed 00:00</p>
+<p class="date">Created: 2022-04-16 Sat 23:05</p>
+<p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
+</div>
+</body>
+</html>

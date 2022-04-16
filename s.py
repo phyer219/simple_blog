@@ -36,9 +36,12 @@ class Post:
         self.path += '/'         # todo
         (self.name, self.ext) = os.path.splitext(filename_extension)
         self.have_folder = self.name in os.listdir(posts_source_path)
-        self.year = int(self.name[:4])
-        self.month = int(self.name[5:7])
-        self.day = int(self.name[8:10])
+        info = re.search(r'^(?P<year>\d{4})-(?P<month>\d{2})-(?P<day>\d{2})-(?P<category>[a-z]*)-(?P<url_title>.*)$', self.name)
+        self.year = int(info.group('year'))
+        self.month = int(info.group('month'))
+        self.day = int(info.group('day'))
+        self.category = info.group('category')
+        self.url_title = info.group('url_title')
 
     def gen_md_post(self):
         markdown.markdownFromFile(input=self.post_file,
@@ -89,9 +92,11 @@ def gen_index():
                 for post in posts:
                     print('--- Generating post ---', post.name)
                     new_line = line.replace(r'{path}',
-                                            posts_public_path+post.name+'.html')  # todo
-                    new_line = new_line.replace(r'{title}',
-                                                post.name + f'--{post.year:n}-{post.month:n}-{post.day:n}')
+                                            posts_public_path+post.name+'.html')
+                    # todo
+                    title = f'{post.year:n}.{post.month:n}.{post.day:n}  '
+                    title += post.url_title
+                    new_line = new_line.replace(r'{title}', title)
                     t.writelines(new_line)
             else:
                 t.writelines(line)
@@ -139,4 +144,3 @@ for opt, v in opts:
     elif opt == "-p":
         # generate one post, given filename.extension
         gen_single_post(v)
-

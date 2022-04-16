@@ -1,0 +1,495 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2022-04-16 Sat 23:06 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>读书笔记: IV.4 Tensors and Representations of Special Unitary Groups</title>
+<meta name="generator" content="Org Mode" />
+<style>
+  #content { max-width: 60em; margin: auto; }
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #e6e6e6;
+    border-radius: 3px;
+    background-color: #f2f2f2;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: auto;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    top: -8px;
+    right: 12px;
+    padding: 3px;
+    color: #555;
+    background-color: #f2f2f299;
+  }
+  pre.src:hover:before { display: inline; margin-top: 14px;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-authinfo::before { content: 'Authinfo'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .equation-container {
+    display: table;
+    text-align: center;
+    width: 100%;
+  }
+  .equation {
+    vertical-align: middle;
+  }
+  .equation-label {
+    display: table-cell;
+    text-align: right;
+    vertical-align: middle;
+  }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { width: 90%; }
+</style>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        displayAlign: "center",
+        displayIndent: "0em",
+
+        "HTML-CSS": { scale: 100,
+                        linebreaks: { automatic: "false" },
+                        webFont: "TeX"
+                       },
+        SVG: {scale: 100,
+              linebreaks: { automatic: "false" },
+              font: "TeX"},
+        NativeMML: {scale: 100},
+        TeX: { equationNumbers: {autoNumber: "AMS"},
+               MultLineWidth: "85%",
+               TagSide: "right",
+               TagIndent: ".8em"
+             }
+});
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS_HTML"></script>
+</head>
+<body>
+<div id="content" class="content">
+<h1 class="title">读书笔记: IV.4 Tensors and Representations of Special Unitary Groups</h1>
+<div id="table-of-contents" role="doc-toc">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents" role="doc-toc">
+<ul>
+<li><a href="#org206936f">1. \(SO(N)\) 与 \(SU(N)\) 的对比</a></li>
+<li><a href="#orge702b55">2. \(SU(3)\) 群的表示</a></li>
+<li><a href="#org58352e2">3. \(SU(N)\) 群的下标</a></li>
+<li><a href="#org3418f82">4. \(SO(N)\) 群的不可约表示</a></li>
+<li><a href="#org334dba2">5. 上下标之间的移动</a></li>
+<li><a href="#org48ac050">6. Reference</a></li>
+</ul>
+</div>
+</div>
+<!-- toc -->
+<!-- more -->
+
+
+<div id="outline-container-org206936f" class="outline-2">
+<h2 id="org206936f"><span class="section-number-2">1.</span> \(SO(N)\) 与 \(SU(N)\) 的对比</h2>
+<div class="outline-text-2" id="text-1">
+<p>
+在这里, 要对 \(SU(N)\) 群做与 \(SO(N)\) 群相同的事. 它们的区别如下
+</p>
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<tbody>
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">\(SO(N)\)</td>
+<td class="org-left">\(SU(N)\)</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">实</td>
+<td class="org-left">复</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">只有上标</td>
+<td class="org-left">有上标, 有下标</td>
+</tr>
+
+<tr>
+<td class="org-left">Special</td>
+<td class="org-left">\(O^T O=1\)</td>
+<td class="org-left">\(U^{\dagger} U = 1\)</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">\(O(N)\to SO(N)\)</td>
+<td class="org-left">\(U(N) \to SU(N)\)</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">\(\det O=\pm 1\to \det O = 1\)</td>
+<td class="org-left">\(\det U = e^{\mathrm{i}\alpha} \to \det U = 1\)</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+
+
+<div id="outline-container-orge702b55" class="outline-2">
+<h2 id="orge702b55"><span class="section-number-2">2.</span> \(SU(3)\) 群的表示</h2>
+<div class="outline-text-2" id="text-2">
+<p>
+全对称张量 \(\phi^{ijk}\) 生成 \(SU(3)\) 的一个 \(10\) 维不可约表示.
+</p>
+\begin{align}
+  \phi^{333},   \phi^{331},   \phi^{332},   \phi^{322},   \phi^{321},   \phi^{311},   \phi^{222},   \phi^{221},   \phi^{111},   \phi^{112}
+\end{align}
+</div>
+</div>
+
+<div id="outline-container-org58352e2" class="outline-2">
+<h2 id="org58352e2"><span class="section-number-2">3.</span> \(SU(N)\) 群的下标</h2>
+<div class="outline-text-2" id="text-3">
+<p>
+从 \(SO(N)\) 群的 \(O^T O=1\) 到 \(SU(N)\) 群的 \(U^{\dagger} U = 1\) 就引出了下标
+</p>
+\begin{align}
+  \psi_i \equiv \psi^{i*}
+\end{align}
+<p>
+因此
+</p>
+\begin{align}
+  \zeta^{\dagger}\psi = \zeta^{j*}\psi^j = \zeta_j\psi^j
+\end{align}
+<p>
+把 \(U^{ij}\) 也写成 \(U^i_{\,j}\) 的形式, 来保证上标只和下标求和, 下标只和上标求和, 所以
+tensor 之间的变换就写为
+</p>
+\begin{align}
+  \psi^i \to& \psi'^i = U^i_{\,j} \psi^j \\
+  \psi_i \to& \psi'_i = \psi_j (U^{\dagger})^j_{\,i}
+\end{align}
+<p>
+总的来说就是: 上标由 \(U\) 变换, 下标由 \(U^{\dagger}\) 变换.
+</p>
+<blockquote>
+<p>
+Example:
+</p>
+\begin{align}
+  \phi^{ij}_k \to \phi'^{ij}_k = U^i_{\,l} U^j_{\,m} \phi^{lm}_n (U^{\dagger})^n_{\,k}
+\end{align}
+</blockquote>
+<p>
+在此记法下, 它们的 trace 为一个上标和一个下标的求和
+</p>
+\begin{align}
+  \delta^k_{\,j} \phi^{ij}_k \equiv \phi^{ij}_j
+\end{align}
+<blockquote>
+<p>
+Exercise:
+</p>
+\begin{align}
+  \phi^{ij}_j \to U^i_{\,l}U^j_{\,m} \phi^{lm}_n(U^{\dagger})^n_{\,j}
+  =& U^i_{\,l}\delta ^n_{\,m} \phi^{lm}_n  = U^i_{\,l} \phi^{ln}_n
+\end{align}
+</blockquote>
+</div>
+</div>
+
+<div id="outline-container-org3418f82" class="outline-2">
+<h2 id="org3418f82"><span class="section-number-2">4.</span> \(SO(N)\) 群的不可约表示</h2>
+<div class="outline-text-2" id="text-4">
+<p>
+因为上标和下标按不同的方式变换, 所以它们各自有独立的对称性.
+</p>
+
+<p>
+书上说
+</p>
+<blockquote>
+<p>
+Thus, in summary, the irreducible representations of \(SU(N)\) are realized by traceless
+tensors with definite symmetry properties under permutation of indices.
+</p>
+
+<p>
+Convince yourself that for \(SU(N)\) , the dimensions of the representations
+defined by the following tensors \(\phi^i\) , \(\phi^{ij}\) (antisymmetric), \(\phi^{ij}\)
+(symmetric), \(\phi^i_{\,j}\) , and \(\phi^{ij}_k\) (antisymmetric in the upper indices) 
+are, respectively, \(N , N (N − 1)/2, N (N + 1)/2, N^2 − 1\) and \(\frac{1}{2} N (N −
+2)(N + 1)\). 
+</p>
+</blockquote>
+
+<blockquote>
+<p>
+Example:
+</p>
+
+<p>
+symmetric traceless representation \(S^{ij}_k = S^{ji}_k\) 是 \(\frac{1}{2}N(N+1)N-N
+=\frac{1}{2}N(N-1)(N+2)\) 维的. 
+</p>
+
+<p>
+先不考虑下标, 目标的对称表示共有 \(\frac{1}{2}N(N+1)\) 种, 下标还有 \(N\) 种可能, 再
+减去 \(N\) 个迹. 这 \(N\) 个迹 \(S^{ij}_i\) 对应 \(N\) 个不同的 \(j\) .
+</p>
+</blockquote>
+
+<blockquote>
+<p>
+Exercise:
+说明 antisymmetric traceless representation \(A^{ij}_k = - A^{ji}_k\) 是
+\(\frac{1}{2}N(N-1)N - N = \frac{1}{2}N(N+1)(N-2)\) 维的.
+</p>
+</blockquote>
+
+<p>
+\(SU(N)\) 群的不可约表示是由具有确定对称性的无迹张量生成的. (不知道第二句话的意思
+是否是说所有的 \(SU(N)\) 群的不可约表示都只有这几个维度, 这里貌似是不加证明地给出
+了这个结论) .
+</p>
+
+<blockquote>
+<p>
+Example:
+</p>
+
+<p>
+\(SU(5)\) 有 \(5, 10, 15, 24, 45\) 维的不可约表示.
+</p>
+</blockquote>
+</div>
+</div>
+
+
+<div id="outline-container-org334dba2" class="outline-2">
+<h2 id="org334dba2"><span class="section-number-2">5.</span> 上下标之间的移动</h2>
+<div class="outline-text-2" id="text-5">
+<p>
+前面用到了 \(SU(N)\) 的 unitary \(U^{\dagger}U = 1\) . 它可以如下表示
+</p>
+\begin{align}
+  \varepsilon_{i_1i_2\cdots i_N} U^{i_1}_{\,j_1}U^{i_2}_{\,j_2} \cdots U^{i_N}_{\,j_N} = \varepsilon_{j_1j_2\cdots j_N}
+\end{align}
+<p>
+两边同时乘 \((U^{\dagger})^{j_N}_{p_N}\) 并对 \(j_N\) 求和有
+</p>
+\begin{align}
+    \varepsilon_{i_1i_2\cdots i_N} U^{i_1}_{\,j_1}U^{i_2}_{\,j_2} \cdots U^{i_N}_{\,j_N}(U^{\dagger})^{j_N}_{p_N} =& \varepsilon_{j_1j_2\cdots j_N}(U^{\dagger})^{j_N}_{p_N} \\
+     \Downarrow& \\
+    \varepsilon_{i_1i_2\cdots p_N} U^{i_1}_{\,j_1}U^{i_2}_{\,j_2} \cdots U^{i_{N-1}}_{\,j_{N-1}} =& \varepsilon_{j_1j_2\cdots j_N}(U^{\dagger})^{j_N}_{p_N} 
+\end{align}
+<p>
+重复上述过程可以把 \(U\) 换成 \(U^{\dagger}\) .
+</p>
+<blockquote>
+<p>
+Example:
+</p>
+
+<p>
+定义
+</p>
+\begin{align}
+  \phi_{kpq} \equiv \epsilon_{ijpq} \phi^{ij}_k
+\end{align}
+<p>
+那么它的变换
+</p>
+\begin{align}
+  \varepsilon_{ijpq} \phi^{ij}_k \to \varepsilon_{ijpq} U^i_{\,l}U^j_{\,m} \phi^{ij}_k (U^{\dagger})^n_{\,k}
+  = (U^{\dagger})^s_{\,p}(U^{\dagger})^t_{\,q}(U^{\dagger})^n_{\,k} \phi_{nst}
+\end{align}
+</blockquote>
+<p>
+总结一下, 用两个反对称符号, 就可以将 \(SU(N)\) 群张量的上下标上下移动. 
+</p>
+</div>
+</div>
+
+<div id="outline-container-org48ac050" class="outline-2">
+<h2 id="org48ac050"><span class="section-number-2">6.</span> Reference</h2>
+<div class="outline-text-2" id="text-6">
+<ul class="org-ul">
+<li>A. Zee, Group Theory in a Nutshell for Physicists, 2016, Princeton University Press</li>
+
+<li><a href="https://en.wikipedia.org/wiki/3D_rotation_group">https://en.wikipedia.org/wiki/3D_rotation_group</a></li>
+</ul>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="date">Date: 2020-05-19 Tue 00:00</p>
+<p class="date">Created: 2022-04-16 Sat 23:06</p>
+<p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
+</div>
+</body>
+</html>

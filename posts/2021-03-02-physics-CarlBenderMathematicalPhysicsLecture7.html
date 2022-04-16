@@ -1,0 +1,693 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2022-04-16 Sat 23:05 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Carl Bender Mathematical Physics Lecture7 Note</title>
+<meta name="generator" content="Org Mode" />
+<style>
+  #content { max-width: 60em; margin: auto; }
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #e6e6e6;
+    border-radius: 3px;
+    background-color: #f2f2f2;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: auto;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    top: -8px;
+    right: 12px;
+    padding: 3px;
+    color: #555;
+    background-color: #f2f2f299;
+  }
+  pre.src:hover:before { display: inline; margin-top: 14px;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-authinfo::before { content: 'Authinfo'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .equation-container {
+    display: table;
+    text-align: center;
+    width: 100%;
+  }
+  .equation {
+    vertical-align: middle;
+  }
+  .equation-label {
+    display: table-cell;
+    text-align: right;
+    vertical-align: middle;
+  }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { width: 90%; }
+</style>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        displayAlign: "center",
+        displayIndent: "0em",
+
+        "HTML-CSS": { scale: 100,
+                        linebreaks: { automatic: "false" },
+                        webFont: "TeX"
+                       },
+        SVG: {scale: 100,
+              linebreaks: { automatic: "false" },
+              font: "TeX"},
+        NativeMML: {scale: 100},
+        TeX: { equationNumbers: {autoNumber: "AMS"},
+               MultLineWidth: "85%",
+               TagSide: "right",
+               TagIndent: ".8em"
+             }
+});
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS_HTML"></script>
+</head>
+<body>
+<div id="content" class="content">
+<h1 class="title">Carl Bender Mathematical Physics Lecture7 Note</h1>
+<div id="table-of-contents" role="doc-toc">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents" role="doc-toc">
+<ul>
+<li><a href="#org9fd9870">1. Information</a></li>
+<li><a href="#org3ce8382">2. Keywords</a></li>
+<li><a href="#orged2becf">3. Pade</a></li>
+<li><a href="#org2485fe0">4. Stirling's Series</a></li>
+<li><a href="#orga1d3154">5. What is Asymptotic Series?</a></li>
+<li><a href="#org12f74bf">6. An Example about "How do asymptotic series arise?"</a>
+<ul>
+<li><a href="#orga684f6d">6.1. 偏题: 如何分析一个 second order linear DE?</a>
+<ul>
+<li><a href="#orgdf1acfb">6.1.1. case 1</a></li>
+<li><a href="#orge9151da">6.1.2. case 2</a></li>
+<li><a href="#orgb82acee">6.1.3. case 3</a></li>
+</ul>
+</li>
+<li><a href="#orgf3359d7">6.2. local analysis</a>
+<ul>
+<li><a href="#org833502f">6.2.1. \(y' = \frac{y}{2}\)</a></li>
+<li><a href="#org6921c3e">6.2.2. \(y' = \frac{y}{2x}\)</a></li>
+<li><a href="#orgabf51df">6.2.3. \(y' = \frac{y}{2x^2}\)</a></li>
+</ul>
+</li>
+<li><a href="#org32ae695">6.3. How do asymptotic series arise?</a></li>
+</ul>
+</li>
+<li><a href="#org7c34cd8">7. Summary</a></li>
+<li><a href="#orgf7d1657">8. Reference</a></li>
+</ul>
+</div>
+</div>
+<!-- toc -->
+<!-- more -->
+
+<div id="outline-container-org9fd9870" class="outline-2">
+<h2 id="org9fd9870"><span class="section-number-2">1.</span> Information</h2>
+<div class="outline-text-2" id="text-1">
+<ul class="org-ul">
+<li>原出处: <a href="https://www.perimeterinstitute.ca/video-library/collection/11/12-psi-mathematical-physics">https://www.perimeterinstitute.ca/video-library/collection/11/12-psi-mathematical-physics</a></li>
+
+<li>可以看自动生成的字幕: <a href="https://www.youtube.com/playlist?list=PLzcd6SoIscwjHuWRE38UXWG92uq0Sy4UF">https://www.youtube.com/playlist?list=PLzcd6SoIscwjHuWRE38UXWG92uq0Sy4UF</a></li>
+
+<li>Bilibili:
+<a href="https://www.bilibili.com/video/BV1w4411q7x6?from=search&amp;seid=7852838902448285010">https://www.bilibili.com/video/BV1w4411q7x6?from=search&amp;seid=7852838902448285010</a></li>
+
+<li>Book: Carl M. Bender, Steven A. Orszag, Advanced Mathematical Methods for Scientists and
+Engineers I Asymptotic Methods and Perturbation Theory, 1999</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org3ce8382" class="outline-2">
+<h2 id="org3ce8382"><span class="section-number-2">2.</span> Keywords</h2>
+<div class="outline-text-2" id="text-2">
+<p>
+Pade technique for summing a series.  Asymptotic series.  Fuchs' theorem.  Frobenius series.
+</p>
+</div>
+</div>
+
+<div id="outline-container-orged2becf" class="outline-2">
+<h2 id="orged2becf"><span class="section-number-2">3.</span> Pade</h2>
+<div class="outline-text-2" id="text-3">
+<p>
+Poles are "mocking up" the cut.
+</p>
+
+<p>
+展示了 \(\frac{\ln (1 + x)}{x}\) Pade 近似的结果. Mathematican 中可以用函数
+<code>PadeApproximant</code> 来实现.
+</p>
+
+<p>
+这是上节课尾巴.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org2485fe0" class="outline-2">
+<h2 id="org2485fe0"><span class="section-number-2">4.</span> Stirling's Series</h2>
+<div class="outline-text-2" id="text-4">
+\begin{align}
+  \Gamma(x) \sim x^{x-1/2} e^{-x}\sqrt{2\pi}
+    \left(1 + \frac{1}{12 x} + \frac{1}{288 z^2} - \cdots \right)
+\end{align}
+<p>
+它收敛很慢. 但是变成 Pade 后, 就收敛很快. 但是 no idea why it works.
+</p>
+</div>
+</div>
+
+<div id="outline-container-orga1d3154" class="outline-2">
+<h2 id="orga1d3154"><span class="section-number-2">5.</span> What is Asymptotic Series?</h2>
+<div class="outline-text-2" id="text-5">
+\begin{align}
+  f(x) - \sum_{n = 0}^N a_n x^n \sim a_{N + 1} x^{N + 1}
+   \quad \mathrm{as} \quad x\to 0
+\end{align}
+<p>
+means that
+</p>
+\begin{align}
+  f(x) - \sum_{n=0}^N a_n x^n \sim a_{N + 1} x^{N + 1}
+   \quad \mathrm{as} \quad x\to 0  \quad \mathrm{for}
+  \quad  \mathrm{all} \quad N
+\end{align}
+<p>
+also
+</p>
+\begin{align}
+ \lim_{x \to \infty} \frac{f(x) - \sum_{n=0}^N a_n x^n}{x^{N + 1}} = a_{N + 1}
+  \quad \mathrm{for} \quad  \mathrm{all} \quad N
+\end{align}
+<p>
+只有说一个 series asymptotic to 某个函数时, 才有意义. 直接说某个 series 是不是
+asymptotic series 是没有意义的.
+</p>
+
+<p>
+对于一个 series, 总有一个 function 是此级数 asymptotic to 的.
+</p>
+
+<p>
+但对于一个 function 只有一个 series 是 asymptotic to 它的.
+</p>
+
+<p>
+A function has an unique asymptotic series. But a series could be asymptotic to
+many different functions.
+</p>
+
+<p>
+asymptotic series 也可以有其它的形式, 如
+</p>
+\begin{align}
+  f(x) - \sum_{n = 0}^N (a_n - a) x^n \sim a_{N + 1} x^{N + 1}
+   \quad \mathrm{as} \quad x\to a
+\end{align}
+<p>
+同样, \(n\) 也不一定是整数. 可以是分数等等.
+</p>
+
+<p>
+如
+</p>
+\begin{align}
+  \frac{\Gamma(x)}{x^{x-1/2} e^{-x}\sqrt{2\pi}} \sim
+    1 + \frac{1}{12 x} + \frac{1}{288 z^2} - \cdots \quad \mathrm{as} \quad x \to \infty
+\end{align}
+</div>
+</div>
+
+<div id="outline-container-org12f74bf" class="outline-2">
+<h2 id="org12f74bf"><span class="section-number-2">6.</span> An Example about "How do asymptotic series arise?"</h2>
+<div class="outline-text-2" id="text-6">
+<p>
+对
+</p>
+\begin{align}
+  x^3 y'' = y
+\end{align}
+<p>
+在 near \(x=0\) 处进行 local analysis.
+</p>
+</div>
+
+<div id="outline-container-orga684f6d" class="outline-3">
+<h3 id="orga684f6d"><span class="section-number-3">6.1.</span> 偏题: 如何分析一个 second order linear DE?</h3>
+<div class="outline-text-3" id="text-6-1">
+<p>
+拿到形如
+</p>
+\begin{align}
+  a(x) y'' + b(x) y' + c(x)y = 0
+\end{align}
+<p>
+的方程, 首先化成 normal form. 两边同时除以 \(a(x)\) , 变成了如下形式
+</p>
+\begin{align}
+  y'' + A(x) y' + B(x)y = 0
+\end{align}
+<p>
+要分析它在 \(x\to x_0\) 处的行为. How does \(y(x)\) behave near \(x = x_0\) ?
+</p>
+
+<p>
+There are exactly three possibilities there.
+</p>
+</div>
+
+<div id="outline-container-orgdf1acfb" class="outline-4">
+<h4 id="orgdf1acfb"><span class="section-number-4">6.1.1.</span> case 1</h4>
+<div class="outline-text-4" id="text-6-1-1">
+<p>
+\(A(x)\) , \(B(x)\) analytic near \(x = x_0\) ( \(x_0\) is a regular point)
+</p>
+
+<p>
+此时有定理, Fuchs' theorem. (Lazarus Immanuel Fuchs (5 May 1833 – 26 April 1902)
+was a Jewish-German[1] mathematician who contributed important research in the
+field of linear differential equations)
+</p>
+
+<p>
+All solutions have a Taylor series about \(x = x_0\)
+</p>
+\begin{align}
+  y(x) = \sum_0^{\infty} (x - x_0)^n a_n
+\end{align}
+</div>
+</div>
+
+<div id="outline-container-orge9151da" class="outline-4">
+<h4 id="orge9151da"><span class="section-number-4">6.1.2.</span> case 2</h4>
+<div class="outline-text-4" id="text-6-1-2">
+<p>
+Not both \(A\) and \(B\) are analytical. But \((x - x_0) A(x)\) and \((x - x_0) B(x)\)
+are analytical. ( \(x_0\) is a regular singular point)
+</p>
+
+<p>
+At least one solution has the form (Frobenius series)
+</p>
+\begin{align}
+  y(x) = \sum_0^{\infty} (x - x_0)^{n + \alpha} a_n
+\end{align}
+<p>
+others
+</p>
+\begin{align}
+  y(x) = \sum_0^{\infty} (x - x_0)^{n + \alpha} a_n \ln(x - x_0)
+\end{align}
+
+<p>
+case 1 and case 2 solutions' converge radius is often the distance from \(x_0\) to
+the nearest singularity.
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgb82acee" class="outline-4">
+<h4 id="orgb82acee"><span class="section-number-4">6.1.3.</span> case 3</h4>
+<div class="outline-text-4" id="text-6-1-3">
+<p>
+\(x_0\) is an irregular point.
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgf3359d7" class="outline-3">
+<h3 id="orgf3359d7"><span class="section-number-3">6.2.</span> local analysis</h3>
+<div class="outline-text-3" id="text-6-2">
+<p>
+对于
+</p>
+\begin{align}
+  x^3 y'' = y
+\end{align}
+<p>
+来说
+</p>
+\begin{align}
+  A = 0, \quad B = \frac{1}{x^3}
+\end{align}
+
+<p>
+它属于 case 3. 如果强行写一个 Frobenius series 的解
+</p>
+\begin{align}
+  y(x) = \sum_{n = 0}^{\infty} a_n x^{n + \alpha} \quad(a_n \neq 0)
+\end{align}
+<p>
+那么代回原方程可以得到
+</p>
+\begin{align}
+  \sum_{n = 1}^{\infty} (n - 1 + \alpha)(n - 2 + \alpha) a_{n - 1} x^{n + \alpha}
+   = \sum_{n = 0}^{\infty} a_n x^{n + \alpha}
+\end{align}
+<p>
+结果是 \(a_0 = 0\) , \(a_n = 0\) . 也就是它没有 Frobenius series 的解.
+</p>
+
+<p>
+这个问题太难了, 让我们看一下一阶的问题, 能不能猜一下它的解.
+</p>
+</div>
+
+<div id="outline-container-org833502f" class="outline-4">
+<h4 id="org833502f"><span class="section-number-4">6.2.1.</span> \(y' = \frac{y}{2}\)</h4>
+<div class="outline-text-4" id="text-6-2-1">
+<p>
+它的 case 1, 在 \(x = 0\) 处是 regular point. 那么它有 Taylor series 形式的解. 当
+然的, 它的解是
+</p>
+\begin{align}
+  y(x) = C e^{\frac{x}{2}} = C \sum_{n = 0}^{\infty} \frac{(x/2)^n}{n!}
+\end{align}
+</div>
+</div>
+
+<div id="outline-container-org6921c3e" class="outline-4">
+<h4 id="org6921c3e"><span class="section-number-4">6.2.2.</span> \(y' = \frac{y}{2x}\)</h4>
+<div class="outline-text-4" id="text-6-2-2">
+<p>
+它是 case 2, 在 \(x = 0\) 处是 regular singular point. 它的解为
+</p>
+\begin{align}
+  y(x) = C \sqrt{x}
+\end{align}
+<p>
+这是 Frobenius series, \(\alpha = 1/2\) , 只有一项. Frobenius was right!
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgabf51df" class="outline-4">
+<h4 id="orgabf51df"><span class="section-number-4">6.2.3.</span> \(y' = \frac{y}{2x^2}\)</h4>
+<div class="outline-text-4" id="text-6-2-3">
+<p>
+它是 case 3, irregular point. 但是它的可解的, 结果是
+</p>
+\begin{align}
+  y = C e^{- \frac{1}{2x}}
+\end{align}
+<p>
+它的形式是
+</p>
+\begin{align}
+  y = e^{s(x)}
+\end{align}
+</div>
+</div>
+</div>
+
+<div id="outline-container-org32ae695" class="outline-3">
+<h3 id="org32ae695"><span class="section-number-3">6.3.</span> How do asymptotic series arise?</h3>
+<div class="outline-text-3" id="text-6-3">
+<p>
+因此, Green (是 George Green?)给出了这样的 suggested, 一个 \(y = e^{s(x)}\) 形式的
+试探解( \(s(x)\) is singular, blowing up at \(x = 0\) )
+</p>
+\begin{align}
+ y(x) = e^{a x^b}, \quad b<0
+\end{align}
+<p>
+如果直接将 \(y = e^{s(x)}\) 代回 \(x^3 y'' = y\) , 会得到 Riccati
+</p>
+\begin{align}
+  x^3(s'' + s'^2) &= 1 \\
+    \Downarrow& \\
+x^3(T' + T^2) &= 1
+\end{align}
+<p>
+如果 \(s = a x^b\)
+那么会得到
+</p>
+\begin{align}
+  s'  =& b a x^{b - 1}\\
+  s'' =& b(b - 1) a x^{b-2}\\
+  s'^2 =& b^2a^2 x^{2b - 2}
+\end{align}
+<p>
+Mr. Green noticed that if \(b < 0\) which of \(s'', s'^2\) is more important as \(x\to
+0\) ? (Its an issue of 2b or not 2b. That's the point! -_- !!! Bender 讲了这么多就
+只是为了玩 shakespeare 的梗&#x2026;当然不是&#x2026;) 当然是
+</p>
+\begin{align}
+  s'' \ll (s')^2 \quad \mathrm{as} \quad x \to 0
+\end{align}
+<p>
+所以用了 the method of dominant balance( 第一节课讲的 ), 将等号的换成 \(\sim\) , 问题
+有了进展. 这也再次说明 equal sign make no progress! Replace this equation by an
+asymptotic relations
+</p>
+\begin{align}
+  x^3(s'' + s'^2) &= 1 \\
+        \Downarrow& \\
+  x^3 s'^2 &\sim 1 \quad \mathrm{as} \quad x\to 0\\
+\end{align}
+<p>
+ha! I can solve that equation. It's only a first order euqation.
+<img src="2021-03-02-专业笔记-CarlBenderMathematicalPhysicsLecture7/bender.png" alt="bender.png" />
+</p>
+\begin{align}
+s \sim \mp C\frac{2}{\sqrt{x}}\quad \mathrm{as} \quad x\to 0
+\end{align}
+<p>
+Just like that! We cracked into the equation!
+</p>
+
+<p>
+We know what \(s\) is asymptotic to. 但是我们想要的是 \(y(x) = e^{s(x)}\) . 那么问题
+来了. If \(f(x)\sim g(x)\) as \(x\to x_0\) , is it true \(e^{f(x)}\sim e^{g(x)}\) as \(x\to
+x_0\) ? (因为 asymptotic 并不意味着 \(f(x) - g(x)\) 很小, 它可以很大, 比如 \(x^2 + x
+\sim x^{2}\) as \(x\to \infty\) , 但它们相差无穷大!)
+</p>
+
+<p>
+Only true when \(f(x) - g(x) \ll 1\) as \(x \to x_0\) . The one thing that you cannot
+do both sides of an asymptotic approximation is to exponent it.
+</p>
+
+<p>
+\(\mp \frac{2}{\sqrt{x}}\quad \mathrm{as}\) 叫做 controlling factor. 因此我们只能
+<b>roughly</b> speaking
+</p>
+\begin{align}
+  y(x) \sim e^{\frac{2}{\sqrt{x}}} \quad \mathrm{or} \quad e^{-\frac{2}{\sqrt{x}}}
+   \quad \mathrm{as} \quad x\to 0
+\end{align}
+<p>
+有一个解在 \(x \to 0\) 时很快地 blow up. 另一个趋于 \(0\) . 这两个解都没有 Frobenius
+或者 Taylor series.
+</p>
+
+<p>
+Bender 最后总结, 新的概念就是这样被发明的. 这个方程的解一定是一个函数, 但是通常
+的方法都没法表示, 所以 we're forced to a new way to represent the function.
+</p>
+
+<p>
+最终的结果是
+</p>
+\begin{align}
+  y(x) \sim e^{\mp \frac{2}{\sqrt{x}}} x^{3/4} \sum_{n = 0}^{\infty} a_n x^{n/2} \quad
+  \mathrm{as} \quad x \to 0
+\end{align}
+<p>
+之后会发现这是个 divergent series. 所以说, divergent series are forced upon
+us. This is the only way to represent the solution. We don't have a convergent
+series representation.
+</p>
+
+<p>
+之后会讲如何 sum that series and actually write down the answer.
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org7c34cd8" class="outline-2">
+<h2 id="org7c34cd8"><span class="section-number-2">7.</span> Summary</h2>
+<div class="outline-text-2" id="text-7">
+<p>
+介绍了 asymptotic series 的定义, 之后重点用一个例子说明我们是如何有了 asymptotic
+series 这个概念的: 我们发现了一些方程, 它的解的形式只能用 asymptotic series 来表
+示. 这就像 \(x^2 = -1\) 的解让我们不得不拥有了复数的概念一样.
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgf7d1657" class="outline-2">
+<h2 id="orgf7d1657"><span class="section-number-2">8.</span> Reference</h2>
+<div class="outline-text-2" id="text-8">
+<ul class="org-ul">
+<li><a href="https://mathworld.wolfram.com/StirlingsSeries.html">Stirling's Series</a></li>
+
+<li><a href="https://arxiv.org/pdf/0912.2069.pdf">Stokes' wedges</a> (只有 Bender 这么叫?)</li>
+
+<li><a href="https://en.wikipedia.org/wiki/Fuchs%27_theorem">Fuchs' theorem</a></li>
+</ul>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="date">Date: 2021-03-02 Tue 00:00</p>
+<p class="date">Created: 2022-04-16 Sat 23:05</p>
+<p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
+</div>
+</body>
+</html>

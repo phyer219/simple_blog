@@ -1,0 +1,1253 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2022-04-16 Sat 23:05 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>欢迎来到 Emacs 主义至上教室(lisp note -_-)</title>
+<meta name="generator" content="Org Mode" />
+<style>
+  #content { max-width: 60em; margin: auto; }
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #e6e6e6;
+    border-radius: 3px;
+    background-color: #f2f2f2;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: auto;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    top: -8px;
+    right: 12px;
+    padding: 3px;
+    color: #555;
+    background-color: #f2f2f299;
+  }
+  pre.src:hover:before { display: inline; margin-top: 14px;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-authinfo::before { content: 'Authinfo'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .equation-container {
+    display: table;
+    text-align: center;
+    width: 100%;
+  }
+  .equation {
+    vertical-align: middle;
+  }
+  .equation-label {
+    display: table-cell;
+    text-align: right;
+    vertical-align: middle;
+  }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { width: 90%; }
+</style>
+</head>
+<body>
+<div id="content" class="content">
+<h1 class="title">欢迎来到 Emacs 主义至上教室(lisp note -_-)</h1>
+<div id="table-of-contents" role="doc-toc">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents" role="doc-toc">
+<ul>
+<li><a href="#org188c8b1">1. Intro</a></li>
+<li><a href="#orgff687d4">2. Common Lisp Syntax</a>
+<ul>
+<li><a href="#org93e61b0">2.1. Form</a></li>
+<li><a href="#org01fd3fe">2.2. Evaluation</a></li>
+<li><a href="#org52ef128">2.3. Data</a>
+<ul>
+<li><a href="#org4e12b02">2.3.1. integer, string</a></li>
+<li><a href="#orgeda2f7a">2.3.2. symbol</a></li>
+<li><a href="#org4ae2f79">2.3.3. list</a></li>
+</ul>
+</li>
+<li><a href="#org32d21a3">2.4. List Operations</a></li>
+<li><a href="#orga183fd4">2.5. Truth</a>
+<ul>
+<li><a href="#orgf71cad2">2.5.1. True and False</a></li>
+<li><a href="#orgb3c8dc8">2.5.2. if</a></li>
+<li><a href="#orgb3eba8b">2.5.3. AND and OR</a></li>
+</ul>
+</li>
+<li><a href="#org0fff8ec">2.6. Functions</a></li>
+<li><a href="#org95748e5">2.7. Recursion</a></li>
+<li><a href="#orgbceecc7">2.8. Input and Output</a>
+<ul>
+<li><a href="#org2789bc3">2.8.1. output</a></li>
+<li><a href="#org406cfa7">2.8.2. input</a></li>
+</ul>
+</li>
+<li><a href="#org05a0e18">2.9. Variables</a>
+<ul>
+<li><a href="#org5e01086">2.9.1. local variable</a></li>
+<li><a href="#orgf37d23b">2.9.2. global variable</a></li>
+</ul>
+</li>
+<li><a href="#org99ec8b6">2.10. Assignment</a></li>
+<li><a href="#org0e4c7d6">2.11. Functional Programming</a></li>
+<li><a href="#org9e6a46d">2.12. Iteration</a></li>
+<li><a href="#org58eca18">2.13. Functions as Objects</a>
+<ul>
+<li><a href="#org74cee49">2.13.1. lambda</a></li>
+</ul>
+</li>
+<li><a href="#org548fb93">2.14. Types</a></li>
+</ul>
+</li>
+<li><a href="#org289b78f">3. &#x2026;</a></li>
+<li><a href="#org6ec1e8a">4. Elisp</a>
+<ul>
+<li><a href="#org9751d95">4.1. Hello wolrd</a></li>
+<li><a href="#org7688b9e">4.2. Doc string</a></li>
+<li><a href="#org7a127c2">4.3. Some functions</a></li>
+</ul>
+</li>
+<li><a href="#orga057535">5. Reference</a></li>
+</ul>
+</div>
+</div>
+<!-- toc -->
+<!-- more -->
+
+<div id="outline-container-org188c8b1" class="outline-2">
+<h2 id="org188c8b1"><span class="section-number-2">1.</span> Intro</h2>
+<div class="outline-text-2" id="text-1">
+<div class="org-src-container">
+<pre class="src src-lisp">  i i i i i i i       ooooo    o        ooooooo   ooooo   ooooo
+  I I I I I I I      8     8   8           8     8     o  8    8
+  I  \ `+' /  I      8         8           8     8        8    8
+   \  `-+-'  /       8         8           8      ooooo   8oooo
+    `-__|__-'        8         8           8           8  8
+	|            8     o   8           8     o     8  8
+  ------+------       ooooo    8oooooo  ooo8ooo   ooooo   8
+
+Welcome to GNU CLISP 2.49.93+ (2018-02-18) &lt;http://clisp.org/&gt;
+</pre>
+</div>
+
+<p>
+交互式的(类似 ipython), 在 terminal 中输入 <code>ecl</code> (Embeddable Common Lisp) . 没有
+的话则需要安装. 也可以用 <code>clisp</code>
+</p>
+
+<p>
+此为快速入门笔记.
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgff687d4" class="outline-2">
+<h2 id="orgff687d4"><span class="section-number-2">2.</span> Common Lisp Syntax</h2>
+<div class="outline-text-2" id="text-2">
+</div>
+<div id="outline-container-org93e61b0" class="outline-3">
+<h3 id="org93e61b0"><span class="section-number-3">2.1.</span> Form</h3>
+<div class="outline-text-3" id="text-2-1">
+<p>
+lisp 的语法比较特别, 表达式用括号括起来, 括号中第一部分是函数, 剩余部分是函数的
+参数. 当然也可以直接是一个 data. 如
+</p>
+
+<div class="org-src-container">
+<pre class="src src-lisp">&gt; 1
+
+1
+&gt; (+ 2 3)
+
+5
+&gt; (+ 2 3 4)
+
+9
+&gt; (+)
+
+0
+&gt; (/ (- 7 1) (- 4 2))
+
+3
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org01fd3fe" class="outline-3">
+<h3 id="org01fd3fe"><span class="section-number-3">2.2.</span> Evaluation</h3>
+<div class="outline-text-3" id="text-2-2">
+<p>
+lisp 默认对 <code>(+ 1 1)</code> 是要求值的. 如果要避免求值, 可以用 <code>quote</code> .
+</p>
+
+<div class="org-src-container">
+<pre class="src src-lisp">&gt; (quote (+ 3 5))
+
+(+ 3 5)
+</pre>
+</div>
+<p>
+<code>'</code> 为 <code>quote</code> 的简写
+</p>
+
+<div class="org-src-container">
+<pre class="src src-lisp">&gt; '(+ 3 5)
+
+(+ 3 5)
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org52ef128" class="outline-3">
+<h3 id="org52ef128"><span class="section-number-3">2.3.</span> Data</h3>
+<div class="outline-text-3" id="text-2-3">
+</div>
+<div id="outline-container-org4e12b02" class="outline-4">
+<h4 id="org4e12b02"><span class="section-number-4">2.3.1.</span> integer, string</h4>
+<div class="outline-text-4" id="text-2-3-1">
+<p>
+在其它语言中常见.
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgeda2f7a" class="outline-4">
+<h4 id="orgeda2f7a"><span class="section-number-4">2.3.2.</span> symbol</h4>
+<div class="outline-text-4" id="text-2-3-2">
+<p>
+无论怎输入, 都会被转换成大写. symbol 不对自身求值, 一般加 <code>'</code> 引用
+</p>
+<div class="org-src-container">
+<pre class="src src-lisp">&gt; 'Good
+
+GOOD
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org4ae2f79" class="outline-4">
+<h4 id="org4ae2f79"><span class="section-number-4">2.3.3.</span> list</h4>
+<div class="outline-text-4" id="text-2-3-3">
+<div class="org-src-container">
+<pre class="src src-lisp">&gt; (list 'hello (+ 3 6) "good")
+
+(HELLO 9 "good")
+</pre>
+</div>
+
+<p>
+<code>list</code> 函数来创建列表. build lists
+</p>
+
+<div class="org-src-container">
+<pre class="src src-lisp">&gt; (list '(+ 1 1) (+ 1 1))
+
+((+ 1 1) 2)
+</pre>
+</div>
+
+<p>
+空列表有两种表示方式
+</p>
+<div class="org-src-container">
+<pre class="src src-lisp">&gt; ()
+
+NIL
+&gt; nil
+
+NIL 
+</pre>
+</div>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org32d21a3" class="outline-3">
+<h3 id="org32d21a3"><span class="section-number-3">2.4.</span> List Operations</h3>
+<div class="outline-text-3" id="text-2-4">
+<p>
+<code>cons</code> build lists
+</p>
+
+<div class="org-src-container">
+<pre class="src src-lisp">&gt; (cons 'a '(b c d))
+
+(A B C D)
+</pre>
+</div>
+
+<p>
+上述例子第二个实参是一个 list . 
+</p>
+
+<p>
+list 是将几个元素加到 <code>nil</code> 空表的快捷方式, 如
+</p>
+
+<div class="org-src-container">
+<pre class="src src-lisp">&gt; (cons 'a (cons 'b nil))
+
+(A B)
+&gt; (list 'a 'b)
+
+(A B)
+</pre>
+</div>
+
+<p>
+<code>car</code> 返回 list 的第一个元素, <code>cdr</code> 返回第一个元素之后的所有元素, 如
+</p>
+
+<div class="org-src-container">
+<pre class="src src-lisp">&gt; (car '(a b c))
+
+A
+&gt; (cdr '(a b c))
+
+(B C)
+</pre>
+</div>
+
+<p>
+取第三个元素有两种方法, 如
+</p>
+
+<div class="org-src-container">
+<pre class="src src-lisp">&gt; (car (cdr (cdr '(a b c d))))
+
+C
+&gt; (third '(a b c d))
+
+C
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orga183fd4" class="outline-3">
+<h3 id="orga183fd4"><span class="section-number-3">2.5.</span> Truth</h3>
+<div class="outline-text-3" id="text-2-5">
+</div>
+<div id="outline-container-orgf71cad2" class="outline-4">
+<h4 id="orgf71cad2"><span class="section-number-4">2.5.1.</span> True and False</h4>
+<div class="outline-text-4" id="text-2-5-1">
+<p>
+symbol <code>t</code> 表示逻辑真的默认值. 它是一个 symbol, 因此它会自身求值. 逻辑假由 <code>nil</code>
+来表示.
+</p>
+
+<p>
+The function <code>listp</code> returns true if its argument is a list:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-lisp">&gt; (listp '(a b c))
+
+T
+&gt; (listp 2)
+
+NIL
+</pre>
+</div>
+
+<p>
+像 <code>listp</code> 这样返回结果为真或假的函数, 称为 predicate, 这类函数通常以 p 结尾.
+</p>
+
+<p>
+The function <code>null</code> returns true of the empty list. The function <code>not</code> returns
+true if its argument is false. 如
+</p>
+
+<div class="org-src-container">
+<pre class="src src-lisp">&gt; (null nil)
+
+T
+&gt; (not nil)
+
+T
+</pre>
+</div>
+
+<p>
+上述例子中, 第一个 <code>nil</code> 表示 empty list, 因此返回 True. 第二个 <code>nil</code> 表示逻辑假,
+因此返回 True. 但由于 <code>nil</code> 既可表示 empty list, 也可表示逻辑假, 因此上述两个表
+达式在功能上等价的. 
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgb3c8dc8" class="outline-4">
+<h4 id="orgb3c8dc8"><span class="section-number-4">2.5.2.</span> if</h4>
+<div class="outline-text-4" id="text-2-5-2">
+<div class="org-src-container">
+<pre class="src src-lisp">&gt; (if (listp '(a b c))
+      (+ 1 2)
+      (+ 5 6))
+
+3
+&gt; (if (listp 2)
+      (+ 1 2)
+      (+ 5 6))
+
+11
+</pre>
+</div>
+
+<p>
+if 函数的第一个参量是 test 表达式, 即要判断真假的对象. 第二个 then 表达式. 第三
+个是 else 表达式, 是可选参数, 默认是 <code>nil</code> . 如
+</p>
+
+<div class="org-src-container">
+<pre class="src src-lisp">&gt; (if (listp 27)
+      (+ 1 2))
+
+NIL
+</pre>
+</div>
+
+<p>
+除了 <code>nil</code> 以外的所有东西, 都视为 True, 如
+</p>
+<div class="org-src-container">
+<pre class="src src-lisp">&gt; (if 27 1 2)
+
+1
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgb3eba8b" class="outline-4">
+<h4 id="orgb3eba8b"><span class="section-number-4">2.5.3.</span> AND and OR</h4>
+<div class="outline-text-4" id="text-2-5-3">
+<p>
+逻辑与, 或. <code>and</code> , 求到第一个为 False 后, 就不对后面的表达式求值了, 直接返回
+<code>nil</code> 如果所有值为真, 那么它就会返回最后一个参数(而不是返回 True). 也就是说它比
+较懒, 知道结果了, 就不继续求值了. 
+. or 运算时, 有一个 False 后, 就不对后面的表达式求值了.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-lisp">&gt; (and t (+ 1 2))
+
+3
+</pre>
+</div>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org0fff8ec" class="outline-3">
+<h3 id="org0fff8ec"><span class="section-number-3">2.6.</span> Functions</h3>
+<div class="outline-text-3" id="text-2-6">
+<p>
+定义 function, 第一个实参是函数名字, 第二个是用列表表示的参数, 第三个是一个或多
+个组成函数体的表达式. 如
+</p>
+<div class="org-src-container">
+<pre class="src src-lisp">&gt; (and t (+ 1 2))
+
+3
+&gt; (defun our-third (x)
+   (car (cdr (cdr x))))
+
+OUR-THIRD
+&gt; (our-third '(a b c d e f))
+
+C
+</pre>
+</div>
+<p>
+又如
+</p>
+<div class="org-src-container">
+<pre class="src src-lisp">&gt; (defun sum-greater (x y z)
+   (&gt; (+ x y) z))
+
+SUM-GREATER
+&gt; (sum-greater 1 4 3)
+
+T
+&gt; (sum-greater 2 5 9)
+
+NIL
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org95748e5" class="outline-3">
+<h3 id="org95748e5"><span class="section-number-3">2.7.</span> Recursion</h3>
+<div class="outline-text-3" id="text-2-7">
+<p>
+下面的函数是递归的一个例子
+</p>
+
+<div class="org-src-container">
+<pre class="src src-lisp">&gt; (defun our-member (obj lst)
+   (if (null lst)
+       nil
+   (if (eql (car lst) obj)
+       lst
+       (our-member obj (cdr lst)))))
+
+OUR-MEMBER
+&gt; (our-member 'b '(a b c))
+
+(B C)
+&gt; (our-member 'z '(a b c))
+
+NIL
+</pre>
+</div>
+
+<p>
+函数 <code>our-member</code> 用来判断 <code>obj</code> 是否是列表 <code>lst</code> 中的成员.
+</p>
+
+<p>
+首先判断 <code>lst</code> 是否为空, 如果为空, 那当然就返回 <code>nil</code> . 如果不空, 那么就用函数
+<code>eql</code> 判断 <code>lst</code> 的第一个成员是否与 <code>obj</code> 相同, 相同的话输出当前的 <code>lst</code> , 如果
+不同, 只有当 <code>obj</code> 是其它列表成员时, 它才可能是 <code>lst</code> 的成员, 于是就就递归调用,
+并把除掉第一个成员后的 <code>lst</code> 传递给递归调用的自己. 
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgbceecc7" class="outline-3">
+<h3 id="orgbceecc7"><span class="section-number-3">2.8.</span> Input and Output</h3>
+<div class="outline-text-3" id="text-2-8">
+</div>
+<div id="outline-container-org2789bc3" class="outline-4">
+<h4 id="org2789bc3"><span class="section-number-4">2.8.1.</span> output</h4>
+<div class="outline-text-4" id="text-2-8-1">
+<p>
+common lisp 最普遍的输出函数是 <code>format</code> . 第一个实参是输出到哪里, <code>t</code> 表示默认的
+的地方. 第二个实参是字符模板, 剩下的实参是要插入到模板的对象. 如
+</p>
+
+<div class="org-src-container">
+<pre class="src src-lisp">&gt; (format t "~A plus ~A equals ~A. ~%" 2 3 (+ 2 3))
+2 plus 3 equals 5. 
+NIL
+</pre>
+</div>
+
+<p>
+<code>~A</code> 表示被填入的位置, <code>~%</code> 表示换行.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org406cfa7" class="outline-4">
+<h4 id="org406cfa7"><span class="section-number-4">2.8.2.</span> input</h4>
+<div class="outline-text-4" id="text-2-8-2">
+<div class="org-src-container">
+<pre class="src src-lisp">&gt; (defun askem (string)
+   (format t "~A" string)
+   (read))
+
+ASKEM
+&gt; (askem "How old are you?")
+How old are you?15
+
+15
+</pre>
+</div>
+<p>
+这个函数首先输出参量 <code>string</code> , 返回通过 <code>read</code> 输入得到的值. 当函数 <code>read</code> 没有
+实参时, 它会读取默认的位置. 函数 <code>askem</code> 有两个表达式, 它会返回最后一个表达式的
+值. 
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org05a0e18" class="outline-3">
+<h3 id="org05a0e18"><span class="section-number-3">2.9.</span> Variables</h3>
+<div class="outline-text-3" id="text-2-9">
+</div>
+<div id="outline-container-org5e01086" class="outline-4">
+<h4 id="org5e01086"><span class="section-number-4">2.9.1.</span> local variable</h4>
+<div class="outline-text-4" id="text-2-9-1">
+<p>
+<code>let</code> 可以引入局部变量, 如
+</p>
+
+<div class="org-src-container">
+<pre class="src src-lisp">&gt; (let ((x 1) (y 2))
+     (+ x y))
+
+3
+</pre>
+</div>
+
+<p>
+上述例子分别把 <code>1</code> 和 <code>2</code> 赋值给 <code>x</code> 和 <code>y</code> , 赋值只在 <code>let</code> 函数值内有效. 之后
+是表达式, 求值的结果作为 <code>let</code> 的返回值.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-lisp">&gt;  (defun ask-number ()
+   (format t "Please enter a number. ")
+   (let ((val (read)))
+     (if (numberp val)
+	 val
+	  (ask-number))))
+
+ASK-NUMBER
+&gt; (ask-number)
+Please enter a number. a
+Please enter a number. (ho hum)
+Please enter a number. 19
+</pre>
+</div>
+
+<p>
+<code>numberp</code> 是一个 predicate, 判断是否是一个数. 这也是递归调用的一个例子.
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgf37d23b" class="outline-4">
+<h4 id="orgf37d23b"><span class="section-number-4">2.9.2.</span> global variable</h4>
+<div class="outline-text-4" id="text-2-9-2">
+<p>
+由 <code>defparameter</code> 来定义全局变量, 由 <code>defconstant</code> 定义全局常量, 由 <code>boundp</code> 判
+断某个符号是否为一个全局变量或常量. 如
+</p>
+
+<div class="org-src-container">
+<pre class="src src-lisp">&gt; (defparameter *glob* 99)
+
+*GLOB*
+&gt; (defconstant limit (+ *glob* 1))
+
+LIMIT
+&gt; (boundp '*glob*)
+
+T
+</pre>
+</div>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org99ec8b6" class="outline-3">
+<h3 id="org99ec8b6"><span class="section-number-3">2.10.</span> Assignment</h3>
+<div class="outline-text-3" id="text-2-10">
+<p>
+<code>setf</code> 来给变量赋值. 如
+</p>
+
+<div class="org-src-container">
+<pre class="src src-lisp">&gt; (setf *glob* 98)
+
+98
+&gt; (let ((n 10))
+    (setf n 2)
+    n)
+
+2
+</pre>
+</div>
+
+<p>
+如果一个 symbol 不是局部变量的名字, 那么 <code>setf</code> 把这个 symbol 设置为全局变量. 如
+</p>
+
+<div class="org-src-container">
+<pre class="src src-lisp">&gt; (setf x (list 'a 'b 'c))
+
+(A B C)
+</pre>
+</div>
+
+<p>
+也就是说 <code>setf</code> 也可以用来创建全局变量, 不过还是推荐用 <code>defparameter</code> 来创建, 这
+样比较明确.
+</p>
+
+<p>
+<code>setf</code> 还有一个用法. 第一个实参可以是表达式, 这样第二个实参直接传给表达式中. 如
+</p>
+
+<div class="org-src-container">
+<pre class="src src-lisp">&gt; (setf (car x) 'n)
+
+N
+&gt; x
+
+(N B C)
+</pre>
+</div>
+
+<p>
+以下两种表达方式是等价的
+</p>
+
+<div class="org-src-container">
+<pre class="src src-lisp">&gt; (setf a 'b
+	c 'd
+	e 'f)
+
+F
+&gt; a
+
+B
+&gt; c
+
+D
+&gt; e
+
+F
+</pre>
+</div>
+
+<div class="org-src-container">
+<pre class="src src-lisp">&gt; (setf a 'b)
+
+B
+&gt; (setf c 'd)
+
+D
+&gt; (setf e 'f)
+
+F
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org0e4c7d6" class="outline-3">
+<h3 id="org0e4c7d6"><span class="section-number-3">2.11.</span> Functional Programming</h3>
+<div class="outline-text-3" id="text-2-11">
+<p>
+Lisp 的主流范式是函数式编程. 中心思想是: 执行一个函数是得到它的返回值. 如
+</p>
+
+<div class="org-src-container">
+<pre class="src src-lisp">&gt; (setf lst '(c a r a t))
+
+(C A R A T)
+&gt; (remove 'a lst)
+
+(C R T)
+&gt; lst
+
+(C A R A T)
+</pre>
+</div>
+
+<p>
+<code>remove</code> 函数是移除列表中的指定元素. 但只是返回移除之后的结果, 原来的列表还是原
+来的列表. 如果真的想要移除, 可以如下操作
+</p>
+
+<div class="org-src-container">
+<pre class="src src-lisp">&gt; (setf lst (remove 'a lst))
+
+(C R T)
+</pre>
+</div>
+
+<p>
+函数式编程意味着避免使用如 <code>setf</code> 一样的函数. 它的优点之一是允许 interactive
+testing. 
+</p>
+</div>
+</div>
+
+<div id="outline-container-org9e6a46d" class="outline-3">
+<h3 id="org9e6a46d"><span class="section-number-3">2.12.</span> Iteration</h3>
+<div class="outline-text-3" id="text-2-12">
+<p>
+如
+</p>
+<div class="org-src-container">
+<pre class="src src-lisp">&gt; (defun show-squares (start end)
+    (do ((i start (+ i 1)))
+	((&gt; i end) 'done)
+      (format t "~A ~A~%" i (* i i)))) 
+
+SHOW-SQUARES
+&gt; (show-squares 2 5)
+2 4
+3 9
+4 16
+5 25
+DONE
+</pre>
+</div>
+
+<p>
+<code>do</code> 的第一个表达式是 <code>(variable initial update)</code> , 标明变量 <code>i</code> , 初值, 更新规
+则. 第二个表达式是结束的条件. 剩下的是循环体.
+</p>
+
+<p>
+上述函数也可以用递归来写, 但是不太自然
+</p>
+
+<div class="org-src-container">
+<pre class="src src-lisp">&gt; (defun show-squares (i end)
+     (if (&gt; i end)
+       'done
+       (progn
+	 (format t "~A ~A~%" i (* i i))
+	 (show-squares (+ i 1) end))))
+
+SHOW-SQUARES
+&gt; (show-squares 2 5)
+2 4
+3 9
+4 16
+5 25
+DONE
+</pre>
+</div>
+
+<p>
+新的函数 <code>progn</code> 接受任意数量的表达式, 依次求值, 并返回最后一个表达式的值.
+</p>
+
+<p>
+用 <code>dolist</code> 来遍历列表元素会更加简单
+</p>
+
+<div class="org-src-container">
+<pre class="src src-lisp">&gt; (defun our-length (lst)
+    (let ((len 0))
+      (dolist (obj lst)
+	(setf len (+ len 1)))
+     len))
+
+OUR-LENGTH
+&gt; (our-length (list 'a 'b 'c))
+
+3
+</pre>
+</div>
+
+<p>
+上述例子的递归版本为
+</p>
+
+<div class="org-src-container">
+<pre class="src src-lisp">&gt; (defun our-length (lst)
+    (if (null lst)
+	0
+	(+ (our-length (cdr lst)) 1)))
+
+OUR-LENGTH
+&gt; (our-length (list 'a 'b 'c 'd))
+
+4
+&gt; (our-length 'nil)
+
+0
+&gt; (our-length '(a b c))          
+
+3
+</pre>
+</div>
+
+<p>
+它更容易理解, 但由于不是 tail-recursive 的形式, 效率不是那么高.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org58eca18" class="outline-3">
+<h3 id="org58eca18"><span class="section-number-3">2.13.</span> Functions as Objects</h3>
+<div class="outline-text-3" id="text-2-13">
+<p>
+<code>function</code> 是一个特殊的操作符号, 如果把函数的名字传给function, 它会返回相关关联
+的对象, 如
+</p>
+
+<div class="org-src-container">
+<pre class="src src-lisp">&gt; (function +)
+
+#&lt;compiled-function + 0x55e01ee95b10&gt;
+</pre>
+</div>
+
+<p>
+<code>#'</code> (sharp-quote)作为 function 的缩写, 如
+</p>
+
+<div class="org-src-container">
+<pre class="src src-lisp">&gt; #' +
+
+#&lt;compiled-function + 0x55e01ee95b10&gt;
+</pre>
+</div>
+
+<p>
+<code>apply</code> 可以接受函数作为第一个实参, 第二个列表作为函数的实参. 如
+</p>
+
+<div class="org-src-container">
+<pre class="src src-lisp">&gt; (apply #'+ '(1 2 3))
+
+6
+</pre>
+</div>
+
+<p>
+<code>funcall</code> 做相同的事情, 但不需要把实参包装成列表
+</p>
+
+<div class="org-src-container">
+<pre class="src src-lisp">&gt; (funcall #'+ 1 2 3)
+
+6
+</pre>
+</div>
+</div>
+
+<div id="outline-container-org74cee49" class="outline-4">
+<h4 id="org74cee49"><span class="section-number-4">2.13.1.</span> lambda</h4>
+<div class="outline-text-4" id="text-2-13-1">
+<p>
+<code>lambda</code> 不是一个操作符, 而只是一个符号. 早期由于函数在内部是用列表表示的, 因此
+将函数的第一个元素标记为 <code>lambda</code> 加以区分. 如
+</p>
+
+<div class="org-src-container">
+<pre class="src src-lisp">&gt; (lambda (x) (+ x 100))
+
+#&lt;bytecompiled-function 0x55726dfbe0f0&gt;
+</pre>
+</div>
+
+<p>
+(书上说现在可以省略 <code>lambda</code> , 但是我这里省略了会报错, 或许我的版本不够新?)
+</p>
+
+<p>
+<code>lambda</code> 表达式是一个列表, 包含符号 <code>lambda</code> , 接着是形参列表, 以及由零个或多个
+表达式所组成的函数体. 如
+</p>
+
+<div class="org-src-container">
+<pre class="src src-lisp">&gt; (lambda (x y))
+
+#&lt;bytecompiled-function 0x5652ca53c0f0&gt;
+&gt; (lambda (x y)
+    (+ x y))
+
+#&lt;bytecompiled-function 0x5652ca53c050&gt;
+&gt; ((lambda (x) (+ x 100)) 1)
+
+101
+&gt; (funcall #'(lambda (x) (+ x 100)) 
+	  1) 
+
+101
+</pre>
+</div>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org548fb93" class="outline-3">
+<h3 id="org548fb93"><span class="section-number-3">2.14.</span> Types</h3>
+<div class="outline-text-3" id="text-2-14">
+<p>
+变量没有类型, 数值才有类型, 且可有多个类型. 如 <code>27</code> 的类型, 依普遍性增加顺序为
+<code>fixnum</code> , <code>integer</code> , <code>rational</code> , <code>real</code> , <code>number</code> , <code>atom</code> , <code>t</code> . <code>t</code> 是所
+有类型的 supertype, 所以每个对象都属于 <code>t</code> 类型. 如用 <code>typep</code> 来判断某个数值是否
+为某个类型
+</p>
+
+<div class="org-src-container">
+<pre class="src src-lisp">&gt; (typep 27 'integer)
+
+T
+&gt; (typep 27 't)
+
+T
+&gt; (typep 27 'rational)
+
+T
+&gt; (typep 27 'fixnum)
+
+T
+</pre>
+</div>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org289b78f" class="outline-2">
+<h2 id="org289b78f"><span class="section-number-2">3.</span> &#x2026;</h2>
+<div class="outline-text-2" id="text-3">
+<p>
+赶在因疫情突然决定明天回家之前整理完此篇. 不禁感叹世事无常, 还是要好好珍惜眼前的
+人和事啊! 
+</p>
+</div>
+</div>
+
+<div id="outline-container-org6ec1e8a" class="outline-2">
+<h2 id="org6ec1e8a"><span class="section-number-2">4.</span> Elisp</h2>
+<div class="outline-text-2" id="text-4">
+</div>
+<div id="outline-container-org9751d95" class="outline-3">
+<h3 id="org9751d95"><span class="section-number-3">4.1.</span> Hello wolrd</h3>
+<div class="outline-text-3" id="text-4-1">
+<p>
+elisp 要在 emacs 中执行. 一个 hello world 的例子. 在 emacs 中 <code>M-x</code>
+<code>lisp-interaction-mode</code> 切换到 lisp 交互主模式, 写入 
+</p>
+
+<div class="org-src-container">
+<pre class="src src-elisp">(message "hello world")
+</pre>
+</div>
+
+<p>
+光标切到行尾, <code>C-j</code> 即可运行. 另外也可以在 <code>org-mode</code> 中, 插入 <code>elisp</code> 代码块,
+然后 <code>C-c</code> <code>C-c</code> 运行. (原 org 文件可以显示结果, hexo 不渲染执行结果) .
+</p>
+
+<div class="org-src-container">
+<pre class="src src-elisp">(message "hello world")
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org7688b9e" class="outline-3">
+<h3 id="org7688b9e"><span class="section-number-3">4.2.</span> Doc string</h3>
+<div class="outline-text-3" id="text-4-2">
+<p>
+函数可以加 doc string, 将光标移到函数上, 用 <code>C-h</code> <code>f</code> 查看. 如 
+</p>
+
+<div class="org-src-container">
+<pre class="src src-elisp">(defun hello-world (name)
+"Say hello to user whose name is NAME"
+(message "Hello, %s!" name))
+
+(hello-world 'Emacser)
+</pre>
+</div>
+
+<p>
+变量也可以加 doc string, 可用 <code>C-h</code>  <code>v</code> 查看. 如声明变量
+</p>
+<div class="org-src-container">
+<pre class="src src-elisp">(defvar foo "I'm foo!"
+  "A demo variable")
+foo
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org7a127c2" class="outline-3">
+<h3 id="org7a127c2"><span class="section-number-3">4.3.</span> Some functions</h3>
+<div class="outline-text-3" id="text-4-3">
+<p>
+函数 <code>eq</code> 用来判断变量是否为某个值. 如( <code>elisp</code> 和 <code>lisp</code> 语法还是有些不同, 如
+<code>format</code> ) 
+</p>
+
+<div class="org-src-container">
+<pre class="src src-elisp">(defun eq-example()
+  "A demo for function eq"
+  (let ((a 1) (b 'x)) 
+   (format "%s, %s, %s, %s" 
+    (eq a 1) (eq a 2) (eq b 'x) (eq b 'y))))
+
+(eq-example)
+</pre>
+</div>
+
+
+<div class="org-src-container">
+<pre class="src src-elisp">system-type
+</pre>
+</div>
+</div>
+</div>
+</div>
+
+
+
+<div id="outline-container-orga057535" class="outline-2">
+<h2 id="orga057535"><span class="section-number-2">5.</span> Reference</h2>
+<div class="outline-text-2" id="text-5">
+<ul class="org-ul">
+<li>Book: ANSI Common LISP by Paul Graham (z-lib.org)</li>
+
+<li><a href="https://acl.readthedocs.io/en/latest/zhCN/ch2-cn.html">https://acl.readthedocs.io/en/latest/zhCN/ch2-cn.html</a></li>
+
+<li><a href="http://smacs.github.io/elisp/01-hello-world.html">http://smacs.github.io/elisp/01-hello-world.html</a></li>
+
+<li><a href="https://www.emacswiki.org/emacs/">https://www.emacswiki.org/emacs/</a></li>
+</ul>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="date">Date: 2021-01-20 Wed 00:00</p>
+<p class="date">Created: 2022-04-16 Sat 23:05</p>
+<p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
+</div>
+</body>
+</html>

@@ -1,0 +1,450 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2022-04-16 Sat 23:05 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Atomic and Optical Physics I, 03 ResonanceIII: Rapid adiabatic passage</title>
+<meta name="generator" content="Org Mode" />
+<style>
+  #content { max-width: 60em; margin: auto; }
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #e6e6e6;
+    border-radius: 3px;
+    background-color: #f2f2f2;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: auto;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    top: -8px;
+    right: 12px;
+    padding: 3px;
+    color: #555;
+    background-color: #f2f2f299;
+  }
+  pre.src:hover:before { display: inline; margin-top: 14px;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-authinfo::before { content: 'Authinfo'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .equation-container {
+    display: table;
+    text-align: center;
+    width: 100%;
+  }
+  .equation {
+    vertical-align: middle;
+  }
+  .equation-label {
+    display: table-cell;
+    text-align: right;
+    vertical-align: middle;
+  }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { width: 90%; }
+</style>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        displayAlign: "center",
+        displayIndent: "0em",
+
+        "HTML-CSS": { scale: 100,
+                        linebreaks: { automatic: "false" },
+                        webFont: "TeX"
+                       },
+        SVG: {scale: 100,
+              linebreaks: { automatic: "false" },
+              font: "TeX"},
+        NativeMML: {scale: 100},
+        TeX: { equationNumbers: {autoNumber: "AMS"},
+               MultLineWidth: "85%",
+               TagSide: "right",
+               TagIndent: ".8em"
+             }
+});
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS_HTML"></script>
+</head>
+<body>
+<div id="content" class="content">
+<h1 class="title">Atomic and Optical Physics I, 03 ResonanceIII: Rapid adiabatic passage</h1>
+<div id="table-of-contents" role="doc-toc">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents" role="doc-toc">
+<ul>
+<li><a href="#org144002e">1. Information</a></li>
+<li><a href="#org78d952c">2. Atomic clocks</a></li>
+<li><a href="#org9826d06">3. Motion in a rotating magnetic field, Resonance, \(\pi\) pulse</a></li>
+<li><a href="#orgda51071">4. Generalized Rabi Frequency</a></li>
+<li><a href="#orgb447913">5. Compare with quantum result</a></li>
+<li><a href="#orge2d720d">6. Rapid adiabatic passage (RAP) (classical counterpart of Landau-Zener transition)</a></li>
+<li><a href="#orgdfb0a9c">7. Reference</a></li>
+</ul>
+</div>
+</div>
+<!-- toc -->
+<!-- more -->
+
+<div id="outline-container-org144002e" class="outline-2">
+<h2 id="org144002e"><span class="section-number-2">1.</span> Information</h2>
+<div class="outline-text-2" id="text-1">
+<ul class="org-ul">
+<li>官方介绍:
+<a href="https://ocw.mit.edu/courses/physics/8-421-atomic-and-optical-physics-i-spring-2014/">https://ocw.mit.edu/courses/physics/8-421-atomic-and-optical-physics-i-spring-2014/</a></li>
+
+<li>视频列表地址: <a href="https://www.youtube.com/playlist?list=PLUl4u3cNGP62FPGcyFJkzhqq9c5cHCK32">https://www.youtube.com/playlist?list=PLUl4u3cNGP62FPGcyFJkzhqq9c5cHCK32</a></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org78d952c" class="outline-2">
+<h2 id="org78d952c"><span class="section-number-2">2.</span> Atomic clocks</h2>
+</div>
+
+<div id="outline-container-org9826d06" class="outline-2">
+<h2 id="org9826d06"><span class="section-number-2">3.</span> Motion in a rotating magnetic field, Resonance, \(\pi\) pulse</h2>
+<div class="outline-text-2" id="text-3">
+<p>
+考虑 classical 的情况.
+</p>
+
+<p>
+假设磁矩 \(\vec{\mu}\) 处于磁场中磁场为
+</p>
+\begin{align}
+  \vec{B}(t) = B_0 \hat{e}_z + B_1(\hat{e}_x \cos \Omega_Lt - \hat{e}_y \sin\Omega_Lt)
+\end{align}
+<p>
+也就是说在 \(z\) 方向有一个 static field, 在 \(xoy\) 平面内有一个以 Lamor 频率 \(\Omega_L
+= -\gamma B_0\) 旋转的 rotating field.
+在 rotating frame ( \(x', y', z\) ) 中, 根据上一节的知识, 等效的磁场为
+</p>
+\begin{align}
+B_{\mathrm{eff}} = (B_0 + \frac{\Omega_L}{\gamma})\hat{e}_z + B_1\hat{e}_x = B_1\hat{e}_{x'}
+\end{align}
+<p>
+也就是说 \(z\) 方向的 static field 被抵消, 只剩下 \(x'\) 方向的一个 static field. 因
+此, \(\vec{\mu}\) 会绕 \(x'\) 轴以 Rabi 频率 \(\omega_R = - \gamma B_{1}\) 进动. 因此总的效果是会
+将 spin flip 一下. 比如
+</p>
+\begin{align}
+  t =& 0, \quad\vec{\mu} = \mu \hat{e}_z \\
+  t =& \frac{\pi}{\omega_R}, \quad\vec{\mu} = \mu \hat{e}_z
+\end{align}
+<p>
+也叫 \(\pi\) pulse.
+</p>
+
+
+<div id="org40c28c7" class="figure">
+<p><img src="2021-11-04-专业笔记-MITAMO03/pi-pulse.png" alt="pi-pulse.png" />
+</p>
+</div>
+
+<p>
+如果磁场不是 rotating 的, 比如是沿某个方向线偏振的, 那么可以分解成两个方向相反的
+rotating 的叠加. 在 rotating frame 中, 一个方向的 rotating 会变成 static, 而另一
+个方向上的 rotating 会变成原来频率的 2 倍 rotating, 这个高频的 rotating 通常不会
+有物理效果, 所以被忽略, 这就是 rotating wave approximation!
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgda51071" class="outline-2">
+<h2 id="orgda51071"><span class="section-number-2">4.</span> Generalized Rabi Frequency</h2>
+<div class="outline-text-2" id="text-4">
+<p>
+如果 \(B_{1}\) rotating 的 frequency \(\omega \neq \Omega_L\) , 那么等效的磁场就不会完全抵消
+\(B_0\) , 那么
+</p>
+\begin{align}
+  \vec{B}_{\mathrm{eff}} = B_1 \hat{e}_{x'}
+           + \left(B_0 - \frac{\omega}{\gamma} \right) \hat{e}_z
+\end{align}
+<p>
+其大小为
+</p>
+\begin{align}
+|B_{\mathrm{eff}}| = \sqrt{B_1^2 + (B_0 - \frac{\omega}{\gamma})^2}
+\end{align}
+<p>
+可以定义 generalized Rabi frequency (之后都取 \(\gamma = |\gamma|\) ?)
+</p>
+\begin{align}
+\Omega_{R} = \gamma B_{\mathrm{eff}} = \sqrt{(\omega_L - \omega)^2 + \omega_R^2}
+  = \sqrt{\omega_R^2 + \delta^2}
+\end{align}
+<p>
+其中 detuning \(\delta = \omega_L - \omega\)
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgb447913" class="outline-2">
+<h2 id="orgb447913"><span class="section-number-2">5.</span> Compare with quantum result</h2>
+<div class="outline-text-2" id="text-5">
+<p>
+如图, 对两个三角形用余弦定理
+</p>
+\begin{align}
+A^2 =& 2 \mu^2 (1 - \cos\alpha) \\
+A^2 =& 2 \mu^{2} \sin^2\theta (1 - \cos\phi)
+\end{align}
+<p>
+并利用
+</p>
+\begin{align}
+ \sin \theta =& \frac{B_1}{B_{\mathrm{eff}}} = \frac{\omega_R}{\Omega_R} \\
+  \phi(t) =& \Omega_R t
+\end{align}
+<p>
+可以严格地求得 \(\mu\) 在 \(z\) 方向上的投影
+</p>
+\begin{align}
+  \mu_z(t) = \mu\sin\cos\alpha = \mu \left[ 1 -
+   2 \frac{\omega_R^2}{\Omega_{R}^2}\sin^{2} \left( \frac{\Omega_R}{2}t \right) \right]
+\end{align}
+
+
+<div id="orgdcfe96e" class="figure">
+<p><img src="2021-11-04-专业笔记-MITAMO03/rabi-freq.png" alt="rabi-freq.png" />
+</p>
+</div>
+
+<p>
+如果我们定义
+</p>
+\begin{align}
+P_{\uparrow \to \downarrow} \equiv \frac{\mu_z(0) - \mu_z(t)}{2 \mu_z(0)}
+\end{align}
+<p>
+那么
+</p>
+\begin{align}
+P_{\uparrow \to \downarrow} = \frac{\omega_R^2}{\Omega_{R}^2}\sin^{2} \left( \frac{\Omega_R}{2}t \right)
+\end{align}
+<p>
+这正是量子的结果.
+</p>
+</div>
+</div>
+
+<div id="outline-container-orge2d720d" class="outline-2">
+<h2 id="orge2d720d"><span class="section-number-2">6.</span> Rapid adiabatic passage (RAP) (classical counterpart of Landau-Zener transition)</h2>
+<div class="outline-text-2" id="text-6">
+<p>
+现在 change the frequency of the rotating field. Sweeping the frequency <b>thtrough
+the resoance</b>, we can invert the spin, we can tun over the magnetic moment in a
+very robust way.
+</p>
+
+<ul class="org-ul">
+<li><b>slow</b>: compare to the Larmor frequency</li>
+
+<li><b>rapid</b>: compare to all the things mentioned here(decoherence and relaxition
+processes).</li>
+</ul>
+
+<p>
+这里不做严格计算, 只给一个 intuitive picture
+</p>
+
+<p>
+\(\vec{\mu}\) , static field \(\vec{B}_0\) , \(\vec{B}_1\) rotating at \(\omega\) , \(|B_{1}|
+\ll |B_0|\) , start with \(\omega << \gamma B_{0}\)
+</p>
+
+
+<div id="org97cc730" class="figure">
+<p><img src="2021-11-04-专业笔记-MITAMO03/RAP.png" alt="RAP.png" />
+</p>
+</div>
+
+<p>
+In adiabatic limit, the spin processes tightly ( \(\theta\) is small) around
+\(\vec{B}_{\mathrm{eff}}\) , follows the direction of the effective magnetic
+field.
+</p>
+
+<p>
+所以当扫到 detuning \(\delta = 0\) 时, \(\vec{\mu}\) 转到了 \(x'\) 方向, 当继续扫到 \(\omega
+\gg \gamma B_0\) 时, spin 被 flip.
+</p>
+
+<p>
+无论是从高频向低频扫, 还是从低频向高频扫, 只要扫过共振频率, the rapid adiabatic
+passage always swaps the spin state.
+</p>
+
+<p>
+这在实验上很有用, 因为像之前那样直接加到共振频率上, 如果频率稍有偏差, spin 就不
+会完全被 flip. 但是 RAP 的话, 只要扫过共振频率, spin 就会被完美地 flip!
+</p>
+
+<p>
+同样的物理机制, 但是操作完全不一样, 就是让 spin 在 quadrapolar fields magnetic
+trap 中同移动, 磁场也能从一个方向扫到相反的方向. 在中间可能发生 Majorana losses.
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgdfb0a9c" class="outline-2">
+<h2 id="orgdfb0a9c"><span class="section-number-2">7.</span> Reference</h2>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="date">Date: 2021-11-04 Thu 00:00</p>
+<p class="date">Created: 2022-04-16 Sat 23:05</p>
+<p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
+</div>
+</body>
+</html>

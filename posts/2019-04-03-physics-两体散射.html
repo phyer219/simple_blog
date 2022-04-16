@@ -1,0 +1,830 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2022-04-16 Sat 23:06 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>两体散射</title>
+<meta name="generator" content="Org Mode" />
+<style>
+  #content { max-width: 60em; margin: auto; }
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #e6e6e6;
+    border-radius: 3px;
+    background-color: #f2f2f2;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: auto;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    top: -8px;
+    right: 12px;
+    padding: 3px;
+    color: #555;
+    background-color: #f2f2f299;
+  }
+  pre.src:hover:before { display: inline; margin-top: 14px;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-authinfo::before { content: 'Authinfo'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .equation-container {
+    display: table;
+    text-align: center;
+    width: 100%;
+  }
+  .equation {
+    vertical-align: middle;
+  }
+  .equation-label {
+    display: table-cell;
+    text-align: right;
+    vertical-align: middle;
+  }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { width: 90%; }
+</style>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        displayAlign: "center",
+        displayIndent: "0em",
+
+        "HTML-CSS": { scale: 100,
+                        linebreaks: { automatic: "false" },
+                        webFont: "TeX"
+                       },
+        SVG: {scale: 100,
+              linebreaks: { automatic: "false" },
+              font: "TeX"},
+        NativeMML: {scale: 100},
+        TeX: { equationNumbers: {autoNumber: "AMS"},
+               MultLineWidth: "85%",
+               TagSide: "right",
+               TagIndent: ".8em"
+             }
+});
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS_HTML"></script>
+</head>
+<body>
+<div id="content" class="content">
+<h1 class="title">两体散射</h1>
+<div id="table-of-contents" role="doc-toc">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents" role="doc-toc">
+<ul>
+<li><a href="#orgfe4fd7d">1. Scattering Length</a>
+<ul>
+<li><a href="#org7053e38">1.1. Schrodinger EQ</a>
+<ul>
+<li><a href="#orga295149">1.1.1. Equation</a></li>
+<li><a href="#org4e77eda">1.1.2. 分离变量</a></li>
+<li><a href="#orgaf1601e">1.1.3. \(m=0\) and \(l=0\)</a></li>
+</ul>
+</li>
+<li><a href="#orga27d6ae">1.2. Scattering Length</a></li>
+</ul>
+</li>
+<li><a href="#orgd9780f0">2. Square Well and Shallow Bound State</a></li>
+<li><a href="#orgc67ad5e">3. Partial-Wave Expansion</a>
+<ul>
+<li><a href="#org48f0d94">3.1. Expansion of plane waves in spherical harmonics</a></li>
+<li><a href="#orgba4e978">3.2. Wave Function as \(r \to \infty\)</a></li>
+<li><a href="#org79931ae">3.3. Partial-Wave Expansion</a></li>
+<li><a href="#org158479f">3.4. \(l=0\)</a></li>
+</ul>
+</li>
+<li><a href="#org8d1f4b2">4. Supplementary</a></li>
+<li><a href="#org8df0797">5. Reference</a></li>
+</ul>
+</div>
+</div>
+<!-- toc -->
+<!-- more -->
+
+<div id="outline-container-orgfe4fd7d" class="outline-2">
+<h2 id="orgfe4fd7d"><span class="section-number-2">1.</span> Scattering Length</h2>
+<div class="outline-text-2" id="text-1">
+</div>
+<div id="outline-container-org7053e38" class="outline-3">
+<h3 id="org7053e38"><span class="section-number-3">1.1.</span> Schrodinger EQ</h3>
+<div class="outline-text-3" id="text-1-1">
+</div>
+<div id="outline-container-orga295149" class="outline-4">
+<h4 id="orga295149"><span class="section-number-4">1.1.1.</span> Equation</h4>
+<div class="outline-text-4" id="text-1-1-1">
+<p>
+两体运动的相对运动的 Schrodinger 方程为
+</p>
+\begin{align}
+  \left[ -\frac{\hbar^2}{2\mu}\nabla^2 + V(r) -E\right]\psi = 0
+\end{align}
+<p>
+变形为
+</p>
+\begin{align}
+  \nabla^2 \psi = \left[ \frac{2\mu}{\hbar^2} V(r) - k^2 \right]\psi
+\end{align}
+<p>
+其中 \(k^2 = E/\frac{\hbar^2}{2\mu}\) . 写出 \(\nabla^2\) 在球
+坐标系中的形式, 方程变为
+</p>
+\begin{align}
+  \left[\frac{1}{r^2}\frac{\partial}{\partial r}r^2 \frac{\partial}{\partial r} +
+  \frac{1}{r^2 \sin \theta}\frac{\partial}{\partial \theta}\sin \theta \frac{\partial}{\partial \theta}
+  + \frac{1}{r^2\sin^2 \theta}\frac{\partial^2}{\partial\varphi^2} \right] \psi
+  = \left[ \frac{2\mu}{\hbar^2} V(r) - k^2 \right]\psi
+\end{align}
+</div>
+</div>
+
+<div id="outline-container-org4e77eda" class="outline-4">
+<h4 id="org4e77eda"><span class="section-number-4">1.1.2.</span> 分离变量</h4>
+<div class="outline-text-4" id="text-1-1-2">
+<p>
+分离变量, 令
+</p>
+\begin{align}
+  \psi(r,\theta,\phi) = R(r)\Theta(\theta)\Phi(\phi)
+\end{align}
+<p>
+代回方程, 并且两边同时除以 \(R(r)\Theta(\theta)\Phi(\varphi)\) 可得
+</p>
+\begin{align}
+  \frac{1}{R}\frac{1}{r^2}\frac{\mathrm{d}}{\mathrm{d} r}r^2 \frac{\mathrm{d}}{\mathrm{d} r} R+
+  \frac{1}{\Theta}\frac{1}{r^2 \sin \theta}\frac{\mathrm{d}}{\mathrm{d} \theta}\sin \theta \frac{\mathrm{d}}{\mathrm{d} \theta}\Theta
+  +\frac{1}{\Phi} \frac{1}{r^2\sin^2 \theta}\frac{\mathrm{d}^2}{\mathrm{d}\varphi^2}\Phi
+  =  \frac{2\mu}{\hbar^2} V(r) - k^2
+\end{align}
+<p>
+所有含有 \(\varphi\) 的项都在方程左边第三项, 与 \(r,\theta\) 没有耦合, 所以
+它一定是一个常数. 因为其它的项中都与 \(\theta\) 无关, \(\theta\) 改变时其它
+项保持不变. 记这个常数为 \(-m^2\) 即
+</p>
+\begin{align}
+  \frac{1}{\Phi}\frac{\mathrm{d}^2}{\mathrm{d}\varphi^2}\Phi = -m^2
+\end{align}
+<p>
+将它代回原方程, 原方程变为
+</p>
+\begin{align}
+  \frac{1}{R}\frac{1}{r^2}\frac{\mathrm{d}}{\mathrm{d} r}r^2 \frac{\mathrm{d}}{\mathrm{d} r} R+
+  \frac{1}{\Theta}\frac{1}{r^2 \sin \theta}\frac{\mathrm{d}}{\mathrm{d} \theta}\sin \theta \frac{\mathrm{d}}{\mathrm{d} \theta}\Theta
+  - \frac{m^2}{r^2\sin^2 \theta}
+  =  \frac{2\mu}{\hbar^2} V(r) - k^2
+\end{align}
+<p>
+\(\theta\) 和 \(r\) 也没有耦合, 同理可以把与 \(\theta\) 有关的项单拎出来, 是一个常数, 记为 \(-\lambda\) ,即
+</p>
+\begin{align}
+    \frac{1}{\Theta}\frac{1}{ \sin \theta}\frac{\mathrm{d}}{\mathrm{d} \theta}\sin \theta \frac{\mathrm{d}}{\mathrm{d} \theta}\Theta
+  - \frac{m^2}{\sin^2 \theta} = -\lambda
+\end{align}
+<p>
+上述关于 \(\theta\) 的方程的解是连带 Legendre 多项式 \(P_l^m(\cos\theta)\), 本征值 \(\lambda\) 只能取值为 \(l(l+1)\) , \(l\) 是个
+整数. 如果 \(m=0\) ,解则是一个 Legendre 多项式.
+ Supplementary 中用 Frobenius 方法(即级数解法) 求解 \(m= 0\) 的情况.
+</p>
+
+<p>
+剩下的只有 \(r\) 的方程为
+</p>
+\begin{align}
+  \frac{1}{R}\frac{1}{r^2}\frac{\mathrm{d}}{\mathrm{d} r}r^2 \frac{\mathrm{d}}{\mathrm{d} r} R
+  = \frac{2\mu}{\hbar^2} V(r) - k^2 +\frac{l(l + 1)}{r^2}
+\end{align}
+<p>
+即
+</p>
+\begin{align}
+  \frac{1}{r^2}\frac{\mathrm{d}}{\mathrm{d} r}r^2 \frac{\mathrm{d}}{\mathrm{d} r} R
+  -\left[ \frac{2\mu}{\hbar^2} V(r) - k^2 +\frac{l(l + 1)}{r^2}\right]R =0
+\end{align}
+<p>
+它的一般解的形式是球 Bessel 函数.
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgaf1601e" class="outline-4">
+<h4 id="orgaf1601e"><span class="section-number-4">1.1.3.</span> \(m=0\) and \(l=0\)</h4>
+<div class="outline-text-4" id="text-1-1-3">
+<p>
+由于散射势 \(V(r)\) 是球对称的, 那么其波函数应该沿入射方向是轴对称的. 选
+取入射方程是 \(z\) 方向, 那么角动量在 \(z\) 方向上动量为 \(0\) (可与经典
+散射类比). 也就是说 \(m =0\) . 在　\(m=0\) 的情况下，　本征波函数的形式为
+</p>
+\begin{align}
+  \psi = R_{kl}(r) P_l(\cos \theta)
+\end{align}
+<p>
+对于径向关于　\(r\) 方程可以做变量代换
+</p>
+\begin{align}
+  R_{kl}(r) = \frac{\chi_{kl}(r)}{kr}
+\end{align}
+<p>
+设入射波函数为 \(\Psi\) ,它可以是不同分波的本征波函数的任意叠加, 即
+</p>
+\begin{align}
+  \Psi = \sum_{l = 0}^{+\infty} \frac{\chi_{kl}(r)}{kr}P_l(\cos\theta)
+\end{align}
+<p>
+径向方程为
+</p>
+\begin{align}
+  \frac{\mathrm{d}^2}{\mathrm{d}r^2}\chi
+  -\left[ \frac{2\mu}{\hbar^2} V(r) - k^2 +\frac{l(l + 1)}{r^2}\right]\chi =0
+\end{align}
+<p>
+以下只关心 s 波散射, 也就是 \(l=0\) ,方程化为
+</p>
+\begin{align}
+  \frac{\mathrm{d}^2}{\mathrm{d}r^2}\chi
+  =\left[ \frac{2\mu}{\hbar^2} V(r) - k^2 \right]\chi
+\end{align}
+</div>
+</div>
+</div>
+
+<div id="outline-container-orga27d6ae" class="outline-3">
+<h3 id="orga27d6ae"><span class="section-number-3">1.2.</span> Scattering Length</h3>
+<div class="outline-text-3" id="text-1-2">
+<p>
+考虑有限力程的散射, 也就是 \(V(r>r_0)=0\) .因此, 对于力程之外, 方程化为
+</p>
+\begin{align}
+  \frac{\mathrm{d}^2}{\mathrm{d}r^2}\chi
+  =- k^2 \chi
+\end{align}
+<p>
+其中 \(k^2 = E/\frac{\hbar^2}{2\mu}\) ,很明显, \(E>0\) , 是一个散射
+态. 容易解得
+</p>
+\begin{align}
+  \chi_k(r>r_0) = A \sin (kr +\delta_{k})
+\end{align}
+<p>
+在 \(r=r_0\) 处的 \(r\) 连接条件为
+</p>
+\begin{align}
+  \left.\frac{\chi'(r>r_0)}{\chi(r>r_0)}\right|_{r=r_0}
+  = \frac{k\cos(kr_0 +\delta_k)}{\sin(kr_0\delta_{k})}
+  = \left.\frac{\chi'(r < r_0)}{\chi(r < r_0)}\right|_{r=r_0}
+\end{align}
+<p>
+低能散射下, \(kr_0\approx 0\) ,取 \(kr_0\) 的 Leading order,
+</p>
+\begin{align}
+  \left.\frac{\chi'(r>r_0)}{\chi(r>r_0)}\right|_{r=r_0}
+  \approx \frac{k}{\tan \delta_k}
+\end{align}
+<p>
+用以下极限定义散射长度 \(a_s\)
+</p>
+\begin{align}
+  \lim_{k\to 0}\frac{k}{\tan \delta_k} = -\frac{1}{a_s}
+\end{align}
+<p>
+取极限时, 相当于极限的分子分母的 Leading order 系数之比. 如果取到
+更高阶, 第二阶为 effective range \(r_{\mathrm{eff}}\)
+</p>
+\begin{align}
+  \frac{k}{\tan \delta_k} = -\frac{1}{a_s} + \frac{1}{2}
+
+**
+  r_{\mathrm{eff}}k^2
+\end{align}
+<p>
+低能散射时, 如果波函数也只取到 \(k\) 的 Leading order
+</p>
+\begin{align}
+  \chi(r>r_0) \propto& \sin(kr+\delta_k) \approx \sin \delta_k
+  + kr\cos \delta_k \\
+  &\propto 1+ \frac{k}{\tan\delta_k}r = 1-\frac{r}{a_s}
+\end{align}
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgd9780f0" class="outline-2">
+<h2 id="orgd9780f0"><span class="section-number-2">2.</span> Square Well and Shallow Bound State</h2>
+<div class="outline-text-2" id="text-2">
+<p>
+求有限深球方势阱的散射长度随势阱深度的变化, 以及束缚态能量.
+</p>
+
+<p>
+球方势阱
+</p>
+\begin{align*}
+  V(r) =
+  \left\{
+  \begin{aligned}
+    0 & , r > r_0 \\
+    -V_0 & , r < r_0
+  \end{aligned}
+  \right.
+\end{align*}
+<p>
+定态 Schrodinger 方程解的形式为
+</p>
+\begin{align*}
+  \psi(r,\theta,\varphi) = \frac{\chi _l(r)}{r}Y_l^m(\theta,\varphi)
+\end{align*}
+<p>
+对于 \(l=0\) 的 s 分波, 其径向波函数满足
+</p>
+\begin{align*}
+  \frac{\mathrm{d}^2}{\mathrm{d}r^2}\chi_r = -\frac{2\mu}{\hbar^2}[E-V(r)]\chi(r)
+\end{align*}
+<p>
+对于 \(E>0\) 的散射态, 当 \(r > r_0\) 时的径向解为
+</p>
+\begin{align*}
+  \chi(r>r_0)\propto \sin(k r + \delta_k)
+\end{align*}
+<p>
+其中 \(k = \frac{\sqrt{2\mu E}}{\hbar}\) .
+当 \(r < r_0\) 时
+</p>
+\begin{align*}
+  \chi(r < r_0) \propto \sin(\kappa r)
+\end{align*}
+<p>
+其中 \(\kappa = \frac{\sqrt{2\mu(E+V_0)}}{\hbar}\) .
+在 \(r=r_0\) 处的连接条件为
+</p>
+\begin{align*}
+  \left.\frac{\chi'(r>r_0)}{\chi(r > r_0)}\right|_{r=r_0} =
+  k \frac{\cos(kr_0+\delta_k)}{\sin(kr_0+\delta_k)} =
+  \left.\frac{\chi'(r < r_0)}{\chi(r < r_0)}\right|_{r=r_0} =
+  \frac{\kappa}{\tan(\kappa r_0)}
+\end{align*}
+<p>
+由上式可解得
+</p>
+\begin{align*}
+  \frac{\tan(\delta_k)}{k} = \frac{k \tan(\kappa r_0)\cos(kr_0)-\kappa \sin(kr_0)}
+  {\kappa k + k \tan(\kappa r_0)\sin(kr_0)}
+\end{align*}
+<p>
+由散射长度的定义可得
+</p>
+\begin{align*}
+  -\frac{1}{a_s} =& \lim_{k\to0} \frac{k}{\tan(\delta_k)} \\
+  =&\lim_{k\to0}\frac{\kappa k + k \tan(\kappa r_0)\sin(kr_0)}{k \tan(\kappa r_0)\cos(kr_0)-\kappa \sin(kr_0)} \\
+  =&\frac{1}{\frac{\tan(\kappa_0 r_0)}{\kappa_0}-r_0}
+\end{align*}
+<p>
+其中 \(\kappa_0 =\kappa|_{k=0} = \frac{\sqrt{2\mu V_0}}{\hbar}\) . 所以
+</p>
+\begin{align*}
+  a_s = r_0 - \frac{\tan(\kappa_0r_0)}{\kappa_0}
+\end{align*}
+<p>
+无量纲化
+</p>
+\begin{align*}
+  \tilde{a}_s = 1 - \frac{\tan(\sqrt{\tilde{V}_0})}{\sqrt{\tilde{V}_0}}
+\end{align*}
+<p>
+其中 \(\tilde{a}_s = \frac{a_s}{r_0}\) , \(\tilde{V}_0 = \frac{V_0}{\hbar^2/(2\mu r_0^2)}\) .
+对于 \(-V_0 < E_b < 0\) 的束缚态
+</p>
+\begin{align*}
+  \begin{cases}
+      \chi(r > r_0)\propto& e^{-k'r} \\
+  \chi(r < r_0)\propto& \sin (\kappa r)
+  \end{cases}
+\end{align*}
+<p>
+其中 \(k' = \frac{\sqrt{2\mu(-E_b)}}{\hbar}\) . 类似地, 由 \(r = r_0\) 处的连接条件得
+</p>
+\begin{align*}
+  -k' = \frac{\kappa}{\tan(\kappa r_0)}
+\end{align*}
+<p>
+无量纲化的结果为
+</p>
+\begin{align*}
+  -\sqrt{-\tilde{E}_b} = \frac{\sqrt{\tilde{E}_b+\tilde{V}_0}}{\tan(\sqrt{\tilde{E}_b+\tilde{V}_0})}
+\end{align*}
+<p>
+其中 \(\tilde{E}_b = \frac{E_b}{\hbar^2/(2\mu r_0^2)}\) .
+\(k'\) 在 \(E_b\) 很小下的行为
+</p>
+\begin{align*}
+  k'= \frac{\sqrt{2\mu(-E_b)}}{\hbar}\sim-\frac{\kappa_0}{\tan(\kappa r_0)} = \frac{1}{a_s - r_0}
+\end{align*}
+<p>
+可以看出, 只有当 \(a_s>0\) 时才可能有解. 且在 \(a_s\gg r_0\) 时有
+</p>
+\begin{align*}
+  E_b \sim -\frac{\hbar^2}{2\mu a_s^2}
+\end{align*}
+<p>
+无量纲化的结果为
+</p>
+\begin{align*}
+  \tilde{E}_b \sim -\frac{1}{\tilde{a}_s^2}
+\end{align*}
+<p>
+散射长度随势阱深度的变化, 以及低能束缚态在 \(a_s\gg r_0\) 时的渐进行为如图所示
+</p>
+
+
+<div id="org65629a2" class="figure">
+<p><img src="./2019-04-03-专业笔记-两体散射/Figure_1.png" alt="Figure_1.png" />
+</p>
+</div>
+
+<p>
+<a href="./2019-04-03-专业笔记-两体散射/Figure_1.eps">./2019-04-03-专业笔记-两体散射/Figure_1.eps</a>
+</p>
+
+<p>
+<a href="./2019-04-03-专业笔记-两体散射/scatterlength.py">./2019-04-03-专业笔记-两体散射/scatterlength.py</a>
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgc67ad5e" class="outline-2">
+<h2 id="orgc67ad5e"><span class="section-number-2">3.</span> Partial-Wave Expansion</h2>
+<div class="outline-text-2" id="text-3">
+</div>
+<div id="outline-container-org48f0d94" class="outline-3">
+<h3 id="org48f0d94"><span class="section-number-3">3.1.</span> Expansion of plane waves in spherical harmonics</h3>
+<div class="outline-text-3" id="text-3-1">
+<p>
+为讨论分波展开做准备, 先讨论将平面波用 Legendre 函数展开.
+</p>
+
+<p>
+考虑沿 \(\vec{k}\) 方向传播的平面波, 其波函数为(未归一的)
+\(e^{\mathrm{i}\vec{k}\cdot \vec{r}} = e^{\mathrm{i}kr\cos\theta}\) .
+其中 \(r = |\vec{r}|\) .如果选取平面波的
+传播方向为 \(z\) 方向, 即 \(\vec{k} = k \hat{z}\) , 那么平面波就
+可以写为 \(e^{\mathrm{i}kz}\) .
+</p>
+
+<p>
+前面已经讨论过, 对于有心力场的 Schrodinger 方程, 其角向
+的解是连带 Legendre 函数. 我们考虑的平面波取了传播方向为 \(z\) 方向,
+那么角动量的 \(z\) 分量就是零, 这时, 连带 Legendre 函数中
+\(m=0\) ,角向解就变为 Legendre 方程.
+</p>
+
+<p>
+Legendre 多项 \(P_l(\cos\theta)\) 式在 \(\cos\theta\in [-1,1]\) 上
+构成一组完备正交基, 正交完备关系如下
+</p>
+\begin{align}
+  \int_{-1}^1 P_l(\cos\theta) P_{l'}(\cos\theta)
+  \cdot \mathrm{d}\cos\theta = \delta_{l,l'}\cdot\frac{2}{2l+1}
+\end{align}
+<p>
+将平面波用 Legendre 多项式展开
+</p>
+\begin{align}
+  e^{\mathrm{i}kr\cos\theta} =
+  \sum_{l=0}^{\infty} C_l\cdot P_l(\cos\theta)
+\end{align}
+<p>
+将等式两边乘上 \(P_{l'}(\cos\theta)\) 再积分, 利用正交归一性可求得
+展开系数 \(C_l\)
+</p>
+\begin{align}
+  C_l = \frac{2l+1}{2}\int_{-1}^1 e^{\mathrm{i}kr\cos\theta}
+  P_l(\cos\theta) \cdot \mathrm{d}\cos\theta
+\end{align}
+<p>
+我们需要的是在 \(r\to\infty\) 时的结果, 因此只需要展开系数 \(C_l\) 在 \(r\to\infty\)
+时的渐进结果, 也就是只保留 Leading order . 对上式中的积分用分部
+积分法
+</p>
+\begin{align*}
+  & \int_{-1}^1 e^{\mathrm{i}krt}
+  P_l(t) \cdot \mathrm{d}t \\
+  =&\frac{1}{\mathrm{i}kr} \int_{-1}^1
+  P_l(t) \cdot \mathrm{d}e^{\mathrm{i}krt} \\
+  =& \left.\frac{1}{\mathrm{i}kr}e^{\mathrm{i}krt}
+   P_l(t)\right|_{-1}^1 -\frac{1}{\mathrm{i}kr}\int_{-1}^1 e^{\mathrm{i}krt}
+  P'_l(t) \cdot \mathrm{d}t \\
+  =& \left.\frac{1}{\mathrm{i}kr}e^{\mathrm{i}krt}
+   P_l(t)\right|_{-1}^1 +\frac{1}{(kr)^2}\left[
+  \left.e^{\mathrm{i}krt}
+   P'_l(t)\right|_{-1}^1 -\int_{-1}^1 e^{\mathrm{i}krt}
+  P''_l(t) \cdot \mathrm{d}t
+  \right]\\
+  =& \frac{1}{\mathrm{i}kr}\left( e^{\mathrm{i}kr}-e^{-\mathrm{i}kr}
+  e^{\mathrm{i}\pi l} \right) + \mathcal{O}\left(\frac{1}{(kr)^2}\right) \\
+  =& \frac{2\mathrm{i}^l}{kr}\sin(kr-\frac{1}{2}\pi l) + \mathcal{O}\left(\frac{1}{(kr)^2}\right)
+\end{align*}
+<p>
+其中利用了 \(P_l(1)=1\) 和 \(P_l(-1)=(-1)^l =e^{\mathrm{i}\pi l}\).
+所以展开系数为
+</p>
+\begin{align}
+  C_l \sim \frac{(2l+1)\mathrm{i}^l}{kr}\sin(kr-\frac{1}{2}\pi l)  P_l(\cos\theta) \quad \quad \mathrm{as} \quad
+  r \to \infty
+\end{align}
+<p>
+那么就求得了平面波展开
+</p>
+\begin{align}
+  e^{\mathrm{i}kr\cos\theta} \sim&
+  \sum_{l=0}^{\infty} \frac{(2l+1)\mathrm{i}^l}{kr}\sin(kr-\frac{1}{2}\pi l) \cdot P_l(\cos\theta)\\
+  =&  \sum_{l=0}^{\infty} \frac{(2l+1)}{2\mathrm{i}kr}\left( e^{\mathrm{i}kr}-e^{-\mathrm{i}kr}
+  e^{\mathrm{i}\pi l} \right) P_l(\cos\theta)\quad \quad \mathrm{as}\quad
+  r \to \infty\cdot
+\end{align}
+</div>
+</div>
+
+<div id="outline-container-orgba4e978" class="outline-3">
+<h3 id="orgba4e978"><span class="section-number-3">3.2.</span> Wave Function as \(r \to \infty\)</h3>
+<div class="outline-text-3" id="text-3-2">
+<p>
+设入射波函数为 \(\Psi\) ,它可以是不同分波的本征波函数的任意叠加, 即
+</p>
+\begin{align}
+  \Psi = \sum_{l = 0}^{+\infty} \frac{\chi_{kl}(r)}{kr}P_l(\cos\theta)
+\end{align}
+<p>
+径向方程为
+</p>
+\begin{align}
+  \frac{\mathrm{d}^2}{\mathrm{d}r^2}\chi
+  -\left[ \frac{2\mu}{\hbar^2} V(r) - k^2 +\frac{l(l + 1)}{r^2}\right]\chi =0
+\end{align}
+<p>
+它在 \(r\to\infty\) 时的解为
+</p>
+\begin{align}
+  \Psi \sim&  \sum_{l = 0}^{ + \infty} A_{l}\frac{1}{kr}\sin(kr-l\pi/2 + \delta_l)P_l(\cos\theta) \\
+  =& \sum_{l = 0}^{ + \infty} A_{l}\frac{1}{2\mathrm{i}kr}
+  \left[ e^{\mathrm{i}(kr-\pi l/2 +\delta_{l})} -e^{-\mathrm{i}(kr-\pi l/2 +\delta_{l})} \right]P_l(\cos\theta)
+\end{align}
+<p>
+同时, 当 \(r\to\infty\) 时, 波函数可以写成入射平面波和散射波叠加的形式
+</p>
+\begin{align}
+  \Psi \sim e^{\mathrm{i}kz} +f(\theta)\frac{e^{\mathrm{i}kr}}{r} \quad \quad \mathrm{as}\quad
+  r\to \infty
+\end{align}
+<p>
+将前面平面波的展开式代入上式得
+</p>
+\begin{align}
+  \Psi \sim \sum_{l=0}^{\infty} \frac{(2l+1)}{2\mathrm{i}kr}\left( e^{\mathrm{i}kr}-e^{-\mathrm{i}kr}
+  e^{\mathrm{i}\pi l} \right) P_l(\cos\theta) +f(\theta)\frac{e^{\mathrm{i}kr}}{r}
+\end{align}
+</div>
+</div>
+
+<div id="outline-container-org79931ae" class="outline-3">
+<h3 id="org79931ae"><span class="section-number-3">3.3.</span> Partial-Wave Expansion</h3>
+<div class="outline-text-3" id="text-3-3">
+<p>
+比较下列两式
+</p>
+\begin{align}
+    \Psi \sim&  \sum_{l = 0}^{ + \infty} A_{l}\frac{1}{2\mathrm{i}kr}
+  \left[ e^{\mathrm{i}(kr-\pi l/2 +\delta_{l})} -e^{-\mathrm{i}(kr-\pi l/2 +\delta_{l})} \right]P_l(\cos\theta)\\
+  \Psi \sim& \sum_{l=0}^{\infty}\left[ \frac{(2l+1)}{2\mathrm{i}kr}\left( e^{\mathrm{i}kr}-e^{-\mathrm{i}kr}
+  e^{\mathrm{i}\pi l} \right) P_l(\cos\theta)\right] +f(\theta)\frac{e^{\mathrm{i}kr}}{r}
+\end{align}
+<p>
+对比 \(e^{-\mathrm{i}kr}\) 的系数
+</p>
+\begin{align}
+  \sum_{l = 0}^{ + \infty} A_{l}\frac{1}{2\mathrm{i}kr}
+  e^{-\mathrm{i}(kr-\pi l/2 +\delta_{l})}P_l(\cos\theta)
+  =\sum_{l=0}^{\infty} \frac{(2l+1)}{2\mathrm{i}kr}e^{-\mathrm{i}kr}
+  e^{\mathrm{i}\pi l} P_l(\cos\theta)
+\end{align}
+<p>
+可得
+</p>
+\begin{align}
+  A_l = \mathrm{i}^l (2l+1)e^{\mathrm{i}\delta_l}
+\end{align}
+<p>
+对比 \(e^{\mathrm{i}kr}\) 的系数
+</p>
+\begin{align}
+  \sum_{l = 0}^{ + \infty} A_{l}\frac{1}{2\mathrm{i}kr}
+  e^{\mathrm{i}(kr-\pi l/2 +\delta_{l})} P_l(\cos\theta)
+  = \sum_{l=0}^{\infty}\left[ \frac{(2l+1)}{2\mathrm{i}kr}
+   e^{\mathrm{i}kr} P_l(\cos\theta)\right] +f(\theta)\frac{e^{\mathrm{i}kr}}{r}
+\end{align}
+<p>
+可得
+</p>
+\begin{align}
+  f(\theta) = \sum_{l = 0}^{ + \infty} \frac{2l+1}{2\mathrm{i}k}
+  \left(e^{\mathrm{i}\cdot2\delta_{l}} -1\right) P_l(\cos\theta)
+\end{align}
+</div>
+</div>
+
+<div id="outline-container-org158479f" class="outline-3">
+<h3 id="org158479f"><span class="section-number-3">3.4.</span> \(l=0\)</h3>
+<div class="outline-text-3" id="text-3-4">
+<p>
+当 \(l=0\) 时
+</p>
+\begin{align}
+  f_s(\theta) = \frac{e^{2\mathrm{i}\delta_l}-1}{2\mathrm{i}k}
+  = -\frac{1}{\mathrm{i}k-k/\tan\delta} = -\frac{1}{1/a_s +\mathrm{i}k}
+\end{align}
+</div>
+</div>
+</div>
+
+<div id="outline-container-org8d1f4b2" class="outline-2">
+<h2 id="org8d1f4b2"><span class="section-number-2">4.</span> Supplementary</h2>
+</div>
+
+<div id="outline-container-org8df0797" class="outline-2">
+<h2 id="org8df0797"><span class="section-number-2">5.</span> Reference</h2>
+<div class="outline-text-2" id="text-5">
+<p>
+Arfken, Weber, Harris, Mathematical Methods for Physicists 7ed:
+</p>
+<ul class="org-ul">
+<li>Chap 7.5 Series Solutions-Frobenius' Methods</li>
+<li>Example 8.3.1 Legendre Equation</li>
+<li>Chap 9.4 Separation of Variables, Spherical Polar Coordinates</li>
+<li>Chap 15.2 Orthogonality (Legendre Functions)</li>
+</ul>
+
+<p>
+C. J. Pethick, H. Smith, Bose-Einstein Condensation in Dilute Gases
+</p>
+<ul class="org-ul">
+<li>Chap 5.2 Basic Scattering Theory</li>
+</ul>
+
+<p>
+<a href="http://scipp.ucsc.edu/~haber/ph215/PlaneWaveExpansion.pdf">http://scipp.ucsc.edu/~haber/ph215/PlaneWaveExpansion.pdf</a>
+</p>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="date">Date: 2019-04-03 Wed 00:00</p>
+<p class="date">Created: 2022-04-16 Sat 23:06</p>
+<p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
+</div>
+</body>
+</html>

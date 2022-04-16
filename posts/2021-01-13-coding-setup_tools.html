@@ -1,0 +1,484 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2022-04-16 Sat 23:06 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>如何将 python 程序打包成一个 package</title>
+<meta name="generator" content="Org Mode" />
+<style>
+  #content { max-width: 60em; margin: auto; }
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #e6e6e6;
+    border-radius: 3px;
+    background-color: #f2f2f2;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: auto;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    top: -8px;
+    right: 12px;
+    padding: 3px;
+    color: #555;
+    background-color: #f2f2f299;
+  }
+  pre.src:hover:before { display: inline; margin-top: 14px;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-authinfo::before { content: 'Authinfo'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .equation-container {
+    display: table;
+    text-align: center;
+    width: 100%;
+  }
+  .equation {
+    vertical-align: middle;
+  }
+  .equation-label {
+    display: table-cell;
+    text-align: right;
+    vertical-align: middle;
+  }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { width: 90%; }
+</style>
+</head>
+<body>
+<div id="content" class="content">
+<h1 class="title">如何将 python 程序打包成一个 package</h1>
+<div id="table-of-contents" role="doc-toc">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents" role="doc-toc">
+<ul>
+<li><a href="#org702099e">1. 示例</a></li>
+<li><a href="#org40c2a84">2. 结果</a></li>
+<li><a href="#org0dcd916">3. 源码说明</a>
+<ul>
+<li><a href="#org8939831">3.1. file:./2021-01-13-软件使用-setup_tools/setup.py</a></li>
+<li><a href="#orgaf83ea1">3.2. demo/file:./2021-01-13-软件使用-setup_tools/demo/__init__.py</a></li>
+<li><a href="#orgea70cae">3.3. saudade/file:./2021-01-13-软件使用-setup_tools/saudade/coding_func.py</a></li>
+<li><a href="#orge1b37f0">3.4. saudade/file:./2021-01-13-软件使用-setup_tools/saudade/__init__.py</a></li>
+<li><a href="#org09493b9">3.5. saudade/file:./2021-01-13-软件使用-setup_tools/saudade/physics_func.py</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<!-- toc -->
+<!-- more -->
+
+<div id="outline-container-org702099e" class="outline-2">
+<h2 id="org702099e"><span class="section-number-2">1.</span> 示例</h2>
+<div class="outline-text-2" id="text-1">
+<p>
+一个简单的示例. 比如写了一个名为 saudade 的包. 目录结构为(用 tree 生成, 不错的程
+序, 之前没用过)
+</p>
+<div class="org-src-container">
+<pre class="src src-shell">.
+├── demo
+│   └── __init__.py
+├── saudade
+│   ├── coding_func.py
+│   ├── __init__.py
+│   └── physics_func.py
+└── setup.py
+</pre>
+</div>
+<p>
+直接执行
+</p>
+<div class="org-src-container">
+<pre class="src src-shell">python setup.py install --user
+</pre>
+</div>
+<p>
+即可安装完成. <code>--user</code> 安装给当前用户, 直接就放在 <code>~/.local/lib/python_xx</code> 目录下
+了, 不影响其它用户, 也不需要管理员权限.
+</p>
+<div class="org-src-container">
+<pre class="src src-shell">pip uninstall saudade
+</pre>
+</div>
+<p>
+即可卸载.
+当然也可以传到 github, 直接从 github 上安装.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org40c2a84" class="outline-2">
+<h2 id="org40c2a84"><span class="section-number-2">2.</span> 结果</h2>
+<div class="outline-text-2" id="text-2">
+<p>
+安装完以后就可以调用了. 如
+</p>
+<div class="org-src-container">
+<pre class="src src-python">&gt;&gt;&gt; import saudade as sau
+&gt;&gt;&gt; @sau.timer
+... def foo(x):
+...     return x**2
+... 
+&gt;&gt;&gt; foo(3)
+Finished 'foo' in 0.0000 secs
+9
+&gt;&gt;&gt;
+</pre>
+</div>
+<p>
+可以看出, 可以调用包的中计时器了.
+</p>
+
+<p>
+而 <code>demo</code> 目录下的函数, 调用时要调用 demo , 如
+</p>
+<div class="org-src-container">
+<pre class="src src-python">&gt;&gt;&gt; import demo
+&gt;&gt;&gt; demo.hello()
+hello
+&gt;&gt;&gt;
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org0dcd916" class="outline-2">
+<h2 id="org0dcd916"><span class="section-number-2">3.</span> 源码说明</h2>
+<div class="outline-text-2" id="text-3">
+</div>
+<div id="outline-container-org8939831" class="outline-3">
+<h3 id="org8939831"><span class="section-number-3">3.1.</span> <a href="./2021-01-13-软件使用-setup_tools/setup.py">./2021-01-13-软件使用-setup_tools/setup.py</a></h3>
+<div class="outline-text-3" id="text-3-1">
+<div class="org-src-container">
+<pre class="src src-python">from setuptools import setup, find_packages
+setup(
+    name = 'saudade',
+    version ='0.1',
+    packages = find_packages(),
+    description = "This is ZQW's first python package",
+    author = 'ZQW',
+    author_email = "zeqing6688@126.com",
+)
+</pre>
+</div>
+<p>
+此文件最重要, 它说明这个目录是一个包, 可以安装.
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgaf83ea1" class="outline-3">
+<h3 id="orgaf83ea1"><span class="section-number-3">3.2.</span> demo/<a href="./2021-01-13-软件使用-setup_tools/demo/__init__.py">./2021-01-13-软件使用-setup_tools/demo/__init__.py</a></h3>
+<div class="outline-text-3" id="text-3-2">
+<div class="org-src-container">
+<pre class="src src-python">def hello():
+    print('hello')
+</pre>
+</div>
+<p>
+这是一个测试函数
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgea70cae" class="outline-3">
+<h3 id="orgea70cae"><span class="section-number-3">3.3.</span> saudade/<a href="./2021-01-13-软件使用-setup_tools/saudade/coding_func.py">./2021-01-13-软件使用-setup_tools/saudade/coding_func.py</a></h3>
+<div class="outline-text-3" id="text-3-3">
+<div class="org-src-container">
+<pre class="src src-python">import numpy as np
+#import matplotlib.pyplot as plt
+import functools
+import time
+
+def timer(func):
+    """
+    Print the runtime of the decorated function.
+    参考自: https://realpython.com/primer-on-python-decorators/
+    """
+    @functools.wraps(func)
+    def wrapper_timer(*args, **kwargs):
+	start_time = time.perf_counter()
+	value = func(*args, **kwargs)
+	end_time = time.perf_counter()
+	run_time = end_time - start_time
+	print(f"Finished {func.__name__!r} in {run_time:.4f} secs")
+	return value
+    return wrapper_timer
+
+@timer
+def get_data(parameters, func, x):
+    '''
+    计算画图所需要的点, 并将参数和结果保存到文件.
+    由于自己写的这些函数不能输入数组然后输出数组, 所以只能用循环一个一个算
+    '''
+    num_points = len(x)
+    y = []
+    pm = parameters.get_parameters()
+
+    # 计算每一个数据点
+    for i in range(num_points):
+	print(f"正在计算第 {i+1:d}/{num_points:d}个点...")
+	yi = func(x[i])
+	y.append(yi)
+
+    # 保存数据和参数到文件
+    np.savetxt('./data/x.csv', x, delimiter=',')
+    np.savetxt('./data/y.csv', y, delimiter=',')
+    np.savetxt('./data/paramaters.csv', pm, delimiter=',')
+    return x, y, pm
+</pre>
+</div>
+<p>
+<code>saudade</code> 目录的名字与包的名字相同, 包含了包的主要内容. 此文件是包中的一些函数
+</p>
+</div>
+</div>
+
+<div id="outline-container-orge1b37f0" class="outline-3">
+<h3 id="orge1b37f0"><span class="section-number-3">3.4.</span> saudade/<a href="./2021-01-13-软件使用-setup_tools/saudade/__init__.py">./2021-01-13-软件使用-setup_tools/saudade/__init__.py</a></h3>
+<div class="outline-text-3" id="text-3-4">
+<div class="org-src-container">
+<pre class="src src-python">from .coding_func import *
+from .physics_func import *
+</pre>
+</div>
+<p>
+整个包的初始化位置.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org09493b9" class="outline-3">
+<h3 id="org09493b9"><span class="section-number-3">3.5.</span> saudade/<a href="./2021-01-13-软件使用-setup_tools/saudade/physics_func.py">./2021-01-13-软件使用-setup_tools/saudade/physics_func.py</a></h3>
+<div class="outline-text-3" id="text-3-5">
+<div class="org-src-container">
+<pre class="src src-python">import numpy as np
+
+def ts(f, a, b, n=51):
+    """Tanh-sinh quadrature 方法. 适用于端点发散的情况."""
+    up = 4
+    h = 2*up / (n-1)
+    t = np.linspace(-up, up, n, endpoint=True)
+    x = np.tanh(1/2*np.pi*np.sinh(t))
+    w = 1/2*h*np.pi*np.cosh(t)
+    w = w/(np.cosh(1/2*np.pi*np.sinh(t))**2)
+    gc = 0
+    for i in range(n):
+	p = (x[i]*(b-a) + a + b)/2
+	gc = gc + f(p)*w[i]
+    err = 0
+    gc = gc * (b-a)/2
+    return gc, err
+
+def bose(beta, energy):
+    """Bose 分布函数"""
+    x = -beta * energy
+    return np.exp(x) / (1 - np.exp(x))
+
+def cos_theta_kq(theta_k, phi_k, theta_q, phi_q):
+    """k, q 夹角的余弦值"""
+    x = (np.sin(theta_k)*np.sin(theta_q) * np.cos(phi_k - phi_q) 
+	    + np.cos(theta_k)*np.cos(theta_q))
+    return x
+
+class PrincipalValueInt():
+    """分母带有无穷小的那种积分"""
+    def __init__(self, numerator, coeff, down_bound, upbound):
+	"""初始化, numerator 都是函数. 分母为 a*x**2 + b*x + c"""
+	self.numerator = numerator
+	self.down_bound = down_bound
+	self.upbound = upbound
+	self.coeff = coeff
+	a = coeff[0]
+	b = coeff[1]
+	c = coeff[2]
+	self.delta = b**2 - 4*a*c
+
+    def get_imag(self):
+	"""计算积分的虚部."""
+	root_exist = self.delta &gt; 0
+
+	if root_exist:
+	    # 如果根存在, 计算两根
+	    root1 = (-self.coeff[1] - np.sqrt(self.delta)) / (2 * self.coeff[0])
+	    root2 = (-self.coeff[1] + np.sqrt(self.delta)) / (2 * self.coeff[0])
+
+	    # 判断两根是否位于积分区间内
+	    root1_in = self.down_bound &lt; root1 and root1 &lt; self.upbound
+	    root2_in = self.down_bound &lt; root2 and root2 &lt; self.upbound
+
+	    # 计算积分结果
+	    imag = (root1_in) * self.numerator(root1) 
+	    imag += (root2_in) * self.numerator(root2) 
+	    imag *= -np.pi / np.abs(root2 - root1)
+	else:
+	    # 根不存在, 虚部为 0
+	    imag = 0 
+	imag *= 1/self.coeff[0] # bug No.2 分子要除以 a 才行.
+	return imag
+</pre>
+</div>
+<p>
+包中的另一些函数.
+</p>
+</div>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="date">Date: 2021-01-13 Wed 00:00</p>
+<p class="date">Created: 2022-04-16 Sat 23:06</p>
+<p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
+</div>
+</body>
+</html>

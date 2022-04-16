@@ -1,0 +1,638 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2022-04-16 Sat 23:06 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>PRA 99</title>
+<meta name="generator" content="Org Mode" />
+<style>
+  #content { max-width: 60em; margin: auto; }
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #e6e6e6;
+    border-radius: 3px;
+    background-color: #f2f2f2;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: auto;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    top: -8px;
+    right: 12px;
+    padding: 3px;
+    color: #555;
+    background-color: #f2f2f299;
+  }
+  pre.src:hover:before { display: inline; margin-top: 14px;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-authinfo::before { content: 'Authinfo'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .equation-container {
+    display: table;
+    text-align: center;
+    width: 100%;
+  }
+  .equation {
+    vertical-align: middle;
+  }
+  .equation-label {
+    display: table-cell;
+    text-align: right;
+    vertical-align: middle;
+  }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { width: 90%; }
+</style>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        displayAlign: "center",
+        displayIndent: "0em",
+
+        "HTML-CSS": { scale: 100,
+                        linebreaks: { automatic: "false" },
+                        webFont: "TeX"
+                       },
+        SVG: {scale: 100,
+              linebreaks: { automatic: "false" },
+              font: "TeX"},
+        NativeMML: {scale: 100},
+        TeX: { equationNumbers: {autoNumber: "AMS"},
+               MultLineWidth: "85%",
+               TagSide: "right",
+               TagIndent: ".8em"
+             }
+});
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS_HTML"></script>
+</head>
+<body>
+<div id="content" class="content">
+<h1 class="title">PRA 99</h1>
+<div id="table-of-contents" role="doc-toc">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents" role="doc-toc">
+<ul>
+<li><a href="#orga5acefc">1. Model</a></li>
+<li><a href="#org5a7764a">2. s-wave</a></li>
+<li><a href="#org0d4b66b">3. d-wave</a></li>
+<li><a href="#orgf0a1753">4. Acknowledge</a></li>
+<li><a href="#org8d39ecd">5. Reference</a></li>
+</ul>
+</div>
+</div>
+<!-- toc -->
+<!-- more -->
+
+<div id="outline-container-orga5acefc" class="outline-2">
+<h2 id="orga5acefc"><span class="section-number-2">1.</span> Model</h2>
+<div class="outline-text-2" id="text-1">
+<p>
+Lagrangian
+</p>
+\begin{align}
+  \mathcal{L} =&\sum_{\vec{k}}\psi_{\vec{k}}^{\dagger}
+       \left( \mathrm{i}\partial_t - \frac{k^2}{2M} \right)
+       \psi_{\vec{k}}
+           + \sum_{\vec{q}}\frac{\bar{\nu}}{\bar{g}_d^2}
+        d_{\vec{q}}^{\dagger}d_{\vec{q}}
+           + \sum_{\vec{q}}\frac{1}{\bar{g}_s}\phi_{\vec{q}}^{\dagger}
+        \phi_{\vec{q}} \\
+         & -\sum_{\vec{k},\vec{q}} \left[ \frac{\sqrt{2\pi}k^2Y_{20}(\hat{k})
+           e^{-k^2/ \bar{\Lambda}_d^2}}{\sqrt{V}} d^{\dagger}_{\vec{q}}
+          \psi_{\vec{q}/2+ \vec{k}} \psi_{\vec{q}/2- \vec{k}} + \mathrm{H.c.}\right]\\
+        & - \sum_{\vec{k},\vec{q}}\left[  \frac{e^{-k^2/ \bar{\Lambda}_s^2}}{\sqrt{V}}
+          \phi^{\dagger}_{\vec{q}} \psi_{\vec{q}/2 +\vec{k}}\psi_{\vec{q}/2-\vec{k}}
+           + \mathrm{H.c.} \right]
+\end{align} 
+</div>
+</div>
+
+<div id="outline-container-org5a7764a" class="outline-2">
+<h2 id="org5a7764a"><span class="section-number-2">2.</span> s-wave</h2>
+<div class="outline-text-2" id="text-2">
+<p>
+s 波部分的 Hamiltonian
+</p>
+\begin{align}
+  H =&\sum_{\vec{k}} \frac{k^2}{2M}\psi_{\vec{k}}^{\dagger}\psi_{\vec{k}}
+          - \sum_{\vec{q}}\frac{1}{\bar{g}_s}\phi_{\vec{q}}^{\dagger}\phi_{\vec{q}}
+          + \sum_{\vec{k},\vec{q}}\left[  \frac{e^{-k^2/ \bar{\Lambda}_s^2}}{\sqrt{V}}
+          \phi^{\dagger}_{\vec{q}} \psi_{\vec{q}/2 +\vec{k}}\psi_{\vec{q}/2-\vec{k}}
+           + \mathrm{H.c.} \right]
+\end{align}
+
+
+<p>
+首先计算最后一项的 s 波相互作用 T-matrix , T-matrix 与格林函数有如下联系
+</p>
+\begin{align}
+  T_s(k \hat{k},k \hat{k}', E = \frac{k^2}{M}) 
+  = - \frac{4 e^{-2k^2/ \bar{\Lambda}_s^2}}{V} D_s(\vec{q}=0 , E = \frac{k^2}{M})
+\end{align}
+
+
+<div id="orgb9ea437" class="figure">
+<p><img src="./2019-05-15-专业笔记-PAR99/fig1.png" alt="fig1.png" />
+</p>
+</div>
+
+<p>
+由上面的 Feynman 图对应的 Dyson 方程为 \(D = D_0 + D_0 \Sigma D\)  , 化
+简为
+</p>
+\begin{align}
+  \frac{1}{D} = \frac{1}{D_0} - \Sigma
+\end{align}
+<p>
+其中 \(D_0\) 是自由格林函数, 对于 s 波为
+</p>
+\begin{align}
+  \frac{1}{D_0(\vec{q},E=\frac{k^2}{M})}
+  = \frac{1}{\bar{g}_s}
+\end{align}
+
+<p>
+计算自能 \(\Sigma\) . 先算用松原频率求和算非零温情况
+</p>
+\begin{align}
+  \Sigma (\vec{q}, \mathrm{i}\Omega_m )
+  =& \frac{1}{\beta}\sum_{n,\vec{k}}\frac{1}{\mathrm{i}\omega_n - E_{\frac{\vec{q}}{2}-\vec{k}}}
+   \frac{1}{\mathrm{i}\Omega_m - \mathrm{i}\omega_n - E_{\frac{\vec{q}}{2}+\vec{k}}}
+   \cdot \frac{e^{-2k^2 / \bar{\Lambda}_s^2}}{V}\\
+  =& \sum_{\vec{k}}
+     \frac{1 +f(\frac{\vec{q}}{2} +\vec{k}) -f(\frac{\vec{q}}{2}-\vec{k})}
+     {\mathrm{i}\Omega_m - E_{\frac{\vec{q}}{2}-\vec{k}} - E_{\frac{\vec{q}}{2} +\vec{k}} }
+    \cdot \frac{e^{-2k^2 / \bar{\Lambda}_s^2}}{V} \\
+  =& \sum_{\vec{k}}
+     \frac{1}
+     {\mathrm{i}\Omega_m - E_{\frac{\vec{q}}{2}-\vec{k}} - E_{\frac{\vec{q}}{2} +\vec{k}} }
+    \cdot \frac{e^{-2k^2 / \bar{\Lambda}_s^2}}{V} \\
+\end{align}
+<p>
+上式最后一个等号取 令 \(f(\frac{\vec{q}}{2} + \vec{k})
+=f(\frac{\vec{q}}{2}-\vec{k})=0\) .  
+</p>
+
+<p>
+做解析延拓 \(\mathrm{i}\Omega_m\to
+E+\mathrm{i}0^+\) ,得到到零温自能
+</p>
+\begin{align}
+  \Sigma (\vec{q}, E)
+  =& \sum_{\vec{k}}
+     \frac{1}
+     {E - E_{\frac{\vec{q}}{2}-\vec{k}} - E_{\frac{\vec{q}}{2} +\vec{k}} +\mathrm{i}0^ +}
+    \cdot \frac{e^{-2k^2 / \bar{\Lambda}_s^2}}{V} \\
+  =& \sum_{\vec{k}}
+     \frac{1}
+     {E - \frac{q^2}{4M}-\frac{k^2}{M} + \mathrm{i}0^ +}
+    \cdot \frac{e^{-2k^2 / \bar{\Lambda}_s^2}}{V}\\
+  =& \sum_{\vec{k}}
+     \frac{1}
+     {\Omega-\frac{k^2}{M} + \mathrm{i}0^ +}
+    \cdot \frac{e^{-2k^2 / \bar{\Lambda}_s^2}}{V}
+\end{align}
+<p>
+上式最后一个第二个等号取 \(E_{\frac{\vec{q}}{2}\mp\vec{k}} =
+\frac{1}{2M}\left( \frac{\vec{q}}{2}\mp\vec{k} \right)^2\) .
+第三个等号记 \(\Omega = E -\frac{q^2}{4M}\) .
+</p>
+
+<p>
+上式求和化积分, 乘上因子 \(\frac{V}{(2\pi)^3}\) , 积分对角度积分为
+\(4\pi\) , 只剩下对 \(k\) 的积分
+</p>
+\begin{align}
+  \Sigma (\vec{q}, \Omega) 
+  =& \frac{1}{2\pi^2}\int_0^{\infty}\left[\mathcal{P}\frac{ k^2e^{-2k^2 / \bar{\Lambda}_s^2} }
+     {\Omega-\frac{k^2}{M} } - k^2e^{-2k^2 / \bar{\Lambda}_s^2}
+     \cdot \mathrm{i}\pi \delta(\Omega -\frac{k^2}{M})
+     \right]\mathrm{d}k \\
+  =& \left[\frac{1}{2\pi^2}\int_0^{\infty}\mathcal{P}\frac{ k^2e^{-2k^2 / \bar{\Lambda}_s^2} }
+     {\Omega-\frac{k^2}{M} } \mathrm{d}k\right] -\mathrm{i} \frac{M\sqrt{M\Omega}}{4\pi}e^{-2M\Omega / \bar{\Lambda}_s^2}
+\end{align}
+<p>
+其中
+</p>
+\begin{align}
+  \frac{1}{2\pi^2}\int_0^{\infty}\mathcal{P}\frac{ k^2e^{-2k^2 / \bar{\Lambda}_s^2} }
+     {\Omega-\frac{k^2}{M} } \mathrm{d}k
+  = -\frac{M \bar{\Lambda}_s}{4\pi\sqrt{2\pi}} +\frac{M\sqrt{M\Omega}}{4\pi}
+    e^{-2M\Omega / \bar{\Lambda}_s^2}
+    \mathrm{Erfi}\left(\frac{\sqrt{2M\Omega}}{\bar{\Lambda}_s}\right)
+\end{align}
+
+
+<div id="orgdcd2a0e" class="figure">
+<p><img src="./2019-05-15-专业笔记-PAR99/SelfEnergy.png" alt="SelfEnergy.png" />
+</p>
+</div>
+
+<p>
+将以上求得的自能 \(\Sigma\) 代回到 T-matrix 的表达式
+</p>
+\begin{align}
+  &\frac{1}{T_s(k \hat{k},k \hat{k}', E = \frac{k^2}{M})} \\
+  =& - \frac{V}{4 e^{-2k^2/ \bar{\Lambda}_s^2}}
+   \left[\frac{1}{\bar{g}_s}
+    +\frac{M \bar{\Lambda}_s}{4\pi\sqrt{2\pi}} -\frac{M\sqrt{M\Omega}}{4\pi}
+    e^{-2M\Omega  / \bar{\Lambda}_s^2}
+    \mathrm{Erfi}\left(\frac{\sqrt{2M\Omega}}{\bar{\Lambda}_s}\right) 
+   + \mathrm{i}\frac{M\sqrt{M\Omega}}{4\pi}e^{-2M\Omega / \bar{\Lambda}_s^2}\right]
+\end{align}
+<p>
+令 \(\vec{q}=0\) , 则 \(\Omega = E - 0 = \frac{k^2}{M}\) , 上式化为
+</p>
+\begin{align}
+  &\frac{1}{T_s(k \hat{k},k \hat{k}', E = \frac{k^2}{M})} \\
+  =& - \frac{V}{4 e^{-2k^2/ \bar{\Lambda}_s^2}}
+   \left[\frac{1}{\bar{g}_s}
+    +\frac{M \bar{\Lambda}_s}{4\pi\sqrt{2\pi}} -\frac{M\sqrt{M\Omega}}{4\pi}
+    e^{-2k^2 / \bar{\Lambda}_s^2}
+    \mathrm{Erfi}\left(\frac{\sqrt{2M\Omega}}{\bar{\Lambda}_s}\right) 
+   + \mathrm{i}\frac{M\sqrt{M\Omega}}{4\pi}e^{-2Mk^2 / \bar{\Lambda}_s^2}\right] \\
+  =&- \frac{V}{4 e^{-2k^2/ \bar{\Lambda}_s^2}}
+   \cdot \left[ \frac{1}{\bar{g}_s}
+    +\frac{M \bar{\Lambda}_s}{4\pi\sqrt{2\pi}}\right] +\frac{MVk}{16\pi}
+    \mathrm{Erfi}\left(\frac{\sqrt{2}k}{\bar{\Lambda}_s}\right) 
+   - \mathrm{i}\frac{MVk}{16\pi}
+\end{align}
+<p>
+上式实部取到 \(k\) 的零阶项
+</p>
+\begin{align}
+  &\mathrm{Re}\left[\frac{1}{T_s(k \hat{k},k \hat{k}', E = \frac{k^2}{M})}\right] \\
+  =& -\frac{1}{4\bar{g}_s}
+    -\frac{M V\bar{\Lambda}_s}{16\pi\sqrt{2\pi}}
+\end{align}
+<p>
+已知的 s -wave phase shift (实部取了 \(k\) 的零阶近似) 为
+</p>
+\begin{align}
+  \frac{1}{T_s(k \hat{k},k \hat{k}', E = \frac{k^2}{M})}
+  =& -\frac{VM}{8\pi}\left(-\frac{1}{a_s} - \mathrm{i}k \right) \\
+  =& \frac{VM}{8\pi}\frac{1}{a_s} + \mathrm{i}k\frac{VM}{8\pi}
+\end{align}
+<p>
+对比以上三式, 虚部差一因子 \(-2\) , 手动添上, 得到重整化关系
+</p>
+\begin{align}
+  \frac{1}{\bar{g}_s}
+  =& \frac{M}{4\pi a_s}
+    -\frac{M \bar{\Lambda}_s}{4\pi\sqrt{2\pi}}
+  = \frac{M}{4\pi a_s}
+    -\frac{M }{2\pi^2} \int_0^{\infty}\mathrm{d}k
+    \cdot e^{-2k^2/ \bar{\Lambda}_s^2}
+\end{align}
+<p>
+将重整化关系代回 \(D_s^{-1}\) 的表达式得
+</p>
+\begin{align}
+  &\frac{1}{D_s(\vec{q},E = \Omega +\frac{q^2}{4M})}\\
+  =&\frac{1}{\bar{g}_s}
+    +\frac{M \bar{\Lambda}_s}{4\pi\sqrt{2\pi}} -\frac{M\sqrt{M\Omega}}{4\pi}
+    e^{-2M\Omega /\bar{\Lambda}_s^2}
+    \mathrm{Erfi}\left(\frac{\sqrt{2M\Omega}}{\bar{\Lambda}_s}\right) 
+   + \mathrm{i}\frac{M\sqrt{M\Omega}}{4\pi}e^{-2M\Omega / \bar{\Lambda}_s^2} \\
+  =&  \frac{M}{4\pi a_s}
+  -\frac{M\sqrt{M\Omega}}{4\pi}
+    e^{-2M\Omega / \bar{\Lambda}_s^2}
+    \mathrm{Erfi}\left(\frac{\sqrt{2M\Omega}}{\bar{\Lambda}_s}\right) 
+   + \mathrm{i}\frac{M\sqrt{M\Omega}}{4\pi}e^{-2M\Omega / \bar{\Lambda}_s^2}\\
+  =&  \frac{M}{4\pi a_s}
+     + \frac{M\sqrt{-M\Omega}}{4\pi} \left[
+     1 + \mathrm{Erf}\left( \frac{\sqrt{-2M\Omega}}{ \bar{\Lambda}_s} \right) \right]
+     e^{- \frac{2M\Omega }{ \bar{\Lambda}_s^2}}
+\end{align}
+<p>
+其中
+</p>
+\begin{align}
+  \mathrm{Erfc}(x) = 1 - \mathrm{Erf}(x) = \frac{2}{\sqrt{\pi}}
+  \int_x^{\infty} e^{-t^2}\mathrm{d}t
+\end{align}
+\begin{align}
+  \mathrm{Erfi}(z) = -\mathrm{i}\cdot\mathrm{Erf}(\mathrm{i}z)
+\end{align}
+
+\begin{align}
+F(z) = \frac{\sqrt{\pi}}{2}e^{-z^2} \mathrm{Erfi(z)}
+\end{align}
+
+
+<div id="org6af9948" class="figure">
+<p><img src="./2019-05-15-专业笔记-PAR99/dawson.png" alt="dawson.png" />
+</p>
+</div>
+</div>
+</div>
+
+
+<div id="outline-container-org0d4b66b" class="outline-2">
+<h2 id="org0d4b66b"><span class="section-number-2">3.</span> d-wave</h2>
+<div class="outline-text-2" id="text-3">
+<p>
+s 波部分的 Hamiltonian
+</p>
+\begin{align}
+  H =&\sum_{\vec{k}}\frac{k^2}{2M}\psi_{\vec{k}}^{\dagger}\psi_{\vec{k}}
+           - \sum_{\vec{q}}\frac{\bar{\nu}}{\bar{g}_d^2}
+        d_{\vec{q}}^{\dagger}d_{\vec{q}}
+          +\sum_{\vec{k},\vec{q}} \left[ \frac{\sqrt{2\pi}k^2Y_{20}(\hat{k})
+           e^{-k^2/ \bar{\Lambda}_d^2}}{\sqrt{V}} d^{\dagger}_{\vec{q}}
+          \psi_{\vec{q}/2+ \vec{k}} \psi_{\vec{q}/2- \vec{k}} + \mathrm{H.c.}\right]
+\end{align}
+<p>
+与 s 波类似
+</p>
+\begin{align}
+  \frac{1}{D} = \frac{1}{D_0} - \Sigma = \frac{\bar{\nu}}{\bar{g}_d^2}- \Sigma
+\end{align}
+<p>
+其中
+</p>
+\begin{align}
+  \Sigma (\vec{q}, E)= &\sum_{\vec{k}}
+     \frac{1}{\Omega-\frac{k^2}{M} + \mathrm{i}0^ +}
+    \cdot \frac{2\pi k^4 [Y_{20}]^2 e^{-2k^2 / \bar{\Lambda}_d^2}}{V}\\
+    =& \frac{5}{8\pi^2}\int_0^{\infty}\mathrm{d}k\cdot
+    \frac{k^6 e^{-2k^2 / \bar{\Lambda}_d^2}}
+    {\Omega-\frac{k^2}{M} + \mathrm{i}0^ +}
+     \cdot\int_{-1}^1 \mathrm{d}x\cdot \left( \frac{3}{2}x^2 -\frac{1}{2} \right)^2 \\
+   =&\frac{1}{2\pi^2}\int_0^{\infty}\mathrm{d}k\cdot
+    \frac{k^6 e^{-2k^2 / \bar{\Lambda}_d^2}}
+    {\Omega-\frac{k^2}{M} + \mathrm{i}0^ +} \\
+  =& -\frac{\sqrt{2\pi}M \bar{\Lambda}_d[ 16(M\Omega)^2 +4M\Omega\bar{\Lambda}_d^2
+        + 3\bar{\Lambda}_d^4 ]}{128\pi^2}
+     + \frac{e^{-\frac{2M\Omega}{\bar{\Lambda}_d^2}} M(M\Omega)^{5/2}
+         \left[ -\mathrm{i}
+        +\mathrm{Erfi}\left( \frac{\sqrt{2M\Omega}}{\bar{\Lambda}_d}\right) \right]}
+             {4\pi}\\
+  =& -\frac{\sqrt{2\pi}M \bar{\Lambda}_d[ 16(M\Omega)^2 +4M\Omega\bar{\Lambda}_d^2
+        + 3\bar{\Lambda}_d^4 ]}{128\pi^2}
+     + \frac{e^{-\frac{2M\Omega}{\bar{\Lambda}_d^2}} M(-M\Omega)^{5/2}
+         \left[ -1-
+        \mathrm{Erf}\left( \frac{\sqrt{-2M\Omega}}{\bar{\Lambda}_d}\right) \right]}
+       {4\pi}
+\end{align}                                                     
+<p>
+第二个等号取 \(Y_{20}(\hat{k}) = \sqrt{\frac{5}{4\pi}}\left(
+ \frac{3}{2}\cos^2\theta -\frac{1}{2} \right)\) .
+</p>
+
+
+<div id="org46869cd" class="figure">
+<p><img src="./2019-05-15-专业笔记-PAR99/dWaveInt.png" alt="dWaveInt.png" />
+</p>
+</div>
+
+<p>
+所以
+</p>
+\begin{align}
+  \frac{1}{D_d(\vec{q},E)} 
+    =& \frac{\bar{\nu}}{\bar{g}_d^2}
+     +\frac{\sqrt{2\pi}M \bar{\Lambda}_d[ 16(M\Omega)^2 +4M\Omega\bar{\Lambda}_d^2
+        + 3\bar{\Lambda}_d^4 ]}{128\pi^2}
+     - \frac{e^{-\frac{2M\Omega}{\bar{\Lambda}_d^2}} M(M\Omega)^{5/2}
+         \left[ -\mathrm{i}
+        +\mathrm{Erfi}\left( \frac{\sqrt{2M\Omega}}{\bar{\Lambda}_d}\right) \right]}
+             {4\pi}\\
+   =& \frac{\bar{\nu}}{\bar{g}_d^2}
+    +\frac{\sqrt{2\pi}M \bar{\Lambda}_d[ 16(M\Omega)^2 +4M\Omega\bar{\Lambda}_d^2
+        + 3\bar{\Lambda}_d^4 ]}{128\pi^2}
+     - \frac{e^{-\frac{2M\Omega}{\bar{\Lambda}_d^2}} M(-M\Omega)^{5/2}
+         \left[ -1-
+        \mathrm{Erf}\left( \frac{\sqrt{-2M\Omega}}{\bar{\Lambda}_d}\right) \right]}
+       {4\pi}
+\end{align}
+<p>
+已知的 \(T_d\)
+</p>
+\begin{align}
+  T_d =& -\frac{32\pi^2}{MV}Y_{20}(\hat{k})Y_{20}(\hat{k'})\frac{k^4}
+       {k^5 \cot \delta_d(k) - \mathrm{i}k^5} \\
+     \sim & -\frac{32\pi^2}{MV}Y_{20}(\hat{k})Y_{20}(\hat{k'})\frac{k^4}
+       {-\frac{1}{D} -\frac{k^2}{v} -\frac{k^4}{R} - \mathrm{i}k^5} 
+\end{align}
+<p>
+用算得的 \(D_d\) 得到的 \(T_d\)
+</p>
+\begin{align}
+  T_d =& -\frac{8\pi k^4 Y_{20}(\hat{k})Y_{20} e^{-2k^2/ \bar{\Lambda}_d^2}}{V}D_d
+       (\vec{q}=0, E = \frac{k^2}{M}) \\
+     \sim &-\frac{32\pi^2}{MV}Y_{20}(\hat{k})Y_{20}(\hat{k'})\frac{k^4}
+       { 
+          \left[\frac{4\pi}{M}\frac{\bar{\nu}}{\bar{g}_d^2} +
+           \frac{\bar{\Lambda}_d}{16\sqrt{2\pi}} \left( 16k^4 + 4\bar{\Lambda}_d^2k^2
+              +3 \bar{\Lambda}_d^4 \right)
+          \right] \left[ 
+            1 + \frac{2}{\bar{\Lambda}_d^2}k^2 + \frac{2}{\bar{\Lambda}_d^4}k^4\right]
+        + \mathrm{i}k^5
+       } \\
+     \sim &-\frac{32\pi^2}{MV}Y_{20}(\hat{k})Y_{20}(\hat{k'})\frac{k^4}
+       { 
+          \left[\frac{4\pi}{M}\frac{\bar{\nu}}{\bar{g}_d^2}
+           + \frac{3}{16\sqrt{2\pi}} \bar{\Lambda}_d^5
+             + k^2\left( \frac{8\pi}{M \bar{\Lambda}_d^2}\frac{\bar{\nu}}{\bar{g}_d^2}
+                   + \frac{5}{8\sqrt{2\pi}} \bar{\Lambda}_d^3 
+                  \right)
+             + k^4\left( \frac{8\pi}{M \bar{\Lambda}_d^4}\frac{\bar{\nu}}{\bar{g}_d^2}
+                  + \frac{15}{8\sqrt{2\pi}} \bar{\Lambda}_d
+                  \right)
+           \right]
+        + \mathrm{i}k^5
+       } 
+\end{align}
+<p>
+对比以上两式可得重整化关系 (差一负号)
+</p>
+\begin{align}
+  \frac{1}{D} & =\frac{4\pi}{M}\frac{\bar{\nu}}{\bar{g}_d^2}
+           + \frac{3}{16\sqrt{2\pi}} \bar{\Lambda}_d^5 \\
+  \frac{1}{v} & =\frac{8\pi}{M \bar{\Lambda}_d^2}\frac{\bar{\nu}}{\bar{g}_d^2}
+                   + \frac{5}{8\sqrt{2\pi}} \bar{\Lambda}_d^3 \\
+  \frac{1}{R} & =\frac{8\pi}{M \bar{\Lambda}_d^4}\frac{\bar{\nu}}{\bar{g}_d^2}
+                  + \frac{15}{8\sqrt{2\pi}} \bar{\Lambda}_d
+\end{align}
+</div>
+</div>
+
+<div id="outline-container-orgf0a1753" class="outline-2">
+<h2 id="orgf0a1753"><span class="section-number-2">4.</span> Acknowledge</h2>
+<div class="outline-text-2" id="text-4">
+<p>
+StackExchange:
+</p>
+
+<p>
+<a href="https://math.stackexchange.com/questions/3231991/an-integration-about-error-function">https://math.stackexchange.com/questions/3231991/an-integration-about-error-function</a>
+</p>
+</div>
+</div>
+
+<div id="outline-container-org8d39ecd" class="outline-2">
+<h2 id="org8d39ecd"><span class="section-number-2">5.</span> Reference</h2>
+<div class="outline-text-2" id="text-5">
+<p>
+PRA 99, 012701(2019)
+</p>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="date">Date: 2019-05-15 Wed 00:00</p>
+<p class="date">Created: 2022-04-16 Sat 23:06</p>
+<p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
+</div>
+</body>
+</html>

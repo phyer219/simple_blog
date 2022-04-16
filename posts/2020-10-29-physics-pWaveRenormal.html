@@ -1,0 +1,444 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2022-04-16 Sat 23:06 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>p 波接触相互作用参数的重整化</title>
+<meta name="generator" content="Org Mode" />
+<style>
+  #content { max-width: 60em; margin: auto; }
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #e6e6e6;
+    border-radius: 3px;
+    background-color: #f2f2f2;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: auto;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    top: -8px;
+    right: 12px;
+    padding: 3px;
+    color: #555;
+    background-color: #f2f2f299;
+  }
+  pre.src:hover:before { display: inline; margin-top: 14px;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-authinfo::before { content: 'Authinfo'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .equation-container {
+    display: table;
+    text-align: center;
+    width: 100%;
+  }
+  .equation {
+    vertical-align: middle;
+  }
+  .equation-label {
+    display: table-cell;
+    text-align: right;
+    vertical-align: middle;
+  }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { width: 90%; }
+</style>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        displayAlign: "center",
+        displayIndent: "0em",
+
+        "HTML-CSS": { scale: 100,
+                        linebreaks: { automatic: "false" },
+                        webFont: "TeX"
+                       },
+        SVG: {scale: 100,
+              linebreaks: { automatic: "false" },
+              font: "TeX"},
+        NativeMML: {scale: 100},
+        TeX: { equationNumbers: {autoNumber: "AMS"},
+               MultLineWidth: "85%",
+               TagSide: "right",
+               TagIndent: ".8em"
+             }
+});
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS_HTML"></script>
+</head>
+<body>
+<div id="content" class="content">
+<h1 class="title">p 波接触相互作用参数的重整化</h1>
+<div id="table-of-contents" role="doc-toc">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents" role="doc-toc">
+<ul>
+<li><a href="#orgc5aea08">1. p-Wave Scattering Amplitude</a></li>
+<li><a href="#org23628b5">2. Hamiltonian</a></li>
+<li><a href="#org65494f0">3. T-matrix</a></li>
+<li><a href="#org21af47e">4. Renormalization</a></li>
+<li><a href="#org3a00459">5. Reference</a></li>
+</ul>
+</div>
+</div>
+<!-- toc -->
+<!-- more -->
+
+<div id="outline-container-orgc5aea08" class="outline-2">
+<h2 id="orgc5aea08"><span class="section-number-2">1.</span> p-Wave Scattering Amplitude</h2>
+<div class="outline-text-2" id="text-1">
+<p>
+由 Taylor 书 (6.14) 可得 \(l\) 分波的散射振幅
+</p>
+\begin{align}
+  f_l(k) = \frac{e^{2\mathrm{i}\delta_l(k)} - 1}{2 \mathrm{i} k}
+  = \frac{1}{k \cot \delta_l(k) - \mathrm{i}k}
+\end{align}
+<p>
+对于 \(l = 1\) 的 p 波, 用 \(m = 1, 0, -1\) 表示磁量子数, 将 \(k^3\cot \delta_m(k)\) 低能展
+开到 \(k^2\) 阶 
+</p>
+\begin{align}
+  k^3\cot \delta_m(k) = - \frac{1}{v_m} - \frac{k^2}{R_m}
+\end{align}
+<p>
+其中 \(v_m\) 是 effective volume, \(R_m\) 是 effective range. 那么散射振幅就为
+</p>
+\begin{align}
+  \label{eq:scatterAM}
+  f(k) \approx \frac{k^2}{- \frac{1}{v_m} - \frac{k^2}{R_m} - \mathrm{i}k^3}
+\end{align}
+</div>
+</div>
+
+<div id="outline-container-org23628b5" class="outline-2">
+<h2 id="org23628b5"><span class="section-number-2">2.</span> Hamiltonian</h2>
+<div class="outline-text-2" id="text-2">
+<p>
+考虑 p 波相互作用的两分量 Bose 气体
+</p>
+\begin{align}
+  \hat{H} = &\sum_{\vec{k},\sigma}\left(\frac{k^2}{2M} - \mu\right)\hat{a}_{\vec{k},\sigma}^{\dagger}
+            \hat{a}_{\vec{k},\sigma}
+           + \sum_{\vec{q},m}\left(\frac{q^2}{4M} - 2 \mu -
+  \nu_m\right)\hat{b}_{\vec{q},m}^{\dagger} \hat{b}_{\vec{q}, m}\\
+ &+ \sqrt{\frac{1}{V }} \sum_{\vec{k},\vec{q},m}\left[g_m k Y_{1, m}(\hat{k})
+   \hat{b}^{\dagger}_{\vec{q},m}\hat{a}_{\frac{\vec{q}}{2} + \vec{k}}
+          \hat{a}_{\frac{\vec{q}}{2} - \vec{k}}
+   + \mathrm{h.c.} \right]
+\end{align}
+</div>
+</div>
+
+<div id="outline-container-org65494f0" class="outline-2">
+<h2 id="org65494f0"><span class="section-number-2">3.</span> T-matrix</h2>
+<div class="outline-text-2" id="text-3">
+<p>
+下图中 \(G_0\) 表示自由原子的自由松原格林函数, \(D_0\) 表示两个原子形成的分子的自由
+松原格林函数, \(D\) 表示考虑分子分裂和形成之后的分子格林函数
+<img src="./2020-10-29-专业笔记-pWaveRenormal/diagram.png" alt="diagram.png" />
+通过图可以对应 Dyson 方程
+</p>
+\begin{align}
+D = D_0-D_0 \left(\frac{1}{\beta}\sum_{\vec{k}_1, \omega}\mathcal{V} G_1 G_2\mathcal{V}^* \right) D
+\end{align}
+<p>
+其中 \(\mathcal{V}\) 表示 p 波相互作用顶点. 即 \(\mathcal{V} =
+\frac{1}{\sqrt{V}}g_m k Y_{1, m}(\hat{k})\) . 通过此 Dyson 方程可以得到分子格林函
+数的表达式为
+</p>
+\begin{align}
+  \frac{1}{D} = \frac{1}{D_0} + \frac{1}{\beta}\sum_{\vec{k}_{1}, \omega} G_0 G_0|\mathcal{V}|^2
+\end{align}
+<p>
+其中对 \(\omega\) 的求和可以由 Matsubara frequency summation 求出(考虑化学势会影响重整
+化关系?)
+</p>
+\begin{align}
+&\frac{1}{\beta}\sum_{\vec{k}_{1}, \omega} G_{0}(E - \omega, \frac{\vec{q}}{2} + \vec{k}_1)
+  G_0(\omega, \frac{\vec{q}}{2} - \vec{k}_1)|\mathcal{V}|^2\\
+=& -\sum_{\vec{k}_1}
+     \frac{n(\varepsilon_{\vec{q} /2 + \vec{k}_1})+1
+     + n(\varepsilon_{\vec{q}/2 - \vec{k}_1})}
+     {\mathrm{i}E- \varepsilon_{\vec{q} /2 + \vec{k}_1} - \varepsilon_{\vec{q} /2 - \vec{k}_1}}
+    \frac{1}{V } g_m^2 k_1^2 \left|Y_{l, m}(\hat{k}_1)\right|^2\\
+\end{align}
+<p>
+所以求得分子松原格林函数
+</p>
+\begin{align}
+ \frac{1}{D} = \mathrm{i}E - \frac{q^2}{4M} + \nu_m -\sum_{\vec{k}_1}
+     \frac{n(\varepsilon_{\vec{q} /2 + \vec{k}_1})+1
+     + n(\varepsilon_{\vec{q}/2 - \vec{k}_1})}
+     {\mathrm{i}E- \varepsilon_{\vec{q} /2 + \vec{k}_1} - \varepsilon_{\vec{q} /2 - \vec{k}_1}}
+    \frac{1}{V } g_m^2 k_1^2 \left|Y_{l=1, m}(\hat{k}_1)\right|^2
+\end{align}
+<p>
+将松原格林函数解析延拓成推迟格林函数(忽粒子数是延拓的一部分?)
+</p>
+\begin{align}
+ \frac{1}{D^{\mathrm{ret}}} = E + \mathrm{i}0^+ - \frac{q^2}{4M} + \nu_m -\sum_{\vec{k}_1}
+     \frac{1}
+     {E + \mathrm{i}0^+ - \varepsilon_{\vec{q} /2 + \vec{k}_1} - \varepsilon_{\vec{q} /2 - \vec{k}_1}}
+    \frac{1}{V } g_m^2 k_1^2 \left|Y_{1, m}(\hat{k}_1)\right|^2
+\end{align}
+<p>
+因此可以得到 T-matrix 为(不仅加上两个顶点, 还要有个因子 \(4\) ?)(以及求和项中 \(4\pi\)
+的来源?)
+</p>
+\begin{align}
+  T(k \hat{k}, k \hat{k}', E = \frac{k^2}{M})
+  =& \frac{1}{V} g_m^{2}k^2 Y_{1, m}^{*}(\hat{k}) Y_{1, m}(\hat{k}') D^{\mathrm{ret}}(\vec{q} = 0, E) \\
+  =& \frac{\frac{1}{V} g_m^{2}k^2 Y_{1, m}^{*}(\hat{k}) Y_{1, m}(\hat{k}')}
+       {E + \mathrm{i}0^+ + \nu_m - 4\pi \sum_{\vec{k}_1}
+         \frac{g_m^2 k_1^2\left|Y_{1, m}(\hat{k_1})\right|^2}{V}
+       \frac{1}{E - \frac{k_1^2}{M} + \mathrm{i}0^+}}
+\end{align}
+</div>
+</div>
+
+<div id="outline-container-org21af47e" class="outline-2">
+<h2 id="org21af47e"><span class="section-number-2">4.</span> Renormalization</h2>
+<div class="outline-text-2" id="text-4">
+<p>
+分母中的求和化积分为(球谐函数对角度积分归一)
+</p>
+\begin{align}
+     &4\pi \sum_{\vec{k}_1}
+         \frac{g_m^2 k_1^2\left|Y_{1, m}(\hat{k_1})\right|^2}{V}
+       \frac{1}{E - \frac{k_1^2}{M} + \mathrm{i}0^+} \\
+   =& \frac{g_m^2}{2 \pi^2}\int_0^{\infty} \mathrm{d}k_1 \frac{k^4_1}{E- \frac{k_1^2}{M} + \mathrm{i}0^+} \\
+   =& \frac{g_m^2}{2 \pi^2}\int_0^{\infty} \mathrm{d}k_1 \left[\mathcal{P}\frac{k^4_1}{E- \frac{k_1^2}{M}} 
+       - \mathrm{i}\pi \cdot k_1^4 \delta(E - \frac{k_1^2}{M})\right]
+\end{align}
+<p>
+被积函数部分发散, 其发散行为
+</p>
+\begin{align}
+  \frac{k^4_1}{E- \frac{k_1^2}{M}} = - M^2E - Mk_1^2 + M^2 E^2 \frac{1}{E - \frac{k_1^2}{M}}
+\end{align}
+<p>
+第一项是常数, 第二项是 \(k^2\) , 对这两项的积分是发散的. 而第三项, 可以算出其积分值
+为 \(0\) .
+被积函数虚部可以算出
+</p>
+\begin{align}
+- \mathrm{i}\pi \int_0^{\infty} \mathrm{d}k_1  \cdot k_1^4 \delta(E - \frac{k_1^2}{M}) 
+   = -\mathrm{i}\pi \frac{M k^3}{2}
+\end{align}
+<p>
+其中利用了关系 \(E = \frac{k^2}{M}\) .
+</p>
+
+<p>
+将积分结果代回原式, 并将积分再化为求和, 得
+</p>
+\begin{align}
+     &4\pi \sum_{\vec{k}_1}
+         \frac{g_m^2 k_1^2\left|Y_{1, m}(\hat{k_1})\right|^2}{V}
+       \frac{1}{E - \frac{k_1^2}{M} + \mathrm{i}0^+} \\
+=& - \frac{g_m^2}{V} M \left[\sum_{\vec{k}_1} \frac{ME}{k^2_1} + \sum_{\vec{k}_1}1 \right]
+    - \mathrm{i} \frac{g_m^2}{4\pi} Mk^3
+\end{align}
+<p>
+将此结果代加 T-matrix 表达式可得
+</p>
+\begin{align}
+  T(k \hat{k}, k \hat{k}', E = \frac{k^2}{M})
+  =& \frac{\frac{1}{V} k^2 Y_{1, m}^{*}(\hat{k}) Y_{1, m}(\hat{k}')}
+     {\frac{k^2}{M }\left[ \frac{1}{g_m^2} + \frac{M^2}{V}\sum_{\vec{k}_1}\frac{1}{k_1^2}\right]
+      + \left[ \frac{\nu_m}{g_m^2} + \frac{M}{V}\sum_{\vec{k}_1}1 \right] 
+       + \mathrm{i} \frac{M}{4\pi}k^3  }
+\end{align}
+<p>
+其中利用了关系 \(E = \frac{k^2}{M}\) . 上式与 (\ref{eq:scatterAM}) 对比可得重整化关
+系
+</p>
+\begin{align}
+  \frac{1}{g_m^2} =& \frac{M^2}{4\pi} R_m^{-1} - \frac{M^2}{V}\sum_{\vec{k}_1}\frac{1}{k_1^2} \\
+  \frac{\nu_m}{g_m^2} = & \frac{M}{4\pi} v_m^{-1} - \frac{M}{V} \sum_{\vec{k}_1}1
+\end{align}
+<blockquote>
+<p>
+重整化之后的 T-matrix 为
+</p>
+\begin{align}
+  T(k \hat{k}, k \hat{k}', E = \frac{k^2}{M})
+  =& \frac{\frac{1}{V} R_m \frac{4\pi}{M^2}k^2 Y_{1, m}^{*}(\hat{k}) Y_{1, m}(\hat{k}')}
+     {\frac{k^2}{M } + \frac{R_m}{M v_m}
+       + \mathrm{i} \frac{R_m}{M }k^3  }
+\end{align}
+</blockquote>
+</div>
+</div>
+
+<div id="outline-container-org3a00459" class="outline-2">
+<h2 id="org3a00459"><span class="section-number-2">5.</span> Reference</h2>
+<div class="outline-text-2" id="text-5">
+<ul class="org-ul">
+<li>Taylor, Scattering Theory: quantum theory of nonrelativistic collisions, 1972, 
+John Wiley &amp; Sons</li>
+
+<li>PhysRevA.86.012711, Renormalization in the three-body problem with resonant
+p-wave interactions</li>
+
+<li>PhysRevA.99.012701, Three-body problem of bosons near a d-wave resonance</li>
+</ul>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="date">Date: 2020-10-29 Thu 00:00</p>
+<p class="date">Created: 2022-04-16 Sat 23:06</p>
+<p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
+</div>
+</body>
+</html>

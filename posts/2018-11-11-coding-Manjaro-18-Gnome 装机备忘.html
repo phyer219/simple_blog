@@ -1,0 +1,591 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2022-04-16 Sat 23:06 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Manjaro-18-Gnome 装机备忘</title>
+<meta name="generator" content="Org Mode" />
+<style>
+  #content { max-width: 60em; margin: auto; }
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #e6e6e6;
+    border-radius: 3px;
+    background-color: #f2f2f2;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: auto;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    top: -8px;
+    right: 12px;
+    padding: 3px;
+    color: #555;
+    background-color: #f2f2f299;
+  }
+  pre.src:hover:before { display: inline; margin-top: 14px;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-authinfo::before { content: 'Authinfo'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .equation-container {
+    display: table;
+    text-align: center;
+    width: 100%;
+  }
+  .equation {
+    vertical-align: middle;
+  }
+  .equation-label {
+    display: table-cell;
+    text-align: right;
+    vertical-align: middle;
+  }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { width: 90%; }
+</style>
+</head>
+<body>
+<div id="content" class="content">
+<h1 class="title">Manjaro-18-Gnome 装机备忘</h1>
+<div id="table-of-contents" role="doc-toc">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents" role="doc-toc">
+<ul>
+<li><a href="#org7a53dab">1. 基本安装</a>
+<ul>
+<li><a href="#org149d282">1.1. 刻盘</a></li>
+<li><a href="#orgc5e3c73">1.2. 配置安装源</a>
+<ul>
+<li><a href="#orgdb19ac7">1.2.1. 添加中国镜像</a></li>
+<li><a href="#orge988bca">1.2.2. 添加 archlinuxcn 仓库</a></li>
+<li><a href="#org841a7e4">1.2.3. yaourt 配置</a></li>
+<li><a href="#org388bcc2">1.2.4. snap</a></li>
+</ul>
+</li>
+<li><a href="#orgad63d4e">1.3. 中文输入法</a>
+<ul>
+<li><a href="#org5b4045a">1.3.1. 安装</a></li>
+<li><a href="#orgbc5624a">1.3.2. 配置文件</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#orga588e9f">2. 软件安装</a>
+<ul>
+<li><a href="#org61b21d6">2.1. tex</a></li>
+<li><a href="#org7bbbc34">2.2. evince 中文</a></li>
+<li><a href="#org4a1d0b6">2.3. hexo</a>
+<ul>
+<li><a href="#org6a8caee">2.3.1. 安装 Hexo</a></li>
+<li><a href="#org1da1187">2.3.2. 复制旧的文件过来</a></li>
+<li><a href="#org11e7484">2.3.3. 添加site map</a></li>
+</ul>
+</li>
+<li><a href="#org56425f7">2.4. emacs</a>
+<ul>
+<li><a href="#orgeefb21c">2.4.1. 右alt不能当meta</a></li>
+</ul>
+</li>
+<li><a href="#orgc2ec72f">2.5. 坚果云</a>
+<ul>
+<li><a href="#org3fed2d2">2.5.1. 无托盘图标：</a></li>
+</ul>
+</li>
+<li><a href="#orga579051">2.6. teamviewer</a>
+<ul>
+<li><a href="#orgbdb638d">2.6.1. 不能连网：</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#orgd46feeb">3. 问题合集</a>
+<ul>
+<li><a href="#orgeedbf26">3.1. shadowsocks-qt5连上, 但是浏览器连不上</a></li>
+</ul>
+</li>
+<li><a href="#orgb17f45d">4. 注</a></li>
+</ul>
+</div>
+</div>
+<!-- toc -->
+<!-- more -->
+
+<div id="outline-container-org7a53dab" class="outline-2">
+<h2 id="org7a53dab"><span class="section-number-2">1.</span> 基本安装</h2>
+<div class="outline-text-2" id="text-1">
+</div>
+<div id="outline-container-org149d282" class="outline-3">
+<h3 id="org149d282"><span class="section-number-3">1.1.</span> 刻盘</h3>
+<div class="outline-text-3" id="text-1-1">
+<ul class="org-ul">
+<li>使用ultroiso，刻录方式应选择raw</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-orgc5e3c73" class="outline-3">
+<h3 id="orgc5e3c73"><span class="section-number-3">1.2.</span> 配置安装源</h3>
+<div class="outline-text-3" id="text-1-2">
+</div>
+<div id="outline-container-orgdb19ac7" class="outline-4">
+<h4 id="orgdb19ac7"><span class="section-number-4">1.2.1.</span> 添加中国镜像</h4>
+<div class="outline-text-4" id="text-1-2-1">
+<p>
+生成可用中国镜像站列表:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-shell">sudo pacman-mirrors -i -c China -m rank
+</pre>
+</div>
+
+<p>
+出现镜像列表后勾选所需要的镜像.
+</p>
+
+<p>
+然后刷新缓存:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-shell">sudo pacman -Syy
+</pre>
+</div>
+
+<p>
+参见: <a href="http://mirrors.ustc.edu.cn/help/manjaro.html">http://mirrors.ustc.edu.cn/help/manjaro.html</a>
+</p>
+</div>
+</div>
+
+<div id="outline-container-orge988bca" class="outline-4">
+<h4 id="orge988bca"><span class="section-number-4">1.2.2.</span> 添加 archlinuxcn 仓库</h4>
+<div class="outline-text-4" id="text-1-2-2">
+<p>
+在 `/etc/pacman.conf` 文件末尾添加两行：
+</p>
+
+<div class="org-src-container">
+<pre class="src src-shell">[archlinuxcn]
+Server = https://mirrors.ustc.edu.cn/archlinuxcn/$arch
+</pre>
+</div>
+
+<p>
+刷新
+</p>
+<div class="org-src-container">
+<pre class="src src-shell">sudo pacman -Syy
+</pre>
+</div>
+
+<p>
+之后安装 archlinuxcn-keyring 包导入 GPG key.
+</p>
+
+
+<p>
+参见: <a href="https://mirror.tuna.tsinghua.edu.cn/help/archlinuxcn">https://mirror.tuna.tsinghua.edu.cn/help/archlinuxcn</a>
+</p>
+</div>
+</div>
+<div id="outline-container-org841a7e4" class="outline-4">
+<h4 id="org841a7e4"><span class="section-number-4">1.2.3.</span> yaourt 配置</h4>
+<div class="outline-text-4" id="text-1-2-3">
+<ul class="org-ul">
+<li>安装 yaourt</li>
+</ul>
+
+<div class="org-src-container">
+<pre class="src src-shell">sudo pacman -S yaourt
+
+</pre>
+</div>
+<ul class="org-ul">
+<li>安装 base-devel</li>
+</ul>
+
+<div class="org-src-container">
+<pre class="src src-shell">sudo pacman -S base-devel
+
+</pre>
+</div>
+
+<p>
+参见: <a href="https://wiki.archlinux.org/index.php/Arch_User_Repository_(%25E7%25AE%2580%25E4%25BD%2593%25E4%25B8%25AD%25E6%2596%2587)">https://wiki.archlinux.org/index.php/Arch_User_Repository_(%25E7%25AE%2580%25E4%25BD%2593%25E4%25B8%25AD%25E6%2596%2587)</a>
+</p>
+</div>
+</div>
+
+
+<div id="outline-container-org388bcc2" class="outline-4">
+<h4 id="org388bcc2"><span class="section-number-4">1.2.4.</span> snap</h4>
+<div class="outline-text-4" id="text-1-2-4">
+</div>
+<ol class="org-ol">
+<li><a id="orgb29523e"></a>连不上网<br />
+<div class="outline-text-5" id="text-1-2-4-1">
+<div class="org-src-container">
+<pre class="src src-shell">systemctl start snapd.service
+</pre>
+</div>
+</div>
+</li>
+</ol>
+</div>
+</div>
+
+<div id="outline-container-orgad63d4e" class="outline-3">
+<h3 id="orgad63d4e"><span class="section-number-3">1.3.</span> 中文输入法</h3>
+<div class="outline-text-3" id="text-1-3">
+</div>
+<div id="outline-container-org5b4045a" class="outline-4">
+<h4 id="org5b4045a"><span class="section-number-4">1.3.1.</span> 安装</h4>
+<div class="outline-text-4" id="text-1-3-1">
+<div class="org-src-container">
+<pre class="src src-shell">sudo pacman -S fcitx
+sudo pacman -S fcitx -configtool   ----配置工具
+sudo pacman -S fcitx-sogoupinyin    ----可选安装，fcitx默认已有中文输入
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgbc5624a" class="outline-4">
+<h4 id="orgbc5624a"><span class="section-number-4">1.3.2.</span> 配置文件</h4>
+<div class="outline-text-4" id="text-1-3-2">
+<p>
+在 <code>~/.xprofile</code> 中添加以下内容
+</p>
+
+<div class="org-src-container">
+<pre class="src src-shell">export GTK_IM_MODULE=fcitx
+export QT_IM_MODULE=fcitx
+export XMODIFIERS=@im=fcitx
+</pre>
+</div>
+
+
+<p>
+参见: <a href="https://wiki.archlinux.org/index.php/Fcitx_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#.E5.AE.89.E8.A3.85">https://wiki.archlinux.org/index.php/Fcitx_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#.E5.AE.89.E8.A3.85</a>
+</p>
+</div>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orga588e9f" class="outline-2">
+<h2 id="orga588e9f"><span class="section-number-2">2.</span> 软件安装</h2>
+<div class="outline-text-2" id="text-2">
+</div>
+<div id="outline-container-org61b21d6" class="outline-3">
+<h3 id="org61b21d6"><span class="section-number-3">2.1.</span> tex</h3>
+<div class="outline-text-3" id="text-2-1">
+<p>
+安装以下三个包, 中文编写应该没有问题.
+</p>
+
+<p>
+texlive-most
+</p>
+
+<p>
+texlive-lang
+</p>
+
+<p>
+texlive-latexextra
+</p>
+</div>
+</div>
+
+<div id="outline-container-org7bbbc34" class="outline-3">
+<h3 id="org7bbbc34"><span class="section-number-3">2.2.</span> evince 中文</h3>
+<div class="outline-text-3" id="text-2-2">
+<p>
+evince 可能中文显示不好. 安装 xpdf 后会解决
+</p>
+</div>
+</div>
+
+<div id="outline-container-org4a1d0b6" class="outline-3">
+<h3 id="org4a1d0b6"><span class="section-number-3">2.3.</span> hexo</h3>
+<div class="outline-text-3" id="text-2-3">
+</div>
+<div id="outline-container-org6a8caee" class="outline-4">
+<h4 id="org6a8caee"><span class="section-number-4">2.3.1.</span> 安装 Hexo</h4>
+<div class="outline-text-4" id="text-2-3-1">
+<div class="org-src-container">
+<pre class="src src-shell">sudo npm install -g hexo-cli
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org1da1187" class="outline-4">
+<h4 id="org1da1187"><span class="section-number-4">2.3.2.</span> 复制旧的文件过来</h4>
+</div>
+
+<div id="outline-container-org11e7484" class="outline-4">
+<h4 id="org11e7484"><span class="section-number-4">2.3.3.</span> 添加site map</h4>
+<div class="outline-text-4" id="text-2-3-3">
+</div>
+<ol class="org-ol">
+<li><a id="org12bd9b2"></a>执行命令安装sitemap<br />
+<div class="outline-text-5" id="text-2-3-3-1">
+<div class="org-src-container">
+<pre class="src src-shell">npm install hexo-generator-sitemap --save
+</pre>
+</div>
+</div>
+</li>
+
+<li><a id="org6d80bce"></a>在Hexo站点配置文件 _config.yml 中加入 sitemap 插件<br />
+<div class="outline-text-5" id="text-2-3-3-2">
+<div class="org-src-container">
+<pre class="src src-shell"># Extensions
+plugins: hexo-generator-sitemap
+</pre>
+</div>
+</div>
+</li>
+
+<li><a id="org46299c6"></a>执行命令生成sitemap文件<br />
+<div class="outline-text-5" id="text-2-3-3-3">
+<pre class="example">
+hexo clean
+hexo g
+</pre>
+</div>
+</li>
+</ol>
+</div>
+</div>
+
+<div id="outline-container-org56425f7" class="outline-3">
+<h3 id="org56425f7"><span class="section-number-3">2.4.</span> emacs</h3>
+<div class="outline-text-3" id="text-2-4">
+</div>
+<div id="outline-container-orgeefb21c" class="outline-4">
+<h4 id="orgeefb21c"><span class="section-number-4">2.4.1.</span> 右alt不能当meta</h4>
+<div class="outline-text-4" id="text-2-4-1">
+<p>
+搜索：优化-键盘和鼠标-其它布局选项
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgc2ec72f" class="outline-3">
+<h3 id="orgc2ec72f"><span class="section-number-3">2.5.</span> 坚果云</h3>
+<div class="outline-text-3" id="text-2-5">
+</div>
+<div id="outline-container-org3fed2d2" class="outline-4">
+<h4 id="org3fed2d2"><span class="section-number-4">2.5.1.</span> 无托盘图标：</h4>
+<div class="outline-text-4" id="text-2-5-1">
+<p>
+搜索：优化-扩展-topicons plus（没有的话安装gnome-shell-extension-topicons-plus-git）
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orga579051" class="outline-3">
+<h3 id="orga579051"><span class="section-number-3">2.6.</span> teamviewer</h3>
+<div class="outline-text-3" id="text-2-6">
+</div>
+<div id="outline-container-orgbdb638d" class="outline-4">
+<h4 id="orgbdb638d"><span class="section-number-4">2.6.1.</span> 不能连网：</h4>
+<div class="outline-text-4" id="text-2-6-1">
+<div class="org-src-container">
+<pre class="src src-shell">sudo teamviewer --daemon start
+teamviewer
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+
+
+<div id="outline-container-orgd46feeb" class="outline-2">
+<h2 id="orgd46feeb"><span class="section-number-2">3.</span> 问题合集</h2>
+<div class="outline-text-2" id="text-3">
+</div>
+<div id="outline-container-orgeedbf26" class="outline-3">
+<h3 id="orgeedbf26"><span class="section-number-3">3.1.</span> shadowsocks-qt5连上, 但是浏览器连不上</h3>
+<div class="outline-text-3" id="text-3-1">
+<p>
+原来是 ss-qt5 里边没改端口. 汗&#x2026;
+</p>
+</div>
+</div>
+</div>
+
+
+<div id="outline-container-orgb17f45d" class="outline-2">
+<h2 id="orgb17f45d"><span class="section-number-2">4.</span> 注</h2>
+<div class="outline-text-2" id="text-4">
+<p>
+善用 arch 的 wiki , 一般问题都可以得到解决.
+</p>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="date">Date: 2018-11-11 Sun 00:00</p>
+<p class="date">Created: 2022-04-16 Sat 23:06</p>
+<p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
+</div>
+</body>
+</html>

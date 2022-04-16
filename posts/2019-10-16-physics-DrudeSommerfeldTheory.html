@@ -1,0 +1,456 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2022-04-16 Sat 23:05 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Drude Model and the Sommerfeld Theory of Metals</title>
+<meta name="generator" content="Org Mode" />
+<style>
+  #content { max-width: 60em; margin: auto; }
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #e6e6e6;
+    border-radius: 3px;
+    background-color: #f2f2f2;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: auto;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    top: -8px;
+    right: 12px;
+    padding: 3px;
+    color: #555;
+    background-color: #f2f2f299;
+  }
+  pre.src:hover:before { display: inline; margin-top: 14px;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-authinfo::before { content: 'Authinfo'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .equation-container {
+    display: table;
+    text-align: center;
+    width: 100%;
+  }
+  .equation {
+    vertical-align: middle;
+  }
+  .equation-label {
+    display: table-cell;
+    text-align: right;
+    vertical-align: middle;
+  }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { width: 90%; }
+</style>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        displayAlign: "center",
+        displayIndent: "0em",
+
+        "HTML-CSS": { scale: 100,
+                        linebreaks: { automatic: "false" },
+                        webFont: "TeX"
+                       },
+        SVG: {scale: 100,
+              linebreaks: { automatic: "false" },
+              font: "TeX"},
+        NativeMML: {scale: 100},
+        TeX: { equationNumbers: {autoNumber: "AMS"},
+               MultLineWidth: "85%",
+               TagSide: "right",
+               TagIndent: ".8em"
+             }
+});
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS_HTML"></script>
+</head>
+<body>
+<div id="content" class="content">
+<h1 class="title">Drude Model and the Sommerfeld Theory of Metals</h1>
+<div id="table-of-contents" role="doc-toc">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents" role="doc-toc">
+<ul>
+<li><a href="#orgaf958d1">1. Drude Model</a>
+<ul>
+<li><a href="#org961dd70">1.1. 物理图像</a></li>
+<li><a href="#org56cb4df">1.2. 主要结论</a>
+<ul>
+<li><a href="#orgfd15eb7">1.2.1. current density \(\vec{j}\) 和电场强度 \(\vec{E}\) 之间的线性关系</a></li>
+<li><a href="#orga238b30">1.2.2. 电子的运动方程</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#org3b434fa">2. The Sommerfeld Theory of Metals</a></li>
+<li><a href="#org032e70a">3. 总结</a></li>
+<li><a href="#orgb4ea7cb">4. Reference</a></li>
+</ul>
+</div>
+</div>
+<!-- toc -->
+<!-- more -->
+
+<div id="outline-container-orgaf958d1" class="outline-2">
+<h2 id="orgaf958d1"><span class="section-number-2">1.</span> Drude Model</h2>
+<div class="outline-text-2" id="text-1">
+</div>
+<div id="outline-container-org961dd70" class="outline-3">
+<h3 id="org961dd70"><span class="section-number-3">1.1.</span> 物理图像</h3>
+<div class="outline-text-3" id="text-1-1">
+<p>
+金属元素的原子聚在一起形成金属时, 价电子分离出来, 并且在金属中自由的游荡, 而金属
+离子保持完好, 扮演着不动的正电荷粒子的角色. 一个原子总共有 \(Z_{\alpha}\) 个电子.
+总电量是 \(-Z_{\alpha}e\) (取 \(e\) 是正数). 价电子有 \(Z\) 个. \(Z_{\alpha}-Z\) 个电子
+相对紧地束缚在原子核周围, 称为 core electrons. 
+</p>
+
+<p>
+Drude Model 的几个基本假设:
+</p>
+
+<ol class="org-ol">
+<li>在碰撞之间, 电子与其它电子以及离子实的相互作用都被忽略(也就是忽略了长程库伦相
+互作用). 前者为 independent electron approximation, 后者为 free electron
+approximation.</li>
+<li>碰撞是瞬时的, 突然地改变电子的速度. 碰撞为电子与离子实的碰撞. 两次碰撞的平均
+时间间隔为 \(\tau\) , 它有 relaxation time, collision time, mean free time 几种
+不同的叫法. 那么电子发生碰撞的概率是 \(\frac{1}{\tau}\) .</li>
+<li>电子只通过碰撞来达到与环境的热平衡. 电子在碰撞后, 速度与碰撞前的速度完全无关,
+而时随机地得到一个与碰撞周围的温度相匹配的温度.</li>
+</ol>
+</div>
+</div>
+
+<div id="outline-container-org56cb4df" class="outline-3">
+<h3 id="org56cb4df"><span class="section-number-3">1.2.</span> 主要结论</h3>
+<div class="outline-text-3" id="text-1-2">
+</div>
+<div id="outline-container-orgfd15eb7" class="outline-4">
+<h4 id="orgfd15eb7"><span class="section-number-4">1.2.1.</span> current density \(\vec{j}\) 和电场强度 \(\vec{E}\) 之间的线性关系</h4>
+<div class="outline-text-4" id="text-1-2-1">
+<p>
+Ohm's 定律 
+</p>
+\begin{align*}
+  V =& I \cdot R \\
+    &\Downarrow \\
+  \vec{E} =& \rho \cdot \vec{j}
+\end{align*}
+<p>
+为什么要从第一式变到第二式. 因为 \(R\) 与导体的形状有关系. 而 \(\rho\) 只与导体的成
+份有关系, 更加普适. 这是很重要的思想. 给导体加上电场在导体中, 能产生多大的电流,
+就是 \(\rho\) 的意义, 用来描述导体的导电性的大小. 
+</p>
+
+<p>
+从更加微观的意义上考虑 current density
+</p>
+\begin{align}
+  \vec{j} = -ne \vec{v}
+\end{align}
+<p>
+\(\vec{j}\) 从量纲上考虑是单位面积单位时间的电荷量. 电子的速度 \(\vec{v}\) 是长度比
+上时间. \(n\) 是单位体积. 三者相乘就单位面积单位时间的电量.
+</p>
+
+<p>
+\(\vec{v}\) 是一个平均速度. 通过假设推导 \(\vec{v}\) . \(\vec{v}\) 的产生原因是
+\(\vec{E}\) 的存在. 因为无电场时, 没有电流, 即 \(\vec{v}=0\) . 
+</p>
+
+<p>
+考虑 \(\vec{E}\) 对 \(\vec{v}\) 的影响. 受到的力产生的加速度为
+</p>
+\begin{align}
+  \vec{a} = -\frac{e \vec{E}}{m}
+\end{align}
+
+<p>
+考虑电子两次碰撞之间的时间 \(\tau\) 内产生的加速后的平均速度为
+</p>
+\begin{align}
+  \vec{v}_{\mbox{avg}} = 0 - \frac{e \vec{E}\tau}{m}
+\end{align}
+
+<p>
+所以
+</p>
+\begin{align}
+  \vec{j} = \frac{ne^2\tau}{m}\vec{E}
+\end{align}
+<p>
+微观量就可以由宏观可测的量推出
+</p>
+\begin{align}
+  \tau = \frac{m}{\rho ne^2}
+\end{align}
+</div>
+</div>
+
+<div id="outline-container-orga238b30" class="outline-4">
+<h4 id="orga238b30"><span class="section-number-4">1.2.2.</span> 电子的运动方程</h4>
+<div class="outline-text-4" id="text-1-2-2">
+<p>
+假设电子在 \(t\) 时刻的平均动量为 \(\vec{p}(t)\) , 外场给电子的力为 \(\vec{f}(t)\) .
+</p>
+
+<p>
+在 \(\Delta t\) 时间内没有发生碰撞的电子, 对平均动量的贡献为
+</p>
+
+\begin{align}
+  \vec{p}(t) + \int_t^{t+ \Delta t}\vec{f}(t)\mathrm{d}t
+\end{align}
+
+<p>
+将第二项展开到 \(\Delta t\) 的二阶(假设 \(\vec{f}(t)\) 的原函数为 \(\vec{F}(t)\) )
+</p>
+\begin{align}
+  \int_t^{t+ \Delta t}\vec{f}(t)\mathrm{d}t
+  =& \vec{F}(t+ \Delta t) - \vec{F}(t) \\
+  =& \vec{F}(t) + \vec{F}'(t)\Delta t + \mathcal{O}(\Delta t)^2 - \vec{F}(t)\\
+  =& \vec{f}(t)\Delta t + \mathcal{O}(\Delta t)^2
+\end{align}
+
+<p>
+所以
+</p>
+
+\begin{align}
+  \vec{p}(t) + \int_t^{t+ \Delta t}\vec{f}(t)\mathrm{d}t
+  = \vec{p}(t) + \vec{f}(t)\Delta t + \mathcal{O}(\Delta t)^2
+\end{align}
+
+
+<p>
+在 \(\Delta t\) 时间内发生碰撞的电子. 根据假设, 碰撞后, 它的平均动量为 \(\vec{0}\)
+. 所以它的经过不路 \(\Delta t\) 时间的受力后, 平均动量的量级为(可见碰撞后的电子速
+度取为碰撞周围达到热平衡的条件是很重要的)
+</p>
+\begin{align}
+  \vec{f}(t)\Delta t + \mathcal{O}(\Delta t)^2
+\end{align}
+
+<p>
+那么在 \(\Delta t\) 时间后, 它的平均动量变为 
+</p>
+
+\begin{align}
+  \vec{p}(t + \Delta t) = \left( 1 - \frac{\Delta t}{\tau} \right)
+  \left[ \vec{p}(t) + \vec{f}(t)\delta t + \mathcal{O}(\Delta t)^2 \right]
+  + \frac{\Delta t}{\tau}\left[ \vec{f}(t)\delta t + \mathcal{O}(\Delta t)^2 \right]
+\end{align}
+
+<p>
+舍去 \(\mathcal{O}(\Delta t)^2\) , 取 \(\Delta t \to 0\) 后, 得到电子的运动
+方程
+</p>
+
+\begin{align}
+  \frac{\mathrm{d}}{\mathrm{d}t} \vec{p}(t) = - \frac{\vec{p}(t)}{\tau} + \vec{f}(t)
+\end{align}
+</div>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org3b434fa" class="outline-2">
+<h2 id="org3b434fa"><span class="section-number-2">2.</span> The Sommerfeld Theory of Metals</h2>
+<div class="outline-text-2" id="text-2">
+<p>
+与 Drude Model 的主要区别在于将电子作为全同费米子来处理, 考虑 Fermi-Dirac 分布. 
+</p>
+
+<p>
+又名 Free Electron Model ,Drude-Sommerfeld Model.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org032e70a" class="outline-2">
+<h2 id="org032e70a"><span class="section-number-2">3.</span> 总结</h2>
+<div class="outline-text-2" id="text-3">
+<p>
+随着学习的不断加深, 越来越要重视清晰的物理图像. 中学的物理由于物理图像都是日常生
+活中的图像, 与经验相符, 所以已经自然而然地存在于经验当中, 所以重点在于学习用数学
+来描述物理图像.
+</p>
+
+<p>
+本科的学习不够深入, 只知道物理图像是必要的, 也没有体会到物理图像的重要性. 现在学
+习的图像都很抽象, 之前似乎陷在数学之中了. 以后要非常重视清晰的物理图像.
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgb4ea7cb" class="outline-2">
+<h2 id="orgb4ea7cb"><span class="section-number-2">4.</span> Reference</h2>
+<div class="outline-text-2" id="text-4">
+<p>
+Ashcroft, Mermin, Solid State Physics
+</p>
+
+<p>
+<a href="https://en.wikipedia.org/wiki/Drude_model">https://en.wikipedia.org/wiki/Drude_model</a>
+</p>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="date">Date: 2019-10-16 Wed 00:00</p>
+<p class="date">Created: 2022-04-16 Sat 23:05</p>
+<p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
+</div>
+</body>
+</html>
