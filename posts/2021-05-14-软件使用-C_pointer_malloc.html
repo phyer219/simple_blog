@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2022-04-16 Sat 17:42 -->
+<!-- 2022-04-16 Sat 21:09 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>C 中的指针与动态内存分配</title>
@@ -200,24 +200,24 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#org5f9b9b9">1. Pointers</a></li>
-<li><a href="#org706e85f">2. Declarations</a></li>
-<li><a href="#orgc96790a">3. Using a pointer</a></li>
-<li><a href="#org82b5e7b">4. Memory allocation and deallocation</a></li>
-<li><a href="#org0e2dee2">5. Pointers and arrays</a></li>
-<li><a href="#org5f710a6">6. Freeing memory, and memory leaks</a></li>
-<li><a href="#orgc25d97f">7. Pointers and arrays</a></li>
-<li><a href="#org8f00919">8. Pointers and arrays as arguments</a></li>
-<li><a href="#org8cb0271">9. How to dynamically allocate a 2D array in C?</a>
+<li><a href="#org5fe1012">1. Pointers</a></li>
+<li><a href="#orgddc4529">2. Declarations</a></li>
+<li><a href="#org7573cfc">3. Using a pointer</a></li>
+<li><a href="#orgf4b77b0">4. Memory allocation and deallocation</a></li>
+<li><a href="#org8b4169f">5. Pointers and arrays</a></li>
+<li><a href="#orgfed830b">6. Freeing memory, and memory leaks</a></li>
+<li><a href="#org31e77dd">7. Pointers and arrays</a></li>
+<li><a href="#org63aedef">8. Pointers and arrays as arguments</a></li>
+<li><a href="#orgf5631fd">9. How to dynamically allocate a 2D array in C?</a>
 <ul>
-<li><a href="#org1554c51">9.1. 1. Using a single pointer</a></li>
-<li><a href="#org0e0feb3">9.2. 2. Using an array of pointers</a></li>
-<li><a href="#org6d52c4e">9.3. 3. Using pointer to a pointer</a></li>
-<li><a href="#org770a788">9.4. 4. Using double pointer and one malloc call</a></li>
+<li><a href="#org091f99c">9.1. 1. Using a single pointer</a></li>
+<li><a href="#orgdc33e17">9.2. 2. Using an array of pointers</a></li>
+<li><a href="#org7dde4ca">9.3. 3. Using pointer to a pointer</a></li>
+<li><a href="#orgb334413">9.4. 4. Using double pointer and one malloc call</a></li>
 </ul>
 </li>
-<li><a href="#org5d111f8">10. Memory leak</a></li>
-<li><a href="#org20266f3">11. Reference</a></li>
+<li><a href="#orga3c0b8d">10. Memory leak</a></li>
+<li><a href="#org212e814">11. Reference</a></li>
 </ul>
 </div>
 </div>
@@ -228,8 +228,8 @@
 主要是为 Reference 存个书签.
 </p>
 
-<div id="outline-container-org5f9b9b9" class="outline-2">
-<h2 id="org5f9b9b9"><span class="section-number-2">1.</span> Pointers</h2>
+<div id="outline-container-org5fe1012" class="outline-2">
+<h2 id="org5fe1012"><span class="section-number-2">1.</span> Pointers</h2>
 <div class="outline-text-2" id="text-1">
 <p>
 在写程序的过程中, array 是相当有用的. 但是 array 是静态的, 也就是它的大小不能改
@@ -243,8 +243,8 @@ pointer, 也叫 NULL , "nil" .
 </div>
 </div>
 
-<div id="outline-container-org706e85f" class="outline-2">
-<h2 id="org706e85f"><span class="section-number-2">2.</span> Declarations</h2>
+<div id="outline-container-orgddc4529" class="outline-2">
+<h2 id="orgddc4529"><span class="section-number-2">2.</span> Declarations</h2>
 <div class="outline-text-2" id="text-2">
 <p>
 指针声明的方式是, 在一个已经存在的数据类型前加一个 <code>*</code>. 如
@@ -278,8 +278,8 @@ ip = &amp;x;
 </div>
 </div>
 
-<div id="outline-container-orgc96790a" class="outline-2">
-<h2 id="orgc96790a"><span class="section-number-2">3.</span> Using a pointer</h2>
+<div id="outline-container-org7573cfc" class="outline-2">
+<h2 id="org7573cfc"><span class="section-number-2">3.</span> Using a pointer</h2>
 <div class="outline-text-2" id="text-3">
 <p>
 使用 pointer 的方法是使用算符 <code>*</code> , 它叫做 dereference operator. 它作用在一个指针
@@ -309,8 +309,8 @@ ip = &amp;x;
 </div>
 </div>
 
-<div id="outline-container-org82b5e7b" class="outline-2">
-<h2 id="org82b5e7b"><span class="section-number-2">4.</span> Memory allocation and deallocation</h2>
+<div id="outline-container-orgf4b77b0" class="outline-2">
+<h2 id="orgf4b77b0"><span class="section-number-2">4.</span> Memory allocation and deallocation</h2>
 <div class="outline-text-2" id="text-4">
 <p>
 一般来讲, 把一个指针指向一个已经声明的变量, 没什么用. 真正有用的是用它来分配一块
@@ -348,8 +348,8 @@ ip = (int *) malloc(sizeof(int));
 </div>
 </div>
 
-<div id="outline-container-org0e2dee2" class="outline-2">
-<h2 id="org0e2dee2"><span class="section-number-2">5.</span> Pointers and arrays</h2>
+<div id="outline-container-org8b4169f" class="outline-2">
+<h2 id="org8b4169f"><span class="section-number-2">5.</span> Pointers and arrays</h2>
 <div class="outline-text-2" id="text-5">
 <p>
 分配单个整型大小的内存没什么用, 有用的是 allocate arrays. 实际上, 指针可以当作一
@@ -366,8 +366,8 @@ ip[10] = 99; // WRONG: array only has 10 elements
 </div>
 </div>
 
-<div id="outline-container-org5f710a6" class="outline-2">
-<h2 id="org5f710a6"><span class="section-number-2">6.</span> Freeing memory, and memory leaks</h2>
+<div id="outline-container-orgfed830b" class="outline-2">
+<h2 id="orgfed830b"><span class="section-number-2">6.</span> Freeing memory, and memory leaks</h2>
 <div class="outline-text-2" id="text-6">
 <p>
 如果有以下 code
@@ -410,8 +410,8 @@ automatic garbage collection , 但是 C 和 C++ 没有这种机制. 所以你在
 </div>
 </div>
 
-<div id="outline-container-orgc25d97f" class="outline-2">
-<h2 id="orgc25d97f"><span class="section-number-2">7.</span> Pointers and arrays</h2>
+<div id="outline-container-org31e77dd" class="outline-2">
+<h2 id="org31e77dd"><span class="section-number-2">7.</span> Pointers and arrays</h2>
 <div class="outline-text-2" id="text-7">
 <p>
 pointers 可以用 array 的指标, 或者说, 一个数组的名字本质上就是一个 constant
@@ -460,8 +460,8 @@ an address.
 </div>
 </div>
 
-<div id="outline-container-org8f00919" class="outline-2">
-<h2 id="org8f00919"><span class="section-number-2">8.</span> Pointers and arrays as arguments</h2>
+<div id="outline-container-org63aedef" class="outline-2">
+<h2 id="org63aedef"><span class="section-number-2">8.</span> Pointers and arrays as arguments</h2>
 <div class="outline-text-2" id="text-8">
 <p>
 有一个地方,指针和数组几乎是完全相同的, 那就是 当它们作为一个函数的参数的时候. 这
@@ -491,8 +491,8 @@ int func(int *A);
 </div>
 </div>
 
-<div id="outline-container-org8cb0271" class="outline-2">
-<h2 id="org8cb0271"><span class="section-number-2">9.</span> How to dynamically allocate a 2D array in C?</h2>
+<div id="outline-container-orgf5631fd" class="outline-2">
+<h2 id="orgf5631fd"><span class="section-number-2">9.</span> How to dynamically allocate a 2D array in C?</h2>
 <div class="outline-text-2" id="text-9">
 <p>
 有四种方法能够动态的给一个二维数组赋值. 比如
@@ -505,8 +505,8 @@ int func(int *A);
 </div>
 </div>
 
-<div id="outline-container-org1554c51" class="outline-3">
-<h3 id="org1554c51"><span class="section-number-3">9.1.</span> 1. Using a single pointer</h3>
+<div id="outline-container-org091f99c" class="outline-3">
+<h3 id="org091f99c"><span class="section-number-3">9.1.</span> 1. Using a single pointer</h3>
 <div class="outline-text-3" id="text-9-1">
 <div class="org-src-container">
 <pre class="src src-c">#include &lt;stdio.h&gt;
@@ -536,8 +536,8 @@ int main()
 </div>
 </div>
 
-<div id="outline-container-org0e0feb3" class="outline-3">
-<h3 id="org0e0feb3"><span class="section-number-3">9.2.</span> 2. Using an array of pointers</h3>
+<div id="outline-container-orgdc33e17" class="outline-3">
+<h3 id="orgdc33e17"><span class="section-number-3">9.2.</span> 2. Using an array of pointers</h3>
 <div class="outline-text-3" id="text-9-2">
 <div class="org-src-container">
 <pre class="src src-c">#include &lt;stdio.h&gt;
@@ -571,8 +571,8 @@ return 0;
 </div>
 </div>
 
-<div id="outline-container-org6d52c4e" class="outline-3">
-<h3 id="org6d52c4e"><span class="section-number-3">9.3.</span> 3. Using pointer to a pointer</h3>
+<div id="outline-container-org7dde4ca" class="outline-3">
+<h3 id="org7dde4ca"><span class="section-number-3">9.3.</span> 3. Using pointer to a pointer</h3>
 <div class="outline-text-3" id="text-9-3">
 <div class="org-src-container">
 <pre class="src src-c">#include &lt;stdio.h&gt;
@@ -606,8 +606,8 @@ return 0;
 </div>
 </div>
 
-<div id="outline-container-org770a788" class="outline-3">
-<h3 id="org770a788"><span class="section-number-3">9.4.</span> 4. Using double pointer and one malloc call</h3>
+<div id="outline-container-orgb334413" class="outline-3">
+<h3 id="orgb334413"><span class="section-number-3">9.4.</span> 4. Using double pointer and one malloc call</h3>
 <div class="outline-text-3" id="text-9-4">
 <div class="org-src-container">
 <pre class="src src-c">#include&lt;stdio.h&gt;
@@ -645,8 +645,8 @@ int main()
 </div>
 </div>
 
-<div id="outline-container-org5d111f8" class="outline-2">
-<h2 id="org5d111f8"><span class="section-number-2">10.</span> Memory leak</h2>
+<div id="outline-container-orga3c0b8d" class="outline-2">
+<h2 id="orga3c0b8d"><span class="section-number-2">10.</span> Memory leak</h2>
 <div class="outline-text-2" id="text-10">
 <p>
 下面的 code 可以演示内存泄漏
@@ -684,15 +684,15 @@ int main()
 </p>
 
 
-<div id="orgd4445e3" class="figure">
+<div id="orga056ab0" class="figure">
 <p><img src="2021-05-14-软件使用-C_pointer_malloc/memory_leak_res.png" alt="memory_leak_res.png" />
 </p>
 </div>
 </div>
 </div>
 
-<div id="outline-container-org20266f3" class="outline-2">
-<h2 id="org20266f3"><span class="section-number-2">11.</span> Reference</h2>
+<div id="outline-container-org212e814" class="outline-2">
+<h2 id="org212e814"><span class="section-number-2">11.</span> Reference</h2>
 <div class="outline-text-2" id="text-11">
 <ul class="org-ul">
 <li><a href="https://www.cs.nmsu.edu/~rth/cs/cs271/notes/Pointers.html">https://www.cs.nmsu.edu/~rth/cs/cs271/notes/Pointers.html</a></li>
@@ -708,7 +708,7 @@ int main()
 </div>
 <div id="postamble" class="status">
 <p class="date">Date: 2021-05-14 Fri 00:00</p>
-<p class="date">Created: 2022-04-16 Sat 17:42</p>
+<p class="date">Created: 2022-04-16 Sat 21:09</p>
 <p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>

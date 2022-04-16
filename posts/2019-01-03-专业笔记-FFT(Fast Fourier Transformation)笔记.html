@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2022-04-16 Sat 17:43 -->
+<!-- 2022-04-16 Sat 21:08 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>FFT (Fast Fourier Transform) 笔记</title>
@@ -221,32 +221,32 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#org885cab6">1. 问题</a></li>
-<li><a href="#orgc44cd19">2. DFT (Discreate Fourier Transform)</a></li>
-<li><a href="#org88aa42a">3. 精髓</a></li>
-<li><a href="#org9ef883a">4. 结论</a></li>
-<li><a href="#orgac3d1a3">5. 简的可以手算的例子</a></li>
-<li><a href="#orga54f59d">6. 输出结果分析</a>
+<li><a href="#org860da82">1. 问题</a></li>
+<li><a href="#orgdf947ae">2. DFT (Discreate Fourier Transform)</a></li>
+<li><a href="#org4861116">3. 精髓</a></li>
+<li><a href="#org75ec703">4. 结论</a></li>
+<li><a href="#org3e0c84c">5. 简的可以手算的例子</a></li>
+<li><a href="#org98bff63">6. 输出结果分析</a>
 <ul>
-<li><a href="#org0437c8d">6.1. 输出的对称性</a></li>
-<li><a href="#org1804037">6.2. 三角函数和 \(e\) 指数形式的 Fourier Transform 之间的联系</a></li>
-<li><a href="#org8347b89">6.3. 输出结果中有价值的部分</a></li>
+<li><a href="#orgd7a529e">6.1. 输出的对称性</a></li>
+<li><a href="#orgfb49859">6.2. 三角函数和 \(e\) 指数形式的 Fourier Transform 之间的联系</a></li>
+<li><a href="#orge13ba05">6.3. 输出结果中有价值的部分</a></li>
 </ul>
 </li>
-<li><a href="#org6005f35">7. Python 程序示例</a>
+<li><a href="#org8e3b2af">7. Python 程序示例</a>
 <ul>
-<li><a href="#org89327f1">7.1. 三角函数的例子</a></li>
-<li><a href="#org2f05742">7.2. 高斯函数的例子</a></li>
+<li><a href="#orga91d75e">7.1. 三角函数的例子</a></li>
+<li><a href="#orgf100bb6">7.2. 高斯函数的例子</a></li>
 </ul>
 </li>
-<li><a href="#org072cb37">8. 致谢与参考书</a></li>
+<li><a href="#org2f8ffdf">8. 致谢与参考书</a></li>
 </ul>
 </div>
 </div>
 <!-- toc -->
 <!-- more -->
-<div id="outline-container-org885cab6" class="outline-2">
-<h2 id="org885cab6"><span class="section-number-2">1.</span> 问题</h2>
+<div id="outline-container-org860da82" class="outline-2">
+<h2 id="org860da82"><span class="section-number-2">1.</span> 问题</h2>
 <div class="outline-text-2" id="text-1">
 <p>
 函数 \(f(t)\) 的 Fourier Transform 为
@@ -266,8 +266,8 @@
 </div>
 </div>
 
-<div id="outline-container-orgc44cd19" class="outline-2">
-<h2 id="orgc44cd19"><span class="section-number-2">2.</span> DFT (Discreate Fourier Transform)</h2>
+<div id="outline-container-orgdf947ae" class="outline-2">
+<h2 id="orgdf947ae"><span class="section-number-2">2.</span> DFT (Discreate Fourier Transform)</h2>
 <div class="outline-text-2" id="text-2">
 <p>
 如果用计算机进行数值上的计算, 会对积分进行离散化, 那么就变成了离散的 Fourier Transform .
@@ -291,8 +291,8 @@
 </div>
 </div>
 
-<div id="outline-container-org88aa42a" class="outline-2">
-<h2 id="org88aa42a"><span class="section-number-2">3.</span> 精髓</h2>
+<div id="outline-container-org4861116" class="outline-2">
+<h2 id="org4861116"><span class="section-number-2">3.</span> 精髓</h2>
 <div class="outline-text-2" id="text-3">
 <p>
 进行数值计算时, 对应每一个 \(\omega\) 都要算一个求和. 我们只能进行有限次数的计算, 因此必须要选取特定的 \(\omega\) 进行计算, 也就是
@@ -329,8 +329,8 @@ FFT 将 \(\omega\) 同样离散化成 \(N\) 个 (这样做的优势以后将会�
 </div>
 </div>
 
-<div id="outline-container-org9ef883a" class="outline-2">
-<h2 id="org9ef883a"><span class="section-number-2">4.</span> 结论</h2>
+<div id="outline-container-org75ec703" class="outline-2">
+<h2 id="org75ec703"><span class="section-number-2">4.</span> 结论</h2>
 <div class="outline-text-2" id="text-4">
 <p>
 这样选取 \(\Delta\omega\) 的结果就使原式变成了
@@ -382,8 +382,8 @@ FFT 将 \(\omega\) 同样离散化成 \(N\) 个 (这样做的优势以后将会�
 </div>
 </div>
 
-<div id="outline-container-orgac3d1a3" class="outline-2">
-<h2 id="orgac3d1a3"><span class="section-number-2">5.</span> 简的可以手算的例子</h2>
+<div id="outline-container-org3e0c84c" class="outline-2">
+<h2 id="org3e0c84c"><span class="section-number-2">5.</span> 简的可以手算的例子</h2>
 <div class="outline-text-2" id="text-5">
 <p>
 我之所以会对这个感兴趣, 是因为我想要用电脑对一些函数做 Fourier Transform ,于是得知有 FFT 这样现成的程序. 但是 FFT 给出的结果
@@ -482,12 +482,12 @@ print(F)
 </div>
 </div>
 
-<div id="outline-container-orga54f59d" class="outline-2">
-<h2 id="orga54f59d"><span class="section-number-2">6.</span> 输出结果分析</h2>
+<div id="outline-container-org98bff63" class="outline-2">
+<h2 id="org98bff63"><span class="section-number-2">6.</span> 输出结果分析</h2>
 <div class="outline-text-2" id="text-6">
 </div>
-<div id="outline-container-org0437c8d" class="outline-3">
-<h3 id="org0437c8d"><span class="section-number-3">6.1.</span> 输出的对称性</h3>
+<div id="outline-container-orgd7a529e" class="outline-3">
+<h3 id="orgd7a529e"><span class="section-number-3">6.1.</span> 输出的对称性</h3>
 <div class="outline-text-3" id="text-6-1">
 <p>
 变换矩阵中的元素
@@ -516,8 +516,8 @@ print(F)
 </div>
 </div>
 
-<div id="outline-container-org1804037" class="outline-3">
-<h3 id="org1804037"><span class="section-number-3">6.2.</span> 三角函数和 \(e\) 指数形式的 Fourier Transform 之间的联系</h3>
+<div id="outline-container-orgfb49859" class="outline-3">
+<h3 id="orgfb49859"><span class="section-number-3">6.2.</span> 三角函数和 \(e\) 指数形式的 Fourier Transform 之间的联系</h3>
 <div class="outline-text-3" id="text-6-2">
 <p>
 在我的印象中, Fourier Transform 的结果应该是一个实函数, 比如一个高斯函数的 Fourier Transform 的
@@ -583,8 +583,8 @@ print(F)
 </div>
 </div>
 
-<div id="outline-container-org8347b89" class="outline-3">
-<h3 id="org8347b89"><span class="section-number-3">6.3.</span> 输出结果中有价值的部分</h3>
+<div id="outline-container-orge13ba05" class="outline-3">
+<h3 id="orge13ba05"><span class="section-number-3">6.3.</span> 输出结果中有价值的部分</h3>
 <div class="outline-text-3" id="text-6-3">
 <p>
 输出结果的实部和虚部对应同一频率的振幅, 只不过实部是正弦部分, 虚部是余弦部分. 所以用其模长来刻画 Fourier Transform 的结果.
@@ -597,12 +597,12 @@ print(F)
 </div>
 </div>
 
-<div id="outline-container-org6005f35" class="outline-2">
-<h2 id="org6005f35"><span class="section-number-2">7.</span> Python 程序示例</h2>
+<div id="outline-container-org8e3b2af" class="outline-2">
+<h2 id="org8e3b2af"><span class="section-number-2">7.</span> Python 程序示例</h2>
 <div class="outline-text-2" id="text-7">
 </div>
-<div id="outline-container-org89327f1" class="outline-3">
-<h3 id="org89327f1"><span class="section-number-3">7.1.</span> 三角函数的例子</h3>
+<div id="outline-container-orga91d75e" class="outline-3">
+<h3 id="orga91d75e"><span class="section-number-3">7.1.</span> 三角函数的例子</h3>
 <div class="outline-text-3" id="text-7-1">
 <p>
 用 Numpy 中的 numpy.fft.fft() 函数计算三角函数
@@ -632,7 +632,7 @@ plt.show()
 </div>
 
 
-<div id="orgbd35fda" class="figure">
+<div id="orgce62021" class="figure">
 <p><img src="./2019-01-03-专业笔记-FFT(Fast Fourier Transformation)笔记/sin.png" alt="sin.png" />
 </p>
 </div>
@@ -643,8 +643,8 @@ plt.show()
 </div>
 </div>
 
-<div id="outline-container-org2f05742" class="outline-3">
-<h3 id="org2f05742"><span class="section-number-3">7.2.</span> 高斯函数的例子</h3>
+<div id="outline-container-orgf100bb6" class="outline-3">
+<h3 id="orgf100bb6"><span class="section-number-3">7.2.</span> 高斯函数的例子</h3>
 <div class="outline-text-3" id="text-7-2">
 <p>
 用 Numpy 中的 numpy.fft.fft() 函数高斯函数
@@ -687,7 +687,7 @@ plt.show()
 </div>
 
 
-<div id="org70234d1" class="figure">
+<div id="org39d3b16" class="figure">
 <p><img src="./2019-01-03-专业笔记-FFT(Fast Fourier Transformation)笔记/gau.png" alt="gau.png" />
 </p>
 </div>
@@ -699,8 +699,8 @@ plt.show()
 </div>
 </div>
 
-<div id="outline-container-org072cb37" class="outline-2">
-<h2 id="org072cb37"><span class="section-number-2">8.</span> 致谢与参考书</h2>
+<div id="outline-container-org2f8ffdf" class="outline-2">
+<h2 id="org2f8ffdf"><span class="section-number-2">8.</span> 致谢与参考书</h2>
 <div class="outline-text-2" id="text-8">
 <p>
 苏变萍, 陈东立 编 复变函数与积分变换(第二版)
@@ -714,7 +714,7 @@ plt.show()
 </div>
 <div id="postamble" class="status">
 <p class="date">Date: 2019-01-03 Thu 00:00</p>
-<p class="date">Created: 2022-04-16 Sat 17:43</p>
+<p class="date">Created: 2022-04-16 Sat 21:08</p>
 <p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>

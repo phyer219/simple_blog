@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2022-04-16 Sat 17:43 -->
+<!-- 2022-04-16 Sat 21:09 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>多体物理读书会:5.1节 从Dirac表象中的演化算符到因果格林函数-通往diagram techniques之路</title>
@@ -221,25 +221,25 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#org323b75c">1. 起点</a></li>
-<li><a href="#orgc033dc2">2. 因果格林函数</a></li>
-<li><a href="#org1d30bc1">3. 绝热演化得到基态</a></li>
-<li><a href="#orgcfb13cd">4. 正负无穷处的等价性</a>
+<li><a href="#org1c3cba9">1. 起点</a></li>
+<li><a href="#orgf967115">2. 因果格林函数</a></li>
+<li><a href="#org3bba7cb">3. 绝热演化得到基态</a></li>
+<li><a href="#org0a79745">4. 正负无穷处的等价性</a>
 <ul>
-<li><a href="#orgeb4b642">4.1. 问题引入</a></li>
-<li><a href="#orgec56adf">4.2. 等价性的说明</a></li>
+<li><a href="#org6969a3a">4.1. 问题引入</a></li>
+<li><a href="#orgb959e51">4.2. 等价性的说明</a></li>
 </ul>
 </li>
-<li><a href="#orgc710b3e">5. 三个 time-ordering 的合并</a></li>
-<li><a href="#org9c42265">6. 零温单粒子因果格林函数</a></li>
+<li><a href="#org08ae0fb">5. 三个 time-ordering 的合并</a></li>
+<li><a href="#orgfe7243c">6. 零温单粒子因果格林函数</a></li>
 </ul>
 </div>
 </div>
 <!-- toc -->
 <!-- more -->
 
-<div id="outline-container-org323b75c" class="outline-2">
-<h2 id="org323b75c"><span class="section-number-2">1.</span> 起点</h2>
+<div id="outline-container-org1c3cba9" class="outline-2">
+<h2 id="org1c3cba9"><span class="section-number-2">1.</span> 起点</h2>
 <div class="outline-text-2" id="text-1">
 <p>
 digram techniques 的起点是
@@ -258,8 +258,8 @@ U_D(t,t') = \sum_{n=0}^{\infty}\frac{1}{n!} \left( \frac{1}{\mathrm{i}\hbar} \ri
 </div>
 </div>
 
-<div id="outline-container-orgc033dc2" class="outline-2">
-<h2 id="orgc033dc2"><span class="section-number-2">2.</span> 因果格林函数</h2>
+<div id="outline-container-orgf967115" class="outline-2">
+<h2 id="orgf967115"><span class="section-number-2">2.</span> 因果格林函数</h2>
 <div class="outline-text-2" id="text-2">
 <p>
 第三章中因果格林函数的定义为
@@ -277,8 +277,8 @@ G_{AB}^c (t-t') \equiv - \mathrm{i} \langle T_{\varepsilon} (A(t)B(t'))\rangle
 </div>
 </div>
 
-<div id="outline-container-org1d30bc1" class="outline-2">
-<h2 id="org1d30bc1"><span class="section-number-2">3.</span> 绝热演化得到基态</h2>
+<div id="outline-container-org3bba7cb" class="outline-2">
+<h2 id="org3bba7cb"><span class="section-number-2">3.</span> 绝热演化得到基态</h2>
 <div class="outline-text-2" id="text-3">
 <p>
 如 Dirac 表象的设定, 系统的 Hamiltonia 可以分为无相互作用 Hamiltonian \(H_0\) 加上相互作用 Hamiltonian \(V_t\) .
@@ -313,12 +313,12 @@ H = H_0 + V e^{-\alpha |t|} \quad \quad ,\alpha>0
 </div>
 </div>
 
-<div id="outline-container-orgcfb13cd" class="outline-2">
-<h2 id="orgcfb13cd"><span class="section-number-2">4.</span> 正负无穷处的等价性</h2>
+<div id="outline-container-org0a79745" class="outline-2">
+<h2 id="org0a79745"><span class="section-number-2">4.</span> 正负无穷处的等价性</h2>
 <div class="outline-text-2" id="text-4">
 </div>
-<div id="outline-container-orgeb4b642" class="outline-3">
-<h3 id="orgeb4b642"><span class="section-number-3">4.1.</span> 问题引入</h3>
+<div id="outline-container-org6969a3a" class="outline-3">
+<h3 id="org6969a3a"><span class="section-number-3">4.1.</span> 问题引入</h3>
 <div class="outline-text-3" id="text-4-1">
 <p>
 先把 \(A(t)B(t')\) 换到 Dirac 表象(把相互作用的演化去掉即可)
@@ -362,8 +362,8 @@ A(t)B(t') = U^D(0,t) A^D(t) U^D(t,t') B^D(t') U^D(t',0)
 </div>
 </div>
 
-<div id="outline-container-orgec56adf" class="outline-3">
-<h3 id="orgec56adf"><span class="section-number-3">4.2.</span> 等价性的说明</h3>
+<div id="outline-container-orgb959e51" class="outline-3">
+<h3 id="orgb959e51"><span class="section-number-3">4.2.</span> 等价性的说明</h3>
 <div class="outline-text-3" id="text-4-2">
 <p>
 假设通过 Gell-Mann–Low 定理,并且假设相互作用系统的基态没有简并以及其它论证和假设同样可以得到以下态也是有相互作用系统的基态(对此细节推导有疑问).
@@ -391,8 +391,8 @@ A(t)B(t') = U^D(0,t) A^D(t) U^D(t,t') B^D(t') U^D(t',0)
 </div>
 </div>
 
-<div id="outline-container-orgc710b3e" class="outline-2">
-<h2 id="orgc710b3e"><span class="section-number-2">5.</span> 三个 time-ordering 的合并</h2>
+<div id="outline-container-org08ae0fb" class="outline-2">
+<h2 id="org08ae0fb"><span class="section-number-2">5.</span> 三个 time-ordering 的合并</h2>
 <div class="outline-text-2" id="text-5">
 <p>
 我们用 \(\langle \tilde{E}_0' |\) 替换 \(\langle \tilde{E}_0' |\) 后, 就有
@@ -463,8 +463,8 @@ A(t)B(t') = U^D(0,t) A^D(t) U^D(t,t') B^D(t') U^D(t',0)
 </div>
 </div>
 
-<div id="outline-container-org9c42265" class="outline-2">
-<h2 id="org9c42265"><span class="section-number-2">6.</span> 零温单粒子因果格林函数</h2>
+<div id="outline-container-orgfe7243c" class="outline-2">
+<h2 id="orgfe7243c"><span class="section-number-2">6.</span> 零温单粒子因果格林函数</h2>
 <div class="outline-text-2" id="text-6">
 <p>
 将前面三个 time-ordering 合并之后的结果代入到格林函数的定义中有
@@ -497,7 +497,7 @@ A(t)B(t') = U^D(0,t) A^D(t) U^D(t,t') B^D(t') U^D(t',0)
 </div>
 <div id="postamble" class="status">
 <p class="date">Date: 2018-12-13 Thu 00:00</p>
-<p class="date">Created: 2022-04-16 Sat 17:43</p>
+<p class="date">Created: 2022-04-16 Sat 21:09</p>
 <p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>

@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2022-04-16 Sat 17:43 -->
+<!-- 2022-04-16 Sat 21:09 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Friedel Oscillations疑问</title>
@@ -221,37 +221,37 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#org6da5bc5">1. 问题</a></li>
-<li><a href="#org34b017c">2. Thomas-Fermi 近似的结果</a>
+<li><a href="#orgf36d4ac">1. 问题</a></li>
+<li><a href="#org3a8c5b7">2. Thomas-Fermi 近似的结果</a>
 <ul>
-<li><a href="#org7a609af">2.1. 问题1</a></li>
-<li><a href="#orgeb7f06a">2.2. 问题2</a></li>
+<li><a href="#orgbdbb18e">2.1. 问题1</a></li>
+<li><a href="#org79ac75f">2.2. 问题2</a></li>
 </ul>
 </li>
-<li><a href="#org91f79a1">3. RPA 的结果</a>
+<li><a href="#orgb01968a">3. RPA 的结果</a>
 <ul>
-<li><a href="#org5cbcf56">3.1. 级数展开</a></li>
-<li><a href="#org462a7bf">3.2. 问题3: 接下来该怎么做? 所有的展开项代入积分都是发散的.</a></li>
-<li><a href="#org9545673">3.3. 正确的级数展开</a></li>
+<li><a href="#org1499550">3.1. 级数展开</a></li>
+<li><a href="#org4328d22">3.2. 问题3: 接下来该怎么做? 所有的展开项代入积分都是发散的.</a></li>
+<li><a href="#org122c962">3.3. 正确的级数展开</a></li>
 </ul>
 </li>
-<li><a href="#orgc9faf3a">4. 数值计算 RPA 的结果</a>
+<li><a href="#org6dc9ff5">4. 数值计算 RPA 的结果</a>
 <ul>
-<li><a href="#org5a2be80">4.1. 问题分析</a></li>
-<li><a href="#orgcca16a4">4.2. 构造新的被积函数</a></li>
-<li><a href="#org3c4c85b">4.3. 数值积分</a></li>
-<li><a href="#orgd14ac31">4.4. 结果对比</a></li>
+<li><a href="#orga4577a8">4.1. 问题分析</a></li>
+<li><a href="#org8c56b34">4.2. 构造新的被积函数</a></li>
+<li><a href="#orgf922ccf">4.3. 数值积分</a></li>
+<li><a href="#org8b9b921">4.4. 结果对比</a></li>
 </ul>
 </li>
-<li><a href="#org0c43278">5. 参考文献</a></li>
-<li><a href="#org7f5962b">6. 致谢</a></li>
+<li><a href="#org141e140">5. 参考文献</a></li>
+<li><a href="#org5b6760a">6. 致谢</a></li>
 </ul>
 </div>
 </div>
 <!-- toc -->
 <!-- more -->
-<div id="outline-container-org6da5bc5" class="outline-2">
-<h2 id="org6da5bc5"><span class="section-number-2">1.</span> 问题</h2>
+<div id="outline-container-orgf36d4ac" class="outline-2">
+<h2 id="orgf36d4ac"><span class="section-number-2">1.</span> 问题</h2>
 <div class="outline-text-2" id="text-1">
 <p>
 动量空间中电势为
@@ -280,8 +280,8 @@
 </div>
 </div>
 
-<div id="outline-container-org34b017c" class="outline-2">
-<h2 id="org34b017c"><span class="section-number-2">2.</span> Thomas-Fermi 近似的结果</h2>
+<div id="outline-container-org3a8c5b7" class="outline-2">
+<h2 id="org3a8c5b7"><span class="section-number-2">2.</span> Thomas-Fermi 近似的结果</h2>
 <div class="outline-text-2" id="text-2">
 <p>
 Thomas-Fermi 近似给出
@@ -358,8 +358,8 @@ q = \frac{1}{2i} \cdot \pi i \cdot 1 = \frac{\pi}{2}
 </p>
 </div>
 
-<div id="outline-container-org7a609af" class="outline-3">
-<h3 id="org7a609af"><span class="section-number-3">2.1.</span> 问题1</h3>
+<div id="outline-container-orgbdbb18e" class="outline-3">
+<h3 id="orgbdbb18e"><span class="section-number-3">2.1.</span> 问题1</h3>
 <div class="outline-text-3" id="text-2-1">
 <p>
 Thomas-Fermi 近似结果与精确结果的 \(q_{TF}^2\) 的系数不同?
@@ -371,8 +371,8 @@ Thomas-Fermi 近似结果与精确结果的 \(q_{TF}^2\) 的系数不同?
 </div>
 </div>
 
-<div id="outline-container-orgeb7f06a" class="outline-3">
-<h3 id="orgeb7f06a"><span class="section-number-3">2.2.</span> 问题2</h3>
+<div id="outline-container-org79ac75f" class="outline-3">
+<h3 id="org79ac75f"><span class="section-number-3">2.2.</span> 问题2</h3>
 <div class="outline-text-3" id="text-2-2">
 <p>
 为什么要对 \(q\) 在 \(q\rightarrow +\infty\) 展开? 积分的区间不是整个实轴吗?
@@ -385,8 +385,8 @@ Thomas-Fermi 近似结果与精确结果的 \(q_{TF}^2\) 的系数不同?
 </div>
 </div>
 
-<div id="outline-container-org91f79a1" class="outline-2">
-<h2 id="org91f79a1"><span class="section-number-2">3.</span> RPA 的结果</h2>
+<div id="outline-container-orgb01968a" class="outline-2">
+<h2 id="orgb01968a"><span class="section-number-2">3.</span> RPA 的结果</h2>
 <div class="outline-text-2" id="text-3">
 <p>
 RPA 给出
@@ -422,8 +422,8 @@ g(u) = \frac{1}{2} \left( 1+\frac{1}{2u}(1-u^2)\ln \left| \frac{1+u}{1-u} \right
 \end{align}
 </div>
 
-<div id="outline-container-org5cbcf56" class="outline-3">
-<h3 id="org5cbcf56"><span class="section-number-3">3.1.</span> 级数展开</h3>
+<div id="outline-container-org1499550" class="outline-3">
+<h3 id="org1499550"><span class="section-number-3">3.1.</span> 级数展开</h3>
 <div class="outline-text-3" id="text-3-1">
 <p>
 对 
@@ -460,8 +460,8 @@ print(sym.latex(s))
 </div>
 </div>
 
-<div id="outline-container-org462a7bf" class="outline-3">
-<h3 id="org462a7bf"><span class="section-number-3">3.2.</span> 问题3: 接下来该怎么做? 所有的展开项代入积分都是发散的.</h3>
+<div id="outline-container-org4328d22" class="outline-3">
+<h3 id="org4328d22"><span class="section-number-3">3.2.</span> 问题3: 接下来该怎么做? 所有的展开项代入积分都是发散的.</h3>
 <div class="outline-text-3" id="text-3-2">
 <p>
 答: 展开算错了. 程序中把公式抄错了. 看来最好还是手算 check 一下比较好, 不然不会出现这么低级的错误. 级数展开的计算能力还有待提高&#x2026; 
@@ -469,8 +469,8 @@ print(sym.latex(s))
 </div>
 </div>
 
-<div id="outline-container-org9545673" class="outline-3">
-<h3 id="org9545673"><span class="section-number-3">3.3.</span> 正确的级数展开</h3>
+<div id="outline-container-org122c962" class="outline-3">
+<h3 id="org122c962"><span class="section-number-3">3.3.</span> 正确的级数展开</h3>
 <div class="outline-text-3" id="text-3-3">
 <div class="org-src-container">
 <pre class="src src-python">import sympy as sym
@@ -495,12 +495,12 @@ print(sym.latex(s))
 </div>
 </div>
 
-<div id="outline-container-orgc9faf3a" class="outline-2">
-<h2 id="orgc9faf3a"><span class="section-number-2">4.</span> 数值计算 RPA 的结果</h2>
+<div id="outline-container-org6dc9ff5" class="outline-2">
+<h2 id="org6dc9ff5"><span class="section-number-2">4.</span> 数值计算 RPA 的结果</h2>
 <div class="outline-text-2" id="text-4">
 </div>
-<div id="outline-container-org5a2be80" class="outline-3">
-<h3 id="org5a2be80"><span class="section-number-3">4.1.</span> 问题分析</h3>
+<div id="outline-container-orga4577a8" class="outline-3">
+<h3 id="orga4577a8"><span class="section-number-3">4.1.</span> 问题分析</h3>
 <div class="outline-text-3" id="text-4-1">
 <p>
 首先, 积分 
@@ -531,8 +531,8 @@ print(sym.latex(s))
 </div>
 </div>
 
-<div id="outline-container-orgcca16a4" class="outline-3">
-<h3 id="orgcca16a4"><span class="section-number-3">4.2.</span> 构造新的被积函数</h3>
+<div id="outline-container-org8c56b34" class="outline-3">
+<h3 id="org8c56b34"><span class="section-number-3">4.2.</span> 构造新的被积函数</h3>
 <div class="outline-text-3" id="text-4-2">
 <p>
 构造函数
@@ -558,8 +558,8 @@ F(q) = \sin(qr)\cdot \frac{q}{q^2+q_{TF}^2g( \frac{q}{2k_F} )} - \frac{\sin(qr)}
 </div>
 </div>
 
-<div id="outline-container-org3c4c85b" class="outline-3">
-<h3 id="org3c4c85b"><span class="section-number-3">4.3.</span> 数值积分</h3>
+<div id="outline-container-orgf922ccf" class="outline-3">
+<h3 id="orgf922ccf"><span class="section-number-3">4.3.</span> 数值积分</h3>
 <div class="outline-text-3" id="text-4-3">
 <p>
 下面数值地计算
@@ -748,8 +748,8 @@ plt.show() #显示图片
 </div>
 </div>
 
-<div id="outline-container-orgd14ac31" class="outline-3">
-<h3 id="orgd14ac31"><span class="section-number-3">4.4.</span> 结果对比</h3>
+<div id="outline-container-org8b9b921" class="outline-3">
+<h3 id="org8b9b921"><span class="section-number-3">4.4.</span> 结果对比</h3>
 <div class="outline-text-3" id="text-4-4">
 <p>
 将数值结果与 Friedel Oscillations 的结果
@@ -764,7 +764,7 @@ plt.show() #显示图片
 </p>
 
 
-<div id="org746e3f1" class="figure">
+<div id="orgfc1ced2" class="figure">
 <p><img src="./2018-11-28-专业笔记-Friedel Oscillations/friedel_oscillations.png" alt="friedel_oscillations.png" />
 </p>
 </div>
@@ -776,8 +776,8 @@ plt.show() #显示图片
 </div>
 </div>
 
-<div id="outline-container-org0c43278" class="outline-2">
-<h2 id="org0c43278"><span class="section-number-2">5.</span> 参考文献</h2>
+<div id="outline-container-org141e140" class="outline-2">
+<h2 id="org141e140"><span class="section-number-2">5.</span> 参考文献</h2>
 <div class="outline-text-2" id="text-5">
 <p>
 Friedel Oscillation 的原始文献 the shielding of a fixed charge in a high-density electron gas <a href="http://www.doc88.com/p-9512851691956.html">http://www.doc88.com/p-9512851691956.html</a> 
@@ -789,8 +789,8 @@ Wolfgang Nolting, Fundamentals of Many-body Physics
 </div>
 </div>
 
-<div id="outline-container-org7f5962b" class="outline-2">
-<h2 id="org7f5962b"><span class="section-number-2">6.</span> 致谢</h2>
+<div id="outline-container-org5b6760a" class="outline-2">
+<h2 id="org5b6760a"><span class="section-number-2">6.</span> 致谢</h2>
 <div class="outline-text-2" id="text-6">
 <p>
 感谢导师 Ran Qi 的指导
@@ -804,7 +804,7 @@ Wolfgang Nolting, Fundamentals of Many-body Physics
 </div>
 <div id="postamble" class="status">
 <p class="date">Date: 2018-11-28 Wed 00:00</p>
-<p class="date">Created: 2022-04-16 Sat 17:43</p>
+<p class="date">Created: 2022-04-16 Sat 21:09</p>
 <p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>

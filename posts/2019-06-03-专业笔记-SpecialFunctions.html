@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2022-04-16 Sat 17:43 -->
+<!-- 2022-04-16 Sat 21:09 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Special Functions</title>
@@ -221,80 +221,80 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#orgf309604">1. Legendre Polynomials</a>
+<li><a href="#orgc3640a5">1. Legendre Polynomials</a>
 <ul>
-<li><a href="#orgf602151">1.1. Legendre Equation</a></li>
-<li><a href="#org9a1f15f">1.2. Frobenius' Methods</a>
+<li><a href="#orgb09f50b">1.1. Legendre Equation</a></li>
+<li><a href="#org26c234c">1.2. Frobenius' Methods</a>
 <ul>
-<li><a href="#org2c6abeb">1.2.1. \(s=0\)</a></li>
-<li><a href="#org7d43413">1.2.2. \(s=1\)</a></li>
-<li><a href="#orgaba4def">1.2.3. 合并</a></li>
+<li><a href="#org2953dd1">1.2.1. \(s=0\)</a></li>
+<li><a href="#org7dc6fc4">1.2.2. \(s=1\)</a></li>
+<li><a href="#orgee59258">1.2.3. 合并</a></li>
 </ul>
 </li>
-<li><a href="#orgf55cdba">1.3. Legendre Polynomials</a></li>
-<li><a href="#org52da975">1.4. Orthogonality</a></li>
-<li><a href="#org7854aaf">1.5. Associated Legendre Functions</a>
+<li><a href="#org0a0f076">1.3. Legendre Polynomials</a></li>
+<li><a href="#org1de6099">1.4. Orthogonality</a></li>
+<li><a href="#org47c2efc">1.5. Associated Legendre Functions</a>
 <ul>
-<li><a href="#org36560bf">1.5.1. Associated Legendre Equation</a></li>
-<li><a href="#orge5e7350">1.5.2. Frobenius' Methods</a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li><a href="#orgf692194">2. Bessel Functions</a>
-<ul>
-<li><a href="#org1773081">2.1. Bessel ODE</a></li>
-<li><a href="#org1c43105">2.2. Frobenius' Methods and Bessel Functions of the First Kind</a>
-<ul>
-<li><a href="#org7c9268a">2.2.1. \(s = n\)</a></li>
-<li><a href="#orge72b9f3">2.2.2. \(s = -n\)</a></li>
-<li><a href="#orgcc310da">2.2.3. code</a></li>
-</ul>
-</li>
-<li><a href="#org82c2a81">2.3. the Bessel Functions of the Second Kind</a>
-<ul>
-<li><a href="#orgb5ddf29">2.3.1. Definition</a></li>
-</ul>
-</li>
-<li><a href="#org05a70a5">2.4. Hankel Functions</a></li>
-<li><a href="#orgdd9a3ad">2.5. Modified Bessel Functions</a>
-<ul>
-<li><a href="#orgcf0cfb1">2.5.1. MOdified Bessel equation</a></li>
-<li><a href="#org0a4044b">2.5.2. Modified Bessel Functions of the First Kind</a></li>
-<li><a href="#orgbd4e170">2.5.3. Code</a></li>
-<li><a href="#org967530e">2.5.4. Modified Bessel Functions of the Second Kind</a></li>
-</ul>
-</li>
-<li><a href="#org6a30aae">2.6. Spherical Bessel Functions</a>
-<ul>
-<li><a href="#org3a03938">2.6.1. Definition</a></li>
-<li><a href="#org84c22ac">2.6.2. Some Examples</a></li>
-<li><a href="#org47e6d8d">2.6.3. Asymptotic Forms</a></li>
-<li><a href="#org33e8d7e">2.6.4. Closure Relation</a></li>
+<li><a href="#orga2c6d62">1.5.1. Associated Legendre Equation</a></li>
+<li><a href="#orgf555d35">1.5.2. Frobenius' Methods</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li><a href="#orge4dc357">3. Spherical Harmonics</a>
+<li><a href="#org9208598">2. Bessel Functions</a>
 <ul>
-<li><a href="#org05f6106">3.1. Associated Legendre Functions</a></li>
-<li><a href="#org7948ddd">3.2. Spherical Harmonics</a></li>
+<li><a href="#orgec7c03c">2.1. Bessel ODE</a></li>
+<li><a href="#org86521ca">2.2. Frobenius' Methods and Bessel Functions of the First Kind</a>
+<ul>
+<li><a href="#org8ea9bf3">2.2.1. \(s = n\)</a></li>
+<li><a href="#org9e21fcf">2.2.2. \(s = -n\)</a></li>
+<li><a href="#org2a9accd">2.2.3. code</a></li>
 </ul>
 </li>
-<li><a href="#org95e24df">4. Summary</a></li>
-<li><a href="#orgc1a8de1">5. Reference</a></li>
+<li><a href="#orga182dcb">2.3. the Bessel Functions of the Second Kind</a>
+<ul>
+<li><a href="#org15b8d2f">2.3.1. Definition</a></li>
+</ul>
+</li>
+<li><a href="#org8977c5c">2.4. Hankel Functions</a></li>
+<li><a href="#org3572473">2.5. Modified Bessel Functions</a>
+<ul>
+<li><a href="#orgf5ab55b">2.5.1. MOdified Bessel equation</a></li>
+<li><a href="#orgddeef5c">2.5.2. Modified Bessel Functions of the First Kind</a></li>
+<li><a href="#org183eafc">2.5.3. Code</a></li>
+<li><a href="#org813c77b">2.5.4. Modified Bessel Functions of the Second Kind</a></li>
+</ul>
+</li>
+<li><a href="#org4617dc5">2.6. Spherical Bessel Functions</a>
+<ul>
+<li><a href="#org0ac7c5f">2.6.1. Definition</a></li>
+<li><a href="#org2d87f2b">2.6.2. Some Examples</a></li>
+<li><a href="#org851f577">2.6.3. Asymptotic Forms</a></li>
+<li><a href="#org6173e15">2.6.4. Closure Relation</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#orgbfa8dc4">3. Spherical Harmonics</a>
+<ul>
+<li><a href="#org9a1c2a1">3.1. Associated Legendre Functions</a></li>
+<li><a href="#orgb9696b2">3.2. Spherical Harmonics</a></li>
+</ul>
+</li>
+<li><a href="#org5d74cef">4. Summary</a></li>
+<li><a href="#orgb137ea1">5. Reference</a></li>
 </ul>
 </div>
 </div>
 <!-- toc -->
 <!-- more -->
 
-<div id="outline-container-orgf309604" class="outline-2">
-<h2 id="orgf309604"><span class="section-number-2">1.</span> Legendre Polynomials</h2>
+<div id="outline-container-orgc3640a5" class="outline-2">
+<h2 id="orgc3640a5"><span class="section-number-2">1.</span> Legendre Polynomials</h2>
 <div class="outline-text-2" id="text-1">
 </div>
-<div id="outline-container-orgf602151" class="outline-3">
-<h3 id="orgf602151"><span class="section-number-3">1.1.</span> Legendre Equation</h3>
+<div id="outline-container-orgb09f50b" class="outline-3">
+<h3 id="orgb09f50b"><span class="section-number-3">1.1.</span> Legendre Equation</h3>
 <div class="outline-text-3" id="text-1-1">
 <p>
 Equation
@@ -316,8 +316,8 @@ Boundary conditons
 </div>
 </div>
 
-<div id="outline-container-org9a1f15f" class="outline-3">
-<h3 id="org9a1f15f"><span class="section-number-3">1.2.</span> Frobenius' Methods</h3>
+<div id="outline-container-org26c234c" class="outline-3">
+<h3 id="org26c234c"><span class="section-number-3">1.2.</span> Frobenius' Methods</h3>
 <div class="outline-text-3" id="text-1-2">
 <p>
 尝试级数解
@@ -358,8 +358,8 @@ Boundary conditons
 </p>
 </div>
 
-<div id="outline-container-org2c6abeb" class="outline-4">
-<h4 id="org2c6abeb"><span class="section-number-4">1.2.1.</span> \(s=0\)</h4>
+<div id="outline-container-org2953dd1" class="outline-4">
+<h4 id="org2953dd1"><span class="section-number-4">1.2.1.</span> \(s=0\)</h4>
 <div class="outline-text-4" id="text-1-2-1">
 <p>
 此时得 recurrence relation 为
@@ -380,8 +380,8 @@ Boundary conditons
 </div>
 </div>
 
-<div id="outline-container-org7d43413" class="outline-4">
-<h4 id="org7d43413"><span class="section-number-4">1.2.2.</span> \(s=1\)</h4>
+<div id="outline-container-org7dc6fc4" class="outline-4">
+<h4 id="org7dc6fc4"><span class="section-number-4">1.2.2.</span> \(s=1\)</h4>
 <div class="outline-text-4" id="text-1-2-2">
 <p>
 此时得 recurrence relation 为
@@ -401,8 +401,8 @@ Boundary conditons
 </div>
 </div>
 
-<div id="outline-container-orgaba4def" class="outline-4">
-<h4 id="orgaba4def"><span class="section-number-4">1.2.3.</span> 合并</h4>
+<div id="outline-container-orgee59258" class="outline-4">
+<h4 id="orgee59258"><span class="section-number-4">1.2.3.</span> 合并</h4>
 <div class="outline-text-4" id="text-1-2-3">
 <p>
 \(s=0, a_1 = 0\) 时, 对应的级数解, 都是 \(x\) 的偶数次幂. \(s = 1\) 时, 对应
@@ -426,8 +426,8 @@ Boundary conditons
 </div>
 </div>
 
-<div id="outline-container-orgf55cdba" class="outline-3">
-<h3 id="orgf55cdba"><span class="section-number-3">1.3.</span> Legendre Polynomials</h3>
+<div id="outline-container-org0a0f076" class="outline-3">
+<h3 id="org0a0f076"><span class="section-number-3">1.3.</span> Legendre Polynomials</h3>
 <div class="outline-text-3" id="text-1-3">
 <p>
 下面是画前七阶 Legendre Polynomials 的图像
@@ -480,7 +480,7 @@ plt.savefig("./2019-06-03-专业笔记-PartialWaveExpansion/LegenderPolynomials.
 </div>
 
 
-<div id="org35e199e" class="figure">
+<div id="org1863c19" class="figure">
 <p><img src="./2019-06-03-专业笔记-PartialWaveExpansion/LegenderPolynomials.jpg" alt="LegenderPolynomials.jpg" />
 </p>
 </div>
@@ -547,8 +547,8 @@ for i in range(8):
 </div>
 </div>
 
-<div id="outline-container-org52da975" class="outline-3">
-<h3 id="org52da975"><span class="section-number-3">1.4.</span> Orthogonality</h3>
+<div id="outline-container-org1de6099" class="outline-3">
+<h3 id="org1de6099"><span class="section-number-3">1.4.</span> Orthogonality</h3>
 <div class="outline-text-3" id="text-1-4">
 <p>
 Legendre Polynomials 的正交归一性为
@@ -561,12 +561,12 @@ Legendre Polynomials 的正交归一性为
 </div>
 
 
-<div id="outline-container-org7854aaf" class="outline-3">
-<h3 id="org7854aaf"><span class="section-number-3">1.5.</span> Associated Legendre Functions</h3>
+<div id="outline-container-org47c2efc" class="outline-3">
+<h3 id="org47c2efc"><span class="section-number-3">1.5.</span> Associated Legendre Functions</h3>
 <div class="outline-text-3" id="text-1-5">
 </div>
-<div id="outline-container-org36560bf" class="outline-4">
-<h4 id="org36560bf"><span class="section-number-4">1.5.1.</span> Associated Legendre Equation</h4>
+<div id="outline-container-orga2c6d62" class="outline-4">
+<h4 id="orga2c6d62"><span class="section-number-4">1.5.1.</span> Associated Legendre Equation</h4>
 <div class="outline-text-4" id="text-1-5-1">
 \begin{align}
   (1-x^2) P''(x) -2x P'(x) + \left[ 
@@ -606,8 +606,8 @@ equation 就更像了. 我们还有 \(p\) 是可调的, 可以令常数项和 \(
 </div>
 </div>
 
-<div id="outline-container-orge5e7350" class="outline-4">
-<h4 id="orge5e7350"><span class="section-number-4">1.5.2.</span> Frobenius' Methods</h4>
+<div id="outline-container-orgf555d35" class="outline-4">
+<h4 id="orgf555d35"><span class="section-number-4">1.5.2.</span> Frobenius' Methods</h4>
 <div class="outline-text-4" id="text-1-5-2">
 <p>
 这个变换后的方程就可以由 Frobenius' Methods 得到级数解
@@ -673,7 +673,7 @@ equation 类似, \(s=1\) 时得到的结果是对应的奇数项, 所以 \(l\) �
 </div>
 
 <ol class="org-ol">
-<li><a id="org43d88cf"></a>\(\lambda = l(l+1)\)<br />
+<li><a id="org2c84c26"></a>\(\lambda = l(l+1)\)<br />
 <div class="outline-text-5" id="text-1-5-2-1">
 <p>
 在实际问题中, 一般 \(\lambda = l(l+1)\) , 此时截断为
@@ -691,12 +691,12 @@ equation 类似, \(s=1\) 时得到的结果是对应的奇数项, 所以 \(l\) �
 </div>
 </div>
 
-<div id="outline-container-orgf692194" class="outline-2">
-<h2 id="orgf692194"><span class="section-number-2">2.</span> Bessel Functions</h2>
+<div id="outline-container-org9208598" class="outline-2">
+<h2 id="org9208598"><span class="section-number-2">2.</span> Bessel Functions</h2>
 <div class="outline-text-2" id="text-2">
 </div>
-<div id="outline-container-org1773081" class="outline-3">
-<h3 id="org1773081"><span class="section-number-3">2.1.</span> Bessel ODE</h3>
+<div id="outline-container-orgec7c03c" class="outline-3">
+<h3 id="orgec7c03c"><span class="section-number-3">2.1.</span> Bessel ODE</h3>
 <div class="outline-text-3" id="text-2-1">
 <blockquote>
 \begin{align}
@@ -706,8 +706,8 @@ equation 类似, \(s=1\) 时得到的结果是对应的奇数项, 所以 \(l\) �
 </div>
 </div>
 
-<div id="outline-container-org1c43105" class="outline-3">
-<h3 id="org1c43105"><span class="section-number-3">2.2.</span> Frobenius' Methods and Bessel Functions of the First Kind</h3>
+<div id="outline-container-org86521ca" class="outline-3">
+<h3 id="org86521ca"><span class="section-number-3">2.2.</span> Frobenius' Methods and Bessel Functions of the First Kind</h3>
 <div class="outline-text-3" id="text-2-2">
 <p>
 尝试级数解
@@ -757,8 +757,8 @@ equation 类似, \(s=1\) 时得到的结果是对应的奇数项, 所以 \(l\) �
 </p>
 </div>
 
-<div id="outline-container-org7c9268a" class="outline-4">
-<h4 id="org7c9268a"><span class="section-number-4">2.2.1.</span> \(s = n\)</h4>
+<div id="outline-container-org8ea9bf3" class="outline-4">
+<h4 id="org8ea9bf3"><span class="section-number-4">2.2.1.</span> \(s = n\)</h4>
 <div class="outline-text-4" id="text-2-2-1">
 <p>
 此时得 recurrence relation 为
@@ -785,8 +785,8 @@ Bessel ODE 的解为
 </div>
 </div>
 
-<div id="outline-container-orge72b9f3" class="outline-4">
-<h4 id="orge72b9f3"><span class="section-number-4">2.2.2.</span> \(s = -n\)</h4>
+<div id="outline-container-org9e21fcf" class="outline-4">
+<h4 id="org9e21fcf"><span class="section-number-4">2.2.2.</span> \(s = -n\)</h4>
 <div class="outline-text-4" id="text-2-2-2">
 <p>
 此时得 recurrence relation 为
@@ -811,8 +811,8 @@ first kink. 且有以下性质
 
 
 
-<div id="outline-container-orgcc310da" class="outline-4">
-<h4 id="orgcc310da"><span class="section-number-4">2.2.3.</span> code</h4>
+<div id="outline-container-org2a9accd" class="outline-4">
+<h4 id="org2a9accd"><span class="section-number-4">2.2.3.</span> code</h4>
 <div class="outline-text-4" id="text-2-2-3">
 <p>
 下面是画前3阶 Bessel functions of the first kind 的图像
@@ -864,7 +864,7 @@ plt.savefig("./2019-06-03-专业笔记-PartialWaveExpansion/BFF.jpg"\
 </div>
 
 
-<div id="orgedfdd81" class="figure">
+<div id="org0827f9f" class="figure">
 <p><img src="./2019-06-03-专业笔记-PartialWaveExpansion/BFF.jpg" alt="BFF.jpg" />
 </p>
 </div>
@@ -876,12 +876,12 @@ plt.savefig("./2019-06-03-专业笔记-PartialWaveExpansion/BFF.jpg"\
 </div>
 </div>
 
-<div id="outline-container-org82c2a81" class="outline-3">
-<h3 id="org82c2a81"><span class="section-number-3">2.3.</span> the Bessel Functions of the Second Kind</h3>
+<div id="outline-container-orga182dcb" class="outline-3">
+<h3 id="orga182dcb"><span class="section-number-3">2.3.</span> the Bessel Functions of the Second Kind</h3>
 <div class="outline-text-3" id="text-2-3">
 </div>
-<div id="outline-container-orgb5ddf29" class="outline-4">
-<h4 id="orgb5ddf29"><span class="section-number-4">2.3.1.</span> Definition</h4>
+<div id="outline-container-org15b8d2f" class="outline-4">
+<h4 id="org15b8d2f"><span class="section-number-4">2.3.1.</span> Definition</h4>
 <div class="outline-text-4" id="text-2-3-1">
 <p>
 Bessel ODE 是一个二阶微分方程, 它应该有两个独立的解. 上面 \(\nu\) 取整数
@@ -905,8 +905,8 @@ functions of the second kind . 这里不详细讨论它.
 </div>
 </div>
 
-<div id="outline-container-org05a70a5" class="outline-3">
-<h3 id="org05a70a5"><span class="section-number-3">2.4.</span> Hankel Functions</h3>
+<div id="outline-container-org8977c5c" class="outline-3">
+<h3 id="org8977c5c"><span class="section-number-3">2.4.</span> Hankel Functions</h3>
 <div class="outline-text-3" id="text-2-4">
 <p>
 Hankel Functions 曾经也常被叫做 Bessel functions of the third kind
@@ -920,12 +920,12 @@ Hankel Functions 曾经也常被叫做 Bessel functions of the third kind
 </div>
 </div>
 
-<div id="outline-container-orgdd9a3ad" class="outline-3">
-<h3 id="orgdd9a3ad"><span class="section-number-3">2.5.</span> Modified Bessel Functions</h3>
+<div id="outline-container-org3572473" class="outline-3">
+<h3 id="org3572473"><span class="section-number-3">2.5.</span> Modified Bessel Functions</h3>
 <div class="outline-text-3" id="text-2-5">
 </div>
-<div id="outline-container-orgcf0cfb1" class="outline-4">
-<h4 id="orgcf0cfb1"><span class="section-number-4">2.5.1.</span> MOdified Bessel equation</h4>
+<div id="outline-container-orgf5ab55b" class="outline-4">
+<h4 id="orgf5ab55b"><span class="section-number-4">2.5.1.</span> MOdified Bessel equation</h4>
 <div class="outline-text-4" id="text-2-5-1">
 \begin{align}
   \rho^2 \frac{\mathrm{d}^2}{\mathrm{d}\rho^2}P_{\nu}(k\rho)
@@ -944,8 +944,8 @@ Hankel Functions 曾经也常被叫做 Bessel functions of the third kind
 </div>
 </div>
 
-<div id="outline-container-org0a4044b" class="outline-4">
-<h4 id="org0a4044b"><span class="section-number-4">2.5.2.</span> Modified Bessel Functions of the First Kind</h4>
+<div id="outline-container-orgddeef5c" class="outline-4">
+<h4 id="orgddeef5c"><span class="section-number-4">2.5.2.</span> Modified Bessel Functions of the First Kind</h4>
 <div class="outline-text-4" id="text-2-5-2">
 <p>
 它的解只须做代换 \(k\to
@@ -965,8 +965,8 @@ Hankel Functions 曾经也常被叫做 Bessel functions of the third kind
 </div>
 </div>
 
-<div id="outline-container-orgbd4e170" class="outline-4">
-<h4 id="orgbd4e170"><span class="section-number-4">2.5.3.</span> Code</h4>
+<div id="outline-container-org183eafc" class="outline-4">
+<h4 id="org183eafc"><span class="section-number-4">2.5.3.</span> Code</h4>
 <div class="outline-text-4" id="text-2-5-3">
 <p>
 下面是画前3阶 modified Bessel functions of the first kind 的图像
@@ -1015,15 +1015,15 @@ plt.savefig("./2019-06-03-专业笔记-PartialWaveExpansion/MBFF.jpg"\
 </div>
 
 
-<div id="org7b12977" class="figure">
+<div id="org3222304" class="figure">
 <p><img src="./2019-06-03-专业笔记-PartialWaveExpansion/MBFF.jpg" alt="MBFF.jpg" />
 </p>
 </div>
 </div>
 </div>
 
-<div id="outline-container-org967530e" class="outline-4">
-<h4 id="org967530e"><span class="section-number-4">2.5.4.</span> Modified Bessel Functions of the Second Kind</h4>
+<div id="outline-container-org813c77b" class="outline-4">
+<h4 id="org813c77b"><span class="section-number-4">2.5.4.</span> Modified Bessel Functions of the Second Kind</h4>
 <div class="outline-text-4" id="text-2-5-4">
 <p>
 modified Bessel functions of the second kind 有时也叫做 Whittaker
@@ -1043,8 +1043,8 @@ moddified Bessel function 对于 Bessel function 的关系, 就像 \(\sinh\) 对
 </div>
 </div>
 
-<div id="outline-container-org6a30aae" class="outline-3">
-<h3 id="org6a30aae"><span class="section-number-3">2.6.</span> Spherical Bessel Functions</h3>
+<div id="outline-container-org4617dc5" class="outline-3">
+<h3 id="org4617dc5"><span class="section-number-3">2.6.</span> Spherical Bessel Functions</h3>
 <div class="outline-text-3" id="text-2-6">
 <p>
 对于球对称的问题, 经常会遇到径向方程
@@ -1078,8 +1078,8 @@ moddified Bessel function 对于 Bessel function 的关系, 就像 \(\sinh\) 对
 </p>
 </div>
 
-<div id="outline-container-org3a03938" class="outline-4">
-<h4 id="org3a03938"><span class="section-number-4">2.6.1.</span> Definition</h4>
+<div id="outline-container-org0ac7c5f" class="outline-4">
+<h4 id="org0ac7c5f"><span class="section-number-4">2.6.1.</span> Definition</h4>
 <div class="outline-text-4" id="text-2-6-1">
 <p>
 取定常数 \(C\) , Spherical Functions 定义如下
@@ -1093,8 +1093,8 @@ moddified Bessel function 对于 Bessel function 的关系, 就像 \(\sinh\) 对
 </div>
 </div>
 
-<div id="outline-container-org84c22ac" class="outline-4">
-<h4 id="org84c22ac"><span class="section-number-4">2.6.2.</span> Some Examples</h4>
+<div id="outline-container-org2d87f2b" class="outline-4">
+<h4 id="org2d87f2b"><span class="section-number-4">2.6.2.</span> Some Examples</h4>
 <div class="outline-text-4" id="text-2-6-2">
 \begin{align}
   j_0(x) =& \quad\frac{1}{x}\sin x \\
@@ -1122,8 +1122,8 @@ moddified Bessel function 对于 Bessel function 的关系, 就像 \(\sinh\) 对
 </div>
 </div>
 
-<div id="outline-container-org47e6d8d" class="outline-4">
-<h4 id="org47e6d8d"><span class="section-number-4">2.6.3.</span> Asymptotic Forms</h4>
+<div id="outline-container-org851f577" class="outline-4">
+<h4 id="org851f577"><span class="section-number-4">2.6.3.</span> Asymptotic Forms</h4>
 <div class="outline-text-4" id="text-2-6-3">
 <p>
 as \(x \to \infty\) 
@@ -1135,8 +1135,8 @@ as \(x \to \infty\)
 </div>
 </div>
 
-<div id="outline-container-org33e8d7e" class="outline-4">
-<h4 id="org33e8d7e"><span class="section-number-4">2.6.4.</span> Closure Relation</h4>
+<div id="outline-container-org6173e15" class="outline-4">
+<h4 id="org6173e15"><span class="section-number-4">2.6.4.</span> Closure Relation</h4>
 <div class="outline-text-4" id="text-2-6-4">
 <p>
 Closure Relation for spherical Bessel functions
@@ -1150,12 +1150,12 @@ Closure Relation for spherical Bessel functions
 </div>
 </div>
 
-<div id="outline-container-orge4dc357" class="outline-2">
-<h2 id="orge4dc357"><span class="section-number-2">3.</span> Spherical Harmonics</h2>
+<div id="outline-container-orgbfa8dc4" class="outline-2">
+<h2 id="orgbfa8dc4"><span class="section-number-2">3.</span> Spherical Harmonics</h2>
 <div class="outline-text-2" id="text-3">
 </div>
-<div id="outline-container-org05f6106" class="outline-3">
-<h3 id="org05f6106"><span class="section-number-3">3.1.</span> Associated Legendre Functions</h3>
+<div id="outline-container-org9a1c2a1" class="outline-3">
+<h3 id="org9a1c2a1"><span class="section-number-3">3.1.</span> Associated Legendre Functions</h3>
 <div class="outline-text-3" id="text-3-1">
 \begin{align}
   P_l^m(x) = (-1)^m \frac{\mathrm{d}^m}{\mathrm{d}x^m}P_l(x)
@@ -1163,8 +1163,8 @@ Closure Relation for spherical Bessel functions
 </div>
 </div>
 
-<div id="outline-container-org7948ddd" class="outline-3">
-<h3 id="org7948ddd"><span class="section-number-3">3.2.</span> Spherical Harmonics</h3>
+<div id="outline-container-orgb9696b2" class="outline-3">
+<h3 id="orgb9696b2"><span class="section-number-3">3.2.</span> Spherical Harmonics</h3>
 <div class="outline-text-3" id="text-3-2">
 \begin{align}
   Y_l^m (\theta,\phi) \equiv \sqrt{\frac{2l+1}{4\pi}\frac{(l-m)!}{(l+m)!}}
@@ -1184,8 +1184,8 @@ Closure Relation for spherical Bessel functions
 
 
 
-<div id="outline-container-org95e24df" class="outline-2">
-<h2 id="org95e24df"><span class="section-number-2">4.</span> Summary</h2>
+<div id="outline-container-org5d74cef" class="outline-2">
+<h2 id="org5d74cef"><span class="section-number-2">4.</span> Summary</h2>
 <div class="outline-text-2" id="text-4">
 <p>
 Legendre equation and its orthogonality
@@ -1308,8 +1308,8 @@ Closure Relation for spherical Bessel functions
 </div>
 
 
-<div id="outline-container-orgc1a8de1" class="outline-2">
-<h2 id="orgc1a8de1"><span class="section-number-2">5.</span> Reference</h2>
+<div id="outline-container-orgb137ea1" class="outline-2">
+<h2 id="orgb137ea1"><span class="section-number-2">5.</span> Reference</h2>
 <div class="outline-text-2" id="text-5">
 <p>
 梁昆淼编, 刘法,缪国庆修订, 数学物理方法(第四版)
@@ -1349,7 +1349,7 @@ R. Mehrem, arXiv:0909.0494v4: <a href="https://arxiv.org/pdf/0909.0494.pdf">http
 </div>
 <div id="postamble" class="status">
 <p class="date">Date: 2019-06-03 Mon 00:00</p>
-<p class="date">Created: 2022-04-16 Sat 17:43</p>
+<p class="date">Created: 2022-04-16 Sat 21:09</p>
 <p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>

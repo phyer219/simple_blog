@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2022-04-16 Sat 17:43 -->
+<!-- 2022-04-16 Sat 21:09 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>由 rf current 的定义推导其格林函数的表达形式</title>
@@ -221,24 +221,24 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#org2f52b67">1. 问题描述</a></li>
-<li><a href="#org8383fe3">2. Hamiltonian</a></li>
-<li><a href="#orgd458963">3. Heisenberg 运动方程</a></li>
-<li><a href="#org7bb8034">4. 线性响应</a></li>
-<li><a href="#org4380cfb">5. 应用线性响应, 并扔掉两项</a></li>
-<li><a href="#org963e116">6. Rotating Wave Approximation</a></li>
-<li><a href="#orgc75fdb0">7. rf 谱动量守恒</a></li>
-<li><a href="#orge2f5398">8. 写成格林函数</a></li>
-<li><a href="#org57abddf">9. 初末两个态没有相互作用</a></li>
-<li><a href="#org6ab6022">10. Reference</a></li>
+<li><a href="#orgdbe830e">1. 问题描述</a></li>
+<li><a href="#org2945132">2. Hamiltonian</a></li>
+<li><a href="#org3919422">3. Heisenberg 运动方程</a></li>
+<li><a href="#orge0e9617">4. 线性响应</a></li>
+<li><a href="#org8f67288">5. 应用线性响应, 并扔掉两项</a></li>
+<li><a href="#orgf510019">6. Rotating Wave Approximation</a></li>
+<li><a href="#org98012d4">7. rf 谱动量守恒</a></li>
+<li><a href="#org14606e8">8. 写成格林函数</a></li>
+<li><a href="#org0148a2a">9. 初末两个态没有相互作用</a></li>
+<li><a href="#orgd9790f0">10. Reference</a></li>
 </ul>
 </div>
 </div>
 <!-- toc -->
 <!-- more -->
 
-<div id="outline-container-org2f52b67" class="outline-2">
-<h2 id="org2f52b67"><span class="section-number-2">1.</span> 问题描述</h2>
+<div id="outline-container-orgdbe830e" class="outline-2">
+<h2 id="orgdbe830e"><span class="section-number-2">1.</span> 问题描述</h2>
 <div class="outline-text-2" id="text-1">
 <p>
 通过计算, 探究 rf current, 也就是粒子数对时间的导数, 与 Green's function 的关系. 
@@ -246,8 +246,8 @@
 </div>
 </div>
 
-<div id="outline-container-org8383fe3" class="outline-2">
-<h2 id="org8383fe3"><span class="section-number-2">2.</span> Hamiltonian</h2>
+<div id="outline-container-org2945132" class="outline-2">
+<h2 id="org2945132"><span class="section-number-2">2.</span> Hamiltonian</h2>
 <div class="outline-text-2" id="text-2">
 <p>
 考虑不同 hyperfine state 上的 Fermi 原子. 不同的 hyperfine state 用希腊字母下
@@ -304,8 +304,8 @@ couple. 整个系统的 Hamiltonia 为
 </div>
 </div>
 
-<div id="outline-container-orgd458963" class="outline-2">
-<h2 id="orgd458963"><span class="section-number-2">3.</span> Heisenberg 运动方程</h2>
+<div id="outline-container-org3919422" class="outline-2">
+<h2 id="org3919422"><span class="section-number-2">3.</span> Heisenberg 运动方程</h2>
 <div class="outline-text-2" id="text-3">
 <p>
 根据 Heisenberg picture 的运动方程
@@ -389,8 +389,8 @@ couple. 整个系统的 Hamiltonia 为
 </div>
 </div>
 
-<div id="outline-container-org7bb8034" class="outline-2">
-<h2 id="org7bb8034"><span class="section-number-2">4.</span> 线性响应</h2>
+<div id="outline-container-orge0e9617" class="outline-2">
+<h2 id="orge0e9617"><span class="section-number-2">4.</span> 线性响应</h2>
 <div class="outline-text-2" id="text-4">
 <p>
 现在已经通过 Heisenberg 运动方程, 将原来问题中算符导数的平均, 变成了对关联函数的
@@ -454,8 +454,8 @@ e^{-\frac{\mathrm{i}}{\hbar}\hat{H}_{0C}(t)}\) , 它在 \(t\) 时刻的期望为
 </div>
 </div>
 
-<div id="outline-container-org4380cfb" class="outline-2">
-<h2 id="org4380cfb"><span class="section-number-2">5.</span> 应用线性响应, 并扔掉两项</h2>
+<div id="outline-container-org8f67288" class="outline-2">
+<h2 id="org8f67288"><span class="section-number-2">5.</span> 应用线性响应, 并扔掉两项</h2>
 <div class="outline-text-2" id="text-5">
 <p>
 rf current 在相互作用表象中可以写成
@@ -563,8 +563,8 @@ species.
 </div>
 </div>
 
-<div id="outline-container-org963e116" class="outline-2">
-<h2 id="org963e116"><span class="section-number-2">6.</span> Rotating Wave Approximation</h2>
+<div id="outline-container-orgf510019" class="outline-2">
+<h2 id="orgf510019"><span class="section-number-2">6.</span> Rotating Wave Approximation</h2>
 <div class="outline-text-2" id="text-6">
 <p>
 现在做一个 trick. 原因在书上(待会补充)
@@ -690,8 +690,8 @@ e^{\frac{\mathrm{i}}{\hbar}[(E_e - E_g) - (\mu_g  - \mu_e)]t}
 </div>
 </div>
 
-<div id="outline-container-orgc75fdb0" class="outline-2">
-<h2 id="orgc75fdb0"><span class="section-number-2">7.</span> rf 谱动量守恒</h2>
+<div id="outline-container-org98012d4" class="outline-2">
+<h2 id="org98012d4"><span class="section-number-2">7.</span> rf 谱动量守恒</h2>
 <div class="outline-text-2" id="text-7">
 <blockquote>
 <p>
@@ -747,8 +747,8 @@ coupling parameter to be simply a constant.
 </div>
 </div>
 
-<div id="outline-container-orge2f5398" class="outline-2">
-<h2 id="orge2f5398"><span class="section-number-2">8.</span> 写成格林函数</h2>
+<div id="outline-container-org14606e8" class="outline-2">
+<h2 id="org14606e8"><span class="section-number-2">8.</span> 写成格林函数</h2>
 <div class="outline-text-2" id="text-8">
 <blockquote>
 <p>
@@ -857,8 +857,8 @@ G_{AB}^{\mathrm{ret}}(t,t') =-\mathrm{i}\theta(t-t')\langle [A(t),B(t')]_{-\vare
 </div>
 
 
-<div id="outline-container-org57abddf" class="outline-2">
-<h2 id="org57abddf"><span class="section-number-2">9.</span> 初末两个态没有相互作用</h2>
+<div id="outline-container-org0148a2a" class="outline-2">
+<h2 id="org0148a2a"><span class="section-number-2">9.</span> 初末两个态没有相互作用</h2>
 <div class="outline-text-2" id="text-9">
 <blockquote>
 <p>
@@ -908,8 +908,8 @@ assume \(k=k'\) and \(l=l'\) .
 
 
 
-<div id="outline-container-org6ab6022" class="outline-2">
-<h2 id="org6ab6022"><span class="section-number-2">10.</span> Reference</h2>
+<div id="outline-container-orgd9790f0" class="outline-2">
+<h2 id="orgd9790f0"><span class="section-number-2">10.</span> Reference</h2>
 <div class="outline-text-2" id="text-10">
 <ul class="org-ul">
 <li>Phys. Scr. 91 (2016) 043006 ,Päivi Törmä ,Physics of ultracold Fermi gases revealed by spectroscopies</li>
@@ -921,7 +921,7 @@ assume \(k=k'\) and \(l=l'\) .
 </div>
 <div id="postamble" class="status">
 <p class="date">Date: 2020-05-02 Sat 00:00</p>
-<p class="date">Created: 2022-04-16 Sat 17:43</p>
+<p class="date">Created: 2022-04-16 Sat 21:09</p>
 <p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>

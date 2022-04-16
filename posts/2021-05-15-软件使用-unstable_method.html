@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2022-04-16 Sat 17:42 -->
+<!-- 2022-04-16 Sat 21:09 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>round-off error, unstable method, mpmath(update 15/Mar/2022)</title>
@@ -221,11 +221,11 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#org2cd1125">1. Round-off error</a></li>
-<li><a href="#orgde90fe7">2. Unstable method</a></li>
-<li><a href="#orgaecbd25">3. 解决方法</a></li>
-<li><a href="#org7b1daaa">4. 另一种出现 round-off error 的情况</a></li>
-<li><a href="#orgc9feda8">5. Reference</a></li>
+<li><a href="#org8c335ef">1. Round-off error</a></li>
+<li><a href="#orga520d65">2. Unstable method</a></li>
+<li><a href="#orga8bd16c">3. 解决方法</a></li>
+<li><a href="#org4e131f0">4. 另一种出现 round-off error 的情况</a></li>
+<li><a href="#org7c35375">5. Reference</a></li>
 </ul>
 </div>
 </div>
@@ -233,8 +233,8 @@
 <!-- more -->
 
 
-<div id="outline-container-org2cd1125" class="outline-2">
-<h2 id="org2cd1125"><span class="section-number-2">1.</span> Round-off error</h2>
+<div id="outline-container-org8c335ef" class="outline-2">
+<h2 id="org8c335ef"><span class="section-number-2">1.</span> Round-off error</h2>
 <div class="outline-text-2" id="text-1">
 <p>
 Round-off error 的原因是数值计算的过程中, 机器的精度是有限的. <a href="https://en.wikipedia.org/wiki/Round-off_error">wikipedia: Round-off error</a>
@@ -242,8 +242,8 @@ Round-off error 的原因是数值计算的过程中, 机器的精度是有限�
 </div>
 </div>
 
-<div id="outline-container-orgde90fe7" class="outline-2">
-<h2 id="orgde90fe7"><span class="section-number-2">2.</span> Unstable method</h2>
+<div id="outline-container-orga520d65" class="outline-2">
+<h2 id="orga520d65"><span class="section-number-2">2.</span> Unstable method</h2>
 <div class="outline-text-2" id="text-2">
 <p>
 计算 Goledn Mean
@@ -314,8 +314,8 @@ plt.savefig('unstable_method.png')
 </div>
 </div>
 
-<div id="outline-container-orgaecbd25" class="outline-2">
-<h2 id="orgaecbd25"><span class="section-number-2">3.</span> 解决方法</h2>
+<div id="outline-container-orga8bd16c" class="outline-2">
+<h2 id="orga8bd16c"><span class="section-number-2">3.</span> 解决方法</h2>
 <div class="outline-text-2" id="text-3">
 <p>
 解决方法之一是使用更高精度的数值类型. 虽然此法在效率上的代价是巨大的.
@@ -393,8 +393,8 @@ plt.savefig('unstable_method_with_mpmath.png')
 </div>
 </div>
 
-<div id="outline-container-org7b1daaa" class="outline-2">
-<h2 id="org7b1daaa"><span class="section-number-2">4.</span> 另一种出现 round-off error 的情况</h2>
+<div id="outline-container-org4e131f0" class="outline-2">
+<h2 id="org4e131f0"><span class="section-number-2">4.</span> 另一种出现 round-off error 的情况</h2>
 <div class="outline-text-2" id="text-4">
 \begin{align}
 \int_0^{\infty } \mathrm{d}k\cdot \left[\sqrt{5 k^4+4 \sqrt{k^4+1} k^2+4}-3 k^2\right]
@@ -483,8 +483,8 @@ result of mpmath mpf type: (2.472099451021771, 7.496323446432029e-07)
 </div>
 
 
-<div id="outline-container-orgc9feda8" class="outline-2">
-<h2 id="orgc9feda8"><span class="section-number-2">5.</span> Reference</h2>
+<div id="outline-container-org7c35375" class="outline-2">
+<h2 id="org7c35375"><span class="section-number-2">5.</span> Reference</h2>
 <div class="outline-text-2" id="text-5">
 <ul class="org-ul">
 <li><a href="https://en.wikipedia.org/wiki/Round-off_error">wikipedia: Round-off error</a></li>
@@ -507,7 +507,7 @@ edition. Endeavour 17, 201 (1993). Chap 1.3</li>
 </div>
 <div id="postamble" class="status">
 <p class="date">Date: 2021-05-15 Sat 00:00</p>
-<p class="date">Created: 2022-04-16 Sat 17:42</p>
+<p class="date">Created: 2022-04-16 Sat 21:09</p>
 <p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>

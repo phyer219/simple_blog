@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2022-04-16 Sat 17:43 -->
+<!-- 2022-04-16 Sat 21:08 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Manjaro-18-Gnome 装机备忘</title>
@@ -200,71 +200,71 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#org5c1207a">1. 基本安装</a>
+<li><a href="#orgcaaab6f">1. 基本安装</a>
 <ul>
-<li><a href="#org33938bf">1.1. 刻盘</a></li>
-<li><a href="#orgecc1c24">1.2. 配置安装源</a>
+<li><a href="#org0d5f4eb">1.1. 刻盘</a></li>
+<li><a href="#org8e5f106">1.2. 配置安装源</a>
 <ul>
-<li><a href="#orgd473259">1.2.1. 添加中国镜像</a></li>
-<li><a href="#orgd6478e7">1.2.2. 添加 archlinuxcn 仓库</a></li>
-<li><a href="#org6570b97">1.2.3. yaourt 配置</a></li>
-<li><a href="#org1d7b1e3">1.2.4. snap</a></li>
+<li><a href="#orgf659864">1.2.1. 添加中国镜像</a></li>
+<li><a href="#orgce9acfa">1.2.2. 添加 archlinuxcn 仓库</a></li>
+<li><a href="#org8b9f749">1.2.3. yaourt 配置</a></li>
+<li><a href="#orgd4ee50e">1.2.4. snap</a></li>
 </ul>
 </li>
-<li><a href="#orgad2435b">1.3. 中文输入法</a>
+<li><a href="#orga507285">1.3. 中文输入法</a>
 <ul>
-<li><a href="#orgb037a21">1.3.1. 安装</a></li>
-<li><a href="#org3ad3276">1.3.2. 配置文件</a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li><a href="#org9429bf5">2. 软件安装</a>
-<ul>
-<li><a href="#orgb66aecf">2.1. tex</a></li>
-<li><a href="#org0a2a039">2.2. evince 中文</a></li>
-<li><a href="#org5c90ee4">2.3. hexo</a>
-<ul>
-<li><a href="#org30d4908">2.3.1. 安装 Hexo</a></li>
-<li><a href="#org6ce2954">2.3.2. 复制旧的文件过来</a></li>
-<li><a href="#orgf5e5536">2.3.3. 添加site map</a></li>
-</ul>
-</li>
-<li><a href="#org8e99757">2.4. emacs</a>
-<ul>
-<li><a href="#org5dcb947">2.4.1. 右alt不能当meta</a></li>
-</ul>
-</li>
-<li><a href="#org53a47b2">2.5. 坚果云</a>
-<ul>
-<li><a href="#org6c97fab">2.5.1. 无托盘图标：</a></li>
-</ul>
-</li>
-<li><a href="#orgddc0692">2.6. teamviewer</a>
-<ul>
-<li><a href="#org7d2919c">2.6.1. 不能连网：</a></li>
+<li><a href="#orgac2dae8">1.3.1. 安装</a></li>
+<li><a href="#org08f2f9d">1.3.2. 配置文件</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li><a href="#org4b44b36">3. 问题合集</a>
+<li><a href="#org575eb98">2. 软件安装</a>
 <ul>
-<li><a href="#orgb9410a4">3.1. shadowsocks-qt5连上, 但是浏览器连不上</a></li>
+<li><a href="#org3e0bc41">2.1. tex</a></li>
+<li><a href="#orgcc9a319">2.2. evince 中文</a></li>
+<li><a href="#org1eebc84">2.3. hexo</a>
+<ul>
+<li><a href="#org1236578">2.3.1. 安装 Hexo</a></li>
+<li><a href="#org2783c24">2.3.2. 复制旧的文件过来</a></li>
+<li><a href="#orgc0a531d">2.3.3. 添加site map</a></li>
 </ul>
 </li>
-<li><a href="#org1b5f1ae">4. 注</a></li>
+<li><a href="#orgaa10f01">2.4. emacs</a>
+<ul>
+<li><a href="#org7f3963c">2.4.1. 右alt不能当meta</a></li>
+</ul>
+</li>
+<li><a href="#org5cd4411">2.5. 坚果云</a>
+<ul>
+<li><a href="#orga4d6d89">2.5.1. 无托盘图标：</a></li>
+</ul>
+</li>
+<li><a href="#org4246db2">2.6. teamviewer</a>
+<ul>
+<li><a href="#orgfc951f8">2.6.1. 不能连网：</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#org17d795a">3. 问题合集</a>
+<ul>
+<li><a href="#org9795d57">3.1. shadowsocks-qt5连上, 但是浏览器连不上</a></li>
+</ul>
+</li>
+<li><a href="#orgf3fc3fb">4. 注</a></li>
 </ul>
 </div>
 </div>
 <!-- toc -->
 <!-- more -->
 
-<div id="outline-container-org5c1207a" class="outline-2">
-<h2 id="org5c1207a"><span class="section-number-2">1.</span> 基本安装</h2>
+<div id="outline-container-orgcaaab6f" class="outline-2">
+<h2 id="orgcaaab6f"><span class="section-number-2">1.</span> 基本安装</h2>
 <div class="outline-text-2" id="text-1">
 </div>
-<div id="outline-container-org33938bf" class="outline-3">
-<h3 id="org33938bf"><span class="section-number-3">1.1.</span> 刻盘</h3>
+<div id="outline-container-org0d5f4eb" class="outline-3">
+<h3 id="org0d5f4eb"><span class="section-number-3">1.1.</span> 刻盘</h3>
 <div class="outline-text-3" id="text-1-1">
 <ul class="org-ul">
 <li>使用ultroiso，刻录方式应选择raw</li>
@@ -272,12 +272,12 @@
 </div>
 </div>
 
-<div id="outline-container-orgecc1c24" class="outline-3">
-<h3 id="orgecc1c24"><span class="section-number-3">1.2.</span> 配置安装源</h3>
+<div id="outline-container-org8e5f106" class="outline-3">
+<h3 id="org8e5f106"><span class="section-number-3">1.2.</span> 配置安装源</h3>
 <div class="outline-text-3" id="text-1-2">
 </div>
-<div id="outline-container-orgd473259" class="outline-4">
-<h4 id="orgd473259"><span class="section-number-4">1.2.1.</span> 添加中国镜像</h4>
+<div id="outline-container-orgf659864" class="outline-4">
+<h4 id="orgf659864"><span class="section-number-4">1.2.1.</span> 添加中国镜像</h4>
 <div class="outline-text-4" id="text-1-2-1">
 <p>
 生成可用中国镜像站列表:
@@ -307,8 +307,8 @@
 </div>
 </div>
 
-<div id="outline-container-orgd6478e7" class="outline-4">
-<h4 id="orgd6478e7"><span class="section-number-4">1.2.2.</span> 添加 archlinuxcn 仓库</h4>
+<div id="outline-container-orgce9acfa" class="outline-4">
+<h4 id="orgce9acfa"><span class="section-number-4">1.2.2.</span> 添加 archlinuxcn 仓库</h4>
 <div class="outline-text-4" id="text-1-2-2">
 <p>
 在 `/etc/pacman.conf` 文件末尾添加两行：
@@ -338,8 +338,8 @@ Server = https://mirrors.ustc.edu.cn/archlinuxcn/$arch
 </p>
 </div>
 </div>
-<div id="outline-container-org6570b97" class="outline-4">
-<h4 id="org6570b97"><span class="section-number-4">1.2.3.</span> yaourt 配置</h4>
+<div id="outline-container-org8b9f749" class="outline-4">
+<h4 id="org8b9f749"><span class="section-number-4">1.2.3.</span> yaourt 配置</h4>
 <div class="outline-text-4" id="text-1-2-3">
 <ul class="org-ul">
 <li>安装 yaourt</li>
@@ -367,12 +367,12 @@ Server = https://mirrors.ustc.edu.cn/archlinuxcn/$arch
 </div>
 
 
-<div id="outline-container-org1d7b1e3" class="outline-4">
-<h4 id="org1d7b1e3"><span class="section-number-4">1.2.4.</span> snap</h4>
+<div id="outline-container-orgd4ee50e" class="outline-4">
+<h4 id="orgd4ee50e"><span class="section-number-4">1.2.4.</span> snap</h4>
 <div class="outline-text-4" id="text-1-2-4">
 </div>
 <ol class="org-ol">
-<li><a id="org7e1cc6d"></a>连不上网<br />
+<li><a id="org45168c8"></a>连不上网<br />
 <div class="outline-text-5" id="text-1-2-4-1">
 <div class="org-src-container">
 <pre class="src src-shell">systemctl start snapd.service
@@ -384,12 +384,12 @@ Server = https://mirrors.ustc.edu.cn/archlinuxcn/$arch
 </div>
 </div>
 
-<div id="outline-container-orgad2435b" class="outline-3">
-<h3 id="orgad2435b"><span class="section-number-3">1.3.</span> 中文输入法</h3>
+<div id="outline-container-orga507285" class="outline-3">
+<h3 id="orga507285"><span class="section-number-3">1.3.</span> 中文输入法</h3>
 <div class="outline-text-3" id="text-1-3">
 </div>
-<div id="outline-container-orgb037a21" class="outline-4">
-<h4 id="orgb037a21"><span class="section-number-4">1.3.1.</span> 安装</h4>
+<div id="outline-container-orgac2dae8" class="outline-4">
+<h4 id="orgac2dae8"><span class="section-number-4">1.3.1.</span> 安装</h4>
 <div class="outline-text-4" id="text-1-3-1">
 <div class="org-src-container">
 <pre class="src src-shell">sudo pacman -S fcitx
@@ -400,8 +400,8 @@ sudo pacman -S fcitx-sogoupinyin    ----可选安装，fcitx默认已有中文�
 </div>
 </div>
 
-<div id="outline-container-org3ad3276" class="outline-4">
-<h4 id="org3ad3276"><span class="section-number-4">1.3.2.</span> 配置文件</h4>
+<div id="outline-container-org08f2f9d" class="outline-4">
+<h4 id="org08f2f9d"><span class="section-number-4">1.3.2.</span> 配置文件</h4>
 <div class="outline-text-4" id="text-1-3-2">
 <p>
 在 <code>~/.xprofile</code> 中添加以下内容
@@ -423,12 +423,12 @@ export XMODIFIERS=@im=fcitx
 </div>
 </div>
 
-<div id="outline-container-org9429bf5" class="outline-2">
-<h2 id="org9429bf5"><span class="section-number-2">2.</span> 软件安装</h2>
+<div id="outline-container-org575eb98" class="outline-2">
+<h2 id="org575eb98"><span class="section-number-2">2.</span> 软件安装</h2>
 <div class="outline-text-2" id="text-2">
 </div>
-<div id="outline-container-orgb66aecf" class="outline-3">
-<h3 id="orgb66aecf"><span class="section-number-3">2.1.</span> tex</h3>
+<div id="outline-container-org3e0bc41" class="outline-3">
+<h3 id="org3e0bc41"><span class="section-number-3">2.1.</span> tex</h3>
 <div class="outline-text-3" id="text-2-1">
 <p>
 安装以下三个包, 中文编写应该没有问题.
@@ -448,8 +448,8 @@ texlive-latexextra
 </div>
 </div>
 
-<div id="outline-container-org0a2a039" class="outline-3">
-<h3 id="org0a2a039"><span class="section-number-3">2.2.</span> evince 中文</h3>
+<div id="outline-container-orgcc9a319" class="outline-3">
+<h3 id="orgcc9a319"><span class="section-number-3">2.2.</span> evince 中文</h3>
 <div class="outline-text-3" id="text-2-2">
 <p>
 evince 可能中文显示不好. 安装 xpdf 后会解决
@@ -457,12 +457,12 @@ evince 可能中文显示不好. 安装 xpdf 后会解决
 </div>
 </div>
 
-<div id="outline-container-org5c90ee4" class="outline-3">
-<h3 id="org5c90ee4"><span class="section-number-3">2.3.</span> hexo</h3>
+<div id="outline-container-org1eebc84" class="outline-3">
+<h3 id="org1eebc84"><span class="section-number-3">2.3.</span> hexo</h3>
 <div class="outline-text-3" id="text-2-3">
 </div>
-<div id="outline-container-org30d4908" class="outline-4">
-<h4 id="org30d4908"><span class="section-number-4">2.3.1.</span> 安装 Hexo</h4>
+<div id="outline-container-org1236578" class="outline-4">
+<h4 id="org1236578"><span class="section-number-4">2.3.1.</span> 安装 Hexo</h4>
 <div class="outline-text-4" id="text-2-3-1">
 <div class="org-src-container">
 <pre class="src src-shell">sudo npm install -g hexo-cli
@@ -471,16 +471,16 @@ evince 可能中文显示不好. 安装 xpdf 后会解决
 </div>
 </div>
 
-<div id="outline-container-org6ce2954" class="outline-4">
-<h4 id="org6ce2954"><span class="section-number-4">2.3.2.</span> 复制旧的文件过来</h4>
+<div id="outline-container-org2783c24" class="outline-4">
+<h4 id="org2783c24"><span class="section-number-4">2.3.2.</span> 复制旧的文件过来</h4>
 </div>
 
-<div id="outline-container-orgf5e5536" class="outline-4">
-<h4 id="orgf5e5536"><span class="section-number-4">2.3.3.</span> 添加site map</h4>
+<div id="outline-container-orgc0a531d" class="outline-4">
+<h4 id="orgc0a531d"><span class="section-number-4">2.3.3.</span> 添加site map</h4>
 <div class="outline-text-4" id="text-2-3-3">
 </div>
 <ol class="org-ol">
-<li><a id="org274b122"></a>执行命令安装sitemap<br />
+<li><a id="org2e104bd"></a>执行命令安装sitemap<br />
 <div class="outline-text-5" id="text-2-3-3-1">
 <div class="org-src-container">
 <pre class="src src-shell">npm install hexo-generator-sitemap --save
@@ -489,7 +489,7 @@ evince 可能中文显示不好. 安装 xpdf 后会解决
 </div>
 </li>
 
-<li><a id="org2803081"></a>在Hexo站点配置文件 _config.yml 中加入 sitemap 插件<br />
+<li><a id="org1d4df0f"></a>在Hexo站点配置文件 _config.yml 中加入 sitemap 插件<br />
 <div class="outline-text-5" id="text-2-3-3-2">
 <div class="org-src-container">
 <pre class="src src-shell"># Extensions
@@ -499,7 +499,7 @@ plugins: hexo-generator-sitemap
 </div>
 </li>
 
-<li><a id="org2faea6b"></a>执行命令生成sitemap文件<br />
+<li><a id="org1998ea9"></a>执行命令生成sitemap文件<br />
 <div class="outline-text-5" id="text-2-3-3-3">
 <pre class="example">
 hexo clean
@@ -511,12 +511,12 @@ hexo g
 </div>
 </div>
 
-<div id="outline-container-org8e99757" class="outline-3">
-<h3 id="org8e99757"><span class="section-number-3">2.4.</span> emacs</h3>
+<div id="outline-container-orgaa10f01" class="outline-3">
+<h3 id="orgaa10f01"><span class="section-number-3">2.4.</span> emacs</h3>
 <div class="outline-text-3" id="text-2-4">
 </div>
-<div id="outline-container-org5dcb947" class="outline-4">
-<h4 id="org5dcb947"><span class="section-number-4">2.4.1.</span> 右alt不能当meta</h4>
+<div id="outline-container-org7f3963c" class="outline-4">
+<h4 id="org7f3963c"><span class="section-number-4">2.4.1.</span> 右alt不能当meta</h4>
 <div class="outline-text-4" id="text-2-4-1">
 <p>
 搜索：优化-键盘和鼠标-其它布局选项
@@ -525,12 +525,12 @@ hexo g
 </div>
 </div>
 
-<div id="outline-container-org53a47b2" class="outline-3">
-<h3 id="org53a47b2"><span class="section-number-3">2.5.</span> 坚果云</h3>
+<div id="outline-container-org5cd4411" class="outline-3">
+<h3 id="org5cd4411"><span class="section-number-3">2.5.</span> 坚果云</h3>
 <div class="outline-text-3" id="text-2-5">
 </div>
-<div id="outline-container-org6c97fab" class="outline-4">
-<h4 id="org6c97fab"><span class="section-number-4">2.5.1.</span> 无托盘图标：</h4>
+<div id="outline-container-orga4d6d89" class="outline-4">
+<h4 id="orga4d6d89"><span class="section-number-4">2.5.1.</span> 无托盘图标：</h4>
 <div class="outline-text-4" id="text-2-5-1">
 <p>
 搜索：优化-扩展-topicons plus（没有的话安装gnome-shell-extension-topicons-plus-git）
@@ -539,12 +539,12 @@ hexo g
 </div>
 </div>
 
-<div id="outline-container-orgddc0692" class="outline-3">
-<h3 id="orgddc0692"><span class="section-number-3">2.6.</span> teamviewer</h3>
+<div id="outline-container-org4246db2" class="outline-3">
+<h3 id="org4246db2"><span class="section-number-3">2.6.</span> teamviewer</h3>
 <div class="outline-text-3" id="text-2-6">
 </div>
-<div id="outline-container-org7d2919c" class="outline-4">
-<h4 id="org7d2919c"><span class="section-number-4">2.6.1.</span> 不能连网：</h4>
+<div id="outline-container-orgfc951f8" class="outline-4">
+<h4 id="orgfc951f8"><span class="section-number-4">2.6.1.</span> 不能连网：</h4>
 <div class="outline-text-4" id="text-2-6-1">
 <div class="org-src-container">
 <pre class="src src-shell">sudo teamviewer --daemon start
@@ -558,12 +558,12 @@ teamviewer
 
 
 
-<div id="outline-container-org4b44b36" class="outline-2">
-<h2 id="org4b44b36"><span class="section-number-2">3.</span> 问题合集</h2>
+<div id="outline-container-org17d795a" class="outline-2">
+<h2 id="org17d795a"><span class="section-number-2">3.</span> 问题合集</h2>
 <div class="outline-text-2" id="text-3">
 </div>
-<div id="outline-container-orgb9410a4" class="outline-3">
-<h3 id="orgb9410a4"><span class="section-number-3">3.1.</span> shadowsocks-qt5连上, 但是浏览器连不上</h3>
+<div id="outline-container-org9795d57" class="outline-3">
+<h3 id="org9795d57"><span class="section-number-3">3.1.</span> shadowsocks-qt5连上, 但是浏览器连不上</h3>
 <div class="outline-text-3" id="text-3-1">
 <p>
 原来是 ss-qt5 里边没改端口. 汗&#x2026;
@@ -573,8 +573,8 @@ teamviewer
 </div>
 
 
-<div id="outline-container-org1b5f1ae" class="outline-2">
-<h2 id="org1b5f1ae"><span class="section-number-2">4.</span> 注</h2>
+<div id="outline-container-orgf3fc3fb" class="outline-2">
+<h2 id="orgf3fc3fb"><span class="section-number-2">4.</span> 注</h2>
 <div class="outline-text-2" id="text-4">
 <p>
 善用 arch 的 wiki , 一般问题都可以得到解决.
@@ -584,7 +584,7 @@ teamviewer
 </div>
 <div id="postamble" class="status">
 <p class="date">Date: 2018-11-11 Sun 00:00</p>
-<p class="date">Created: 2022-04-16 Sat 17:43</p>
+<p class="date">Created: 2022-04-16 Sat 21:08</p>
 <p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>

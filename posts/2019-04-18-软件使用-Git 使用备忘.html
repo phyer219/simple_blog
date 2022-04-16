@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2022-04-16 Sat 17:43 -->
+<!-- 2022-04-16 Sat 21:08 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Git 使用备忘</title>
@@ -200,47 +200,47 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#org4b5989d">1. 基本命令</a>
+<li><a href="#org2540341">1. 基本命令</a>
 <ul>
-<li><a href="#org9a12d11">1.1. 本地</a>
+<li><a href="#org596a970">1.1. 本地</a>
 <ul>
-<li><a href="#orgd2d66b8">1.1.1. 必备操作</a></li>
-<li><a href="#org48fa94b">1.1.2. 辅助操作</a></li>
-<li><a href="#org2171e28">1.1.3. 高级操作</a></li>
-<li><a href="#org254bcc1">1.1.4. 标签操作</a></li>
+<li><a href="#org8ff3d60">1.1.1. 必备操作</a></li>
+<li><a href="#orgb1402cb">1.1.2. 辅助操作</a></li>
+<li><a href="#org4a5b35a">1.1.3. 高级操作</a></li>
+<li><a href="#org0850b81">1.1.4. 标签操作</a></li>
 </ul>
 </li>
-<li><a href="#org980bbb9">1.2. 远程操作</a></li>
+<li><a href="#orgfa9536c">1.2. 远程操作</a></li>
 </ul>
 </li>
-<li><a href="#org7a10970">2. 实践一: 博客备份</a>
+<li><a href="#org56dded0">2. 实践一: 博客备份</a>
 <ul>
-<li><a href="#org195af79">2.1. 本地操作</a></li>
-<li><a href="#org7b08890">2.2. 备份到 github</a></li>
-<li><a href="#org8331580">2.3. 恢复</a></li>
+<li><a href="#orged62891">2.1. 本地操作</a></li>
+<li><a href="#org0a046df">2.2. 备份到 github</a></li>
+<li><a href="#org3ebdbe4">2.3. 恢复</a></li>
 </ul>
 </li>
-<li><a href="#org03a471f">3. Reference</a></li>
+<li><a href="#org3e36d5e">3. Reference</a></li>
 </ul>
 </div>
 </div>
 <!-- toc -->
 <!-- more -->
 
-<div id="outline-container-org4b5989d" class="outline-2">
-<h2 id="org4b5989d"><span class="section-number-2">1.</span> 基本命令</h2>
+<div id="outline-container-org2540341" class="outline-2">
+<h2 id="org2540341"><span class="section-number-2">1.</span> 基本命令</h2>
 <div class="outline-text-2" id="text-1">
 </div>
-<div id="outline-container-org9a12d11" class="outline-3">
-<h3 id="org9a12d11"><span class="section-number-3">1.1.</span> 本地</h3>
+<div id="outline-container-org596a970" class="outline-3">
+<h3 id="org596a970"><span class="section-number-3">1.1.</span> 本地</h3>
 <div class="outline-text-3" id="text-1-1">
 </div>
-<div id="outline-container-orgd2d66b8" class="outline-4">
-<h4 id="orgd2d66b8"><span class="section-number-4">1.1.1.</span> 必备操作</h4>
+<div id="outline-container-org8ff3d60" class="outline-4">
+<h4 id="org8ff3d60"><span class="section-number-4">1.1.1.</span> 必备操作</h4>
 <div class="outline-text-4" id="text-1-1-1">
 </div>
 <ol class="org-ol">
-<li><a id="orgd8259b8"></a>基本<br />
+<li><a id="org149ed6a"></a>基本<br />
 <div class="outline-text-5" id="text-1-1-1-1">
 <p>
 初始化 repository
@@ -266,7 +266,7 @@
 </div>
 </li>
 
-<li><a id="orga1012a8"></a>分支<br />
+<li><a id="org5d2d15d"></a>分支<br />
 <div class="outline-text-5" id="text-1-1-1-2">
 <p>
 查看分支
@@ -316,8 +316,8 @@
 </div>
 
 
-<div id="outline-container-org48fa94b" class="outline-4">
-<h4 id="org48fa94b"><span class="section-number-4">1.1.2.</span> 辅助操作</h4>
+<div id="outline-container-orgb1402cb" class="outline-4">
+<h4 id="orgb1402cb"><span class="section-number-4">1.1.2.</span> 辅助操作</h4>
 <div class="outline-text-4" id="text-1-1-2">
 <p>
 查看当前仓库的状态
@@ -371,8 +371,8 @@ git reset HEAD &lt;filename&gt;
 </div>
 </div>
 
-<div id="outline-container-org2171e28" class="outline-4">
-<h4 id="org2171e28"><span class="section-number-4">1.1.3.</span> 高级操作</h4>
+<div id="outline-container-org4a5b35a" class="outline-4">
+<h4 id="org4a5b35a"><span class="section-number-4">1.1.3.</span> 高级操作</h4>
 <div class="outline-text-4" id="text-1-1-3">
 <p>
 工作现场
@@ -395,12 +395,12 @@ git reset HEAD &lt;filename&gt;
 </div>
 </div>
 
-<div id="outline-container-org254bcc1" class="outline-4">
-<h4 id="org254bcc1"><span class="section-number-4">1.1.4.</span> 标签操作</h4>
+<div id="outline-container-org0850b81" class="outline-4">
+<h4 id="org0850b81"><span class="section-number-4">1.1.4.</span> 标签操作</h4>
 <div class="outline-text-4" id="text-1-1-4">
 </div>
 <ol class="org-ol">
-<li><a id="org56223fa"></a>基本操作<br />
+<li><a id="orgdd6dd76"></a>基本操作<br />
 <div class="outline-text-5" id="text-1-1-4-1">
 <p>
 新建一个标签, 默认为 &lt;HEAD&gt; , 也可以指定一个 commit ID
@@ -426,7 +426,7 @@ tag 时指定标签名, 指定描述
 </div>
 </li>
 
-<li><a id="org785bf48"></a>高级操作<br />
+<li><a id="orgfb5ac10"></a>高级操作<br />
 <div class="outline-text-5" id="text-1-1-4-2">
 <p>
 推送一个本地标签
@@ -462,8 +462,8 @@ tag 时指定标签名, 指定描述
 </div>
 </div>
 
-<div id="outline-container-org980bbb9" class="outline-3">
-<h3 id="org980bbb9"><span class="section-number-3">1.2.</span> 远程操作</h3>
+<div id="outline-container-orgfa9536c" class="outline-3">
+<h3 id="orgfa9536c"><span class="section-number-3">1.2.</span> 远程操作</h3>
 <div class="outline-text-3" id="text-1-2">
 <p>
 关联一个远程库
@@ -492,12 +492,12 @@ master分支内容推送的远程新的 master 分支，还会把本地的 maste
 </div>
 </div>
 
-<div id="outline-container-org7a10970" class="outline-2">
-<h2 id="org7a10970"><span class="section-number-2">2.</span> 实践一: 博客备份</h2>
+<div id="outline-container-org56dded0" class="outline-2">
+<h2 id="org56dded0"><span class="section-number-2">2.</span> 实践一: 博客备份</h2>
 <div class="outline-text-2" id="text-2">
 </div>
-<div id="outline-container-org195af79" class="outline-3">
-<h3 id="org195af79"><span class="section-number-3">2.1.</span> 本地操作</h3>
+<div id="outline-container-orged62891" class="outline-3">
+<h3 id="orged62891"><span class="section-number-3">2.1.</span> 本地操作</h3>
 <div class="outline-text-3" id="text-2-1">
 <p>
 进入到博客的根目录, 一定要记得先删除主题文件夹下的 .git/ 文件夹, 不然就会产生 submodules ,
@@ -549,8 +549,8 @@ master分支内容推送的远程新的 master 分支，还会把本地的 maste
 </div>
 </div>
 
-<div id="outline-container-org7b08890" class="outline-3">
-<h3 id="org7b08890"><span class="section-number-3">2.2.</span> 备份到 github</h3>
+<div id="outline-container-org0a046df" class="outline-3">
+<h3 id="org0a046df"><span class="section-number-3">2.2.</span> 备份到 github</h3>
 <div class="outline-text-3" id="text-2-2">
 <p>
 与 github 关联
@@ -585,8 +585,8 @@ git push origin backup
 </div>
 </div>
 
-<div id="outline-container-org8331580" class="outline-3">
-<h3 id="org8331580"><span class="section-number-3">2.3.</span> 恢复</h3>
+<div id="outline-container-org3ebdbe4" class="outline-3">
+<h3 id="org3ebdbe4"><span class="section-number-3">2.3.</span> 恢复</h3>
 <div class="outline-text-3" id="text-2-3">
 <p>
 备份好以后, 如果在另一台设备上(已经安装好 hexo)恢复, 首先到一个要恢复的文件夹, 然后
@@ -624,8 +624,8 @@ clone 下来 backup 分支
 </div>
 </div>
 
-<div id="outline-container-org03a471f" class="outline-2">
-<h2 id="org03a471f"><span class="section-number-2">3.</span> Reference</h2>
+<div id="outline-container-org3e36d5e" class="outline-2">
+<h2 id="org3e36d5e"><span class="section-number-2">3.</span> Reference</h2>
 <div class="outline-text-2" id="text-3">
 <p>
 <a href="https://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000">https://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000</a>
@@ -635,7 +635,7 @@ clone 下来 backup 分支
 </div>
 <div id="postamble" class="status">
 <p class="date">Date: 2019-04-18 Thu 00:00</p>
-<p class="date">Created: 2022-04-16 Sat 17:43</p>
+<p class="date">Created: 2022-04-16 Sat 21:08</p>
 <p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>

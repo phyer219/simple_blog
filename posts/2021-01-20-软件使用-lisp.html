@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2022-04-16 Sat 17:42 -->
+<!-- 2022-04-16 Sat 21:08 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>欢迎来到 Emacs 主义至上教室(lisp note -_-)</title>
@@ -200,68 +200,68 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#org4416eb7">1. Intro</a></li>
-<li><a href="#orgdf04dfb">2. Common Lisp Syntax</a>
+<li><a href="#org30bdc68">1. Intro</a></li>
+<li><a href="#org371305a">2. Common Lisp Syntax</a>
 <ul>
-<li><a href="#org2fbc3e3">2.1. Form</a></li>
-<li><a href="#org64f379c">2.2. Evaluation</a></li>
-<li><a href="#org15b0a34">2.3. Data</a>
+<li><a href="#org94154fb">2.1. Form</a></li>
+<li><a href="#org09e35e8">2.2. Evaluation</a></li>
+<li><a href="#org8fc5b4e">2.3. Data</a>
 <ul>
-<li><a href="#orgd3cbf4c">2.3.1. integer, string</a></li>
-<li><a href="#org9924d71">2.3.2. symbol</a></li>
-<li><a href="#orgf493d94">2.3.3. list</a></li>
+<li><a href="#org5cff966">2.3.1. integer, string</a></li>
+<li><a href="#org5cd9c01">2.3.2. symbol</a></li>
+<li><a href="#org27a8ed9">2.3.3. list</a></li>
 </ul>
 </li>
-<li><a href="#orgf50dcd0">2.4. List Operations</a></li>
-<li><a href="#org899e567">2.5. Truth</a>
+<li><a href="#orgfab06c3">2.4. List Operations</a></li>
+<li><a href="#orgb1aebad">2.5. Truth</a>
 <ul>
-<li><a href="#org11c1ea9">2.5.1. True and False</a></li>
-<li><a href="#orgb752e7b">2.5.2. if</a></li>
-<li><a href="#orgc67346a">2.5.3. AND and OR</a></li>
+<li><a href="#org7a69a74">2.5.1. True and False</a></li>
+<li><a href="#org16d3168">2.5.2. if</a></li>
+<li><a href="#orga226593">2.5.3. AND and OR</a></li>
 </ul>
 </li>
-<li><a href="#org5699be2">2.6. Functions</a></li>
-<li><a href="#org79d9216">2.7. Recursion</a></li>
-<li><a href="#orgee0e634">2.8. Input and Output</a>
+<li><a href="#orgda7ac17">2.6. Functions</a></li>
+<li><a href="#orgce5b10f">2.7. Recursion</a></li>
+<li><a href="#org0b6fcbe">2.8. Input and Output</a>
 <ul>
-<li><a href="#org47eb0d3">2.8.1. output</a></li>
-<li><a href="#org35b98a0">2.8.2. input</a></li>
+<li><a href="#orga3c0682">2.8.1. output</a></li>
+<li><a href="#org7b2ed78">2.8.2. input</a></li>
 </ul>
 </li>
-<li><a href="#org43b2d44">2.9. Variables</a>
+<li><a href="#orgd820096">2.9. Variables</a>
 <ul>
-<li><a href="#org46fcc45">2.9.1. local variable</a></li>
-<li><a href="#orgbfdb41e">2.9.2. global variable</a></li>
+<li><a href="#orgc8d26e0">2.9.1. local variable</a></li>
+<li><a href="#orgb624e1c">2.9.2. global variable</a></li>
 </ul>
 </li>
-<li><a href="#org74a8951">2.10. Assignment</a></li>
-<li><a href="#org8ebe583">2.11. Functional Programming</a></li>
-<li><a href="#org3ae1773">2.12. Iteration</a></li>
-<li><a href="#orgd95cc66">2.13. Functions as Objects</a>
+<li><a href="#orgfe64d3d">2.10. Assignment</a></li>
+<li><a href="#org8f9f18e">2.11. Functional Programming</a></li>
+<li><a href="#org191393f">2.12. Iteration</a></li>
+<li><a href="#org8a53bf8">2.13. Functions as Objects</a>
 <ul>
-<li><a href="#orgb51ceec">2.13.1. lambda</a></li>
+<li><a href="#orgba03261">2.13.1. lambda</a></li>
 </ul>
 </li>
-<li><a href="#org7ed4d1b">2.14. Types</a></li>
+<li><a href="#orgba28b00">2.14. Types</a></li>
 </ul>
 </li>
-<li><a href="#org1fbf7d8">3. &#x2026;</a></li>
-<li><a href="#org7d8205b">4. Elisp</a>
+<li><a href="#orgd80afd0">3. &#x2026;</a></li>
+<li><a href="#orgbe2df6f">4. Elisp</a>
 <ul>
-<li><a href="#org553dd2b">4.1. Hello wolrd</a></li>
-<li><a href="#orgca03f24">4.2. Doc string</a></li>
-<li><a href="#org012242f">4.3. Some functions</a></li>
+<li><a href="#org9b30cd1">4.1. Hello wolrd</a></li>
+<li><a href="#org7746d02">4.2. Doc string</a></li>
+<li><a href="#orgf3692e7">4.3. Some functions</a></li>
 </ul>
 </li>
-<li><a href="#org89b9b47">5. Reference</a></li>
+<li><a href="#org0c962ed">5. Reference</a></li>
 </ul>
 </div>
 </div>
 <!-- toc -->
 <!-- more -->
 
-<div id="outline-container-org4416eb7" class="outline-2">
-<h2 id="org4416eb7"><span class="section-number-2">1.</span> Intro</h2>
+<div id="outline-container-org30bdc68" class="outline-2">
+<h2 id="org30bdc68"><span class="section-number-2">1.</span> Intro</h2>
 <div class="outline-text-2" id="text-1">
 <div class="org-src-container">
 <pre class="src src-lisp">  i i i i i i i       ooooo    o        ooooooo   ooooo   ooooo
@@ -287,12 +287,12 @@ Welcome to GNU CLISP 2.49.93+ (2018-02-18) &lt;http://clisp.org/&gt;
 </div>
 </div>
 
-<div id="outline-container-orgdf04dfb" class="outline-2">
-<h2 id="orgdf04dfb"><span class="section-number-2">2.</span> Common Lisp Syntax</h2>
+<div id="outline-container-org371305a" class="outline-2">
+<h2 id="org371305a"><span class="section-number-2">2.</span> Common Lisp Syntax</h2>
 <div class="outline-text-2" id="text-2">
 </div>
-<div id="outline-container-org2fbc3e3" class="outline-3">
-<h3 id="org2fbc3e3"><span class="section-number-3">2.1.</span> Form</h3>
+<div id="outline-container-org94154fb" class="outline-3">
+<h3 id="org94154fb"><span class="section-number-3">2.1.</span> Form</h3>
 <div class="outline-text-3" id="text-2-1">
 <p>
 lisp 的语法比较特别, 表达式用括号括起来, 括号中第一部分是函数, 剩余部分是函数的
@@ -320,8 +320,8 @@ lisp 的语法比较特别, 表达式用括号括起来, 括号中第一部分�
 </div>
 </div>
 
-<div id="outline-container-org64f379c" class="outline-3">
-<h3 id="org64f379c"><span class="section-number-3">2.2.</span> Evaluation</h3>
+<div id="outline-container-org09e35e8" class="outline-3">
+<h3 id="org09e35e8"><span class="section-number-3">2.2.</span> Evaluation</h3>
 <div class="outline-text-3" id="text-2-2">
 <p>
 lisp 默认对 <code>(+ 1 1)</code> 是要求值的. 如果要避免求值, 可以用 <code>quote</code> .
@@ -346,12 +346,12 @@ lisp 默认对 <code>(+ 1 1)</code> 是要求值的. 如果要避免求值, 可�
 </div>
 </div>
 
-<div id="outline-container-org15b0a34" class="outline-3">
-<h3 id="org15b0a34"><span class="section-number-3">2.3.</span> Data</h3>
+<div id="outline-container-org8fc5b4e" class="outline-3">
+<h3 id="org8fc5b4e"><span class="section-number-3">2.3.</span> Data</h3>
 <div class="outline-text-3" id="text-2-3">
 </div>
-<div id="outline-container-orgd3cbf4c" class="outline-4">
-<h4 id="orgd3cbf4c"><span class="section-number-4">2.3.1.</span> integer, string</h4>
+<div id="outline-container-org5cff966" class="outline-4">
+<h4 id="org5cff966"><span class="section-number-4">2.3.1.</span> integer, string</h4>
 <div class="outline-text-4" id="text-2-3-1">
 <p>
 在其它语言中常见.
@@ -359,8 +359,8 @@ lisp 默认对 <code>(+ 1 1)</code> 是要求值的. 如果要避免求值, 可�
 </div>
 </div>
 
-<div id="outline-container-org9924d71" class="outline-4">
-<h4 id="org9924d71"><span class="section-number-4">2.3.2.</span> symbol</h4>
+<div id="outline-container-org5cd9c01" class="outline-4">
+<h4 id="org5cd9c01"><span class="section-number-4">2.3.2.</span> symbol</h4>
 <div class="outline-text-4" id="text-2-3-2">
 <p>
 无论怎输入, 都会被转换成大写. symbol 不对自身求值, 一般加 <code>'</code> 引用
@@ -374,8 +374,8 @@ GOOD
 </div>
 </div>
 
-<div id="outline-container-orgf493d94" class="outline-4">
-<h4 id="orgf493d94"><span class="section-number-4">2.3.3.</span> list</h4>
+<div id="outline-container-org27a8ed9" class="outline-4">
+<h4 id="org27a8ed9"><span class="section-number-4">2.3.3.</span> list</h4>
 <div class="outline-text-4" id="text-2-3-3">
 <div class="org-src-container">
 <pre class="src src-lisp">&gt; (list 'hello (+ 3 6) "good")
@@ -411,8 +411,8 @@ NIL
 </div>
 </div>
 
-<div id="outline-container-orgf50dcd0" class="outline-3">
-<h3 id="orgf50dcd0"><span class="section-number-3">2.4.</span> List Operations</h3>
+<div id="outline-container-orgfab06c3" class="outline-3">
+<h3 id="orgfab06c3"><span class="section-number-3">2.4.</span> List Operations</h3>
 <div class="outline-text-3" id="text-2-4">
 <p>
 <code>cons</code> build lists
@@ -473,12 +473,12 @@ C
 </div>
 </div>
 
-<div id="outline-container-org899e567" class="outline-3">
-<h3 id="org899e567"><span class="section-number-3">2.5.</span> Truth</h3>
+<div id="outline-container-orgb1aebad" class="outline-3">
+<h3 id="orgb1aebad"><span class="section-number-3">2.5.</span> Truth</h3>
 <div class="outline-text-3" id="text-2-5">
 </div>
-<div id="outline-container-org11c1ea9" class="outline-4">
-<h4 id="org11c1ea9"><span class="section-number-4">2.5.1.</span> True and False</h4>
+<div id="outline-container-org7a69a74" class="outline-4">
+<h4 id="org7a69a74"><span class="section-number-4">2.5.1.</span> True and False</h4>
 <div class="outline-text-4" id="text-2-5-1">
 <p>
 symbol <code>t</code> 表示逻辑真的默认值. 它是一个 symbol, 因此它会自身求值. 逻辑假由 <code>nil</code>
@@ -526,8 +526,8 @@ T
 </div>
 </div>
 
-<div id="outline-container-orgb752e7b" class="outline-4">
-<h4 id="orgb752e7b"><span class="section-number-4">2.5.2.</span> if</h4>
+<div id="outline-container-org16d3168" class="outline-4">
+<h4 id="org16d3168"><span class="section-number-4">2.5.2.</span> if</h4>
 <div class="outline-text-4" id="text-2-5-2">
 <div class="org-src-container">
 <pre class="src src-lisp">&gt; (if (listp '(a b c))
@@ -568,8 +568,8 @@ NIL
 </div>
 </div>
 
-<div id="outline-container-orgc67346a" class="outline-4">
-<h4 id="orgc67346a"><span class="section-number-4">2.5.3.</span> AND and OR</h4>
+<div id="outline-container-orga226593" class="outline-4">
+<h4 id="orga226593"><span class="section-number-4">2.5.3.</span> AND and OR</h4>
 <div class="outline-text-4" id="text-2-5-3">
 <p>
 逻辑与, 或. <code>and</code> , 求到第一个为 False 后, 就不对后面的表达式求值了, 直接返回
@@ -588,8 +588,8 @@ NIL
 </div>
 </div>
 
-<div id="outline-container-org5699be2" class="outline-3">
-<h3 id="org5699be2"><span class="section-number-3">2.6.</span> Functions</h3>
+<div id="outline-container-orgda7ac17" class="outline-3">
+<h3 id="orgda7ac17"><span class="section-number-3">2.6.</span> Functions</h3>
 <div class="outline-text-3" id="text-2-6">
 <p>
 定义 function, 第一个实参是函数名字, 第二个是用列表表示的参数, 第三个是一个或多
@@ -627,8 +627,8 @@ NIL
 </div>
 </div>
 
-<div id="outline-container-org79d9216" class="outline-3">
-<h3 id="org79d9216"><span class="section-number-3">2.7.</span> Recursion</h3>
+<div id="outline-container-orgce5b10f" class="outline-3">
+<h3 id="orgce5b10f"><span class="section-number-3">2.7.</span> Recursion</h3>
 <div class="outline-text-3" id="text-2-7">
 <p>
 下面的函数是递归的一个例子
@@ -665,12 +665,12 @@ NIL
 </div>
 </div>
 
-<div id="outline-container-orgee0e634" class="outline-3">
-<h3 id="orgee0e634"><span class="section-number-3">2.8.</span> Input and Output</h3>
+<div id="outline-container-org0b6fcbe" class="outline-3">
+<h3 id="org0b6fcbe"><span class="section-number-3">2.8.</span> Input and Output</h3>
 <div class="outline-text-3" id="text-2-8">
 </div>
-<div id="outline-container-org47eb0d3" class="outline-4">
-<h4 id="org47eb0d3"><span class="section-number-4">2.8.1.</span> output</h4>
+<div id="outline-container-orga3c0682" class="outline-4">
+<h4 id="orga3c0682"><span class="section-number-4">2.8.1.</span> output</h4>
 <div class="outline-text-4" id="text-2-8-1">
 <p>
 common lisp 最普遍的输出函数是 <code>format</code> . 第一个实参是输出到哪里, <code>t</code> 表示默认的
@@ -690,8 +690,8 @@ NIL
 </div>
 </div>
 
-<div id="outline-container-org35b98a0" class="outline-4">
-<h4 id="org35b98a0"><span class="section-number-4">2.8.2.</span> input</h4>
+<div id="outline-container-org7b2ed78" class="outline-4">
+<h4 id="org7b2ed78"><span class="section-number-4">2.8.2.</span> input</h4>
 <div class="outline-text-4" id="text-2-8-2">
 <div class="org-src-container">
 <pre class="src src-lisp">&gt; (defun askem (string)
@@ -714,12 +714,12 @@ How old are you?15
 </div>
 </div>
 
-<div id="outline-container-org43b2d44" class="outline-3">
-<h3 id="org43b2d44"><span class="section-number-3">2.9.</span> Variables</h3>
+<div id="outline-container-orgd820096" class="outline-3">
+<h3 id="orgd820096"><span class="section-number-3">2.9.</span> Variables</h3>
 <div class="outline-text-3" id="text-2-9">
 </div>
-<div id="outline-container-org46fcc45" class="outline-4">
-<h4 id="org46fcc45"><span class="section-number-4">2.9.1.</span> local variable</h4>
+<div id="outline-container-orgc8d26e0" class="outline-4">
+<h4 id="orgc8d26e0"><span class="section-number-4">2.9.1.</span> local variable</h4>
 <div class="outline-text-4" id="text-2-9-1">
 <p>
 <code>let</code> 可以引入局部变量, 如
@@ -760,8 +760,8 @@ Please enter a number. 19
 </div>
 </div>
 
-<div id="outline-container-orgbfdb41e" class="outline-4">
-<h4 id="orgbfdb41e"><span class="section-number-4">2.9.2.</span> global variable</h4>
+<div id="outline-container-orgb624e1c" class="outline-4">
+<h4 id="orgb624e1c"><span class="section-number-4">2.9.2.</span> global variable</h4>
 <div class="outline-text-4" id="text-2-9-2">
 <p>
 由 <code>defparameter</code> 来定义全局变量, 由 <code>defconstant</code> 定义全局常量, 由 <code>boundp</code> 判
@@ -784,8 +784,8 @@ T
 </div>
 </div>
 
-<div id="outline-container-org74a8951" class="outline-3">
-<h3 id="org74a8951"><span class="section-number-3">2.10.</span> Assignment</h3>
+<div id="outline-container-orgfe64d3d" class="outline-3">
+<h3 id="orgfe64d3d"><span class="section-number-3">2.10.</span> Assignment</h3>
 <div class="outline-text-3" id="text-2-10">
 <p>
 <code>setf</code> 来给变量赋值. 如
@@ -870,8 +870,8 @@ F
 </div>
 </div>
 
-<div id="outline-container-org8ebe583" class="outline-3">
-<h3 id="org8ebe583"><span class="section-number-3">2.11.</span> Functional Programming</h3>
+<div id="outline-container-org8f9f18e" class="outline-3">
+<h3 id="org8f9f18e"><span class="section-number-3">2.11.</span> Functional Programming</h3>
 <div class="outline-text-3" id="text-2-11">
 <p>
 Lisp 的主流范式是函数式编程. 中心思想是: 执行一个函数是得到它的返回值. 如
@@ -909,8 +909,8 @@ testing.
 </div>
 </div>
 
-<div id="outline-container-org3ae1773" class="outline-3">
-<h3 id="org3ae1773"><span class="section-number-3">2.12.</span> Iteration</h3>
+<div id="outline-container-org191393f" class="outline-3">
+<h3 id="org191393f"><span class="section-number-3">2.12.</span> Iteration</h3>
 <div class="outline-text-3" id="text-2-12">
 <p>
 如
@@ -1009,8 +1009,8 @@ OUR-LENGTH
 </div>
 </div>
 
-<div id="outline-container-orgd95cc66" class="outline-3">
-<h3 id="orgd95cc66"><span class="section-number-3">2.13.</span> Functions as Objects</h3>
+<div id="outline-container-org8a53bf8" class="outline-3">
+<h3 id="org8a53bf8"><span class="section-number-3">2.13.</span> Functions as Objects</h3>
 <div class="outline-text-3" id="text-2-13">
 <p>
 <code>function</code> 是一个特殊的操作符号, 如果把函数的名字传给function, 它会返回相关关联
@@ -1058,8 +1058,8 @@ OUR-LENGTH
 </div>
 </div>
 
-<div id="outline-container-orgb51ceec" class="outline-4">
-<h4 id="orgb51ceec"><span class="section-number-4">2.13.1.</span> lambda</h4>
+<div id="outline-container-orgba03261" class="outline-4">
+<h4 id="orgba03261"><span class="section-number-4">2.13.1.</span> lambda</h4>
 <div class="outline-text-4" id="text-2-13-1">
 <p>
 <code>lambda</code> 不是一个操作符, 而只是一个符号. 早期由于函数在内部是用列表表示的, 因此
@@ -1103,8 +1103,8 @@ OUR-LENGTH
 </div>
 </div>
 
-<div id="outline-container-org7ed4d1b" class="outline-3">
-<h3 id="org7ed4d1b"><span class="section-number-3">2.14.</span> Types</h3>
+<div id="outline-container-orgba28b00" class="outline-3">
+<h3 id="orgba28b00"><span class="section-number-3">2.14.</span> Types</h3>
 <div class="outline-text-3" id="text-2-14">
 <p>
 变量没有类型, 数值才有类型, 且可有多个类型. 如 <code>27</code> 的类型, 依普遍性增加顺序为
@@ -1132,8 +1132,8 @@ T
 </div>
 </div>
 
-<div id="outline-container-org1fbf7d8" class="outline-2">
-<h2 id="org1fbf7d8"><span class="section-number-2">3.</span> &#x2026;</h2>
+<div id="outline-container-orgd80afd0" class="outline-2">
+<h2 id="orgd80afd0"><span class="section-number-2">3.</span> &#x2026;</h2>
 <div class="outline-text-2" id="text-3">
 <p>
 赶在因疫情突然决定明天回家之前整理完此篇. 不禁感叹世事无常, 还是要好好珍惜眼前的
@@ -1142,12 +1142,12 @@ T
 </div>
 </div>
 
-<div id="outline-container-org7d8205b" class="outline-2">
-<h2 id="org7d8205b"><span class="section-number-2">4.</span> Elisp</h2>
+<div id="outline-container-orgbe2df6f" class="outline-2">
+<h2 id="orgbe2df6f"><span class="section-number-2">4.</span> Elisp</h2>
 <div class="outline-text-2" id="text-4">
 </div>
-<div id="outline-container-org553dd2b" class="outline-3">
-<h3 id="org553dd2b"><span class="section-number-3">4.1.</span> Hello wolrd</h3>
+<div id="outline-container-org9b30cd1" class="outline-3">
+<h3 id="org9b30cd1"><span class="section-number-3">4.1.</span> Hello wolrd</h3>
 <div class="outline-text-3" id="text-4-1">
 <p>
 elisp 要在 emacs 中执行. 一个 hello world 的例子. 在 emacs 中 <code>M-x</code>
@@ -1171,8 +1171,8 @@ elisp 要在 emacs 中执行. 一个 hello world 的例子. 在 emacs 中 <code>
 </div>
 </div>
 
-<div id="outline-container-orgca03f24" class="outline-3">
-<h3 id="orgca03f24"><span class="section-number-3">4.2.</span> Doc string</h3>
+<div id="outline-container-org7746d02" class="outline-3">
+<h3 id="org7746d02"><span class="section-number-3">4.2.</span> Doc string</h3>
 <div class="outline-text-3" id="text-4-2">
 <p>
 函数可以加 doc string, 将光标移到函数上, 用 <code>C-h</code> <code>f</code> 查看. 如 
@@ -1199,8 +1199,8 @@ foo
 </div>
 </div>
 
-<div id="outline-container-org012242f" class="outline-3">
-<h3 id="org012242f"><span class="section-number-3">4.3.</span> Some functions</h3>
+<div id="outline-container-orgf3692e7" class="outline-3">
+<h3 id="orgf3692e7"><span class="section-number-3">4.3.</span> Some functions</h3>
 <div class="outline-text-3" id="text-4-3">
 <p>
 函数 <code>eq</code> 用来判断变量是否为某个值. 如( <code>elisp</code> 和 <code>lisp</code> 语法还是有些不同, 如
@@ -1229,8 +1229,8 @@ foo
 
 
 
-<div id="outline-container-org89b9b47" class="outline-2">
-<h2 id="org89b9b47"><span class="section-number-2">5.</span> Reference</h2>
+<div id="outline-container-org0c962ed" class="outline-2">
+<h2 id="org0c962ed"><span class="section-number-2">5.</span> Reference</h2>
 <div class="outline-text-2" id="text-5">
 <ul class="org-ul">
 <li>Book: ANSI Common LISP by Paul Graham (z-lib.org)</li>
@@ -1246,7 +1246,7 @@ foo
 </div>
 <div id="postamble" class="status">
 <p class="date">Date: 2021-01-20 Wed 00:00</p>
-<p class="date">Created: 2022-04-16 Sat 17:42</p>
+<p class="date">Created: 2022-04-16 Sat 21:08</p>
 <p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>

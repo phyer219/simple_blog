@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2022-04-16 Sat 17:43 -->
+<!-- 2022-04-16 Sat 21:08 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>几种数值积分方法</title>
@@ -221,22 +221,22 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#orge41fb0b">1. Gaussian Quadrature</a></li>
-<li><a href="#orga0ef7c2">2. Cauchy Principal Value (CPV) Gaussian Quadrature</a>
+<li><a href="#orgd2a1e10">1. Gaussian Quadrature</a></li>
+<li><a href="#orgfa03cf3">2. Cauchy Principal Value (CPV) Gaussian Quadrature</a>
 <ul>
-<li><a href="#org77f716e">2.1. code</a></li>
+<li><a href="#org4c76c85">2.1. code</a></li>
 </ul>
 </li>
-<li><a href="#org02024cb">3. Tanh-Sinh Quadrature</a></li>
-<li><a href="#orgc762000">4. Reference</a></li>
+<li><a href="#orgcf39f2f">3. Tanh-Sinh Quadrature</a></li>
+<li><a href="#orge99b089">4. Reference</a></li>
 </ul>
 </div>
 </div>
 <!-- toc -->
 <!-- more -->
 
-<div id="outline-container-orge41fb0b" class="outline-2">
-<h2 id="orge41fb0b"><span class="section-number-2">1.</span> Gaussian Quadrature</h2>
+<div id="outline-container-orgd2a1e10" class="outline-2">
+<h2 id="orgd2a1e10"><span class="section-number-2">1.</span> Gaussian Quadrature</h2>
 <div class="outline-text-2" id="text-1">
 <p>
 适用于积分区间内平滑的积分.
@@ -295,8 +295,8 @@ def gauquad(f, a, b, n=50):
 </div>
 </div>
 
-<div id="outline-container-orga0ef7c2" class="outline-2">
-<h2 id="orga0ef7c2"><span class="section-number-2">2.</span> Cauchy Principal Value (CPV) Gaussian Quadrature</h2>
+<div id="outline-container-orgfa03cf3" class="outline-2">
+<h2 id="orgfa03cf3"><span class="section-number-2">2.</span> Cauchy Principal Value (CPV) Gaussian Quadrature</h2>
 <div class="outline-text-2" id="text-2">
 <p>
 CPV 用 Gaussian quadrature 时不能给出正确的结果. 这时可以将函数的积部
@@ -339,8 +339,8 @@ Even 部分
 如果奇点不是 \(0\) , 也可以通过换元转化成上式的形式.
 </p>
 </div>
-<div id="outline-container-org77f716e" class="outline-3">
-<h3 id="org77f716e"><span class="section-number-3">2.1.</span> code</h3>
+<div id="outline-container-org4c76c85" class="outline-3">
+<h3 id="org4c76c85"><span class="section-number-3">2.1.</span> code</h3>
 <div class="outline-text-3" id="text-2-1">
 <div class="org-src-container">
 <pre class="src src-python">from scipy import integrate
@@ -367,8 +367,8 @@ def sgq(f, a, b, sp, n=10):
 </div>
 </div>
 
-<div id="outline-container-org02024cb" class="outline-2">
-<h2 id="org02024cb"><span class="section-number-2">3.</span> Tanh-Sinh Quadrature</h2>
+<div id="outline-container-orgcf39f2f" class="outline-2">
+<h2 id="orgcf39f2f"><span class="section-number-2">3.</span> Tanh-Sinh Quadrature</h2>
 <div class="outline-text-2" id="text-3">
 <p>
 对于端点发散的情况, 可以用 Tanh-Sinh quadrature (Double Exponential)
@@ -426,8 +426,8 @@ def sgq(f, a, b, sp, n=10):
 </div>
 </div>
 
-<div id="outline-container-orgc762000" class="outline-2">
-<h2 id="orgc762000"><span class="section-number-2">4.</span> Reference</h2>
+<div id="outline-container-orge99b089" class="outline-2">
+<h2 id="orge99b089"><span class="section-number-2">4.</span> Reference</h2>
 <div class="outline-text-2" id="text-4">
 <p>
 <a href="https://www.win.tue.nl/casa/meetings/seminar/previous/_abstract021106_files/Improper_integral1.pdf">https://www.win.tue.nl/casa/meetings/seminar/previous/_abstract021106_files/Improper_integral1.pdf</a>
@@ -437,7 +437,7 @@ def sgq(f, a, b, sp, n=10):
 </div>
 <div id="postamble" class="status">
 <p class="date">Date: 2019-10-07 Mon 00:00</p>
-<p class="date">Created: 2022-04-16 Sat 17:43</p>
+<p class="date">Created: 2022-04-16 Sat 21:08</p>
 <p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>

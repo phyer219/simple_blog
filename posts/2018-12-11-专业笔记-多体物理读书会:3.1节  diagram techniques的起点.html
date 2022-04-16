@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2022-04-16 Sat 17:43 -->
+<!-- 2022-04-16 Sat 21:08 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>多体物理读书会:3.1节 Dirac表象中的演化算符-diagram techniques的起点</title>
@@ -221,49 +221,49 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#org3390f4c">1. Schrodinger 表象</a>
+<li><a href="#org6ed0c95">1. Schrodinger 表象</a>
 <ul>
-<li><a href="#orgd044dae">1.1. 定义运动方程</a></li>
-<li><a href="#org4bf73bc">1.2. 演化算符的定义</a></li>
-<li><a href="#org9304595">1.3. 演化算符的具体形式</a>
+<li><a href="#org6401bb9">1.1. 定义运动方程</a></li>
+<li><a href="#orgf304882">1.2. 演化算符的定义</a></li>
+<li><a href="#org136f1fe">1.3. 演化算符的具体形式</a>
 <ul>
-<li><a href="#org3173197">1.3.1. 原始形式</a></li>
-<li><a href="#org6ff7654">1.3.2. von Neumann's series 形式</a></li>
-<li><a href="#org9a770b5">1.3.3. time-ordered 形式</a></li>
-<li><a href="#orgef2b9a3">1.3.4. 几何意义</a></li>
+<li><a href="#org7d957b3">1.3.1. 原始形式</a></li>
+<li><a href="#org4ab5937">1.3.2. von Neumann's series 形式</a></li>
+<li><a href="#orgab39fc1">1.3.3. time-ordered 形式</a></li>
+<li><a href="#orgfb86c09">1.3.4. 几何意义</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li><a href="#org68cd153">2. Heisenberg 表象</a>
+<li><a href="#orgb3d8e36">2. Heisenberg 表象</a>
 <ul>
-<li><a href="#org9c83cd5">2.1. 定义</a></li>
-<li><a href="#org0bf75f8">2.2. 运动方程</a></li>
+<li><a href="#org090278c">2.1. 定义</a></li>
+<li><a href="#orgb982836">2.2. 运动方程</a></li>
 </ul>
 </li>
-<li><a href="#org64a1acb">3. Dirac 表象</a>
+<li><a href="#orge5fab11">3. Dirac 表象</a>
 <ul>
-<li><a href="#orga89fd0d">3.1. 定义</a></li>
-<li><a href="#org0db8d9f">3.2. 运动方程</a>
+<li><a href="#org1c36908">3.1. 定义</a></li>
+<li><a href="#org905c191">3.2. 运动方程</a>
 <ul>
-<li><a href="#org7977310">3.2.1. 演化算符</a></li>
+<li><a href="#orgc4edfaa">3.2.1. 演化算符</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li><a href="#org46275d1">4. Supplementary</a></li>
+<li><a href="#org0859b02">4. Supplementary</a></li>
 </ul>
 </div>
 </div>
 <!-- toc -->
 <!-- more -->
 
-<div id="outline-container-org3390f4c" class="outline-2">
-<h2 id="org3390f4c"><span class="section-number-2">1.</span> Schrodinger 表象</h2>
+<div id="outline-container-org6ed0c95" class="outline-2">
+<h2 id="org6ed0c95"><span class="section-number-2">1.</span> Schrodinger 表象</h2>
 <div class="outline-text-2" id="text-1">
 </div>
-<div id="outline-container-orgd044dae" class="outline-3">
-<h3 id="orgd044dae"><span class="section-number-3">1.1.</span> 定义运动方程</h3>
+<div id="outline-container-org6401bb9" class="outline-3">
+<h3 id="org6401bb9"><span class="section-number-3">1.1.</span> 定义运动方程</h3>
 <div class="outline-text-3" id="text-1-1">
 <p>
 Schrodinger 表象的定义就是学习量子力学的过程中用的定义. Schrodinger 表象中的运动方程是 Schrodinger 方程
@@ -275,8 +275,8 @@ Schrodinger 表象的定义就是学习量子力学的过程中用的定义. Sch
 </div>
 </div>
 
-<div id="outline-container-org4bf73bc" class="outline-3">
-<h3 id="org4bf73bc"><span class="section-number-3">1.2.</span> 演化算符的定义</h3>
+<div id="outline-container-orgf304882" class="outline-3">
+<h3 id="orgf304882"><span class="section-number-3">1.2.</span> 演化算符的定义</h3>
 <div class="outline-text-3" id="text-1-2">
 <p>
 定义演化算符 \(U_S(t,t_0)\) 使得满足
@@ -310,12 +310,12 @@ Schrodinger 表象的定义就是学习量子力学的过程中用的定义. Sch
 </div>
 </div>
 
-<div id="outline-container-org9304595" class="outline-3">
-<h3 id="org9304595"><span class="section-number-3">1.3.</span> 演化算符的具体形式</h3>
+<div id="outline-container-org136f1fe" class="outline-3">
+<h3 id="org136f1fe"><span class="section-number-3">1.3.</span> 演化算符的具体形式</h3>
 <div class="outline-text-3" id="text-1-3">
 </div>
-<div id="outline-container-org3173197" class="outline-4">
-<h4 id="org3173197"><span class="section-number-4">1.3.1.</span> 原始形式</h4>
+<div id="outline-container-org7d957b3" class="outline-4">
+<h4 id="org7d957b3"><span class="section-number-4">1.3.1.</span> 原始形式</h4>
 <div class="outline-text-4" id="text-1-3-1">
 <p>
 根据演化算符随时间演化的方程 \eqref{eq:eoms} , 就可以推出演化算符的具体形式
@@ -331,8 +331,8 @@ U_S (t,t_0) = \mathbf{1} +\frac{1}{\mathrm{i}\hbar} \int_{t_0}^t \mathrm{d}t_1 \
 </div>
 </div>
 
-<div id="outline-container-org6ff7654" class="outline-4">
-<h4 id="org6ff7654"><span class="section-number-4">1.3.2.</span> von Neumann's series 形式</h4>
+<div id="outline-container-org4ab5937" class="outline-4">
+<h4 id="org4ab5937"><span class="section-number-4">1.3.2.</span> von Neumann's series 形式</h4>
 <div class="outline-text-4" id="text-1-3-2">
 <p>
 将原始的形式 \eqref{eq:evl1} 进行迭代, 就得到了它的级数形式
@@ -354,8 +354,8 @@ H_{t_1}H_{t_2} \cdots H_{t_n} \quad \quad (t \ge t_1 \ge \cdots t_n \ge t_0)
 </div>
 </div>
 
-<div id="outline-container-org9a770b5" class="outline-4">
-<h4 id="org9a770b5"><span class="section-number-4">1.3.3.</span> time-ordered 形式</h4>
+<div id="outline-container-orgab39fc1" class="outline-4">
+<h4 id="orgab39fc1"><span class="section-number-4">1.3.3.</span> time-ordered 形式</h4>
 <div class="outline-text-4" id="text-1-3-3">
 <p>
 可以通过 Heaviside step function \(\Theta\) 将所有的积分上限都写成 \(t\)
@@ -382,8 +382,8 @@ U_S^{(n)}(t,t_0) = T_D \left\{ e^{\frac{1}{\mathrm{i}\hbar}\int _{t_0}^t \mathrm
 </div>
 </div>
 
-<div id="outline-container-orgef2b9a3" class="outline-4">
-<h4 id="orgef2b9a3"><span class="section-number-4">1.3.4.</span> 几何意义</h4>
+<div id="outline-container-orgfb86c09" class="outline-4">
+<h4 id="orgfb86c09"><span class="section-number-4">1.3.4.</span> 几何意义</h4>
 <div class="outline-text-4" id="text-1-3-4">
 <p>
 类比二维, 积分 \eqref{eq:evl2} 可以理解成一个高维的"锥"的体积. 这个"锥", 从二维开始增加维度, 然后把新增加的维度捏到一个点上. 比如一维是一条线, 增加到二维是一个正方形, 然后把新增加的维度捏到一个点上,
@@ -396,12 +396,12 @@ U_S^{(n)}(t,t_0) = T_D \left\{ e^{\frac{1}{\mathrm{i}\hbar}\int _{t_0}^t \mathrm
 </div>
 </div>
 
-<div id="outline-container-org68cd153" class="outline-2">
-<h2 id="org68cd153"><span class="section-number-2">2.</span> Heisenberg 表象</h2>
+<div id="outline-container-orgb3d8e36" class="outline-2">
+<h2 id="orgb3d8e36"><span class="section-number-2">2.</span> Heisenberg 表象</h2>
 <div class="outline-text-2" id="text-2">
 </div>
-<div id="outline-container-org9c83cd5" class="outline-3">
-<h3 id="org9c83cd5"><span class="section-number-3">2.1.</span> 定义</h3>
+<div id="outline-container-org090278c" class="outline-3">
+<h3 id="org090278c"><span class="section-number-3">2.1.</span> 定义</h3>
 <div class="outline-text-3" id="text-2-1">
 <p>
 Heisenberg 表象将系统的变化从态中移到了力学量算符中
@@ -419,8 +419,8 @@ A_H(t) = U(t_0,t) A_S U(t,t_0) = U^{-1}(t,t_0) A_S U(t,t_0)
 </div>
 </div>
 
-<div id="outline-container-org0bf75f8" class="outline-3">
-<h3 id="org0bf75f8"><span class="section-number-3">2.2.</span> 运动方程</h3>
+<div id="outline-container-orgb982836" class="outline-3">
+<h3 id="orgb982836"><span class="section-number-3">2.2.</span> 运动方程</h3>
 <div class="outline-text-3" id="text-2-2">
 <p>
 在 Heisenberg 表象中, 运动方程从 Schrodinger 表象中态的 Schrodinger 方程, 变为算符的 Heisenberg 方程
@@ -435,12 +435,12 @@ A_H(t) = U(t_0,t) A_S U(t,t_0) = U^{-1}(t,t_0) A_S U(t,t_0)
 </div>
 </div>
 
-<div id="outline-container-org64a1acb" class="outline-2">
-<h2 id="org64a1acb"><span class="section-number-2">3.</span> Dirac 表象</h2>
+<div id="outline-container-orge5fab11" class="outline-2">
+<h2 id="orge5fab11"><span class="section-number-2">3.</span> Dirac 表象</h2>
 <div class="outline-text-2" id="text-3">
 </div>
-<div id="outline-container-orga89fd0d" class="outline-3">
-<h3 id="orga89fd0d"><span class="section-number-3">3.1.</span> 定义</h3>
+<div id="outline-container-org1c36908" class="outline-3">
+<h3 id="org1c36908"><span class="section-number-3">3.1.</span> 定义</h3>
 <div class="outline-text-3" id="text-3-1">
 <p>
 Dirac 表象对 Hamiltonian 进行了分解
@@ -505,8 +505,8 @@ U_D(t,t') = U_0(t_0,t) U_S(t,t') U_0(t',t_0)
 </div>
 </div>
 
-<div id="outline-container-org0db8d9f" class="outline-3">
-<h3 id="org0db8d9f"><span class="section-number-3">3.2.</span> 运动方程</h3>
+<div id="outline-container-org905c191" class="outline-3">
+<h3 id="org905c191"><span class="section-number-3">3.2.</span> 运动方程</h3>
 <div class="outline-text-3" id="text-3-2">
 <p>
 由于 Dirac 表象中算符和态都会随时间变化, 所以算符和态各对应不同的运动方程.
@@ -532,8 +532,8 @@ U_D(t,t') = U_0(t_0,t) U_S(t,t') U_0(t',t_0)
 \mathrm{i}\hbar | \dot{\psi}_D(t)\rangle = V_t^D (t) | \psi_D(t)\rangle
 \end{align}
 </div>
-<div id="outline-container-org7977310" class="outline-4">
-<h4 id="org7977310"><span class="section-number-4">3.2.1.</span> 演化算符</h4>
+<div id="outline-container-orgc4edfaa" class="outline-4">
+<h4 id="orgc4edfaa"><span class="section-number-4">3.2.1.</span> 演化算符</h4>
 <div class="outline-text-4" id="text-3-2-1">
 <p>
 和 Schrodinger 表象类似, Dirac 表象中的演化算符的时间演化就是态的时间演化
@@ -559,8 +559,8 @@ U_D(t,t') = U_0(t_0,t) U_S(t,t') U_0(t',t_0)
 </div>
 </div>
 </div>
-<div id="outline-container-org46275d1" class="outline-2">
-<h2 id="org46275d1"><span class="section-number-2">4.</span> Supplementary</h2>
+<div id="outline-container-org0859b02" class="outline-2">
+<h2 id="org0859b02"><span class="section-number-2">4.</span> Supplementary</h2>
 <div class="outline-text-2" id="text-4">
 <p>
 一个 \(n\) 维的这种"锥"的体积为对应的 \(n\) 维的立方体体积的 \(\frac{1}{n!}\) 的证明:
@@ -593,7 +593,7 @@ U_D(t,t') = U_0(t_0,t) U_S(t,t') U_0(t',t_0)
 </div>
 <div id="postamble" class="status">
 <p class="date">Date: 2018-12-11 Tue 00:00</p>
-<p class="date">Created: 2022-04-16 Sat 17:43</p>
+<p class="date">Created: 2022-04-16 Sat 21:08</p>
 <p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>

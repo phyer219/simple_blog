@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2022-04-16 Sat 17:43 -->
+<!-- 2022-04-16 Sat 21:08 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>二次量子化笔记 (update 06/Dec/2019)</title>
@@ -221,45 +221,45 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#org14ce06d">1. 单体力学量</a>
+<li><a href="#org994379e">1. 单体力学量</a>
 <ul>
-<li><a href="#orgc680728">1.1. 本征表象</a></li>
-<li><a href="#orga568a25">1.2. 非本征表象</a></li>
+<li><a href="#org24f7243">1.1. 本征表象</a></li>
+<li><a href="#org89f368c">1.2. 非本征表象</a></li>
 </ul>
 </li>
-<li><a href="#org40f2663">2. 二体力学量</a>
+<li><a href="#org280454d">2. 二体力学量</a>
 <ul>
-<li><a href="#org7a19c19">2.1. 本征表象</a></li>
-<li><a href="#org85bcc0b">2.2. 非本征表象</a></li>
+<li><a href="#orgf397bba">2.1. 本征表象</a></li>
+<li><a href="#org4c54ee0">2.2. 非本征表象</a></li>
 </ul>
 </li>
-<li><a href="#orgc38ac7c">3. 例: 场算符</a>
+<li><a href="#orgce2427a">3. 例: 场算符</a>
 <ul>
-<li><a href="#org35deefe">3.1. 引言</a></li>
-<li><a href="#org0113335">3.2. 动能算符</a></li>
-<li><a href="#orgcdd3f39">3.3. 动能算符的另一种形式</a></li>
-<li><a href="#orgdf6fc61">3.4. 用场算符表示波函数</a></li>
-<li><a href="#org41727df">3.5. <del>动能算符作用在态上(之前不恰当的理解)</del></a></li>
+<li><a href="#orga1dd7d5">3.1. 引言</a></li>
+<li><a href="#org454a979">3.2. 动能算符</a></li>
+<li><a href="#orgd8e5af1">3.3. 动能算符的另一种形式</a></li>
+<li><a href="#orgb81f2c1">3.4. 用场算符表示波函数</a></li>
+<li><a href="#org7577fc3">3.5. <del>动能算符作用在态上(之前不恰当的理解)</del></a></li>
 </ul>
 </li>
-<li><a href="#org0ae12f7">4. 例: 费米子接触势</a>
+<li><a href="#orge95a31a">4. 例: 费米子接触势</a>
 <ul>
-<li><a href="#orgc47e317">4.1. 坐标表象</a></li>
-<li><a href="#org467091b">4.2. 动量表象</a></li>
+<li><a href="#org8bfddff">4.1. 坐标表象</a></li>
+<li><a href="#org67f3bf6">4.2. 动量表象</a></li>
 </ul>
 </li>
-<li><a href="#orgf040fd4">5. 致谢</a></li>
+<li><a href="#orgc2cb09c">5. 致谢</a></li>
 </ul>
 </div>
 </div>
 <!-- toc -->
 <!-- more -->
-<div id="outline-container-org14ce06d" class="outline-2">
-<h2 id="org14ce06d"><span class="section-number-2">1.</span> 单体力学量</h2>
+<div id="outline-container-org994379e" class="outline-2">
+<h2 id="org994379e"><span class="section-number-2">1.</span> 单体力学量</h2>
 <div class="outline-text-2" id="text-1">
 </div>
-<div id="outline-container-orgc680728" class="outline-3">
-<h3 id="orgc680728"><span class="section-number-3">1.1.</span> 本征表象</h3>
+<div id="outline-container-org24f7243" class="outline-3">
+<h3 id="org24f7243"><span class="section-number-3">1.1.</span> 本征表象</h3>
 <div class="outline-text-3" id="text-1-1">
 <p>
 \(N\) 个粒子组成的系统，对于单个粒子的力学量 \(\hat{f}\) ，其第 \(i\) 个本征值为 \(f_i\) ，本征态为 \(\mid i \rangle\) ，即
@@ -279,8 +279,8 @@
 </div>
 </div>
 
-<div id="outline-container-orga568a25" class="outline-3">
-<h3 id="orga568a25"><span class="section-number-3">1.2.</span> 非本征表象</h3>
+<div id="outline-container-org89f368c" class="outline-3">
+<h3 id="org89f368c"><span class="section-number-3">1.2.</span> 非本征表象</h3>
 <div class="outline-text-3" id="text-1-2">
 <p>
 若要写出非本征表象下的形式，则应对 \(a_i^{\dagger}\) 做表象变换。 \(a_i^{\dagger}\) 的表象变换可让 \(a_i^{\dagger}\) 作用在真空态上如下导出：
@@ -324,12 +324,12 @@ a_i^{\dagger}   = \sum_{\alpha} a_{\alpha}^{\dagger}\ \langle \alpha \mid i \ran
 </div>
 </div>
 
-<div id="outline-container-org40f2663" class="outline-2">
-<h2 id="org40f2663"><span class="section-number-2">2.</span> 二体力学量</h2>
+<div id="outline-container-org280454d" class="outline-2">
+<h2 id="org280454d"><span class="section-number-2">2.</span> 二体力学量</h2>
 <div class="outline-text-2" id="text-2">
 </div>
-<div id="outline-container-org7a19c19" class="outline-3">
-<h3 id="org7a19c19"><span class="section-number-3">2.1.</span> 本征表象</h3>
+<div id="outline-container-orgf397bba" class="outline-3">
+<h3 id="orgf397bba"><span class="section-number-3">2.1.</span> 本征表象</h3>
 <div class="outline-text-3" id="text-2-1">
 <p>
 同样的, \(N\) 个粒子组成的系统, 于单个粒子的力学量 \(\hat{f}\) ，其第 \(i\) 个本征值为 \(f_i\) ，本征态为 \(\mid i \rangle\) ，即
@@ -397,8 +397,8 @@ a_i^{\dagger}   = \sum_{\alpha} a_{\alpha}^{\dagger}\ \langle \alpha \mid i \ran
 </div>
 </div>
 
-<div id="outline-container-org85bcc0b" class="outline-3">
-<h3 id="org85bcc0b"><span class="section-number-3">2.2.</span> 非本征表象</h3>
+<div id="outline-container-org4c54ee0" class="outline-3">
+<h3 id="org4c54ee0"><span class="section-number-3">2.2.</span> 非本征表象</h3>
 <div class="outline-text-3" id="text-2-2">
 <p>
 与单体力学量类似的, 直接对本征表象的结果做表象变换:
@@ -423,12 +423,12 @@ a_i^{\dagger}   = \sum_{\alpha} a_{\alpha}^{\dagger}\ \langle \alpha \mid i \ran
 </div>
 </div>
 
-<div id="outline-container-orgc38ac7c" class="outline-2">
-<h2 id="orgc38ac7c"><span class="section-number-2">3.</span> 例: 场算符</h2>
+<div id="outline-container-orgce2427a" class="outline-2">
+<h2 id="orgce2427a"><span class="section-number-2">3.</span> 例: 场算符</h2>
 <div class="outline-text-2" id="text-3">
 </div>
-<div id="outline-container-org35deefe" class="outline-3">
-<h3 id="org35deefe"><span class="section-number-3">3.1.</span> 引言</h3>
+<div id="outline-container-orga1dd7d5" class="outline-3">
+<h3 id="orga1dd7d5"><span class="section-number-3">3.1.</span> 引言</h3>
 <div class="outline-text-3" id="text-3-1">
 <p>
 考虑坐标表象中两体相互作用势为 \(u(\vec{r}_1, \vec{r}_2)\) 的多体 Hamiltonian 的二
@@ -458,8 +458,8 @@ a_i^{\dagger}   = \sum_{\alpha} a_{\alpha}^{\dagger}\ \langle \alpha \mid i \ran
 </div>
 </div>
 
-<div id="outline-container-org0113335" class="outline-3">
-<h3 id="org0113335"><span class="section-number-3">3.2.</span> 动能算符</h3>
+<div id="outline-container-org454a979" class="outline-3">
+<h3 id="org454a979"><span class="section-number-3">3.2.</span> 动能算符</h3>
 <div class="outline-text-3" id="text-3-2">
 <p>
 真相是: 动能的本征表象不是坐标表象, 而是动量表象, 在动量表象下它的本征值是
@@ -536,8 +536,8 @@ a_i^{\dagger}   = \sum_{\alpha} a_{\alpha}^{\dagger}\ \langle \alpha \mid i \ran
 </div>
 </div>
 
-<div id="outline-container-orgcdd3f39" class="outline-3">
-<h3 id="orgcdd3f39"><span class="section-number-3">3.3.</span> 动能算符的另一种形式</h3>
+<div id="outline-container-orgd8e5af1" class="outline-3">
+<h3 id="orgd8e5af1"><span class="section-number-3">3.3.</span> 动能算符的另一种形式</h3>
 <div class="outline-text-3" id="text-3-3">
 <p>
 动能算符有时也写为
@@ -563,8 +563,8 @@ a_i^{\dagger}   = \sum_{\alpha} a_{\alpha}^{\dagger}\ \langle \alpha \mid i \ran
 </div>
 </div>
 
-<div id="outline-container-orgdf6fc61" class="outline-3">
-<h3 id="orgdf6fc61"><span class="section-number-3">3.4.</span> 用场算符表示波函数</h3>
+<div id="outline-container-orgb81f2c1" class="outline-3">
+<h3 id="orgb81f2c1"><span class="section-number-3">3.4.</span> 用场算符表示波函数</h3>
 <div class="outline-text-3" id="text-3-4">
 <p>
 任意一个态用场算符表示为
@@ -594,8 +594,8 @@ a_i^{\dagger}   = \sum_{\alpha} a_{\alpha}^{\dagger}\ \langle \alpha \mid i \ran
 </div>
 </div>
 
-<div id="outline-container-org41727df" class="outline-3">
-<h3 id="org41727df"><span class="section-number-3">3.5.</span> <del>动能算符作用在态上(之前不恰当的理解)</del></h3>
+<div id="outline-container-org7577fc3" class="outline-3">
+<h3 id="org7577fc3"><span class="section-number-3">3.5.</span> <del>动能算符作用在态上(之前不恰当的理解)</del></h3>
 <div class="outline-text-3" id="text-3-5">
 <blockquote>
 <p>
@@ -665,12 +665,12 @@ a_i^{\dagger}   = \sum_{\alpha} a_{\alpha}^{\dagger}\ \langle \alpha \mid i \ran
 </div>
 </div>
 
-<div id="outline-container-org0ae12f7" class="outline-2">
-<h2 id="org0ae12f7"><span class="section-number-2">4.</span> 例: 费米子接触势</h2>
+<div id="outline-container-orge95a31a" class="outline-2">
+<h2 id="orge95a31a"><span class="section-number-2">4.</span> 例: 费米子接触势</h2>
 <div class="outline-text-2" id="text-4">
 </div>
-<div id="outline-container-orgc47e317" class="outline-3">
-<h3 id="orgc47e317"><span class="section-number-3">4.1.</span> 坐标表象</h3>
+<div id="outline-container-org8bfddff" class="outline-3">
+<h3 id="org8bfddff"><span class="section-number-3">4.1.</span> 坐标表象</h3>
 <div class="outline-text-3" id="text-4-1">
 <p>
 考虑两分量 \((\uparrow, \downarrow)\) 的费米子接触势, 其在坐标表象的二次量子化形式为
@@ -744,8 +744,8 @@ a_i^{\dagger}   = \sum_{\alpha} a_{\alpha}^{\dagger}\ \langle \alpha \mid i \ran
 </div>
 </div>
 
-<div id="outline-container-org467091b" class="outline-3">
-<h3 id="org467091b"><span class="section-number-3">4.2.</span> 动量表象</h3>
+<div id="outline-container-org67f3bf6" class="outline-3">
+<h3 id="org67f3bf6"><span class="section-number-3">4.2.</span> 动量表象</h3>
 <div class="outline-text-3" id="text-4-2">
 <p>
 动量表象是动能的本征表象, 所以
@@ -810,8 +810,8 @@ a_i^{\dagger}   = \sum_{\alpha} a_{\alpha}^{\dagger}\ \langle \alpha \mid i \ran
 </div>
 </div>
 
-<div id="outline-container-orgf040fd4" class="outline-2">
-<h2 id="orgf040fd4"><span class="section-number-2">5.</span> 致谢</h2>
+<div id="outline-container-orgc2cb09c" class="outline-2">
+<h2 id="orgc2cb09c"><span class="section-number-2">5.</span> 致谢</h2>
 <div class="outline-text-2" id="text-5">
 <ul class="org-ul">
 <li>Qiang Han 老师的课件提供的主要思路.</li>
@@ -827,7 +827,7 @@ a_i^{\dagger}   = \sum_{\alpha} a_{\alpha}^{\dagger}\ \langle \alpha \mid i \ran
 </div>
 <div id="postamble" class="status">
 <p class="date">Date: 2018-09-27 Thu 00:00</p>
-<p class="date">Created: 2022-04-16 Sat 17:43</p>
+<p class="date">Created: 2022-04-16 Sat 21:08</p>
 <p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>

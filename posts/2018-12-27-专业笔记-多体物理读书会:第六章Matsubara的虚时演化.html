@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2022-04-16 Sat 17:43 -->
+<!-- 2022-04-16 Sat 21:08 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>多体物理读书会:第六章Matsubara的虚时演化</title>
@@ -221,35 +221,35 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#org380e37e">1. 引入</a>
+<li><a href="#orgc3a6ba6">1. 引入</a>
 <ul>
-<li><a href="#org13b7829">1.1. 引入一</a></li>
-<li><a href="#org09247d7">1.2. 引入二</a></li>
-<li><a href="#orga1fe79c">1.3. 引入三</a></li>
+<li><a href="#orgbd950f8">1.1. 引入一</a></li>
+<li><a href="#org9f99b78">1.2. 引入二</a></li>
+<li><a href="#orgec5119b">1.3. 引入三</a></li>
 </ul>
 </li>
-<li><a href="#orgcea7752">2. Modified Heisenberg Representation</a></li>
-<li><a href="#org13373f9">3. Matsubara function</a>
+<li><a href="#org58a306e">2. Modified Heisenberg Representation</a></li>
+<li><a href="#org4b82d5b">3. Matsubara function</a>
 <ul>
-<li><a href="#orgeb031bf">3.1. Defination</a></li>
-<li><a href="#org04f1f20">3.2. 周期性</a></li>
-<li><a href="#org0c92fb0">3.3. Fourier Transform</a></li>
-<li><a href="#org61799ef">3.4. Relation to the Green's Function</a></li>
+<li><a href="#orga22c5cc">3.1. Defination</a></li>
+<li><a href="#orgc0d811a">3.2. 周期性</a></li>
+<li><a href="#org77c0f04">3.3. Fourier Transform</a></li>
+<li><a href="#org9a1afac">3.4. Relation to the Green's Function</a></li>
 </ul>
 </li>
-<li><a href="#org82385d7">4. Grand Canonical Partition Function</a>
+<li><a href="#orgfa6152e">4. Grand Canonical Partition Function</a>
 <ul>
-<li><a href="#orgd6eade3">4.1. Dirac Representation</a></li>
-<li><a href="#org893bcaf">4.2. Grand Canonical Partition Function</a></li>
+<li><a href="#org0572cda">4.1. Dirac Representation</a></li>
+<li><a href="#org5501f7e">4.2. Grand Canonical Partition Function</a></li>
 </ul>
 </li>
-<li><a href="#org3cce4a9">5. Single-Particle Matsubara function</a>
+<li><a href="#orgf03f958">5. Single-Particle Matsubara function</a>
 <ul>
-<li><a href="#orgc45f3d5">5.1. Defination</a></li>
-<li><a href="#orgd911727">5.2. Start Point of Digramatic Perturbation Theory</a></li>
+<li><a href="#org286b63f">5.1. Defination</a></li>
+<li><a href="#orgb78a913">5.2. Start Point of Digramatic Perturbation Theory</a></li>
 </ul>
 </li>
-<li><a href="#org79213a4">6. 致谢</a></li>
+<li><a href="#org94b13d5">6. 致谢</a></li>
 </ul>
 </div>
 </div>
@@ -259,12 +259,12 @@
 PDF: <a href="./2018-12-27-专业笔记-多体物理读书会:第六章Matsubara的虚时演化/2018-12-27-专业笔记-多体物理读书会:第六章Matsubara的虚时演化.pdf">./2018-12-27-专业笔记-多体物理读书会:第六章Matsubara的虚时演化/2018-12-27-专业笔记-多体物理读书会:第六章Matsubara的虚时演化.pdf</a>
 </p>
 
-<div id="outline-container-org380e37e" class="outline-2">
-<h2 id="org380e37e"><span class="section-number-2">1.</span> 引入</h2>
+<div id="outline-container-orgc3a6ba6" class="outline-2">
+<h2 id="orgc3a6ba6"><span class="section-number-2">1.</span> 引入</h2>
 <div class="outline-text-2" id="text-1">
 </div>
-<div id="outline-container-org13b7829" class="outline-3">
-<h3 id="org13b7829"><span class="section-number-3">1.1.</span> 引入一</h3>
+<div id="outline-container-orgbd950f8" class="outline-3">
+<h3 id="orgbd950f8"><span class="section-number-3">1.1.</span> 引入一</h3>
 <div class="outline-text-3" id="text-1-1">
 <p>
 格林函数的定义中有两项, 是
@@ -301,8 +301,8 @@ PDF: <a href="./2018-12-27-专业笔记-多体物理读书会:第六章Matsubara
 </div>
 </div>
 
-<div id="outline-container-org09247d7" class="outline-3">
-<h3 id="org09247d7"><span class="section-number-3">1.2.</span> 引入二</h3>
+<div id="outline-container-org9f99b78" class="outline-3">
+<h3 id="org9f99b78"><span class="section-number-3">1.2.</span> 引入二</h3>
 <div class="outline-text-3" id="text-1-2">
 <p>
 时间演化算符
@@ -359,8 +359,8 @@ t=-i\hbar \beta
 </div>
 </div>
 
-<div id="outline-container-orga1fe79c" class="outline-3">
-<h3 id="orga1fe79c"><span class="section-number-3">1.3.</span> 引入三</h3>
+<div id="outline-container-orgec5119b" class="outline-3">
+<h3 id="orgec5119b"><span class="section-number-3">1.3.</span> 引入三</h3>
 <div class="outline-text-3" id="text-1-3">
 <p>
 对于非零温的情况, 微扰 \(V\) 不仅出现在演化算符中, 还出现在密度算符中. 虚时
@@ -370,8 +370,8 @@ t=-i\hbar \beta
 </div>
 </div>
 
-<div id="outline-container-orgcea7752" class="outline-2">
-<h2 id="orgcea7752"><span class="section-number-2">2.</span> Modified Heisenberg Representation</h2>
+<div id="outline-container-org58a306e" class="outline-2">
+<h2 id="org58a306e"><span class="section-number-2">2.</span> Modified Heisenberg Representation</h2>
 <div class="outline-text-2" id="text-2">
 <p>
 一个纯虚的时间, 对应于温度的演化, 与真实的时间无关. 如果时间是虚, 那么可以定义
@@ -403,12 +403,12 @@ t=-i\hbar \beta
 </div>
 </div>
 
-<div id="outline-container-org13373f9" class="outline-2">
-<h2 id="org13373f9"><span class="section-number-2">3.</span> Matsubara function</h2>
+<div id="outline-container-org4b82d5b" class="outline-2">
+<h2 id="org4b82d5b"><span class="section-number-2">3.</span> Matsubara function</h2>
 <div class="outline-text-2" id="text-3">
 </div>
-<div id="outline-container-orgeb031bf" class="outline-3">
-<h3 id="orgeb031bf"><span class="section-number-3">3.1.</span> Defination</h3>
+<div id="outline-container-orga22c5cc" class="outline-3">
+<h3 id="orga22c5cc"><span class="section-number-3">3.1.</span> Defination</h3>
 <div class="outline-text-3" id="text-3-1">
 <p>
 与因果格林函数一样的定义, 只不过由于时间是虚的, \(\mathrm{i}\) 被 \(t\) 吸收变成
@@ -434,8 +434,8 @@ t=-i\hbar \beta
 </div>
 </div>
 
-<div id="outline-container-org04f1f20" class="outline-3">
-<h3 id="org04f1f20"><span class="section-number-3">3.2.</span> 周期性</h3>
+<div id="outline-container-orgc0d811a" class="outline-3">
+<h3 id="orgc0d811a"><span class="section-number-3">3.2.</span> 周期性</h3>
 <div class="outline-text-3" id="text-3-2">
 <p>
 Matsubara function 在区间 \([-\hbar\beta,\hbar\beta]\) 之间, 对于 Boson 是
@@ -477,8 +477,8 @@ Matsubara function 在区间 \([-\hbar\beta,\hbar\beta]\) 之间, 对于 Boson �
 </div>
 </div>
 
-<div id="outline-container-org0c92fb0" class="outline-3">
-<h3 id="org0c92fb0"><span class="section-number-3">3.3.</span> Fourier Transform</h3>
+<div id="outline-container-org77c0f04" class="outline-3">
+<h3 id="org77c0f04"><span class="section-number-3">3.3.</span> Fourier Transform</h3>
 <div class="outline-text-3" id="text-3-3">
 <p>
 Matsubara function 按区间 \([-\hbar\beta,\hbar\beta]\) 延拓成周期为 \(2\hbar\beta\) 的
@@ -549,8 +549,8 @@ where
 </div>
 </div>
 
-<div id="outline-container-org61799ef" class="outline-3">
-<h3 id="org61799ef"><span class="section-number-3">3.4.</span> Relation to the Green's Function</h3>
+<div id="outline-container-org9a1afac" class="outline-3">
+<h3 id="org9a1afac"><span class="section-number-3">3.4.</span> Relation to the Green's Function</h3>
 <div class="outline-text-3" id="text-3-4">
 <p>
 它们的关系可以由 Spectral function 联系.
@@ -595,12 +595,12 @@ where
 
 
 
-<div id="outline-container-org82385d7" class="outline-2">
-<h2 id="org82385d7"><span class="section-number-2">4.</span> Grand Canonical Partition Function</h2>
+<div id="outline-container-orgfa6152e" class="outline-2">
+<h2 id="orgfa6152e"><span class="section-number-2">4.</span> Grand Canonical Partition Function</h2>
 <div class="outline-text-2" id="text-4">
 </div>
-<div id="outline-container-orgd6eade3" class="outline-3">
-<h3 id="orgd6eade3"><span class="section-number-3">4.1.</span> Dirac Representation</h3>
+<div id="outline-container-org0572cda" class="outline-3">
+<h3 id="org0572cda"><span class="section-number-3">4.1.</span> Dirac Representation</h3>
 <div class="outline-text-3" id="text-4-1">
 <p>
 对应于实时, 虚时也可以定义 Dirac Representation .
@@ -626,8 +626,8 @@ where
 </div>
 </div>
 
-<div id="outline-container-org893bcaf" class="outline-3">
-<h3 id="org893bcaf"><span class="section-number-3">4.2.</span> Grand Canonical Partition Function</h3>
+<div id="outline-container-org5501f7e" class="outline-3">
+<h3 id="org5501f7e"><span class="section-number-3">4.2.</span> Grand Canonical Partition Function</h3>
 <div class="outline-text-3" id="text-4-2">
 \begin{align*}
   e^{-\frac{1}{\hbar}H\tau} = e^{-\frac{1}{\hbar}H_0\tau}U_D(\tau,0)
@@ -653,12 +653,12 @@ where
 </div>
 </div>
 
-<div id="outline-container-org3cce4a9" class="outline-2">
-<h2 id="org3cce4a9"><span class="section-number-2">5.</span> Single-Particle Matsubara function</h2>
+<div id="outline-container-orgf03f958" class="outline-2">
+<h2 id="orgf03f958"><span class="section-number-2">5.</span> Single-Particle Matsubara function</h2>
 <div class="outline-text-2" id="text-5">
 </div>
-<div id="outline-container-orgc45f3d5" class="outline-3">
-<h3 id="orgc45f3d5"><span class="section-number-3">5.1.</span> Defination</h3>
+<div id="outline-container-org286b63f" class="outline-3">
+<h3 id="org286b63f"><span class="section-number-3">5.1.</span> Defination</h3>
 <div class="outline-text-3" id="text-5-1">
 <p>
 Single-Particle Matsubara function 定义为
@@ -699,8 +699,8 @@ Equation of Motion
 </div>
 </div>
 
-<div id="outline-container-orgd911727" class="outline-3">
-<h3 id="orgd911727"><span class="section-number-3">5.2.</span> Start Point of Digramatic Perturbation Theory</h3>
+<div id="outline-container-orgb78a913" class="outline-3">
+<h3 id="orgb78a913"><span class="section-number-3">5.2.</span> Start Point of Digramatic Perturbation Theory</h3>
 <div class="outline-text-3" id="text-5-2">
 <p>
 微扰 \(V\) 存在的情况下, Single-Particle Matsubara function 为
@@ -739,8 +739,8 @@ Equation of Motion
 </div>
 </div>
 
-<div id="outline-container-org79213a4" class="outline-2">
-<h2 id="org79213a4"><span class="section-number-2">6.</span> 致谢</h2>
+<div id="outline-container-org94b13d5" class="outline-2">
+<h2 id="org94b13d5"><span class="section-number-2">6.</span> 致谢</h2>
 <div class="outline-text-2" id="text-6">
 <p>
 除了 Wolfgang Nolting 的书外,
@@ -751,7 +751,7 @@ Equation of Motion
 </div>
 <div id="postamble" class="status">
 <p class="date">Date: 2018-12-27 Thu 00:00</p>
-<p class="date">Created: 2022-04-16 Sat 17:43</p>
+<p class="date">Created: 2022-04-16 Sat 21:08</p>
 <p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>

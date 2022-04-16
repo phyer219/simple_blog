@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2022-04-16 Sat 17:42 -->
+<!-- 2022-04-16 Sat 21:09 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>多变量数值定积分换元(质心系)</title>
@@ -221,24 +221,24 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#org5e326c2">1. <code>nuqad</code> 的用法</a></li>
-<li><a href="#orgbb9c352">2. 定积分换元到质心系</a></li>
-<li><a href="#orgc95d22f">3. Reference</a></li>
+<li><a href="#orgfb4e604">1. <code>nuqad</code> 的用法</a></li>
+<li><a href="#org67adfb4">2. 定积分换元到质心系</a></li>
+<li><a href="#org31fe48a">3. Reference</a></li>
 </ul>
 </div>
 </div>
 <!-- toc -->
 <!-- more -->
 
-<div id="outline-container-org5e326c2" class="outline-2">
-<h2 id="org5e326c2"><span class="section-number-2">1.</span> <code>nuqad</code> 的用法</h2>
+<div id="outline-container-orgfb4e604" class="outline-2">
+<h2 id="orgfb4e604"><span class="section-number-2">1.</span> <code>nuqad</code> 的用法</h2>
 <div class="outline-text-2" id="text-1">
 \begin{align}
 \int_0^1\mathrm{d}y \int_y^1 \mathrm{d}x \cdot(x^2 + y) = \frac{5}{12}
 \end{align}
 
 
-<div id="orgce8fb55" class="figure">
+<div id="orgbf4628e" class="figure">
 <p><img src="2021-09-17-专业笔记-numerical_Jacobian_center_of_mass/nquad.png" alt="nquad.png" />
 </p>
 </div>
@@ -273,8 +273,8 @@ print(5/12)
 </div>
 </div>
 
-<div id="outline-container-orgbb9c352" class="outline-2">
-<h2 id="orgbb9c352"><span class="section-number-2">2.</span> 定积分换元到质心系</h2>
+<div id="outline-container-org67adfb4" class="outline-2">
+<h2 id="org67adfb4"><span class="section-number-2">2.</span> 定积分换元到质心系</h2>
 <div class="outline-text-2" id="text-2">
 \begin{align}
 \int_0^{2\pi} \mathrm{d}\phi_k \int_0^{2\pi}\mathrm{d}\phi_q \cdot f(\phi_k - \phi_q)
@@ -291,7 +291,7 @@ l(\phi_-) =& \left\{\matrix{4\pi - 2\phi_-, \quad \phi_->0\\
 \end{align}
 
 
-<div id="org71fae69" class="figure">
+<div id="org97cf19d" class="figure">
 <p><img src="2021-09-17-专业笔记-numerical_Jacobian_center_of_mass/center_of_mass.png" alt="center_of_mass.png" />
 </p>
 </div>
@@ -337,8 +337,8 @@ print(normal)
 </div>
 </div>
 
-<div id="outline-container-orgc95d22f" class="outline-2">
-<h2 id="orgc95d22f"><span class="section-number-2">3.</span> Reference</h2>
+<div id="outline-container-org31fe48a" class="outline-2">
+<h2 id="org31fe48a"><span class="section-number-2">3.</span> Reference</h2>
 <div class="outline-text-2" id="text-3">
 <ul class="org-ul">
 <li><a href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.integrate.nquad.html">https://docs.scipy.org/doc/scipy/reference/generated/scipy.integrate.nquad.html</a></li>
@@ -351,7 +351,7 @@ Variables in Multiple Integrals</li>
 </div>
 <div id="postamble" class="status">
 <p class="date">Date: 2021-09-17 Fri 00:00</p>
-<p class="date">Created: 2022-04-16 Sat 17:42</p>
+<p class="date">Created: 2022-04-16 Sat 21:09</p>
 <p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>
