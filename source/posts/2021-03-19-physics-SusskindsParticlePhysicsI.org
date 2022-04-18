@@ -97,7 +97,7 @@ Create a particle at position $x$
 
 ** Possible  Reaction & Stimulated Emission
 
-[[file:2021-03-19-专业笔记-SusskindsParticlePhysicsI/reaction.png]]
+[[file:2021-03-19-physics-SusskindsParticlePhysicsI/reaction.png]]
 
 A particle comes in, and when it hits the target. The target happens to be
 localized at position $x$ . That particle disappears. And then two particles
@@ -185,7 +185,7 @@ $\Psi$ is an operator.
 
 ** A Model: Scattering
 
-[[file:2021-03-19-专业笔记-SusskindsParticlePhysicsI/scattering.png]]
+[[file:2021-03-19-physics-SusskindsParticlePhysicsI/scattering.png]]
 
 A particle absorbed by a fixed target and emitted by the target instantly. This
 process is energy conserved but momentum not conserved. Averaging or integrating

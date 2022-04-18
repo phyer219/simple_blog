@@ -166,7 +166,7 @@ For $a,b \in \mathbb{R}$ and $a>0 , b>0$
 
 ** 与 Mathematica 的结果一致
 
-[[file:./2019-05-15-专业笔记-PAR99/int.png]]
+[[file:./2019-05-15-physics-PAR99/int.png]]
 其中
 \begin{align}
   \mathrm{Erfc}(x) = 1 - \mathrm{Erf}(x) = \frac{2}{\sqrt{\pi}}

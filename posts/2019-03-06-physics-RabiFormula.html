@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2022-04-16 Sat 23:05 -->
+<!-- 2022-04-18 Mon 20:38 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Rabi's Formula (update 15/Apr/2020)</title>
@@ -221,29 +221,29 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#orge67ca7f">1. Statement of the Problem</a></li>
-<li><a href="#orge408001">2. Dirac Representation</a></li>
-<li><a href="#orgdfbda2b">3. 求解微分方程组</a>
+<li><a href="#org2e68b35">1. Statement of the Problem</a></li>
+<li><a href="#org112ef5c">2. Dirac Representation</a></li>
+<li><a href="#orgaccf4ed">3. 求解微分方程组</a>
 <ul>
-<li><a href="#org0d945d8">3.1. 化简</a></li>
-<li><a href="#org0e6ae5a">3.2. 求解</a></li>
+<li><a href="#orgc411b7a">3.1. 化简</a></li>
+<li><a href="#org8c44c30">3.2. 求解</a></li>
 </ul>
 </li>
-<li><a href="#org209fea2">4. Results</a>
+<li><a href="#orga19aa03">4. Results</a>
 <ul>
-<li><a href="#org6126472">4.1. code</a></li>
-<li><a href="#org8c21ef1">4.2. figure</a></li>
+<li><a href="#org49ebf52">4.1. code</a></li>
+<li><a href="#orgd66f3ee">4.2. figure</a></li>
 </ul>
 </li>
-<li><a href="#orgfedc73c">5. 总结</a></li>
-<li><a href="#org85c9e7f">6. Reference</a></li>
+<li><a href="#orgbd6ee80">5. 总结</a></li>
+<li><a href="#orge629f0d">6. Reference</a></li>
 </ul>
 </div>
 </div>
 <!-- toc -->
 <!-- more -->
-<div id="outline-container-orge67ca7f" class="outline-2">
-<h2 id="orge67ca7f"><span class="section-number-2">1.</span> Statement of the Problem</h2>
+<div id="outline-container-org2e68b35" class="outline-2">
+<h2 id="org2e68b35"><span class="section-number-2">1.</span> Statement of the Problem</h2>
 <div class="outline-text-2" id="text-1">
 <p>
 二能级系统的 Hamiltonian
@@ -273,8 +273,8 @@
 </div>
 </div>
 
-<div id="outline-container-orge408001" class="outline-2">
-<h2 id="orge408001"><span class="section-number-2">2.</span> Dirac Representation</h2>
+<div id="outline-container-org112ef5c" class="outline-2">
+<h2 id="org112ef5c"><span class="section-number-2">2.</span> Dirac Representation</h2>
 <div class="outline-text-2" id="text-2">
 \begin{align*}
   \mathrm{i}\hbar\frac{\partial}{\partial t}c_1(t) &=
@@ -332,12 +332,12 @@
 </div>
 </div>
 
-<div id="outline-container-orgdfbda2b" class="outline-2">
-<h2 id="orgdfbda2b"><span class="section-number-2">3.</span> 求解微分方程组</h2>
+<div id="outline-container-orgaccf4ed" class="outline-2">
+<h2 id="orgaccf4ed"><span class="section-number-2">3.</span> 求解微分方程组</h2>
 <div class="outline-text-2" id="text-3">
 </div>
-<div id="outline-container-org0d945d8" class="outline-3">
-<h3 id="org0d945d8"><span class="section-number-3">3.1.</span> 化简</h3>
+<div id="outline-container-orgc411b7a" class="outline-3">
+<h3 id="orgc411b7a"><span class="section-number-3">3.1.</span> 化简</h3>
 <div class="outline-text-3" id="text-3-1">
 <p>
 对于这个问题, \(V_{11} = V_{22} =0\) , \(V_{12}=V_{21}^{*} = \gamma e^{\mathrm{i}\omega t}\) ,所以
@@ -358,8 +358,8 @@
 </div>
 </div>
 
-<div id="outline-container-org0e6ae5a" class="outline-3">
-<h3 id="org0e6ae5a"><span class="section-number-3">3.2.</span> 求解</h3>
+<div id="outline-container-org8c44c30" class="outline-3">
+<h3 id="org8c44c30"><span class="section-number-3">3.2.</span> 求解</h3>
 <div class="outline-text-3" id="text-3-2">
 <p>
 \((2)\) 移项得
@@ -443,12 +443,12 @@
 </div>
 </div>
 
-<div id="outline-container-org209fea2" class="outline-2">
-<h2 id="org209fea2"><span class="section-number-2">4.</span> Results</h2>
+<div id="outline-container-orga19aa03" class="outline-2">
+<h2 id="orga19aa03"><span class="section-number-2">4.</span> Results</h2>
 <div class="outline-text-2" id="text-4">
 </div>
-<div id="outline-container-org6126472" class="outline-3">
-<h3 id="org6126472"><span class="section-number-3">4.1.</span> code</h3>
+<div id="outline-container-org49ebf52" class="outline-3">
+<h3 id="org49ebf52"><span class="section-number-3">4.1.</span> code</h3>
 <div class="outline-text-3" id="text-4-1">
 <div class="org-src-container">
 <pre class="src src-python">import numpy as np
@@ -507,24 +507,24 @@ plt.show()
 </div>
 </div>
 
-<div id="outline-container-org8c21ef1" class="outline-3">
-<h3 id="org8c21ef1"><span class="section-number-3">4.2.</span> figure</h3>
+<div id="outline-container-orgd66f3ee" class="outline-3">
+<h3 id="orgd66f3ee"><span class="section-number-3">4.2.</span> figure</h3>
 <div class="outline-text-3" id="text-4-2">
 
-<div id="orgb5187df" class="figure">
-<p><img src="./2019-03-06-专业笔记-RabiFormula/fig.gif" alt="fig.gif" />
+<div id="orge605226" class="figure">
+<p><img src="./2019-03-06-physics-RabiFormula/fig.gif" alt="fig.gif" />
 </p>
 </div>
 
 <p>
-<a href="./2019-03-06-专业笔记-RabiFormula/fig.mp4">./2019-03-06-专业笔记-RabiFormula/fig.mp4</a>
+<a href="./2019-03-06-physics-RabiFormula/fig.mp4">./2019-03-06-physics-RabiFormula/fig.mp4</a>
 </p>
 </div>
 </div>
 </div>
 
-<div id="outline-container-orgfedc73c" class="outline-2">
-<h2 id="orgfedc73c"><span class="section-number-2">5.</span> 总结</h2>
+<div id="outline-container-orgbd6ee80" class="outline-2">
+<h2 id="orgbd6ee80"><span class="section-number-2">5.</span> 总结</h2>
 <div class="outline-text-2" id="text-5">
 <p>
 如果取 \(\hbar = 1\) , 记 detuning \(\Delta = \omega-\omega_{21}\) , 那么对于一个二能级系统的(含时)
@@ -556,8 +556,8 @@ plt.show()
 </div>
 </div>
 
-<div id="outline-container-org85c9e7f" class="outline-2">
-<h2 id="org85c9e7f"><span class="section-number-2">6.</span> Reference</h2>
+<div id="outline-container-orge629f0d" class="outline-2">
+<h2 id="orge629f0d"><span class="section-number-2">6.</span> Reference</h2>
 <div class="outline-text-2" id="text-6">
 <p>
 <a href="http://farside.ph.utexas.edu/teaching/qmech/Quantum/node113.html">http://farside.ph.utexas.edu/teaching/qmech/Quantum/node113.html</a>
@@ -571,7 +571,7 @@ J. J. Sakurai, Jim Napolitano, Modern Quantum Mechanics 2nd
 </div>
 <div id="postamble" class="status">
 <p class="date">Date: 2019-03-06 Wed 00:00</p>
-<p class="date">Created: 2022-04-16 Sat 23:05</p>
+<p class="date">Created: 2022-04-18 Mon 20:38</p>
 <p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>

@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2022-04-16 Sat 23:06 -->
+<!-- 2022-04-18 Mon 20:39 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>BCS Theory 课堂笔记整理</title>
@@ -221,42 +221,42 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#org87edd21">1. Review</a>
+<li><a href="#org091cf07">1. Review</a>
 <ul>
-<li><a href="#org4f18b97">1.1. Fermi Liquid</a></li>
-<li><a href="#orgabe8728">1.2. Ordered State</a></li>
-<li><a href="#orge3c37db">1.3. Non-Fermi Liquid</a></li>
+<li><a href="#org0d6a6e2">1.1. Fermi Liquid</a></li>
+<li><a href="#org37cc3b4">1.2. Ordered State</a></li>
+<li><a href="#org1ac5534">1.3. Non-Fermi Liquid</a></li>
 </ul>
 </li>
-<li><a href="#org2941b91">2. Introduction</a></li>
-<li><a href="#orgd757eb6">3. Cooper Problem (a 2-Body Problem)</a>
+<li><a href="#org3f1d73c">2. Introduction</a></li>
+<li><a href="#orgf7e1d91">3. Cooper Problem (a 2-Body Problem)</a>
 <ul>
-<li><a href="#orgae2adb7">3.1. intro: 2-body in vacuum</a></li>
-<li><a href="#org0357804">3.2. Cooper Problem</a></li>
+<li><a href="#org2091b37">3.1. intro: 2-body in vacuum</a></li>
+<li><a href="#orgb3f8e35">3.2. Cooper Problem</a></li>
 </ul>
 </li>
-<li><a href="#org26b0256">4. Self-Consistent Mean Field Theory</a></li>
-<li><a href="#orgd1eacfd">5. BCS Mean Field Hamiltonian</a></li>
-<li><a href="#org0d80b62">6. BCS wave function</a></li>
-<li><a href="#orga320309">7. A Physical View</a></li>
-<li><a href="#org5e1b4e2">8. Summary</a></li>
-<li><a href="#org03276c0">9. Reference</a></li>
+<li><a href="#org39bdff8">4. Self-Consistent Mean Field Theory</a></li>
+<li><a href="#org36fb05e">5. BCS Mean Field Hamiltonian</a></li>
+<li><a href="#org63125d4">6. BCS wave function</a></li>
+<li><a href="#orgb3061a5">7. A Physical View</a></li>
+<li><a href="#orgd9c9922">8. Summary</a></li>
+<li><a href="#org2ee51d8">9. Reference</a></li>
 </ul>
 </div>
 </div>
 <!-- toc -->
 <!-- more -->
 
-<div id="outline-container-org87edd21" class="outline-2">
-<h2 id="org87edd21"><span class="section-number-2">1.</span> Review</h2>
+<div id="outline-container-org091cf07" class="outline-2">
+<h2 id="org091cf07"><span class="section-number-2">1.</span> Review</h2>
 <div class="outline-text-2" id="text-1">
 <p>
 有相互作用的费米系统, 一般有以下三类, 前两类比较常见.
 </p>
 </div>
 
-<div id="outline-container-org4f18b97" class="outline-3">
-<h3 id="org4f18b97"><span class="section-number-3">1.1.</span> Fermi Liquid</h3>
+<div id="outline-container-org0d6a6e2" class="outline-3">
+<h3 id="org0d6a6e2"><span class="section-number-3">1.1.</span> Fermi Liquid</h3>
 <div class="outline-text-3" id="text-1-1">
 <p>
 一类非常像无相互作用的费米系统的系统. 它的特征:
@@ -274,8 +274,8 @@
 </div>
 </div>
 
-<div id="outline-container-orgabe8728" class="outline-3">
-<h3 id="orgabe8728"><span class="section-number-3">1.2.</span> Ordered State</h3>
+<div id="outline-container-org37cc3b4" class="outline-3">
+<h3 id="org37cc3b4"><span class="section-number-3">1.2.</span> Ordered State</h3>
 <div class="outline-text-3" id="text-1-2">
 <ul class="org-ul">
 <li>BCS, Fermion 有 pairing 这样的 order, 费米子要配对.</li>
@@ -290,8 +290,8 @@
 </div>
 </div>
 
-<div id="outline-container-orge3c37db" class="outline-3">
-<h3 id="orge3c37db"><span class="section-number-3">1.3.</span> Non-Fermi Liquid</h3>
+<div id="outline-container-org1ac5534" class="outline-3">
+<h3 id="org1ac5534"><span class="section-number-3">1.3.</span> Non-Fermi Liquid</h3>
 <div class="outline-text-3" id="text-1-3">
 <p>
 前两者在现有的多体理论框架中是了解的比较清楚的, 而 Non-Fermi Liquid 还了解的不是
@@ -302,8 +302,8 @@ state. 一般指除了 Fermi liquid 和 ordered-stated 以外的有相互作用�
 </div>
 </div>
 
-<div id="outline-container-org2941b91" class="outline-2">
-<h2 id="org2941b91"><span class="section-number-2">2.</span> Introduction</h2>
+<div id="outline-container-org3f1d73c" class="outline-2">
+<h2 id="org3f1d73c"><span class="section-number-2">2.</span> Introduction</h2>
 <div class="outline-text-2" id="text-2">
 <p>
 BCS 理论, 是 ordered state 的典型代表. BCS 理论的发现是为了解决超导问题. 超导和
@@ -326,8 +326,8 @@ BCS 理论的提出, 已经是在超导发现几十年之后了, 所以对超导
 </div>
 </div>
 
-<div id="outline-container-orgd757eb6" class="outline-2">
-<h2 id="orgd757eb6"><span class="section-number-2">3.</span> Cooper Problem (a 2-Body Problem)</h2>
+<div id="outline-container-orgf7e1d91" class="outline-2">
+<h2 id="orgf7e1d91"><span class="section-number-2">3.</span> Cooper Problem (a 2-Body Problem)</h2>
 <div class="outline-text-2" id="text-3">
 <p>
 理解一个问题, 通常把一个问题简化到一个简单的问题. 虽然超导是一个复杂的多体问题,
@@ -365,8 +365,8 @@ B. C. S. 就提出了 BCS 理论.
 </blockquote>
 </div>
 
-<div id="outline-container-orgae2adb7" class="outline-3">
-<h3 id="orgae2adb7"><span class="section-number-3">3.1.</span> intro: 2-body in vacuum</h3>
+<div id="outline-container-org2091b37" class="outline-3">
+<h3 id="org2091b37"><span class="section-number-3">3.1.</span> intro: 2-body in vacuum</h3>
 <div class="outline-text-3" id="text-3-1">
 <p>
 首先, 如果我们考虑第一种情况, 如果系统中总共只有两个 particle. 这不是一个多体问
@@ -452,8 +452,8 @@ B. C. S. 就提出了 BCS 理论.
 </p>
 
 <p>
-<img src="./2019-11-14-专业笔记-BCS/fig.jpg" alt="fig.jpg" />
-<a href="./2019-11-14-专业笔记-BCS/fig.py">picture code</a>
+<img src="./2019-11-14-physics-BCS/fig.jpg" alt="fig.jpg" />
+<a href="./2019-11-14-physics-BCS/fig.py">picture code</a>
 </p>
 
 <p>
@@ -472,8 +472,8 @@ bound state 越靠近零, bound state 越浅. 如果 \(a_s < 0\) , 横线在下�
 </div>
 </div>
 
-<div id="outline-container-org0357804" class="outline-3">
-<h3 id="org0357804"><span class="section-number-3">3.2.</span> Cooper Problem</h3>
+<div id="outline-container-orgb3f8e35" class="outline-3">
+<h3 id="orgb3f8e35"><span class="section-number-3">3.2.</span> Cooper Problem</h3>
 <div class="outline-text-3" id="text-3-2">
 <p>
 Cooper Problem 是 2-body problem with a Fermi sea. Fermi sea 的定义
@@ -528,8 +528,8 @@ Cooper 问题是再在这个 Fermi sea 上放两个粒子, 这时候它的激发
 </p>
 
 <p>
-<img src="./2019-11-14-专业笔记-BCS/fig2.jpg" alt="fig2.jpg" />
-<a href="./2019-11-14-专业笔记-BCS/fig2.py">picture code</a>
+<img src="./2019-11-14-physics-BCS/fig2.jpg" alt="fig2.jpg" />
+<a href="./2019-11-14-physics-BCS/fig2.py">picture code</a>
 </p>
 
 <p>
@@ -570,8 +570,8 @@ Theory.
 </div>
 </div>
 
-<div id="outline-container-org26b0256" class="outline-2">
-<h2 id="org26b0256"><span class="section-number-2">4.</span> Self-Consistent Mean Field Theory</h2>
+<div id="outline-container-org39bdff8" class="outline-2">
+<h2 id="org39bdff8"><span class="section-number-2">4.</span> Self-Consistent Mean Field Theory</h2>
 <div class="outline-text-2" id="text-4">
 <p>
 一般性的, 对于一个多体系统, 怎么做一个平均场, 特别是这个平均场我们强调它是
@@ -664,8 +664,8 @@ order state , 最重要的就是, 选一个什么样的 order. 就像对于 Ferm
 </div>
 </div>
 
-<div id="outline-container-orgd1eacfd" class="outline-2">
-<h2 id="orgd1eacfd"><span class="section-number-2">5.</span> BCS Mean Field Hamiltonian</h2>
+<div id="outline-container-org36fb05e" class="outline-2">
+<h2 id="org36fb05e"><span class="section-number-2">5.</span> BCS Mean Field Hamiltonian</h2>
 <div class="outline-text-2" id="text-5">
 <p>
 BCS
@@ -775,8 +775,8 @@ where
 </div>
 </div>
 
-<div id="outline-container-org0d80b62" class="outline-2">
-<h2 id="org0d80b62"><span class="section-number-2">6.</span> BCS wave function</h2>
+<div id="outline-container-org63125d4" class="outline-2">
+<h2 id="org63125d4"><span class="section-number-2">6.</span> BCS wave function</h2>
 <div class="outline-text-2" id="text-6">
 <p>
 两个新的准粒子 \(\alpha_{\vec{k}}, \beta_{\vec{k}}\) 的激发能都是正的, 就保证了 ground state 是
@@ -868,8 +868,8 @@ BCS Hamiltonian
 </div>
 </div>
 
-<div id="outline-container-orga320309" class="outline-2">
-<h2 id="orga320309"><span class="section-number-2">7.</span> A Physical View</h2>
+<div id="outline-container-orgb3061a5" class="outline-2">
+<h2 id="orgb3061a5"><span class="section-number-2">7.</span> A Physical View</h2>
 <div class="outline-text-2" id="text-7">
 <p>
 去理解一个物理, 要么是简并微扰, 要么是非简并微扰. 如果考虑费米面附近的情况, 它们
@@ -924,8 +924,8 @@ BCS paring 是一个多体的效应, 是在动量空间里面, 自旋相反, 动
 </div>
 </div>
 
-<div id="outline-container-org5e1b4e2" class="outline-2">
-<h2 id="org5e1b4e2"><span class="section-number-2">8.</span> Summary</h2>
+<div id="outline-container-orgd9c9922" class="outline-2">
+<h2 id="orgd9c9922"><span class="section-number-2">8.</span> Summary</h2>
 <div class="outline-text-2" id="text-8">
 <p>
 通过 BCS mean field theory , 最主要的目的是 construct 一个 ground state, 这个 ground
@@ -934,8 +934,8 @@ state 在这个 Hamiltonian 里面, 激发是正的. 而且有物理上的道理
 </div>
 </div>
 
-<div id="outline-container-org03276c0" class="outline-2">
-<h2 id="org03276c0"><span class="section-number-2">9.</span> Reference</h2>
+<div id="outline-container-org2ee51d8" class="outline-2">
+<h2 id="org2ee51d8"><span class="section-number-2">9.</span> Reference</h2>
 <div class="outline-text-2" id="text-9">
 <ul class="org-ul">
 <li>H. Z. 的课.</li>
@@ -945,7 +945,7 @@ state 在这个 Hamiltonian 里面, 激发是正的. 而且有物理上的道理
 </div>
 <div id="postamble" class="status">
 <p class="date">Date: 2019-11-14 Thu 00:00</p>
-<p class="date">Created: 2022-04-16 Sat 23:06</p>
+<p class="date">Created: 2022-04-18 Mon 20:39</p>
 <p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>

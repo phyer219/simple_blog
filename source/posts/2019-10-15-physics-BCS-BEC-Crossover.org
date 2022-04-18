@@ -55,8 +55,8 @@ s- wave scattering amplitude
 
 
 如图..
-[[file:./2019-10-15-专业笔记-BCS-BEC-Crossover/gapless.jpg]]
-[[file:./2019-10-15-专业笔记-BCS-BEC-Crossover/gapless.py][picture code]]
+[[file:./2019-10-15-physics-BCS-BEC-Crossover/gapless.jpg]]
+[[file:./2019-10-15-physics-BCS-BEC-Crossover/gapless.py][picture code]]
 
 激发谱在配对的时候(如果存在超流), 那么它的准粒子激发就是这样
 
@@ -69,8 +69,8 @@ where $\Delta = \langle \psi_{\downarrow} \psi_{\uparrow}(\vec{r})\rangle$
 关系. 
 
 这个 gap 反应在态密度上如图
-[[file:./2019-10-15-专业笔记-BCS-BEC-Crossover/gaped.jpg]]
-[[file:./2019-10-15-专业笔记-BCS-BEC-Crossover/gaped.py][picture code]]
+[[file:./2019-10-15-physics-BCS-BEC-Crossover/gaped.jpg]]
+[[file:./2019-10-15-physics-BCS-BEC-Crossover/gaped.py][picture code]]
 
 pseudo gap 最早的定义是说, 态密度在费米面附近有一个 deep. 这个 deep, 不同的体系,
 产生的原因是不一样的. 如果激发谱在这里存在一个 gap, 它可以在这样导致一个 deep

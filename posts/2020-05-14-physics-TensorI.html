@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2022-04-16 Sat 23:05 -->
+<!-- 2022-04-18 Mon 20:39 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>读书笔记: Tensors and Representations of the Rotation Groups SO(N)</title>
@@ -221,40 +221,40 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#org31bbc43">1. 前言</a></li>
-<li><a href="#orgf34b0a7">2. IV.1 Tensor and Representations of Rotation Groups \(SO(N)\)</a>
+<li><a href="#orgb821755">1. 前言</a></li>
+<li><a href="#orgd94eece">2. IV.1 Tensor and Representations of Rotation Groups \(SO(N)\)</a>
 <ul>
-<li><a href="#org8b110c6">2.1. Representing the rotation groups</a></li>
-<li><a href="#orgaae3243">2.2. Several questions and some flying guesses</a></li>
-<li><a href="#org546f5bb">2.3. Constructing the irreducible representations of \(SO(N)\)</a></li>
-<li><a href="#org7d2ee05">2.4. Fear of tensors</a></li>
-<li><a href="#org7564145">2.5. Representation Theory</a></li>
-<li><a href="#org21e8514">2.6. Reducible or irreducible?</a></li>
-<li><a href="#org3e70521">2.7. An advanced tidbit(花絮)</a></li>
-<li><a href="#org95c9e12">2.8. Invariant symbols</a></li>
-<li><a href="#org3201dcb">2.9. Dual tensors</a></li>
-<li><a href="#org3d09597">2.10. Constructing larger irreducible representations of \(SO(N)\)</a></li>
-<li><a href="#orgcb33dae">2.11. Contraction indices</a></li>
-<li><a href="#orgad8d391">2.12. Why SO(3) is special</a></li>
-<li><a href="#orgccda09e">2.13. Dimension of the irreducible representations of \(SO(3)\)</a></li>
-<li><a href="#org7250105">2.14. The tensors of \(SO(2)\)</a></li>
-<li><a href="#orgee9e96e">2.15. Polar decomposition</a></li>
-<li><a href="#orgb89155e">2.16. Roations in higher-dimensional space</a></li>
-<li><a href="#orgbd30362">2.17. Self-dual and antiself-dual</a></li>
-<li><a href="#org8c9af9a">2.18. Restriction to a subgroup</a></li>
-<li><a href="#org2b0120b">2.19. The adjoint representation and the Jacobi identity</a></li>
-<li><a href="#orge401adc">2.20. The adjoint of \(SO(N)\)</a></li>
+<li><a href="#org9e802ac">2.1. Representing the rotation groups</a></li>
+<li><a href="#orge9cd7dd">2.2. Several questions and some flying guesses</a></li>
+<li><a href="#orgd9a2c84">2.3. Constructing the irreducible representations of \(SO(N)\)</a></li>
+<li><a href="#org5a69192">2.4. Fear of tensors</a></li>
+<li><a href="#orgfbb9676">2.5. Representation Theory</a></li>
+<li><a href="#org440e2a0">2.6. Reducible or irreducible?</a></li>
+<li><a href="#orgb3b50e2">2.7. An advanced tidbit(花絮)</a></li>
+<li><a href="#orgf118ffc">2.8. Invariant symbols</a></li>
+<li><a href="#org1b78c7d">2.9. Dual tensors</a></li>
+<li><a href="#org4d571a1">2.10. Constructing larger irreducible representations of \(SO(N)\)</a></li>
+<li><a href="#org3c0905b">2.11. Contraction indices</a></li>
+<li><a href="#orgb0723ab">2.12. Why SO(3) is special</a></li>
+<li><a href="#org1c01d9c">2.13. Dimension of the irreducible representations of \(SO(3)\)</a></li>
+<li><a href="#orgab7122e">2.14. The tensors of \(SO(2)\)</a></li>
+<li><a href="#orge5100b4">2.15. Polar decomposition</a></li>
+<li><a href="#org3bc373a">2.16. Roations in higher-dimensional space</a></li>
+<li><a href="#orge0123bd">2.17. Self-dual and antiself-dual</a></li>
+<li><a href="#org03faba8">2.18. Restriction to a subgroup</a></li>
+<li><a href="#org493f9d7">2.19. The adjoint representation and the Jacobi identity</a></li>
+<li><a href="#orgd240fd3">2.20. The adjoint of \(SO(N)\)</a></li>
 </ul>
 </li>
-<li><a href="#org8c42ab8">3. Reference</a></li>
+<li><a href="#org888caa9">3. Reference</a></li>
 </ul>
 </div>
 </div>
 <!-- toc -->
 <!-- more -->
 
-<div id="outline-container-org31bbc43" class="outline-2">
-<h2 id="org31bbc43"><span class="section-number-2">1.</span> 前言</h2>
+<div id="outline-container-orgb821755" class="outline-2">
+<h2 id="orgb821755"><span class="section-number-2">1.</span> 前言</h2>
 <div class="outline-text-2" id="text-1">
 <p>
 Zee 的这本书看了好久了, 也没整理过笔记. 看到哪里都不记得了&#x2026; 今天整理一下, 下次
@@ -263,12 +263,12 @@ Zee 的这本书看了好久了, 也没整理过笔记. 看到哪里都不记得
 </div>
 </div>
 
-<div id="outline-container-orgf34b0a7" class="outline-2">
-<h2 id="orgf34b0a7"><span class="section-number-2">2.</span> IV.1 Tensor and Representations of Rotation Groups \(SO(N)\)</h2>
+<div id="outline-container-orgd94eece" class="outline-2">
+<h2 id="orgd94eece"><span class="section-number-2">2.</span> IV.1 Tensor and Representations of Rotation Groups \(SO(N)\)</h2>
 <div class="outline-text-2" id="text-2">
 </div>
-<div id="outline-container-org8b110c6" class="outline-3">
-<h3 id="org8b110c6"><span class="section-number-3">2.1.</span> Representing the rotation groups</h3>
+<div id="outline-container-org9e802ac" class="outline-3">
+<h3 id="org9e802ac"><span class="section-number-3">2.1.</span> Representing the rotation groups</h3>
 <div class="outline-text-3" id="text-2-1">
 <p>
 \(SO(N)\) 群定义为, 满足如下关系的, \(N\times N\) 维矩阵 \(R\) , 组成的群
@@ -291,12 +291,12 @@ vector 的定义, 由它在转动下的关系定义
 </div>
 </div>
 
-<div id="outline-container-orgaae3243" class="outline-3">
-<h3 id="orgaae3243"><span class="section-number-3">2.2.</span> Several questions and some flying guesses</h3>
+<div id="outline-container-orge9cd7dd" class="outline-3">
+<h3 id="orge9cd7dd"><span class="section-number-3">2.2.</span> Several questions and some flying guesses</h3>
 </div>
 
-<div id="outline-container-org546f5bb" class="outline-3">
-<h3 id="org546f5bb"><span class="section-number-3">2.3.</span> Constructing the irreducible representations of \(SO(N)\)</h3>
+<div id="outline-container-orgd9a2c84" class="outline-3">
+<h3 id="orgd9a2c84"><span class="section-number-3">2.3.</span> Constructing the irreducible representations of \(SO(N)\)</h3>
 <div class="outline-text-3" id="text-2-3">
 <p>
 这里给出了 tensor 的一个例子. 想像一下, 在 \(N\) 维空间里, 一个数学的东西, 它长着
@@ -311,12 +311,12 @@ vector 的定义, 由它在转动下的关系定义
 </div>
 </div>
 
-<div id="outline-container-org7d2ee05" class="outline-3">
-<h3 id="org7d2ee05"><span class="section-number-3">2.4.</span> Fear of tensors</h3>
+<div id="outline-container-org5a69192" class="outline-3">
+<h3 id="org5a69192"><span class="section-number-3">2.4.</span> Fear of tensors</h3>
 </div>
 
-<div id="outline-container-org7564145" class="outline-3">
-<h3 id="org7564145"><span class="section-number-3">2.5.</span> Representation Theory</h3>
+<div id="outline-container-orgfbb9676" class="outline-3">
+<h3 id="orgfbb9676"><span class="section-number-3">2.5.</span> Representation Theory</h3>
 <div class="outline-text-3" id="text-2-5">
 <p>
 tensor \(T\) 的每个指标都独立地变换
@@ -330,8 +330,8 @@ tensor \(T\) 生成 \(SO(3)\) 群的一个九维表示 \(D(R)D(R)\) .
 </div>
 </div>
 
-<div id="outline-container-org21e8514" class="outline-3">
-<h3 id="org21e8514"><span class="section-number-3">2.6.</span> Reducible or irreducible?</h3>
+<div id="outline-container-org440e2a0" class="outline-3">
+<h3 id="org440e2a0"><span class="section-number-3">2.6.</span> Reducible or irreducible?</h3>
 <div class="outline-text-3" id="text-2-6">
 <p>
 有九个量 \(T^{ij}\) 在变换下会变成另外九个. 但是它是否存在一个子集, 能够独立地变换?
@@ -370,12 +370,12 @@ antisymmetric 的 \(A^{ij}\equiv T^{ij} - T^{ji}\) , 具有反对称的性质 \(
 </div>
 </div>
 
-<div id="outline-container-org3e70521" class="outline-3">
-<h3 id="org3e70521"><span class="section-number-3">2.7.</span> An advanced tidbit(花絮)</h3>
+<div id="outline-container-orgb3b50e2" class="outline-3">
+<h3 id="orgb3b50e2"><span class="section-number-3">2.7.</span> An advanced tidbit(花絮)</h3>
 </div>
 
-<div id="outline-container-org95c9e12" class="outline-3">
-<h3 id="org95c9e12"><span class="section-number-3">2.8.</span> Invariant symbols</h3>
+<div id="outline-container-orgf118ffc" class="outline-3">
+<h3 id="orgf118ffc"><span class="section-number-3">2.8.</span> Invariant symbols</h3>
 <div class="outline-text-3" id="text-2-8">
 <p>
 SO(3) 的 Orthogonal
@@ -400,8 +400,8 @@ invariant symbols.
 </div>
 </div>
 
-<div id="outline-container-org3201dcb" class="outline-3">
-<h3 id="org3201dcb"><span class="section-number-3">2.9.</span> Dual tensors</h3>
+<div id="outline-container-org1b78c7d" class="outline-3">
+<h3 id="org1b78c7d"><span class="section-number-3">2.9.</span> Dual tensors</h3>
 <div class="outline-text-3" id="text-2-9">
 <p>
 定义一个新的 tensor \(B^{k\cdots n} = \varepsilon^{ijk\cdots n}A^{ij}\) , 它有 \(N-2\) 个指标(
@@ -417,8 +417,8 @@ vector.
 </div>
 </div>
 
-<div id="outline-container-org3d09597" class="outline-3">
-<h3 id="org3d09597"><span class="section-number-3">2.10.</span> Constructing larger irreducible representations of \(SO(N)\)</h3>
+<div id="outline-container-org4d571a1" class="outline-3">
+<h3 id="org4d571a1"><span class="section-number-3">2.10.</span> Constructing larger irreducible representations of \(SO(N)\)</h3>
 <div class="outline-text-3" id="text-2-10">
 <p>
 用这种张量的方法, 可以构造出许多 \(SO(N)\) 群的表示.
@@ -426,8 +426,8 @@ vector.
 </div>
 </div>
 
-<div id="outline-container-orgcb33dae" class="outline-3">
-<h3 id="orgcb33dae"><span class="section-number-3">2.11.</span> Contraction indices</h3>
+<div id="outline-container-org3c0905b" class="outline-3">
+<h3 id="org3c0905b"><span class="section-number-3">2.11.</span> Contraction indices</h3>
 <div class="outline-text-3" id="text-2-11">
 <p>
 \(S^{ii}\) 是 contracted indices 的一种特殊情况, 它只有两个指标, 把它们收缩了之后,
@@ -436,8 +436,8 @@ vector.
 </div>
 </div>
 
-<div id="outline-container-orgad8d391" class="outline-3">
-<h3 id="orgad8d391"><span class="section-number-3">2.12.</span> Why SO(3) is special</h3>
+<div id="outline-container-orgb0723ab" class="outline-3">
+<h3 id="orgb0723ab"><span class="section-number-3">2.12.</span> Why SO(3) is special</h3>
 <div class="outline-text-3" id="text-2-12">
 <p>
 在前面的 Dual tensors 部分提到, 对于 \(N=3\) 的 \(SO(3)\) 的情况, 对于一个全反对称的
@@ -494,8 +494,8 @@ T^{\{ki\}j})\)
 </div>
 </div>
 
-<div id="outline-container-orgccda09e" class="outline-3">
-<h3 id="orgccda09e"><span class="section-number-3">2.13.</span> Dimension of the irreducible representations of \(SO(3)\)</h3>
+<div id="outline-container-org1c01d9c" class="outline-3">
+<h3 id="org1c01d9c"><span class="section-number-3">2.13.</span> Dimension of the irreducible representations of \(SO(3)\)</h3>
 <div class="outline-text-3" id="text-2-13">
 <p>
 通过上面的分析, 得出的结论就是, 一个新的更高维的张量, 只有全对称的部分会给出新的
@@ -526,37 +526,37 @@ T^{\{ki\}j})\)
 </div>
 
 
-<div id="outline-container-org7250105" class="outline-3">
-<h3 id="org7250105"><span class="section-number-3">2.14.</span> The tensors of \(SO(2)\)</h3>
+<div id="outline-container-orgab7122e" class="outline-3">
+<h3 id="orgab7122e"><span class="section-number-3">2.14.</span> The tensors of \(SO(2)\)</h3>
 </div>
 
-<div id="outline-container-orgee9e96e" class="outline-3">
-<h3 id="orgee9e96e"><span class="section-number-3">2.15.</span> Polar decomposition</h3>
+<div id="outline-container-orge5100b4" class="outline-3">
+<h3 id="orge5100b4"><span class="section-number-3">2.15.</span> Polar decomposition</h3>
 </div>
 
-<div id="outline-container-orgb89155e" class="outline-3">
-<h3 id="orgb89155e"><span class="section-number-3">2.16.</span> Roations in higher-dimensional space</h3>
+<div id="outline-container-org3bc373a" class="outline-3">
+<h3 id="org3bc373a"><span class="section-number-3">2.16.</span> Roations in higher-dimensional space</h3>
 </div>
 
-<div id="outline-container-orgbd30362" class="outline-3">
-<h3 id="orgbd30362"><span class="section-number-3">2.17.</span> Self-dual and antiself-dual</h3>
+<div id="outline-container-orge0123bd" class="outline-3">
+<h3 id="orge0123bd"><span class="section-number-3">2.17.</span> Self-dual and antiself-dual</h3>
 </div>
 
-<div id="outline-container-org8c9af9a" class="outline-3">
-<h3 id="org8c9af9a"><span class="section-number-3">2.18.</span> Restriction to a subgroup</h3>
+<div id="outline-container-org03faba8" class="outline-3">
+<h3 id="org03faba8"><span class="section-number-3">2.18.</span> Restriction to a subgroup</h3>
 </div>
 
-<div id="outline-container-org2b0120b" class="outline-3">
-<h3 id="org2b0120b"><span class="section-number-3">2.19.</span> The adjoint representation and the Jacobi identity</h3>
+<div id="outline-container-org493f9d7" class="outline-3">
+<h3 id="org493f9d7"><span class="section-number-3">2.19.</span> The adjoint representation and the Jacobi identity</h3>
 </div>
 
-<div id="outline-container-orge401adc" class="outline-3">
-<h3 id="orge401adc"><span class="section-number-3">2.20.</span> The adjoint of \(SO(N)\)</h3>
+<div id="outline-container-orgd240fd3" class="outline-3">
+<h3 id="orgd240fd3"><span class="section-number-3">2.20.</span> The adjoint of \(SO(N)\)</h3>
 </div>
 </div>
 
-<div id="outline-container-org8c42ab8" class="outline-2">
-<h2 id="org8c42ab8"><span class="section-number-2">3.</span> Reference</h2>
+<div id="outline-container-org888caa9" class="outline-2">
+<h2 id="org888caa9"><span class="section-number-2">3.</span> Reference</h2>
 <div class="outline-text-2" id="text-3">
 <ul class="org-ul">
 <li>A. Zee, Group Theory in a Nutshell for Physicists, 2016, Princeton University Press</li>
@@ -566,7 +566,7 @@ T^{\{ki\}j})\)
 </div>
 <div id="postamble" class="status">
 <p class="date">Date: 2020-05-14 Thu 00:00</p>
-<p class="date">Created: 2022-04-16 Sat 23:05</p>
+<p class="date">Created: 2022-04-18 Mon 20:39</p>
 <p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>

@@ -51,7 +51,7 @@ tags: [SSD, manjaro]</p>
 <p>一切都好了, 是网卡驱动的问题. 之前 cy 机械硬盘 manjaro 连不上网估计也是这个问题.</p>
 <p>但是!!! 之前四个系统都连不上的原因我依然不知道, 我能想到的就只能是... 想不到是为什么 . 太奇怪了!</p>
 <p>附网上安装: 右键安装</p>
-<p><img alt="fig" src="./2020-11-29-软件使用-newSSD/image-20201128212856147.png" /></p>
+<p><img alt="fig" src="./2020-11-29-coding-newSSD/image-20201128212856147.png" /></p>
 <h1>wayland 换 xorg</h1>
 <p>奇怪的网络问题让我对了机械和 SSD 的 gnome 版本, 发现新的 manjaro 包默认是 wayland. 我突然意识到之前给 cy 的机械硬盘装 manjaro 后闪屏的问题, 很有可能也是用了 wayland.</p>
 <p>换回 Xorg 直接安装 Xorg 包就好了</p>
@@ -61,8 +61,8 @@ sudo pacman -S xorg</code></p>
 <h1>输入法</h1>
 <p>arch wiki 关于中文输入法的部分升级了, 存放环境变量的文件有了变化, 详见: https://wiki.archlinux.org/index.php/Fcitx_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#.E5.AE.89.E8.A3.85</p>
 <p>还是比较习惯之前的快捷键设置, 截图记录.</p>
-<p><img alt="image-20201128215138108" src="./2020-11-29-软件使用-newSSD/image-20201128215138108.png" /></p>
-<p><img alt="image-20201128215200197" src="./2020-11-29-软件使用-newSSD/image-20201128215200197.png" /></p>
+<p><img alt="image-20201128215138108" src="./2020-11-29-coding-newSSD/image-20201128215138108.png" /></p>
+<p><img alt="image-20201128215200197" src="./2020-11-29-coding-newSSD/image-20201128215200197.png" /></p>
 <h1>evince 中文问题</h1>
 <p>之前装 xpdf 就好了, 可这次不好使了. 这样, 也促使我找到了问题的原因: https://blog.csdn.net/nevasun/article/details/7303529 okular, epdfview, evince的pdf功能均由xpdf的分支poppler提供，poppler从fontconfig的配置文件中读取字体取代pdf里的字体。</p>
 <p>这次安装 <code>poppler-data</code> 就好了</p>

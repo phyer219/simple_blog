@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2022-04-16 Sat 23:06 -->
+<!-- 2022-04-18 Mon 20:40 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Fourier transform 总结</title>
@@ -221,23 +221,23 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#org56dc0f2">1. 总的分类</a></li>
-<li><a href="#org4ac6a77">2. 部分离散</a>
+<li><a href="#orga3ecdba">1. 总的分类</a></li>
+<li><a href="#orgc701ed1">2. 部分离散</a>
 <ul>
-<li><a href="#org254aa43">2.1. 动量本征函数</a></li>
-<li><a href="#orgfb99791">2.2. 归一化</a></li>
-<li><a href="#org8e3bec2">2.3. 周期为 \(L\)</a></li>
+<li><a href="#orgb6cb2d2">2.1. 动量本征函数</a></li>
+<li><a href="#orgdc8d337">2.2. 归一化</a></li>
+<li><a href="#orgfedda06">2.3. 周期为 \(L\)</a></li>
 </ul>
 </li>
-<li><a href="#orge1e9834">3. 完全连续</a></li>
-<li><a href="#org3023afa">4. 完全离散</a></li>
+<li><a href="#org786d2a6">3. 完全连续</a></li>
+<li><a href="#org5d75ca0">4. 完全离散</a></li>
 </ul>
 </div>
 </div>
 <!-- toc -->
 <!-- more -->
-<div id="outline-container-org56dc0f2" class="outline-2">
-<h2 id="org56dc0f2"><span class="section-number-2">1.</span> 总的分类</h2>
+<div id="outline-container-orga3ecdba" class="outline-2">
+<h2 id="orga3ecdba"><span class="section-number-2">1.</span> 总的分类</h2>
 <div class="outline-text-2" id="text-1">
 <p>
 根据变量的连续与否，F.T.总共有三种。
@@ -269,12 +269,12 @@
 </div>
 </div>
 
-<div id="outline-container-org4ac6a77" class="outline-2">
-<h2 id="org4ac6a77"><span class="section-number-2">2.</span> 部分离散</h2>
+<div id="outline-container-orgc701ed1" class="outline-2">
+<h2 id="orgc701ed1"><span class="section-number-2">2.</span> 部分离散</h2>
 <div class="outline-text-2" id="text-2">
 </div>
-<div id="outline-container-org254aa43" class="outline-3">
-<h3 id="org254aa43"><span class="section-number-3">2.1.</span> 动量本征函数</h3>
+<div id="outline-container-orgb6cb2d2" class="outline-3">
+<h3 id="orgb6cb2d2"><span class="section-number-3">2.1.</span> 动量本征函数</h3>
 <div class="outline-text-3" id="text-2-1">
 \begin{align*}
 \frac{\hbar}{i} \frac{\mathrm{d}}{\mathrm{d}x} \psi = p \psi\quad \Longrightarrow\quad \psi = e^{i\frac{p}{\hbar}x}
@@ -282,8 +282,8 @@
 </div>
 </div>
 
-<div id="outline-container-orgfb99791" class="outline-3">
-<h3 id="orgfb99791"><span class="section-number-3">2.2.</span> 归一化</h3>
+<div id="outline-container-orgdc8d337" class="outline-3">
+<h3 id="orgdc8d337"><span class="section-number-3">2.2.</span> 归一化</h3>
 <div class="outline-text-3" id="text-2-2">
 \begin{align*}
 \langle e^{ikx} \mid e^{ikx'} \rangle = \int_{-\infty}^{\infty} e^{-ikx} e^{ikx'} \mathrm{d}k = \int_{-\infty}^{\infty} e^{ik(x'-x)} \mathrm{d}k = 2\pi \delta(x-x')
@@ -291,8 +291,8 @@
 </div>
 </div>
 
-<div id="outline-container-org8e3bec2" class="outline-3">
-<h3 id="org8e3bec2"><span class="section-number-3">2.3.</span> 周期为 \(L\)</h3>
+<div id="outline-container-orgfedda06" class="outline-3">
+<h3 id="orgfedda06"><span class="section-number-3">2.3.</span> 周期为 \(L\)</h3>
 <div class="outline-text-3" id="text-2-3">
 <p>
 \(f(x)\) 是周期函数
@@ -333,8 +333,8 @@ C_k = \frac{1}{L} \int_{-\infty}^{\infty} f(x) e^{-ikx \cdot \frac{2\pi}{L}} \ma
 </div>
 </div>
 
-<div id="outline-container-orge1e9834" class="outline-2">
-<h2 id="orge1e9834"><span class="section-number-2">3.</span> 完全连续</h2>
+<div id="outline-container-org786d2a6" class="outline-2">
+<h2 id="org786d2a6"><span class="section-number-2">3.</span> 完全连续</h2>
 <div class="outline-text-2" id="text-3">
 <p>
 当周期 \(L \rightarrow \infty​\) 时，\(\frac{2\pi}{L} \rightarrow 0​\) ，指数上的 \(k\frac{2\pi}{L}​\) 由原来离散的取值 \(\frac{2\pi}{L}, 2\frac{2\pi}{L}, 3\frac{2\pi}{L}, \cdots​\) 变成连续的变量，记为新的 \(k​\) ，且 \(\mathrm{d}k = \frac{2\pi}{L}​\) 。
@@ -358,8 +358,8 @@ f(x) = \frac{1}{2\pi} \int_{-\infty}^{\infty} \mathrm{d}k \int_{-\infty}^{\infty
 </div>
 </div>
 
-<div id="outline-container-org3023afa" class="outline-2">
-<h2 id="org3023afa"><span class="section-number-2">4.</span> 完全离散</h2>
+<div id="outline-container-org5d75ca0" class="outline-2">
+<h2 id="org5d75ca0"><span class="section-number-2">4.</span> 完全离散</h2>
 <div class="outline-text-2" id="text-4">
 <p>
 类似群论中的不可约表示。
@@ -373,7 +373,7 @@ f(x) = \frac{1}{2\pi} \int_{-\infty}^{\infty} \mathrm{d}k \int_{-\infty}^{\infty
 </div>
 <div id="postamble" class="status">
 <p class="date">Date: 2018-09-07 Fri 00:00</p>
-<p class="date">Created: 2022-04-16 Sat 23:06</p>
+<p class="date">Created: 2022-04-18 Mon 20:40</p>
 <p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>

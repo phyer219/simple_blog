@@ -24,9 +24,9 @@ plt.plot(x[10], y[10], marker=mpath.Path.unit_regular_star(20),
 plt.savefig('./fig1.png')
 #+end_src
 
-[[file:2021-10-21-软件使用-dash_circle/code1.py][code]]
+[[file:2021-10-21-coding-dash_circle/code1.py][code]]
 
-[[file:2021-10-21-软件使用-dash_circle/fig1.png]]
+[[file:2021-10-21-coding-dash_circle/fig1.png]]
 
 * 问题二:
 
@@ -45,9 +45,9 @@ plt.plot([1], [1], marker=(5, 1, 0), markersize=30, mfc='gold', mec='k', mew=0)
 plt.savefig('fig2.png')
 #+end_src
 
-[[file:2021-10-21-软件使用-dash_circle/code2.py][code]]
+[[file:2021-10-21-coding-dash_circle/code2.py][code]]
 
-[[file:2021-10-21-软件使用-dash_circle/fig2.png]]
+[[file:2021-10-21-coding-dash_circle/fig2.png]]
 
 * Reference
 

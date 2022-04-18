@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2022-04-16 Sat 23:06 -->
+<!-- 2022-04-18 Mon 20:39 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Susskind's Particle Pyhsics I: Basic Concepts Note</title>
@@ -221,58 +221,58 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#org5b8c284">1. Information</a></li>
-<li><a href="#orgfac022d">2. Lecture 1: Particles and Light</a>
+<li><a href="#orgd679c8f">1. Information</a></li>
+<li><a href="#org8e23028">2. Lecture 1: Particles and Light</a>
 <ul>
-<li><a href="#org777b64a">2.1. Wave Properties</a></li>
-<li><a href="#orgfed5cb0">2.2. Photon Properties</a></li>
+<li><a href="#org081c185">2.1. Wave Properties</a></li>
+<li><a href="#org900e094">2.2. Photon Properties</a></li>
 </ul>
 </li>
-<li><a href="#org4a6191e">3. Lecture 2: Review of Quantum Mechanics &amp; Harmonic Oscillator</a>
+<li><a href="#org9fd4711">3. Lecture 2: Review of Quantum Mechanics &amp; Harmonic Oscillator</a>
 <ul>
-<li><a href="#orgcbdea1e">3.1. Periodic Boundary Condition</a></li>
-<li><a href="#orgc218a05">3.2. Harmonic Oscillator</a></li>
+<li><a href="#orgd70ccff">3.1. Periodic Boundary Condition</a></li>
+<li><a href="#org723c9ff">3.2. Harmonic Oscillator</a></li>
 </ul>
 </li>
-<li><a href="#orgd61c7be">4. Lecture 3: Field Operators</a>
+<li><a href="#org97ffdef">4. Lecture 3: Field Operators</a>
 <ul>
-<li><a href="#org5255018">4.1. Field operator</a></li>
-<li><a href="#org08c7bd9">4.2. Possible  Reaction &amp; Stimulated Emission</a></li>
-<li><a href="#org03a913d">4.3. Density of \(x\)</a></li>
+<li><a href="#orged1ab4b">4.1. Field operator</a></li>
+<li><a href="#org66ae73b">4.2. Possible  Reaction &amp; Stimulated Emission</a></li>
+<li><a href="#org952d517">4.3. Density of \(x\)</a></li>
 </ul>
 </li>
-<li><a href="#orge951efa">5. Lecture 4: Scattering Process</a>
+<li><a href="#org4892797">5. Lecture 4: Scattering Process</a>
 <ul>
-<li><a href="#orgcf0a85b">5.1. Simplest Quantum Field</a></li>
-<li><a href="#org7ed72a9">5.2. A Model: Scattering</a></li>
+<li><a href="#org72c2010">5.1. Simplest Quantum Field</a></li>
+<li><a href="#org3feff69">5.2. A Model: Scattering</a></li>
 </ul>
 </li>
-<li><a href="#org8e34e54">6. Lecture 5: Fermion</a>
+<li><a href="#org6e2b4ce">6. Lecture 5: Fermion</a>
 <ul>
-<li><a href="#orge76c893">6.1. Phase Velocity &amp; Group Velocity</a></li>
-<li><a href="#org282ad30">6.2. Fermion</a></li>
-<li><a href="#org185e3a8">6.3. Ground state</a></li>
-<li><a href="#org28463e1">6.4. Dirac Equation</a></li>
+<li><a href="#orgbfd6ede">6.1. Phase Velocity &amp; Group Velocity</a></li>
+<li><a href="#orga4ca4fb">6.2. Fermion</a></li>
+<li><a href="#org7e1142b">6.3. Ground state</a></li>
+<li><a href="#org4f70931">6.4. Dirac Equation</a></li>
 </ul>
 </li>
-<li><a href="#orgb4e5aae">7. Lecture 6: Dirac Equation &amp; Higgs Boson</a>
+<li><a href="#orga10fc8d">7. Lecture 6: Dirac Equation &amp; Higgs Boson</a>
 <ul>
-<li><a href="#orgb91d3a8">7.1. Dirac Equation in 3 Dimensions</a></li>
+<li><a href="#orgdaff2fe">7.1. Dirac Equation in 3 Dimensions</a></li>
 </ul>
 </li>
-<li><a href="#orge1eaceb">8. Lecture 7: Angular Momentum</a></li>
-<li><a href="#org4121f4d">9. Lecture 8: Spin</a></li>
-<li><a href="#org36ab050">10. Lecture 9: Interaction</a></li>
-<li><a href="#org6db5e1e">11. Lecture 10: Path Integral</a></li>
-<li><a href="#orge643b87">12. Reference</a></li>
+<li><a href="#orgc740f37">8. Lecture 7: Angular Momentum</a></li>
+<li><a href="#orgec1e77a">9. Lecture 8: Spin</a></li>
+<li><a href="#org3bbbe99">10. Lecture 9: Interaction</a></li>
+<li><a href="#org3844eb7">11. Lecture 10: Path Integral</a></li>
+<li><a href="#org74e13c5">12. Reference</a></li>
 </ul>
 </div>
 </div>
 <!-- toc -->
 <!-- more -->
 
-<div id="outline-container-org5b8c284" class="outline-2">
-<h2 id="org5b8c284"><span class="section-number-2">1.</span> Information</h2>
+<div id="outline-container-orgd679c8f" class="outline-2">
+<h2 id="orgd679c8f"><span class="section-number-2">1.</span> Information</h2>
 <div class="outline-text-2" id="text-1">
 <ul class="org-ul">
 <li>官方介绍: <a href="https://theoreticalminimum.com/courses/particle-physics-1-basic-concepts/2009/fall">https://theoreticalminimum.com/courses/particle-physics-1-basic-concepts/2009/fall</a></li>
@@ -284,12 +284,12 @@
 </div>
 </div>
 
-<div id="outline-container-orgfac022d" class="outline-2">
-<h2 id="orgfac022d"><span class="section-number-2">2.</span> Lecture 1: Particles and Light</h2>
+<div id="outline-container-org8e23028" class="outline-2">
+<h2 id="org8e23028"><span class="section-number-2">2.</span> Lecture 1: Particles and Light</h2>
 <div class="outline-text-2" id="text-2">
 </div>
-<div id="outline-container-org777b64a" class="outline-3">
-<h3 id="org777b64a"><span class="section-number-3">2.1.</span> Wave Properties</h3>
+<div id="outline-container-org081c185" class="outline-3">
+<h3 id="org081c185"><span class="section-number-3">2.1.</span> Wave Properties</h3>
 <div class="outline-text-3" id="text-2-1">
 \begin{align}
 \boxed{\frac{\lambda}{T} = c}
@@ -303,8 +303,8 @@ f = \frac{1}{T} \quad \boxed{\lambda f = c}
 </div>
 </div>
 
-<div id="outline-container-orgfed5cb0" class="outline-3">
-<h3 id="orgfed5cb0"><span class="section-number-3">2.2.</span> Photon Properties</h3>
+<div id="outline-container-org900e094" class="outline-3">
+<h3 id="org900e094"><span class="section-number-3">2.2.</span> Photon Properties</h3>
 <div class="outline-text-3" id="text-2-2">
 \begin{align}
 \boxed{E_{\mathrm{phton}} = \hbar\omega}
@@ -319,12 +319,12 @@ p = \frac{E}{c}
 </div>
 </div>
 
-<div id="outline-container-org4a6191e" class="outline-2">
-<h2 id="org4a6191e"><span class="section-number-2">3.</span> Lecture 2: Review of Quantum Mechanics &amp; Harmonic Oscillator</h2>
+<div id="outline-container-org9fd4711" class="outline-2">
+<h2 id="org9fd4711"><span class="section-number-2">3.</span> Lecture 2: Review of Quantum Mechanics &amp; Harmonic Oscillator</h2>
 <div class="outline-text-2" id="text-3">
 </div>
-<div id="outline-container-orgcbdea1e" class="outline-3">
-<h3 id="orgcbdea1e"><span class="section-number-3">3.1.</span> Periodic Boundary Condition</h3>
+<div id="outline-container-orgd70ccff" class="outline-3">
+<h3 id="orgd70ccff"><span class="section-number-3">3.1.</span> Periodic Boundary Condition</h3>
 <div class="outline-text-3" id="text-3-1">
 <p>
 In order to make momentum conseved, we need periodic boundary condition, so
@@ -341,8 +341,8 @@ p = \frac{h}{\lambda} = \frac{h}{L}N
 </div>
 </div>
 
-<div id="outline-container-orgc218a05" class="outline-3">
-<h3 id="orgc218a05"><span class="section-number-3">3.2.</span> Harmonic Oscillator</h3>
+<div id="outline-container-org723c9ff" class="outline-3">
+<h3 id="org723c9ff"><span class="section-number-3">3.2.</span> Harmonic Oscillator</h3>
 <div class="outline-text-3" id="text-3-2">
 \begin{align}
   E &= n \hbar\omega\\
@@ -355,12 +355,12 @@ p = \frac{h}{\lambda} = \frac{h}{L}N
 </div>
 </div>
 
-<div id="outline-container-orgd61c7be" class="outline-2">
-<h2 id="orgd61c7be"><span class="section-number-2">4.</span> Lecture 3: Field Operators</h2>
+<div id="outline-container-org97ffdef" class="outline-2">
+<h2 id="org97ffdef"><span class="section-number-2">4.</span> Lecture 3: Field Operators</h2>
 <div class="outline-text-2" id="text-4">
 </div>
-<div id="outline-container-org5255018" class="outline-3">
-<h3 id="org5255018"><span class="section-number-3">4.1.</span> Field operator</h3>
+<div id="outline-container-orged1ab4b" class="outline-3">
+<h3 id="orged1ab4b"><span class="section-number-3">4.1.</span> Field operator</h3>
 <div class="outline-text-3" id="text-4-1">
 <p>
 In periodic boundary conditions, a plane wave
@@ -406,12 +406,12 @@ Create a particle at position \(x\)
 </div>
 </div>
 
-<div id="outline-container-org08c7bd9" class="outline-3">
-<h3 id="org08c7bd9"><span class="section-number-3">4.2.</span> Possible  Reaction &amp; Stimulated Emission</h3>
+<div id="outline-container-org66ae73b" class="outline-3">
+<h3 id="org66ae73b"><span class="section-number-3">4.2.</span> Possible  Reaction &amp; Stimulated Emission</h3>
 <div class="outline-text-3" id="text-4-2">
 
-<div id="org4b77ccb" class="figure">
-<p><img src="2021-03-19-专业笔记-SusskindsParticlePhysicsI/reaction.png" alt="reaction.png" />
+<div id="orgb161b18" class="figure">
+<p><img src="2021-03-19-physics-SusskindsParticlePhysicsI/reaction.png" alt="reaction.png" />
 </p>
 </div>
 
@@ -485,8 +485,8 @@ as the momentum already there. This is stimulated emission. Bosons!
 </div>
 </div>
 
-<div id="outline-container-org03a913d" class="outline-3">
-<h3 id="org03a913d"><span class="section-number-3">4.3.</span> Density of \(x\)</h3>
+<div id="outline-container-org952d517" class="outline-3">
+<h3 id="org952d517"><span class="section-number-3">4.3.</span> Density of \(x\)</h3>
 <div class="outline-text-3" id="text-4-3">
 \begin{align}
   \Psi^{\dagger}(x) \Psi(x)
@@ -499,12 +499,12 @@ as the momentum already there. This is stimulated emission. Bosons!
 </div>
 </div>
 
-<div id="outline-container-orge951efa" class="outline-2">
-<h2 id="orge951efa"><span class="section-number-2">5.</span> Lecture 4: Scattering Process</h2>
+<div id="outline-container-org4892797" class="outline-2">
+<h2 id="org4892797"><span class="section-number-2">5.</span> Lecture 4: Scattering Process</h2>
 <div class="outline-text-2" id="text-5">
 </div>
-<div id="outline-container-orgcf0a85b" class="outline-3">
-<h3 id="orgcf0a85b"><span class="section-number-3">5.1.</span> Simplest Quantum Field</h3>
+<div id="outline-container-org72c2010" class="outline-3">
+<h3 id="org72c2010"><span class="section-number-3">5.1.</span> Simplest Quantum Field</h3>
 <div class="outline-text-3" id="text-5-1">
 <p>
 The simplest quantum field, be a function of only one coordinate namely \(x\) .
@@ -540,12 +540,12 @@ if \(\omega = \frac{k^2}{2m}\) , a non-relativitic particle
 </div>
 </div>
 
-<div id="outline-container-org7ed72a9" class="outline-3">
-<h3 id="org7ed72a9"><span class="section-number-3">5.2.</span> A Model: Scattering</h3>
+<div id="outline-container-org3feff69" class="outline-3">
+<h3 id="org3feff69"><span class="section-number-3">5.2.</span> A Model: Scattering</h3>
 <div class="outline-text-3" id="text-5-2">
 
-<div id="orgd6d9205" class="figure">
-<p><img src="2021-03-19-专业笔记-SusskindsParticlePhysicsI/scattering.png" alt="scattering.png" />
+<div id="org0787e90" class="figure">
+<p><img src="2021-03-19-physics-SusskindsParticlePhysicsI/scattering.png" alt="scattering.png" />
 </p>
 </div>
 
@@ -566,12 +566,12 @@ conservation of eneryg and the fact there's no preference of any specified time.
 </div>
 </div>
 
-<div id="outline-container-org8e34e54" class="outline-2">
-<h2 id="org8e34e54"><span class="section-number-2">6.</span> Lecture 5: Fermion</h2>
+<div id="outline-container-org6e2b4ce" class="outline-2">
+<h2 id="org6e2b4ce"><span class="section-number-2">6.</span> Lecture 5: Fermion</h2>
 <div class="outline-text-2" id="text-6">
 </div>
-<div id="outline-container-orge76c893" class="outline-3">
-<h3 id="orge76c893"><span class="section-number-3">6.1.</span> Phase Velocity &amp; Group Velocity</h3>
+<div id="outline-container-orgbfd6ede" class="outline-3">
+<h3 id="orgbfd6ede"><span class="section-number-3">6.1.</span> Phase Velocity &amp; Group Velocity</h3>
 <div class="outline-text-3" id="text-6-1">
 \begin{align}
 \omega = \sqrt{k^2 + m^2}
@@ -597,8 +597,8 @@ but if \(m \neq 0\)
 </div>
 </div>
 
-<div id="outline-container-org282ad30" class="outline-3">
-<h3 id="org282ad30"><span class="section-number-3">6.2.</span> Fermion</h3>
+<div id="outline-container-orga4ca4fb" class="outline-3">
+<h3 id="orga4ca4fb"><span class="section-number-3">6.2.</span> Fermion</h3>
 <div class="outline-text-3" id="text-6-2">
 \begin{align}
   c^{+ } |0 \rangle &= |1\rangle\\
@@ -613,8 +613,8 @@ but if \(m \neq 0\)
 </div>
 </div>
 
-<div id="outline-container-org185e3a8" class="outline-3">
-<h3 id="org185e3a8"><span class="section-number-3">6.3.</span> Ground state</h3>
+<div id="outline-container-org7e1142b" class="outline-3">
+<h3 id="org7e1142b"><span class="section-number-3">6.3.</span> Ground state</h3>
 <div class="outline-text-3" id="text-6-3">
 <p>
 Boson: Bose condensate.
@@ -626,8 +626,8 @@ Fermion: Fermi sphere
 </div>
 </div>
 
-<div id="outline-container-org28463e1" class="outline-3">
-<h3 id="org28463e1"><span class="section-number-3">6.4.</span> Dirac Equation</h3>
+<div id="outline-container-org4f70931" class="outline-3">
+<h3 id="org4f70931"><span class="section-number-3">6.4.</span> Dirac Equation</h3>
 <div class="outline-text-3" id="text-6-4">
 <p>
 move speed of light( \(\omega = k\) , \(c = 1\) ), carry electric charge, only move to
@@ -650,8 +650,8 @@ describe both positive and negative energy. Negative is filled.
 </div>
 </div>
 
-<div id="outline-container-orgb4e5aae" class="outline-2">
-<h2 id="orgb4e5aae"><span class="section-number-2">7.</span> Lecture 6: Dirac Equation &amp; Higgs Boson</h2>
+<div id="outline-container-orga10fc8d" class="outline-2">
+<h2 id="orga10fc8d"><span class="section-number-2">7.</span> Lecture 6: Dirac Equation &amp; Higgs Boson</h2>
 <div class="outline-text-2" id="text-7">
 <p>
 Move right field
@@ -716,8 +716,8 @@ For a particle at rest ( \(k = 0\) )
 \end{align}
 </div>
 
-<div id="outline-container-orgb91d3a8" class="outline-3">
-<h3 id="orgb91d3a8"><span class="section-number-3">7.1.</span> Dirac Equation in 3 Dimensions</h3>
+<div id="outline-container-orgdaff2fe" class="outline-3">
+<h3 id="orgdaff2fe"><span class="section-number-3">7.1.</span> Dirac Equation in 3 Dimensions</h3>
 <div class="outline-text-3" id="text-7-1">
 <p>
 Let
@@ -744,8 +744,8 @@ where \(I\) is \(2\times 2\) identity matrix, \(\sigma_i\) is Pauli matrix.
 </div>
 </div>
 
-<div id="outline-container-orge1eaceb" class="outline-2">
-<h2 id="orge1eaceb"><span class="section-number-2">8.</span> Lecture 7: Angular Momentum</h2>
+<div id="outline-container-orgc740f37" class="outline-2">
+<h2 id="orgc740f37"><span class="section-number-2">8.</span> Lecture 7: Angular Momentum</h2>
 <div class="outline-text-2" id="text-8">
 <p>
 Angular momentum
@@ -773,8 +773,8 @@ Angular momentum
 </div>
 </div>
 
-<div id="outline-container-org4121f4d" class="outline-2">
-<h2 id="org4121f4d"><span class="section-number-2">9.</span> Lecture 8: Spin</h2>
+<div id="outline-container-orgec1e77a" class="outline-2">
+<h2 id="orgec1e77a"><span class="section-number-2">9.</span> Lecture 8: Spin</h2>
 <div class="outline-text-2" id="text-9">
 <p>
 Review spin.
@@ -782,8 +782,8 @@ Review spin.
 </div>
 </div>
 
-<div id="outline-container-org36ab050" class="outline-2">
-<h2 id="org36ab050"><span class="section-number-2">10.</span> Lecture 9: Interaction</h2>
+<div id="outline-container-org3bbbe99" class="outline-2">
+<h2 id="org3bbbe99"><span class="section-number-2">10.</span> Lecture 9: Interaction</h2>
 <div class="outline-text-2" id="text-10">
 <p>
 Diagrams but abstract.
@@ -791,8 +791,8 @@ Diagrams but abstract.
 </div>
 </div>
 
-<div id="outline-container-org6db5e1e" class="outline-2">
-<h2 id="org6db5e1e"><span class="section-number-2">11.</span> Lecture 10: Path Integral</h2>
+<div id="outline-container-org3844eb7" class="outline-2">
+<h2 id="org3844eb7"><span class="section-number-2">11.</span> Lecture 10: Path Integral</h2>
 <div class="outline-text-2" id="text-11">
 <p>
 Abstract.
@@ -800,13 +800,13 @@ Abstract.
 </div>
 </div>
 
-<div id="outline-container-orge643b87" class="outline-2">
-<h2 id="orge643b87"><span class="section-number-2">12.</span> Reference</h2>
+<div id="outline-container-org74e13c5" class="outline-2">
+<h2 id="org74e13c5"><span class="section-number-2">12.</span> Reference</h2>
 </div>
 </div>
 <div id="postamble" class="status">
 <p class="date">Date: 2021-03-19 Fri 00:00</p>
-<p class="date">Created: 2022-04-16 Sat 23:06</p>
+<p class="date">Created: 2022-04-18 Mon 20:39</p>
 <p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>

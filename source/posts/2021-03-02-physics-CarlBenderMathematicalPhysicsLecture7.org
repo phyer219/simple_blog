@@ -220,7 +220,7 @@ asymptotic relations
   x^3 s'^2 &\sim 1 \quad \mathrm{as} \quad x\to 0\\
 \end{align}
 ha! I can solve that equation. It's only a first order euqation.
-[[file:2021-03-02-专业笔记-CarlBenderMathematicalPhysicsLecture7/bender.png]]
+[[file:2021-03-02-physics-CarlBenderMathematicalPhysicsLecture7/bender.png]]
 \begin{align}
 s \sim \mp C\frac{2}{\sqrt{x}}\quad \mathrm{as} \quad x\to 0
 \end{align}

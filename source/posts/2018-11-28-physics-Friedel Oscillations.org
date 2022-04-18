@@ -404,7 +404,7 @@ plt.show() #显示图片
 
 进行对比
 
-[[file:./2018-11-28-专业笔记-Friedel Oscillations/friedel_oscillations.png]]
+[[file:./2018-11-28-physics-Friedel Oscillations/friedel_oscillations.png]]
 
 可以看出, Friedel Oscillations 的结果在 $r$ 较大时的结果比较好.
 

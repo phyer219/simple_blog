@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2022-04-16 Sat 23:06 -->
+<!-- 2022-04-18 Mon 20:39 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>围道积分进阶</title>
@@ -221,27 +221,27 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#org6c25603">1. 准备</a>
+<li><a href="#org69aff93">1. 准备</a>
 <ul>
-<li><a href="#org3a868ce">1.1. High Order Residue</a></li>
-<li><a href="#orge1b5ee7">1.2. 复数的方根</a></li>
+<li><a href="#orgb6f95f1">1.1. High Order Residue</a></li>
+<li><a href="#org8606cb7">1.2. 复数的方根</a></li>
 </ul>
 </li>
-<li><a href="#org705e59a">2. Contour Integral I</a></li>
-<li><a href="#org3f66c5e">3. Contour Integral II</a></li>
-<li><a href="#orgb327d31">4. Reference</a></li>
+<li><a href="#orgb739b90">2. Contour Integral I</a></li>
+<li><a href="#orgb14f607">3. Contour Integral II</a></li>
+<li><a href="#org09da65a">4. Reference</a></li>
 </ul>
 </div>
 </div>
 <!-- toc -->
 <!-- more -->
 
-<div id="outline-container-org6c25603" class="outline-2">
-<h2 id="org6c25603"><span class="section-number-2">1.</span> 准备</h2>
+<div id="outline-container-org69aff93" class="outline-2">
+<h2 id="org69aff93"><span class="section-number-2">1.</span> 准备</h2>
 <div class="outline-text-2" id="text-1">
 </div>
-<div id="outline-container-org3a868ce" class="outline-3">
-<h3 id="org3a868ce"><span class="section-number-3">1.1.</span> High Order Residue</h3>
+<div id="outline-container-orgb6f95f1" class="outline-3">
+<h3 id="orgb6f95f1"><span class="section-number-3">1.1.</span> High Order Residue</h3>
 <div class="outline-text-3" id="text-1-1">
 <p>
 Cauchy Integral Formula
@@ -259,8 +259,8 @@ Cauchy Integral Formula
 </div>
 </div>
 
-<div id="outline-container-orge1b5ee7" class="outline-3">
-<h3 id="orge1b5ee7"><span class="section-number-3">1.2.</span> 复数的方根</h3>
+<div id="outline-container-org8606cb7" class="outline-3">
+<h3 id="org8606cb7"><span class="section-number-3">1.2.</span> 复数的方根</h3>
 <div class="outline-text-3" id="text-1-2">
 <p>
 对于 \(z = re^{\mathrm{i}\phi}\)
@@ -275,8 +275,8 @@ Cauchy Integral Formula
 </div>
 </div>
 
-<div id="outline-container-org705e59a" class="outline-2">
-<h2 id="org705e59a"><span class="section-number-2">2.</span> Contour Integral I</h2>
+<div id="outline-container-orgb739b90" class="outline-2">
+<h2 id="orgb739b90"><span class="section-number-2">2.</span> Contour Integral I</h2>
 <div class="outline-text-2" id="text-2">
 \begin{align}
   I_1 =&\int \frac{\mathrm{d}^3q}{(2 \pi)^3} \frac{1}{(q^2 - p^2 - \mathrm{i}\epsilon)^2} \\
@@ -284,7 +284,7 @@ Cauchy Integral Formula
 \end{align}
 <p>
 它有两个二阶奇点 \(R\) 和 \(-R\) , 并且是偶函数.
-<img src="./2020-12-07-专业笔记-ContourIntegral/I1.png" alt="I1.png" />
+<img src="./2020-12-07-physics-ContourIntegral/I1.png" alt="I1.png" />
 它在远处是 \(\frac{1}{q^2} \to 0\) , 所以采用图中的围道. 只要计算 \(z = R\) 处的留数即
 可.
 </p>
@@ -302,8 +302,8 @@ Cauchy Integral Formula
 </div>
 </div>
 
-<div id="outline-container-org3f66c5e" class="outline-2">
-<h2 id="org3f66c5e"><span class="section-number-2">3.</span> Contour Integral II</h2>
+<div id="outline-container-orgb14f607" class="outline-2">
+<h2 id="orgb14f607"><span class="section-number-2">3.</span> Contour Integral II</h2>
 <div class="outline-text-2" id="text-3">
 \begin{align}
   I_2 =& \int \frac{\mathrm{d}^3q}{(2\pi)^3} 
@@ -323,7 +323,7 @@ Cauchy Integral Formula
 \end{align}
 
 <p>
-<img src="./2020-12-07-专业笔记-ContourIntegral/I2.png" alt="I2.png" />
+<img src="./2020-12-07-physics-ContourIntegral/I2.png" alt="I2.png" />
 根据 Jordan's Lemma, 第一项在上半平面无穷远的圆弧上积分为为, 第二项是下半平面,
 因此取不同的围道计算两个积分. 
 </p>
@@ -363,8 +363,8 @@ Cauchy Integral Formula
 </div>
 </div>
 
-<div id="outline-container-orgb327d31" class="outline-2">
-<h2 id="orgb327d31"><span class="section-number-2">4.</span> Reference</h2>
+<div id="outline-container-org09da65a" class="outline-2">
+<h2 id="org09da65a"><span class="section-number-2">4.</span> Reference</h2>
 <div class="outline-text-2" id="text-4">
 <ul class="org-ul">
 <li>PhysRevA.78.053606, Eqn A13(b), A14(b)</li>
@@ -374,7 +374,7 @@ Cauchy Integral Formula
 </div>
 <div id="postamble" class="status">
 <p class="date">Date: 2020-12-07 Mon 00:00</p>
-<p class="date">Created: 2022-04-16 Sat 23:06</p>
+<p class="date">Created: 2022-04-18 Mon 20:39</p>
 <p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>

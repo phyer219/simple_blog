@@ -142,25 +142,25 @@ k_{\varepsilon}^3/(6\pi^2)$ , 那么
 
 * result
 
-file:./2019-07-03-专业笔记-NSRcal/gaussianQuadrature.png
+file:./2019-07-03-physics-NSRcal/gaussianQuadrature.png
 
-file:./2019-07-03-专业笔记-NSRcal/large.png
+file:./2019-07-03-physics-NSRcal/large.png
 
-file:./2019-07-03-专业笔记-NSRcal/densityResult.png
+file:./2019-07-03-physics-NSRcal/densityResult.png
 
-file:./2019-07-03-专业笔记-NSRcal/integralResult.png
+file:./2019-07-03-physics-NSRcal/integralResult.png
 
-file:./2019-07-03-专业笔记-NSRcal/densityResult2.png
+file:./2019-07-03-physics-NSRcal/densityResult2.png
 
-file:./2019-07-03-专业笔记-NSRcal/integralResult2.png
+file:./2019-07-03-physics-NSRcal/integralResult2.png
 
-file:./2019-07-03-专业笔记-NSRcal/p-wave.png
+file:./2019-07-03-physics-NSRcal/p-wave.png
 
-file:./2019-07-03-专业笔记-NSRcal/weakCoupling.png
+file:./2019-07-03-physics-NSRcal/weakCoupling.png
 
-file:./2019-07-03-专业笔记-NSRcal/strongCoupling.png
+file:./2019-07-03-physics-NSRcal/strongCoupling.png
 
-file:./2019-07-03-专业笔记-NSRcal/Tmatrix.png
+file:./2019-07-03-physics-NSRcal/Tmatrix.png
 
 * code
 

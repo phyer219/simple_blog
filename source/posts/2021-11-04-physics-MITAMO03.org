@@ -36,7 +36,7 @@ B_{\mathrm{eff}} = (B_0 + \frac{\Omega_L}{\gamma})\hat{e}_z + B_1\hat{e}_x = B_1
 \end{align}
 也叫 $\pi$ pulse.
 
-[[file:2021-11-04-专业笔记-MITAMO03/pi-pulse.png]]
+[[file:2021-11-04-physics-MITAMO03/pi-pulse.png]]
 
 如果磁场不是 rotating 的, 比如是沿某个方向线偏振的, 那么可以分解成两个方向相反的
 rotating 的叠加. 在 rotating frame 中, 一个方向的 rotating 会变成 static, 而另一
@@ -80,7 +80,7 @@ A^2 =& 2 \mu^{2} \sin^2\theta (1 - \cos\phi)
    2 \frac{\omega_R^2}{\Omega_{R}^2}\sin^{2} \left( \frac{\Omega_R}{2}t \right) \right]
 \end{align}
 
-[[file:2021-11-04-专业笔记-MITAMO03/rabi-freq.png]]
+[[file:2021-11-04-physics-MITAMO03/rabi-freq.png]]
 
 如果我们定义
 \begin{align}
@@ -108,7 +108,7 @@ very robust way.
 $\vec{\mu}$ , static field $\vec{B}_0$ , $\vec{B}_1$ rotating at $\omega$ , $|B_{1}|
 \ll |B_0|$ , start with $\omega << \gamma B_{0}$
 
-[[file:2021-11-04-专业笔记-MITAMO03/RAP.png]]
+[[file:2021-11-04-physics-MITAMO03/RAP.png]]
 
 In adiabatic limit, the spin processes tightly ( $\theta$ is small) around
 $\vec{B}_{\mathrm{eff}}$ , follows the direction of the effective magnetic

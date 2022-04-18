@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2022-04-16 Sat 23:06 -->
+<!-- 2022-04-18 Mon 20:39 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>如何将 python 程序打包成一个 package</title>
@@ -200,15 +200,15 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#org702099e">1. 示例</a></li>
-<li><a href="#org40c2a84">2. 结果</a></li>
-<li><a href="#org0dcd916">3. 源码说明</a>
+<li><a href="#orgc2e6e10">1. 示例</a></li>
+<li><a href="#org69c825d">2. 结果</a></li>
+<li><a href="#org757e669">3. 源码说明</a>
 <ul>
-<li><a href="#org8939831">3.1. file:./2021-01-13-软件使用-setup_tools/setup.py</a></li>
-<li><a href="#orgaf83ea1">3.2. demo/file:./2021-01-13-软件使用-setup_tools/demo/__init__.py</a></li>
-<li><a href="#orgea70cae">3.3. saudade/file:./2021-01-13-软件使用-setup_tools/saudade/coding_func.py</a></li>
-<li><a href="#orge1b37f0">3.4. saudade/file:./2021-01-13-软件使用-setup_tools/saudade/__init__.py</a></li>
-<li><a href="#org09493b9">3.5. saudade/file:./2021-01-13-软件使用-setup_tools/saudade/physics_func.py</a></li>
+<li><a href="#org4759279">3.1. file:./2021-01-13-coding-setup_tools/setup.py</a></li>
+<li><a href="#org50cf5ae">3.2. demo/file:./2021-01-13-coding-setup_tools/demo/__init__.py</a></li>
+<li><a href="#org4e167c2">3.3. saudade/file:./2021-01-13-coding-setup_tools/saudade/coding_func.py</a></li>
+<li><a href="#org755577e">3.4. saudade/file:./2021-01-13-coding-setup_tools/saudade/__init__.py</a></li>
+<li><a href="#orge4ed9de">3.5. saudade/file:./2021-01-13-coding-setup_tools/saudade/physics_func.py</a></li>
 </ul>
 </li>
 </ul>
@@ -217,8 +217,8 @@
 <!-- toc -->
 <!-- more -->
 
-<div id="outline-container-org702099e" class="outline-2">
-<h2 id="org702099e"><span class="section-number-2">1.</span> 示例</h2>
+<div id="outline-container-orgc2e6e10" class="outline-2">
+<h2 id="orgc2e6e10"><span class="section-number-2">1.</span> 示例</h2>
 <div class="outline-text-2" id="text-1">
 <p>
 一个简单的示例. 比如写了一个名为 saudade 的包. 目录结构为(用 tree 生成, 不错的程
@@ -257,8 +257,8 @@
 </div>
 </div>
 
-<div id="outline-container-org40c2a84" class="outline-2">
-<h2 id="org40c2a84"><span class="section-number-2">2.</span> 结果</h2>
+<div id="outline-container-org69c825d" class="outline-2">
+<h2 id="org69c825d"><span class="section-number-2">2.</span> 结果</h2>
 <div class="outline-text-2" id="text-2">
 <p>
 安装完以后就可以调用了. 如
@@ -292,12 +292,12 @@ hello
 </div>
 </div>
 
-<div id="outline-container-org0dcd916" class="outline-2">
-<h2 id="org0dcd916"><span class="section-number-2">3.</span> 源码说明</h2>
+<div id="outline-container-org757e669" class="outline-2">
+<h2 id="org757e669"><span class="section-number-2">3.</span> 源码说明</h2>
 <div class="outline-text-2" id="text-3">
 </div>
-<div id="outline-container-org8939831" class="outline-3">
-<h3 id="org8939831"><span class="section-number-3">3.1.</span> <a href="./2021-01-13-软件使用-setup_tools/setup.py">./2021-01-13-软件使用-setup_tools/setup.py</a></h3>
+<div id="outline-container-org4759279" class="outline-3">
+<h3 id="org4759279"><span class="section-number-3">3.1.</span> <a href="./2021-01-13-coding-setup_tools/setup.py">./2021-01-13-coding-setup_tools/setup.py</a></h3>
 <div class="outline-text-3" id="text-3-1">
 <div class="org-src-container">
 <pre class="src src-python">from setuptools import setup, find_packages
@@ -317,8 +317,8 @@ setup(
 </div>
 </div>
 
-<div id="outline-container-orgaf83ea1" class="outline-3">
-<h3 id="orgaf83ea1"><span class="section-number-3">3.2.</span> demo/<a href="./2021-01-13-软件使用-setup_tools/demo/__init__.py">./2021-01-13-软件使用-setup_tools/demo/__init__.py</a></h3>
+<div id="outline-container-org50cf5ae" class="outline-3">
+<h3 id="org50cf5ae"><span class="section-number-3">3.2.</span> demo/<a href="./2021-01-13-coding-setup_tools/demo/__init__.py">./2021-01-13-coding-setup_tools/demo/__init__.py</a></h3>
 <div class="outline-text-3" id="text-3-2">
 <div class="org-src-container">
 <pre class="src src-python">def hello():
@@ -331,8 +331,8 @@ setup(
 </div>
 </div>
 
-<div id="outline-container-orgea70cae" class="outline-3">
-<h3 id="orgea70cae"><span class="section-number-3">3.3.</span> saudade/<a href="./2021-01-13-软件使用-setup_tools/saudade/coding_func.py">./2021-01-13-软件使用-setup_tools/saudade/coding_func.py</a></h3>
+<div id="outline-container-org4e167c2" class="outline-3">
+<h3 id="org4e167c2"><span class="section-number-3">3.3.</span> saudade/<a href="./2021-01-13-coding-setup_tools/saudade/coding_func.py">./2021-01-13-coding-setup_tools/saudade/coding_func.py</a></h3>
 <div class="outline-text-3" id="text-3-3">
 <div class="org-src-container">
 <pre class="src src-python">import numpy as np
@@ -384,8 +384,8 @@ def get_data(parameters, func, x):
 </div>
 </div>
 
-<div id="outline-container-orge1b37f0" class="outline-3">
-<h3 id="orge1b37f0"><span class="section-number-3">3.4.</span> saudade/<a href="./2021-01-13-软件使用-setup_tools/saudade/__init__.py">./2021-01-13-软件使用-setup_tools/saudade/__init__.py</a></h3>
+<div id="outline-container-org755577e" class="outline-3">
+<h3 id="org755577e"><span class="section-number-3">3.4.</span> saudade/<a href="./2021-01-13-coding-setup_tools/saudade/__init__.py">./2021-01-13-coding-setup_tools/saudade/__init__.py</a></h3>
 <div class="outline-text-3" id="text-3-4">
 <div class="org-src-container">
 <pre class="src src-python">from .coding_func import *
@@ -398,8 +398,8 @@ from .physics_func import *
 </div>
 </div>
 
-<div id="outline-container-org09493b9" class="outline-3">
-<h3 id="org09493b9"><span class="section-number-3">3.5.</span> saudade/<a href="./2021-01-13-软件使用-setup_tools/saudade/physics_func.py">./2021-01-13-软件使用-setup_tools/saudade/physics_func.py</a></h3>
+<div id="outline-container-orge4ed9de" class="outline-3">
+<h3 id="orge4ed9de"><span class="section-number-3">3.5.</span> saudade/<a href="./2021-01-13-coding-setup_tools/saudade/physics_func.py">./2021-01-13-coding-setup_tools/saudade/physics_func.py</a></h3>
 <div class="outline-text-3" id="text-3-5">
 <div class="org-src-container">
 <pre class="src src-python">import numpy as np
@@ -477,7 +477,7 @@ class PrincipalValueInt():
 </div>
 <div id="postamble" class="status">
 <p class="date">Date: 2021-01-13 Wed 00:00</p>
-<p class="date">Created: 2022-04-16 Sat 23:06</p>
+<p class="date">Created: 2022-04-18 Mon 20:39</p>
 <p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>

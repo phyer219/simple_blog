@@ -5,11 +5,11 @@
 #+HTML: <!-- toc -->
 #+HTML: <!-- more -->
 
-[[file:./2019-10-28-专业笔记-NSRCalv4/fig2.jpg]]
+[[file:./2019-10-28-physics-NSRCalv4/fig2.jpg]]
 
-[[file:./2019-10-28-专业笔记-NSRCalv4/fig3.jpg]]
+[[file:./2019-10-28-physics-NSRCalv4/fig3.jpg]]
 
-[[file:./2019-10-28-专业笔记-NSRCalv4/fig4.jpg]]
+[[file:./2019-10-28-physics-NSRCalv4/fig4.jpg]]
 
 * 结果
 

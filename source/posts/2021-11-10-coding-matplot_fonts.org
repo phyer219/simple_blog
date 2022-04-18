@@ -31,7 +31,7 @@ plt.ylabel(r'$\sin\theta$')
 plt.savefig('method1.png')
 #+end_src
 
-[[file:2021-11-10-软件使用-matplot_fonts/method1.py][method1.py]]
+[[file:2021-11-10-coding-matplot_fonts/method1.py][method1.py]]
 
 * Method 2
 
@@ -55,11 +55,11 @@ plt.ylabel(r'$\sin\theta$')
 plt.savefig('method2.png')
 #+end_src
 
-[[file:2021-11-10-软件使用-matplot_fonts/method2.py][method2.py]]
+[[file:2021-11-10-coding-matplot_fonts/method2.py][method2.py]]
 
 * Result
 
-[[file:2021-11-10-软件使用-matplot_fonts/method1.png]]
+[[file:2021-11-10-coding-matplot_fonts/method1.png]]
 
 
 * Reference

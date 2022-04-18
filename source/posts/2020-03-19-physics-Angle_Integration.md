@@ -150,7 +150,7 @@ $q^->0$ 的条件为
 
 所以对积分有贡献的区域如下图
 
-![Integration](./2020-03-19-专业笔记-Angle_Integration/Integration.png)
+![Integration](./2020-03-19-physics-Angle_Integration/Integration.png)
 
 因此, 积分化为
 

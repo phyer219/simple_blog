@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2022-04-16 Sat 23:05 -->
+<!-- 2022-04-18 Mon 20:38 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>scipy 数值求解微分方程, 方程组, 复微分方程组</title>
@@ -221,11 +221,11 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#org9d88852">1. 1D Real</a></li>
-<li><a href="#orgea9358c">2. 1D Complex</a></li>
-<li><a href="#org8cb7c20">3. 2D Real</a></li>
-<li><a href="#org87e0893">4. 2D Complex</a></li>
-<li><a href="#orgef61e3c">5. Reference</a></li>
+<li><a href="#orgadc9676">1. 1D Real</a></li>
+<li><a href="#org0159236">2. 1D Complex</a></li>
+<li><a href="#org46a598e">3. 2D Real</a></li>
+<li><a href="#orga8bcd62">4. 2D Complex</a></li>
+<li><a href="#org41217be">5. Reference</a></li>
 </ul>
 </div>
 </div>
@@ -236,8 +236,8 @@
 Some examples
 </p>
 
-<div id="outline-container-org9d88852" class="outline-2">
-<h2 id="org9d88852"><span class="section-number-2">1.</span> 1D Real</h2>
+<div id="outline-container-orgadc9676" class="outline-2">
+<h2 id="orgadc9676"><span class="section-number-2">1.</span> 1D Real</h2>
 <div class="outline-text-2" id="text-1">
 \begin{align}
 \frac{\mathrm{d}}{\mathrm{d}t}y(t) = 2 t y(t)
@@ -272,14 +272,14 @@ plt.savefig('1d.png')
 </pre>
 </div>
 <p>
-<a href="2021-12-09-软件使用-py_ode/1d-real.py">2021-12-09-软件使用-py_ode/1d-real.py</a>
-<img src="2021-12-09-软件使用-py_ode/1d-real.png" alt="1d-real.png" />
+<a href="2021-12-09-coding-py_ode/1d-real.py">2021-12-09-coding-py_ode/1d-real.py</a>
+<img src="2021-12-09-coding-py_ode/1d-real.png" alt="1d-real.png" />
 </p>
 </div>
 </div>
 
-<div id="outline-container-orgea9358c" class="outline-2">
-<h2 id="orgea9358c"><span class="section-number-2">2.</span> 1D Complex</h2>
+<div id="outline-container-org0159236" class="outline-2">
+<h2 id="org0159236"><span class="section-number-2">2.</span> 1D Complex</h2>
 <div class="outline-text-2" id="text-2">
 \begin{align}
 \frac{d}{\mathrm{d}t}\psi = f(t) \psi
@@ -349,15 +349,15 @@ plt.savefig('1d-complex.png')
 </pre>
 </div>
 <p>
-<a href="2021-12-09-软件使用-py_ode/1d-complex.py">2021-12-09-软件使用-py_ode/1d-complex.py</a>
-<img src="2021-12-09-软件使用-py_ode/1d-complex.png" alt="1d-complex.png" />
+<a href="2021-12-09-coding-py_ode/1d-complex.py">2021-12-09-coding-py_ode/1d-complex.py</a>
+<img src="2021-12-09-coding-py_ode/1d-complex.png" alt="1d-complex.png" />
 </p>
 </div>
 </div>
 
 
-<div id="outline-container-org8cb7c20" class="outline-2">
-<h2 id="org8cb7c20"><span class="section-number-2">3.</span> 2D Real</h2>
+<div id="outline-container-org46a598e" class="outline-2">
+<h2 id="org46a598e"><span class="section-number-2">3.</span> 2D Real</h2>
 <div class="outline-text-2" id="text-3">
 <p>
 A Van der Pol oscillator
@@ -421,14 +421,14 @@ anifig.save('2d-real.gif', writer='imagemagick')
 </pre>
 </div>
 <p>
-<a href="2021-12-09-软件使用-py_ode/2d-real.py">2021-12-09-软件使用-py_ode/2d-real.py</a>
-<img src="2021-12-09-软件使用-py_ode/2d-real.gif" alt="2d-real.gif" />
+<a href="2021-12-09-coding-py_ode/2d-real.py">2021-12-09-coding-py_ode/2d-real.py</a>
+<img src="2021-12-09-coding-py_ode/2d-real.gif" alt="2d-real.gif" />
 </p>
 </div>
 </div>
 
-<div id="outline-container-org87e0893" class="outline-2">
-<h2 id="org87e0893"><span class="section-number-2">4.</span> 2D Complex</h2>
+<div id="outline-container-orga8bcd62" class="outline-2">
+<h2 id="orga8bcd62"><span class="section-number-2">4.</span> 2D Complex</h2>
 <div class="outline-text-2" id="text-4">
 <p>
 Rabi oscillation(ref: another post)
@@ -509,14 +509,14 @@ plt.savefig('2d-complex.png')
 </pre>
 </div>
 <p>
-<a href="2021-12-09-软件使用-py_ode/2d-complex.py">2021-12-09-软件使用-py_ode/2d-complex.py</a>
-<img src="2021-12-09-软件使用-py_ode/2d-complex.png" alt="2d-complex.png" />
+<a href="2021-12-09-coding-py_ode/2d-complex.py">2021-12-09-coding-py_ode/2d-complex.py</a>
+<img src="2021-12-09-coding-py_ode/2d-complex.png" alt="2d-complex.png" />
 </p>
 </div>
 </div>
 
-<div id="outline-container-orgef61e3c" class="outline-2">
-<h2 id="orgef61e3c"><span class="section-number-2">5.</span> Reference</h2>
+<div id="outline-container-org41217be" class="outline-2">
+<h2 id="org41217be"><span class="section-number-2">5.</span> Reference</h2>
 <div class="outline-text-2" id="text-5">
 <ul class="org-ul">
 <li><a href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.integrate.odeint.html">scipy.integrate.odeint</a></li>
@@ -528,7 +528,7 @@ plt.savefig('2d-complex.png')
 </div>
 <div id="postamble" class="status">
 <p class="date">Date: 2021-12-09 Thu 00:00</p>
-<p class="date">Created: 2022-04-16 Sat 23:05</p>
+<p class="date">Created: 2022-04-18 Mon 20:38</p>
 <p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>

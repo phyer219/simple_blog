@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2022-04-16 Sat 23:06 -->
+<!-- 2022-04-18 Mon 20:39 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>RF Current 推导</title>
@@ -221,22 +221,22 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#org8bfb62d">1. System</a></li>
-<li><a href="#orgd9baf4c">2. Hamiltonian</a></li>
-<li><a href="#orgfd07d0c">3. RF Current</a></li>
-<li><a href="#org046f5d0">4. 态 \(|3\rangle\) 上的粒子自由时</a></li>
-<li><a href="#orgca16fa8">5. 态 \(|2\rangle\) 上的粒子也自由时</a></li>
-<li><a href="#org4cbdb4e">6. 总结</a></li>
-<li><a href="#orgaa41e6a">7. Supplymentary</a></li>
-<li><a href="#org38a84ea">8. Reference</a></li>
+<li><a href="#orgda33b14">1. System</a></li>
+<li><a href="#orgf8b90df">2. Hamiltonian</a></li>
+<li><a href="#org8c10203">3. RF Current</a></li>
+<li><a href="#org223e2ab">4. 态 \(|3\rangle\) 上的粒子自由时</a></li>
+<li><a href="#org842cbb2">5. 态 \(|2\rangle\) 上的粒子也自由时</a></li>
+<li><a href="#orgeccff87">6. 总结</a></li>
+<li><a href="#orgf905533">7. Supplymentary</a></li>
+<li><a href="#orgbf95129">8. Reference</a></li>
 </ul>
 </div>
 </div>
 <!-- toc -->
 <!-- more -->
 
-<div id="outline-container-org8bfb62d" class="outline-2">
-<h2 id="org8bfb62d"><span class="section-number-2">1.</span> System</h2>
+<div id="outline-container-orgda33b14" class="outline-2">
+<h2 id="orgda33b14"><span class="section-number-2">1.</span> System</h2>
 <div class="outline-text-2" id="text-1">
 <p>
 考虑 Li-6 最低的三个 hyperfine states. 最低的两个态 \(|1\rangle\) , \(|2\rangle\) 参与超
@@ -250,14 +250,14 @@ excitation level) .
 
 <p>
 RF field, 会 drive 原子从 \(|2\rangle\) 态向 \(|3\rangle\) 态跃迁. 如图
-<img src="./2019-10-30-专业笔记-rfCurrent/level.jpg" alt="level.jpg" />
-<a href="./2019-10-30-专业笔记-rfCurrent/level.py">picture code</a>
+<img src="./2019-10-30-physics-rfCurrent/level.jpg" alt="level.jpg" />
+<a href="./2019-10-30-physics-rfCurrent/level.py">picture code</a>
 </p>
 </div>
 </div>
 
-<div id="outline-container-orgd9baf4c" class="outline-2">
-<h2 id="orgd9baf4c"><span class="section-number-2">2.</span> Hamiltonian</h2>
+<div id="outline-container-orgf8b90df" class="outline-2">
+<h2 id="orgf8b90df"><span class="section-number-2">2.</span> Hamiltonian</h2>
 <div class="outline-text-2" id="text-2">
 <p>
 考虑巨正则系统, 态 \(|3\rangle\) 的 Hamiltonian 为
@@ -280,8 +280,8 @@ RF field, 会 drive 原子从 \(|2\rangle\) 态向 \(|3\rangle\) 态跃迁. 如�
 </div>
 </div>
 
-<div id="outline-container-orgfd07d0c" class="outline-2">
-<h2 id="orgfd07d0c"><span class="section-number-2">3.</span> RF Current</h2>
+<div id="outline-container-org8c10203" class="outline-2">
+<h2 id="org8c10203"><span class="section-number-2">3.</span> RF Current</h2>
 <div class="outline-text-2" id="text-3">
 <p>
 RF current 定义为
@@ -307,8 +307,8 @@ detuning. 考虑线性响应理论的最低阶近似, \(D\) 可以分解为(如�
   G^{(3)}(\mathrm{i}\omega_n + \mathrm{i}\Omega_m, \vec{k})
 \end{align}
 <p>
-<img src="./2019-10-30-专业笔记-rfCurrent/feynmanDiagram.jpg" alt="feynmanDiagram.jpg" />
-<a href="./2019-10-30-专业笔记-rfCurrent/feynmanDiagram.py">picture code</a>
+<img src="./2019-10-30-physics-rfCurrent/feynmanDiagram.jpg" alt="feynmanDiagram.jpg" />
+<a href="./2019-10-30-physics-rfCurrent/feynmanDiagram.py">picture code</a>
 </p>
 
 <p>
@@ -361,8 +361,8 @@ detuning. 考虑线性响应理论的最低阶近似, \(D\) 可以分解为(如�
 </div>
 </div>
 
-<div id="outline-container-org046f5d0" class="outline-2">
-<h2 id="org046f5d0"><span class="section-number-2">4.</span> 态 \(|3\rangle\) 上的粒子自由时</h2>
+<div id="outline-container-org223e2ab" class="outline-2">
+<h2 id="org223e2ab"><span class="section-number-2">4.</span> 态 \(|3\rangle\) 上的粒子自由时</h2>
 <div class="outline-text-2" id="text-4">
 <p>
 态 \(|3\rangle\) 是自由粒子, 所以它的谱函数为 \(A^{(3)}(\bar{\epsilon}, \vec{k}) =
@@ -381,8 +381,8 @@ detuning. 考虑线性响应理论的最低阶近似, \(D\) 可以分解为(如�
 </div>
 </div>
 
-<div id="outline-container-orgca16fa8" class="outline-2">
-<h2 id="orgca16fa8"><span class="section-number-2">5.</span> 态 \(|2\rangle\) 上的粒子也自由时</h2>
+<div id="outline-container-org842cbb2" class="outline-2">
+<h2 id="org842cbb2"><span class="section-number-2">5.</span> 态 \(|2\rangle\) 上的粒子也自由时</h2>
 <div class="outline-text-2" id="text-5">
 <p>
 在 \(|2\rangle\) 态也是自由的时候, \(A^{(2)}(\xi_{\vec{k}}- \nu,
@@ -409,8 +409,8 @@ detuning. 考虑线性响应理论的最低阶近似, \(D\) 可以分解为(如�
 </div>
 </div>
 
-<div id="outline-container-org4cbdb4e" class="outline-2">
-<h2 id="org4cbdb4e"><span class="section-number-2">6.</span> 总结</h2>
+<div id="outline-container-orgeccff87" class="outline-2">
+<h2 id="orgeccff87"><span class="section-number-2">6.</span> 总结</h2>
 <div class="outline-text-2" id="text-6">
 <p>
 常用思想, 除了级数展开, 小量分析外, 将新得到的结果代回的已知结论, 看能否回到原
@@ -419,8 +419,8 @@ detuning. 考虑线性响应理论的最低阶近似, \(D\) 可以分解为(如�
 </div>
 </div>
 
-<div id="outline-container-orgaa41e6a" class="outline-2">
-<h2 id="orgaa41e6a"><span class="section-number-2">7.</span> Supplymentary</h2>
+<div id="outline-container-orgf905533" class="outline-2">
+<h2 id="orgf905533"><span class="section-number-2">7.</span> Supplymentary</h2>
 <div class="outline-text-2" id="text-7">
 <p>
 费米子的频率求和
@@ -433,8 +433,8 @@ detuning. 考虑线性响应理论的最低阶近似, \(D\) 可以分解为(如�
 </div>
 </div>
 
-<div id="outline-container-org38a84ea" class="outline-2">
-<h2 id="org38a84ea"><span class="section-number-2">8.</span> Reference</h2>
+<div id="outline-container-orgbf95129" class="outline-2">
+<h2 id="orgbf95129"><span class="section-number-2">8.</span> Reference</h2>
 <div class="outline-text-2" id="text-8">
 <ul class="org-ul">
 <li>Qijin Chen et al 2009 Rep. Prog. Phys. 72 122501</li>
@@ -444,7 +444,7 @@ detuning. 考虑线性响应理论的最低阶近似, \(D\) 可以分解为(如�
 </div>
 <div id="postamble" class="status">
 <p class="date">Date: 2019-10-30 Wed 00:00</p>
-<p class="date">Created: 2022-04-16 Sat 23:06</p>
+<p class="date">Created: 2022-04-18 Mon 20:39</p>
 <p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>

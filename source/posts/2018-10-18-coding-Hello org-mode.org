@@ -55,31 +55,31 @@ https://phyer219.github.io/
 ** 图片示例
 
 #+BEGIN_SRC shell
-[[file:./2018-10-18-软件使用-Hello org-mode/cpho.jpeg]]
+[[file:./2018-10-18-coding-Hello org-mode/cpho.jpeg]]
 #+END_SRC
 效果为
 
-[[file:./2018-10-18-软件使用-Hello org-mode/cpho.jpeg]]
+[[file:./2018-10-18-coding-Hello org-mode/cpho.jpeg]]
 
 ** 文件示例
 
 *** pdf文件
 
 #+BEGIN_SRC shell
-[[file:./2018-10-18-软件使用-Hello org-mode/Friedel Oscillations1.pdf]]
+[[file:./2018-10-18-coding-Hello org-mode/Friedel Oscillations1.pdf]]
 #+END_SRC
 效果为
 
-[[file:./2018-10-18-软件使用-Hello org-mode/Friedel Oscillations1.pdf]]
+[[file:./2018-10-18-coding-Hello org-mode/Friedel Oscillations1.pdf]]
 
 *** python程序
 
 #+BEGIN_SRC shell
-[[file:./2018-10-18-软件使用-Hello org-mode/plot.py]]
+[[file:./2018-10-18-coding-Hello org-mode/plot.py]]
 #+END_SRC
 效果为
 
-[[file:./2018-10-18-软件使用-Hello org-mode/plot.py]]
+[[file:./2018-10-18-coding-Hello org-mode/plot.py]]
 
 *** 内部链接
 

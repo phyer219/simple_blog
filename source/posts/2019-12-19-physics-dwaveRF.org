@@ -8,21 +8,21 @@
 
 * fig
 
-file:./2019-12-19-专业笔记-dwaveRF/imSigma.jpg
+file:./2019-12-19-physics-dwaveRF/imSigma.jpg
 
-file:./2019-12-19-专业笔记-dwaveRF/imSigma2.jpg
+file:./2019-12-19-physics-dwaveRF/imSigma2.jpg
 
-file:./2019-12-19-专业笔记-dwaveRF/bigInteraction.jpg
+file:./2019-12-19-physics-dwaveRF/bigInteraction.jpg
 
-file:./2019-12-19-专业笔记-dwaveRF/fig1.jpg
+file:./2019-12-19-physics-dwaveRF/fig1.jpg
 
-file:./2019-12-19-专业笔记-dwaveRF/fig2.jpg
+file:./2019-12-19-physics-dwaveRF/fig2.jpg
 
-file:./2019-12-19-专业笔记-dwaveRF/fig3.jpg
+file:./2019-12-19-physics-dwaveRF/fig3.jpg
 
 * code
 
-[[file:./2019-12-19-专业笔记-dwaveRF/p-WaveSinglePole.f90][fortran code download]]
+[[file:./2019-12-19-physics-dwaveRF/p-WaveSinglePole.f90][fortran code download]]
 
 #+BEGIN_SRC fortran
 ! ==============================================================================

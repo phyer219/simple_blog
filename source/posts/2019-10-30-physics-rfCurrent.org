@@ -14,8 +14,8 @@ excitation level) .
 一开始 $|3\rangle$ 态是空的.
 
 RF field, 会 drive 原子从 $|2\rangle$ 态向 $|3\rangle$ 态跃迁. 如图
-[[file:./2019-10-30-专业笔记-rfCurrent/level.jpg]]
-[[file:./2019-10-30-专业笔记-rfCurrent/level.py][picture code]]
+[[file:./2019-10-30-physics-rfCurrent/level.jpg]]
+[[file:./2019-10-30-physics-rfCurrent/level.py][picture code]]
 
 * Hamiltonian
 
@@ -51,8 +51,8 @@ detuning. 考虑线性响应理论的最低阶近似, $D$ 可以分解为(如图
   \sum_{\vec{k}}\sum_{\omega_n} G^{(2)}(\mathrm{i}\omega_n, \vec{k})
   G^{(3)}(\mathrm{i}\omega_n + \mathrm{i}\Omega_m, \vec{k})
 \end{align}
-[[file:./2019-10-30-专业笔记-rfCurrent/feynmanDiagram.jpg]]
-[[file:./2019-10-30-专业笔记-rfCurrent/feynmanDiagram.py][picture code]]
+[[file:./2019-10-30-physics-rfCurrent/feynmanDiagram.jpg]]
+[[file:./2019-10-30-physics-rfCurrent/feynmanDiagram.py][picture code]]
 
 用下面的式子, 把格林函数用谱函数表示
 \begin{align}

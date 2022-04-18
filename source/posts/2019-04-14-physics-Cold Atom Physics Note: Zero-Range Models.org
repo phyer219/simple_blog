@@ -262,7 +262,7 @@ $\langle \vec{k} |T |\vec{k}'\rangle$ 的取值只与 $E$ 有关. 所以上式�
 
 *** 处理方法二: 通过 Feynman 图方法求解 T-matrix
 
-[[./2019-04-14-专业笔记-Cold Atom Physics Note: Zero-Range Models/t-matrix.png]]
+[[./2019-04-14-physics-Cold Atom Physics Note: Zero-Range Models/t-matrix.png]]
 
 T-matrix 可以看作是有效相互作用, 上图对应为
 \begin{align}

@@ -52,11 +52,11 @@ Zee, A. Quantum field theory in a nutshell. (Princeton University Press,
 并验证总的个数为  $11!! = 10395$ . 至此分类完成!
 
 
-[[file:2021-04-27-专业笔记-Symmetry_Factor_Scaler_Field/note1.jpg]]
+[[file:2021-04-27-physics-Symmetry_Factor_Scaler_Field/note1.jpg]]
 
-file:2021-04-27-专业笔记-Symmetry_Factor_Scaler_Field/note2.jpg
+file:2021-04-27-physics-Symmetry_Factor_Scaler_Field/note2.jpg
 
-file:2021-04-27-专业笔记-Symmetry_Factor_Scaler_Field/diagrams.png
+file:2021-04-27-physics-Symmetry_Factor_Scaler_Field/diagrams.png
 
 最终 a-n 归类到 a-l 的结果为(第一列有点乱了,仅参考, 重要的结果是第二, 三列)
 
@@ -80,7 +80,7 @@ $\frac{1}{2}$ . 这可能是由于需要给固定入射的两个粒子? 或许�
 
 * Code
 
-[[file:2021-04-27-专业笔记-Symmetry_Factor_Scaler_Field/symmetry_factors.py][code]]
+[[file:2021-04-27-physics-Symmetry_Factor_Scaler_Field/symmetry_factors.py][code]]
 #+begin_src python
 import numpy as np
 

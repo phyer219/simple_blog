@@ -60,7 +60,7 @@ tcef_d = 1 / ef_d
 print(n)
 print(tcef_p, tcef_d)
 #+end_src
-[[file:2021-10-05-专业笔记-BEC_limit_Tc/code.py][code]]
+[[file:2021-10-05-physics-BEC_limit_Tc/code.py][code]]
 
 #+begin_src shell
 0.9382979415622876

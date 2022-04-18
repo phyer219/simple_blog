@@ -82,7 +82,7 @@ def gen_index():
     """generate index"""
     posts = []
     for p in os.listdir(posts_public_path):
-        if re.search(r'.html$', p):
+        if re.search(r'\.html$', p):
             posts.append(Post(posts_source_path + p))
     posts.sort(key=lambda p: (p.year, p.month, p.day), reverse=True)
 
@@ -111,7 +111,7 @@ def gen_all():
         os.mkdir(temp_path)
     posts = []
     for name_ext in os.listdir(posts_source_path):
-        if re.search(r'.md$', name_ext) or re.search(r'.org$', name_ext):
+        if re.search(r'\.md$', name_ext) or re.search(r'\.org$', name_ext):
             post = Post(posts_source_path + name_ext)
             posts.append(post)
             gen_single_post(name_ext)

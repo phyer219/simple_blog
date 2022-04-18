@@ -180,7 +180,7 @@ H_0 = \frac{\hbar}{2}
 \end{align}
 本征能量如图中虚线
 
-[[file:2021-11-07-专业笔记-MITAMO04/energy-level.png]]
+[[file:2021-11-07-physics-MITAMO04/energy-level.png]]
 
 当加入旋转的磁场时
 \begin{align}

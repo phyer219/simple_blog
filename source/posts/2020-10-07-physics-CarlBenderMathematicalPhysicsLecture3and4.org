@@ -38,7 +38,7 @@ Accelerate the convergence of a series that was already converging.
   \label{eq:log2}
   \ln 2 = 1 - \frac{1}{2} + \frac{1}{3} - \frac{1}{4} + \cdots = 0.693 147 2\cdots
 \end{align}
-[[file:./2020-10-07-专业笔记-CarlBenderMathematicalPhysicsLecture3and4/log2.jpg]]
+[[file:./2020-10-07-physics-CarlBenderMathematicalPhysicsLecture3and4/log2.jpg]]
 
 Shanks Transform 能够让收敛变得更快.
 #+begin_quote
@@ -145,7 +145,7 @@ Some divergent series REALLY sum up to infinity -- this is perfectly OK!
 #+end_quote
 (\ref{eq:zeta1}) 可以对应物理图像, 将质量均匀的砖一块一块地摞, 最多能伸出多远.
 如图 
-file:./2020-10-07-专业笔记-CarlBenderMathematicalPhysicsLecture3and4/zeta1.gif
+file:./2020-10-07-physics-CarlBenderMathematicalPhysicsLecture3and4/zeta1.gif
 Geogebra 在线示意: [[https://www.geogebra.org/m/gxzshmzr]]
 将砖自上而下的放, 每次放砖, 使砖的右侧对准上面所有砖头的重心, 那么伸出的长度就是
 $1 + \frac{1}{2} + \frac{1}{3} + \cdots$ , 而重心始终保持稳定, 不会倒. 因为 $\zeta(1)$

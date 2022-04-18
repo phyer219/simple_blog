@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2022-04-16 Sat 23:05 -->
+<!-- 2022-04-18 Mon 20:38 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Carl Bender Mathematical Physics Lecture7 Note</title>
@@ -221,40 +221,40 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#org9fd9870">1. Information</a></li>
-<li><a href="#org3ce8382">2. Keywords</a></li>
-<li><a href="#orged2becf">3. Pade</a></li>
-<li><a href="#org2485fe0">4. Stirling's Series</a></li>
-<li><a href="#orga1d3154">5. What is Asymptotic Series?</a></li>
-<li><a href="#org12f74bf">6. An Example about "How do asymptotic series arise?"</a>
+<li><a href="#org6a482c3">1. Information</a></li>
+<li><a href="#orgf97fd47">2. Keywords</a></li>
+<li><a href="#org42f5638">3. Pade</a></li>
+<li><a href="#org21b4bae">4. Stirling's Series</a></li>
+<li><a href="#org536f55b">5. What is Asymptotic Series?</a></li>
+<li><a href="#orgef655ec">6. An Example about "How do asymptotic series arise?"</a>
 <ul>
-<li><a href="#orga684f6d">6.1. 偏题: 如何分析一个 second order linear DE?</a>
+<li><a href="#org3c06ff8">6.1. 偏题: 如何分析一个 second order linear DE?</a>
 <ul>
-<li><a href="#orgdf1acfb">6.1.1. case 1</a></li>
-<li><a href="#orge9151da">6.1.2. case 2</a></li>
-<li><a href="#orgb82acee">6.1.3. case 3</a></li>
+<li><a href="#orgff57be9">6.1.1. case 1</a></li>
+<li><a href="#org56a635b">6.1.2. case 2</a></li>
+<li><a href="#org53aa92b">6.1.3. case 3</a></li>
 </ul>
 </li>
-<li><a href="#orgf3359d7">6.2. local analysis</a>
+<li><a href="#orgc64d7e9">6.2. local analysis</a>
 <ul>
-<li><a href="#org833502f">6.2.1. \(y' = \frac{y}{2}\)</a></li>
-<li><a href="#org6921c3e">6.2.2. \(y' = \frac{y}{2x}\)</a></li>
-<li><a href="#orgabf51df">6.2.3. \(y' = \frac{y}{2x^2}\)</a></li>
+<li><a href="#org02f043a">6.2.1. \(y' = \frac{y}{2}\)</a></li>
+<li><a href="#orgd5c1223">6.2.2. \(y' = \frac{y}{2x}\)</a></li>
+<li><a href="#org9de3698">6.2.3. \(y' = \frac{y}{2x^2}\)</a></li>
 </ul>
 </li>
-<li><a href="#org32ae695">6.3. How do asymptotic series arise?</a></li>
+<li><a href="#org3f855d1">6.3. How do asymptotic series arise?</a></li>
 </ul>
 </li>
-<li><a href="#org7c34cd8">7. Summary</a></li>
-<li><a href="#orgf7d1657">8. Reference</a></li>
+<li><a href="#orge5f6d3e">7. Summary</a></li>
+<li><a href="#org2d28268">8. Reference</a></li>
 </ul>
 </div>
 </div>
 <!-- toc -->
 <!-- more -->
 
-<div id="outline-container-org9fd9870" class="outline-2">
-<h2 id="org9fd9870"><span class="section-number-2">1.</span> Information</h2>
+<div id="outline-container-org6a482c3" class="outline-2">
+<h2 id="org6a482c3"><span class="section-number-2">1.</span> Information</h2>
 <div class="outline-text-2" id="text-1">
 <ul class="org-ul">
 <li>原出处: <a href="https://www.perimeterinstitute.ca/video-library/collection/11/12-psi-mathematical-physics">https://www.perimeterinstitute.ca/video-library/collection/11/12-psi-mathematical-physics</a></li>
@@ -270,8 +270,8 @@ Engineers I Asymptotic Methods and Perturbation Theory, 1999</li>
 </div>
 </div>
 
-<div id="outline-container-org3ce8382" class="outline-2">
-<h2 id="org3ce8382"><span class="section-number-2">2.</span> Keywords</h2>
+<div id="outline-container-orgf97fd47" class="outline-2">
+<h2 id="orgf97fd47"><span class="section-number-2">2.</span> Keywords</h2>
 <div class="outline-text-2" id="text-2">
 <p>
 Pade technique for summing a series.  Asymptotic series.  Fuchs' theorem.  Frobenius series.
@@ -279,8 +279,8 @@ Pade technique for summing a series.  Asymptotic series.  Fuchs' theorem.  Frobe
 </div>
 </div>
 
-<div id="outline-container-orged2becf" class="outline-2">
-<h2 id="orged2becf"><span class="section-number-2">3.</span> Pade</h2>
+<div id="outline-container-org42f5638" class="outline-2">
+<h2 id="org42f5638"><span class="section-number-2">3.</span> Pade</h2>
 <div class="outline-text-2" id="text-3">
 <p>
 Poles are "mocking up" the cut.
@@ -297,8 +297,8 @@ Poles are "mocking up" the cut.
 </div>
 </div>
 
-<div id="outline-container-org2485fe0" class="outline-2">
-<h2 id="org2485fe0"><span class="section-number-2">4.</span> Stirling's Series</h2>
+<div id="outline-container-org21b4bae" class="outline-2">
+<h2 id="org21b4bae"><span class="section-number-2">4.</span> Stirling's Series</h2>
 <div class="outline-text-2" id="text-4">
 \begin{align}
   \Gamma(x) \sim x^{x-1/2} e^{-x}\sqrt{2\pi}
@@ -310,8 +310,8 @@ Poles are "mocking up" the cut.
 </div>
 </div>
 
-<div id="outline-container-orga1d3154" class="outline-2">
-<h2 id="orga1d3154"><span class="section-number-2">5.</span> What is Asymptotic Series?</h2>
+<div id="outline-container-org536f55b" class="outline-2">
+<h2 id="org536f55b"><span class="section-number-2">5.</span> What is Asymptotic Series?</h2>
 <div class="outline-text-2" id="text-5">
 \begin{align}
   f(x) - \sum_{n = 0}^N a_n x^n \sim a_{N + 1} x^{N + 1}
@@ -371,8 +371,8 @@ asymptotic series 也可以有其它的形式, 如
 </div>
 </div>
 
-<div id="outline-container-org12f74bf" class="outline-2">
-<h2 id="org12f74bf"><span class="section-number-2">6.</span> An Example about "How do asymptotic series arise?"</h2>
+<div id="outline-container-orgef655ec" class="outline-2">
+<h2 id="orgef655ec"><span class="section-number-2">6.</span> An Example about "How do asymptotic series arise?"</h2>
 <div class="outline-text-2" id="text-6">
 <p>
 对
@@ -385,8 +385,8 @@ asymptotic series 也可以有其它的形式, 如
 </p>
 </div>
 
-<div id="outline-container-orga684f6d" class="outline-3">
-<h3 id="orga684f6d"><span class="section-number-3">6.1.</span> 偏题: 如何分析一个 second order linear DE?</h3>
+<div id="outline-container-org3c06ff8" class="outline-3">
+<h3 id="org3c06ff8"><span class="section-number-3">6.1.</span> 偏题: 如何分析一个 second order linear DE?</h3>
 <div class="outline-text-3" id="text-6-1">
 <p>
 拿到形如
@@ -409,8 +409,8 @@ There are exactly three possibilities there.
 </p>
 </div>
 
-<div id="outline-container-orgdf1acfb" class="outline-4">
-<h4 id="orgdf1acfb"><span class="section-number-4">6.1.1.</span> case 1</h4>
+<div id="outline-container-orgff57be9" class="outline-4">
+<h4 id="orgff57be9"><span class="section-number-4">6.1.1.</span> case 1</h4>
 <div class="outline-text-4" id="text-6-1-1">
 <p>
 \(A(x)\) , \(B(x)\) analytic near \(x = x_0\) ( \(x_0\) is a regular point)
@@ -431,8 +431,8 @@ All solutions have a Taylor series about \(x = x_0\)
 </div>
 </div>
 
-<div id="outline-container-orge9151da" class="outline-4">
-<h4 id="orge9151da"><span class="section-number-4">6.1.2.</span> case 2</h4>
+<div id="outline-container-org56a635b" class="outline-4">
+<h4 id="org56a635b"><span class="section-number-4">6.1.2.</span> case 2</h4>
 <div class="outline-text-4" id="text-6-1-2">
 <p>
 Not both \(A\) and \(B\) are analytical. But \((x - x_0) A(x)\) and \((x - x_0) B(x)\)
@@ -459,8 +459,8 @@ the nearest singularity.
 </div>
 </div>
 
-<div id="outline-container-orgb82acee" class="outline-4">
-<h4 id="orgb82acee"><span class="section-number-4">6.1.3.</span> case 3</h4>
+<div id="outline-container-org53aa92b" class="outline-4">
+<h4 id="org53aa92b"><span class="section-number-4">6.1.3.</span> case 3</h4>
 <div class="outline-text-4" id="text-6-1-3">
 <p>
 \(x_0\) is an irregular point.
@@ -469,8 +469,8 @@ the nearest singularity.
 </div>
 </div>
 
-<div id="outline-container-orgf3359d7" class="outline-3">
-<h3 id="orgf3359d7"><span class="section-number-3">6.2.</span> local analysis</h3>
+<div id="outline-container-orgc64d7e9" class="outline-3">
+<h3 id="orgc64d7e9"><span class="section-number-3">6.2.</span> local analysis</h3>
 <div class="outline-text-3" id="text-6-2">
 <p>
 对于
@@ -507,8 +507,8 @@ the nearest singularity.
 </p>
 </div>
 
-<div id="outline-container-org833502f" class="outline-4">
-<h4 id="org833502f"><span class="section-number-4">6.2.1.</span> \(y' = \frac{y}{2}\)</h4>
+<div id="outline-container-org02f043a" class="outline-4">
+<h4 id="org02f043a"><span class="section-number-4">6.2.1.</span> \(y' = \frac{y}{2}\)</h4>
 <div class="outline-text-4" id="text-6-2-1">
 <p>
 它的 case 1, 在 \(x = 0\) 处是 regular point. 那么它有 Taylor series 形式的解. 当
@@ -520,8 +520,8 @@ the nearest singularity.
 </div>
 </div>
 
-<div id="outline-container-org6921c3e" class="outline-4">
-<h4 id="org6921c3e"><span class="section-number-4">6.2.2.</span> \(y' = \frac{y}{2x}\)</h4>
+<div id="outline-container-orgd5c1223" class="outline-4">
+<h4 id="orgd5c1223"><span class="section-number-4">6.2.2.</span> \(y' = \frac{y}{2x}\)</h4>
 <div class="outline-text-4" id="text-6-2-2">
 <p>
 它是 case 2, 在 \(x = 0\) 处是 regular singular point. 它的解为
@@ -535,8 +535,8 @@ the nearest singularity.
 </div>
 </div>
 
-<div id="outline-container-orgabf51df" class="outline-4">
-<h4 id="orgabf51df"><span class="section-number-4">6.2.3.</span> \(y' = \frac{y}{2x^2}\)</h4>
+<div id="outline-container-org9de3698" class="outline-4">
+<h4 id="org9de3698"><span class="section-number-4">6.2.3.</span> \(y' = \frac{y}{2x^2}\)</h4>
 <div class="outline-text-4" id="text-6-2-3">
 <p>
 它是 case 3, irregular point. 但是它的可解的, 结果是
@@ -554,8 +554,8 @@ the nearest singularity.
 </div>
 </div>
 
-<div id="outline-container-org32ae695" class="outline-3">
-<h3 id="org32ae695"><span class="section-number-3">6.3.</span> How do asymptotic series arise?</h3>
+<div id="outline-container-org3f855d1" class="outline-3">
+<h3 id="org3f855d1"><span class="section-number-3">6.3.</span> How do asymptotic series arise?</h3>
 <div class="outline-text-3" id="text-6-3">
 <p>
 因此, Green (是 George Green?)给出了这样的 suggested, 一个 \(y = e^{s(x)}\) 形式的
@@ -601,7 +601,7 @@ asymptotic relations
 \end{align}
 <p>
 ha! I can solve that equation. It's only a first order euqation.
-<img src="2021-03-02-专业笔记-CarlBenderMathematicalPhysicsLecture7/bender.png" alt="bender.png" />
+<img src="2021-03-02-physics-CarlBenderMathematicalPhysicsLecture7/bender.png" alt="bender.png" />
 </p>
 \begin{align}
 s \sim \mp C\frac{2}{\sqrt{x}}\quad \mathrm{as} \quad x\to 0
@@ -660,8 +660,8 @@ series representation.
 </div>
 </div>
 
-<div id="outline-container-org7c34cd8" class="outline-2">
-<h2 id="org7c34cd8"><span class="section-number-2">7.</span> Summary</h2>
+<div id="outline-container-orge5f6d3e" class="outline-2">
+<h2 id="orge5f6d3e"><span class="section-number-2">7.</span> Summary</h2>
 <div class="outline-text-2" id="text-7">
 <p>
 介绍了 asymptotic series 的定义, 之后重点用一个例子说明我们是如何有了 asymptotic
@@ -671,8 +671,8 @@ series 这个概念的: 我们发现了一些方程, 它的解的形式只能用
 </div>
 </div>
 
-<div id="outline-container-orgf7d1657" class="outline-2">
-<h2 id="orgf7d1657"><span class="section-number-2">8.</span> Reference</h2>
+<div id="outline-container-org2d28268" class="outline-2">
+<h2 id="org2d28268"><span class="section-number-2">8.</span> Reference</h2>
 <div class="outline-text-2" id="text-8">
 <ul class="org-ul">
 <li><a href="https://mathworld.wolfram.com/StirlingsSeries.html">Stirling's Series</a></li>
@@ -686,7 +686,7 @@ series 这个概念的: 我们发现了一些方程, 它的解的形式只能用
 </div>
 <div id="postamble" class="status">
 <p class="date">Date: 2021-03-02 Tue 00:00</p>
-<p class="date">Created: 2022-04-16 Sat 23:05</p>
+<p class="date">Created: 2022-04-18 Mon 20:38</p>
 <p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>

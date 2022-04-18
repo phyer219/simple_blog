@@ -204,9 +204,9 @@ plt.show()
 
 ** figure
 
-[[file:./2019-03-06-专业笔记-RabiFormula/fig.gif]]
+[[file:./2019-03-06-physics-RabiFormula/fig.gif]]
 
-[[file:./2019-03-06-专业笔记-RabiFormula/fig.mp4]]
+[[file:./2019-03-06-physics-RabiFormula/fig.mp4]]
 
 * 总结
 

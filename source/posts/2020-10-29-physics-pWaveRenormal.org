@@ -41,7 +41,7 @@
 
 下图中 $G_0$ 表示自由原子的自由松原格林函数, $D_0$ 表示两个原子形成的分子的自由
 松原格林函数, $D$ 表示考虑分子分裂和形成之后的分子格林函数
-[[file:./2020-10-29-专业笔记-pWaveRenormal/diagram.png]]
+[[file:./2020-10-29-physics-pWaveRenormal/diagram.png]]
 通过图可以对应 Dyson 方程
 \begin{align}
 D = D_0-D_0 \left(\frac{1}{\beta}\sum_{\vec{k}_1, \omega}\mathcal{V} G_1 G_2\mathcal{V}^* \right) D

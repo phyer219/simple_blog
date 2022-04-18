@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2022-04-16 Sat 23:05 -->
+<!-- 2022-04-18 Mon 20:39 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Stationary Phase Approx, Laplace's Method</title>
@@ -221,33 +221,33 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#orgae22690">1. Laplace's Method</a>
+<li><a href="#org6e27afb">1. Laplace's Method</a>
 <ul>
-<li><a href="#org2dba9ca">1.1. 结论</a></li>
-<li><a href="#org3182b7d">1.2. 证明</a></li>
-<li><a href="#org441ecff">1.3. 例子: Stirling's Approx</a></li>
+<li><a href="#org503b591">1.1. 结论</a></li>
+<li><a href="#orgba981cb">1.2. 证明</a></li>
+<li><a href="#org9853995">1.3. 例子: Stirling's Approx</a></li>
 </ul>
 </li>
-<li><a href="#orgad023ee">2. Stationary Phase Approx</a>
+<li><a href="#org4f2dfbf">2. Stationary Phase Approx</a>
 <ul>
-<li><a href="#orga3574c3">2.1. 结论</a></li>
-<li><a href="#org2754789">2.2. Intuition (不做严格证明)</a></li>
-<li><a href="#org678ada9">2.3. 例: Bessel functions 的渐近形式</a></li>
+<li><a href="#org3accf41">2.1. 结论</a></li>
+<li><a href="#org0403c79">2.2. Intuition (不做严格证明)</a></li>
+<li><a href="#org9354278">2.3. 例: Bessel functions 的渐近形式</a></li>
 </ul>
 </li>
-<li><a href="#orgdc3fda2">3. Reference</a></li>
+<li><a href="#org22f633b">3. Reference</a></li>
 </ul>
 </div>
 </div>
 <!-- toc -->
 <!-- more -->
 
-<div id="outline-container-orgae22690" class="outline-2">
-<h2 id="orgae22690"><span class="section-number-2">1.</span> Laplace's Method</h2>
+<div id="outline-container-org6e27afb" class="outline-2">
+<h2 id="org6e27afb"><span class="section-number-2">1.</span> Laplace's Method</h2>
 <div class="outline-text-2" id="text-1">
 </div>
-<div id="outline-container-org2dba9ca" class="outline-3">
-<h3 id="org2dba9ca"><span class="section-number-3">1.1.</span> 结论</h3>
+<div id="outline-container-org503b591" class="outline-3">
+<h3 id="org503b591"><span class="section-number-3">1.1.</span> 结论</h3>
 <div class="outline-text-3" id="text-1-1">
 <p>
 对于积分
@@ -267,8 +267,8 @@
 </div>
 </div>
 
-<div id="outline-container-org3182b7d" class="outline-3">
-<h3 id="org3182b7d"><span class="section-number-3">1.2.</span> 证明</h3>
+<div id="outline-container-orgba981cb" class="outline-3">
+<h3 id="orgba981cb"><span class="section-number-3">1.2.</span> 证明</h3>
 <div class="outline-text-3" id="text-1-2">
 <p>
 将 \(f(x)\) 在 \(x = x_0\) 处 Taylor 展开
@@ -284,7 +284,7 @@
 <p>
 由于 \(f(x_0)\) 是极大值, 且 \(M\) 很大, 所以积分主要由 \(x_0\) 附近贡献. 下图是
 \(f(x)= -x^2\) 时的情况, 可以看出 \(M\) 越大, 积分的贡献越集中于 \(x_{0}\) 处
-<img src="./2020-09-23-专业笔记-StationaryPhaseApprox/laplace.png" alt="laplace.png" />
+<img src="./2020-09-23-physics-StationaryPhaseApprox/laplace.png" alt="laplace.png" />
 只保留到展开的二阶项, 略去更高阶, 因此积分近似为
 </p>
 \begin{align}
@@ -301,8 +301,8 @@
 </div>
 </div>
 
-<div id="outline-container-org441ecff" class="outline-3">
-<h3 id="org441ecff"><span class="section-number-3">1.3.</span> 例子: Stirling's Approx</h3>
+<div id="outline-container-org9853995" class="outline-3">
+<h3 id="org9853995"><span class="section-number-3">1.3.</span> 例子: Stirling's Approx</h3>
 <div class="outline-text-3" id="text-1-3">
 <p>
 \(\Gamma\) function 为
@@ -324,7 +324,7 @@
 \end{align}
 <p>
 其中 \(f(t) = -t +\ln t\) 如下图
-<img src="./2020-09-23-专业笔记-StationaryPhaseApprox/stirling.png" alt="stirling.png" />
+<img src="./2020-09-23-physics-StationaryPhaseApprox/stirling.png" alt="stirling.png" />
 在 \(t = 1\) 处有极大值. 因此可以用 Laplace's method 做近似为
 </p>
 \begin{align}
@@ -344,12 +344,12 @@ Stirling 公式.
 </div>
 </div>
 
-<div id="outline-container-orgad023ee" class="outline-2">
-<h2 id="orgad023ee"><span class="section-number-2">2.</span> Stationary Phase Approx</h2>
+<div id="outline-container-org4f2dfbf" class="outline-2">
+<h2 id="org4f2dfbf"><span class="section-number-2">2.</span> Stationary Phase Approx</h2>
 <div class="outline-text-2" id="text-2">
 </div>
-<div id="outline-container-orga3574c3" class="outline-3">
-<h3 id="orga3574c3"><span class="section-number-3">2.1.</span> 结论</h3>
+<div id="outline-container-org3accf41" class="outline-3">
+<h3 id="org3accf41"><span class="section-number-3">2.1.</span> 结论</h3>
 <div class="outline-text-3" id="text-2-1">
 <p>
 对于积分
@@ -369,8 +369,8 @@ stationary points (也就是一阶导数为零的点) \(s_j, 其中 j = 1, 2, \c
 </div>
 </div>
 
-<div id="outline-container-org2754789" class="outline-3">
-<h3 id="org2754789"><span class="section-number-3">2.2.</span> Intuition (不做严格证明)</h3>
+<div id="outline-container-org0403c79" class="outline-3">
+<h3 id="org0403c79"><span class="section-number-3">2.2.</span> Intuition (不做严格证明)</h3>
 <div class="outline-text-3" id="text-2-2">
 <p>
 假设 \(f(t)\) 只有一个 stationary point \(s_j \in(a, b)\) : \(f'(s_j) = 0\) .
@@ -411,8 +411,8 @@ stationary points (也就是一阶导数为零的点) \(s_j, 其中 j = 1, 2, \c
 </div>
 </div>
 
-<div id="outline-container-org678ada9" class="outline-3">
-<h3 id="org678ada9"><span class="section-number-3">2.3.</span> 例: Bessel functions 的渐近形式</h3>
+<div id="outline-container-org9354278" class="outline-3">
+<h3 id="org9354278"><span class="section-number-3">2.3.</span> 例: Bessel functions 的渐近形式</h3>
 <div class="outline-text-3" id="text-2-3">
 <p>
 Bessel functions 的积分表达形式为
@@ -457,8 +457,8 @@ Bessel functions 的积分表达形式为
 </div>
 </div>
 
-<div id="outline-container-orgdc3fda2" class="outline-2">
-<h2 id="orgdc3fda2"><span class="section-number-2">3.</span> Reference</h2>
+<div id="outline-container-org22f633b" class="outline-2">
+<h2 id="org22f633b"><span class="section-number-2">3.</span> Reference</h2>
 <div class="outline-text-2" id="text-3">
 <ul class="org-ul">
 <li><a href="https://www.youtube.com/watch?v=7PuZQhqkWxk">https://www.youtube.com/watch?v=7PuZQhqkWxk</a></li>
@@ -475,7 +475,7 @@ Edition-Cambridge University Press (2010)</li>
 </div>
 <div id="postamble" class="status">
 <p class="date">Date: 2020-09-23 Wed 00:00</p>
-<p class="date">Created: 2022-04-16 Sat 23:05</p>
+<p class="date">Created: 2022-04-18 Mon 20:39</p>
 <p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>

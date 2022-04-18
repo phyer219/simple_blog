@@ -141,8 +141,8 @@ $\vec{k}$ 的态耦合起来, 这些项就是非对角项. 从这个方程, 可�
 用完重整化关系, 得到一个收敛的结果. 把这个结果画出来, right hand side 作为 $E$
 的函数, 当 $E=0$ 时它取 $0$ , 它大体上就是 $\propto\sqrt{-E}$ , 而方程在左边
 
-[[file:./2019-11-14-专业笔记-BCS/fig.jpg]]
-[[file:./2019-11-14-专业笔记-BCS/fig.py][picture code]]
+[[file:./2019-11-14-physics-BCS/fig.jpg]]
+[[file:./2019-11-14-physics-BCS/fig.py][picture code]]
 
 当 $a_s>0$ 的时候, 方程左边是一条在上边的横线, 与 r.h.s. 有一个交点, 这个交点就
 是 2-body energy 的解, 这个交点就是
@@ -192,8 +192,8 @@ Cooper 问题是再在这个 Fermi sea 上放两个粒子, 这时候它的激发
 \end{align}
 这里的 r.h.s 在 $E\to 0$ 的时候, 是往负无穷发散的.
 
-[[file:./2019-11-14-专业笔记-BCS/fig2.jpg]]
-[[file:./2019-11-14-专业笔记-BCS/fig2.py][picture code]]
+[[file:./2019-11-14-physics-BCS/fig2.jpg]]
+[[file:./2019-11-14-physics-BCS/fig2.py][picture code]]
 
 为什么会有这样一个区别? 是因为两体问题的时候, 两个粒子是加在色散关系底部的. 它的
 态密度是 $\sqrt{E}$ 的关系. 两体问题是加在趋于 $0$ 的地方, 而 Cooper 问题是加在

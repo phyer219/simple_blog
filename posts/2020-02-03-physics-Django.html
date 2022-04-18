@@ -110,7 +110,7 @@ ALLOWED_HOSTS = [‘服务器IP地址’]</code></p>
 (.sabafun)[root@cloud]$ python manage.py runserver 0.0.0.0:8000</code></p>
 <p>对项目的一些操作都保存在 mange.py 文件中。出现关于数据库的提示可以忽略。Django 默认用 SQLite 作数据库。而我们不用它，而是用 Mariadb。</p>
 <p>此时从本地访问 http://你的服务器IP:8000 ，出现如下小火箭界面，表示成功</p>
-<p><img alt="image-20200204125926942" src="./2020-02-03-专业笔记-Django/image-20200204125926942.png" /></p>
+<p><img alt="image-20200204125926942" src="./2020-02-03-physics-Django/image-20200204125926942.png" /></p>
 <p>如果无法访问，可以查看一下服务器的 8000 端口是否开放。一般都可以从云服务器的管理页面中找到安全组设置。</p>
 <h1>Django 的大致工作流程</h1>
 <p>比较业余的理解，Django 是一个用 Python 写网站的框架。我们可以用 Python 语言写一些函数来实现想要的功能。web 服务器，如 Apache，负责将我们设计好的功能提供给浏览器。而 mod_wsgi 负责将我们用 Python 写的功能翻译给 Apache。网站的数据，如我们用于展示的《诗经》就存储在 Mariadb 数据库中。</p>
@@ -299,7 +299,7 @@ from django.contrib import admin</p>
 <p><code>shell
 (.sabafun)[root@cloud]$ python manage.py runserver 0.0.0.0:8000</code></p>
 <p>在本地通过浏览器访问 IP::8000/admin/ 就会看到 Shijing</p>
-<p><img alt="image-20200204153009618" src="./2020-02-03-专业笔记-Django/image-20200204153009618.png" /></p>
+<p><img alt="image-20200204153009618" src="./2020-02-03-physics-Django/image-20200204153009618.png" /></p>
 <h1>迁入 json 数据</h1>
 <p>然后将 github 上的诗词数据库 https://github.com/chinese-poetry/chinese-poetry 中的 shijing.json 传到服务器上，并在同一目录下编写文件 json_to_database.py</p>
 <p>```python
@@ -354,7 +354,7 @@ poetry.commit()                                      # 提交更改             
 (.sabafun)[root@cloud]$ python json_to_database.py</code></p>
 <p>就把 305 首诗经导入到数据库中了！</p>
 <p>进入管理界面，看到 305 个导入的数据</p>
-<p><img alt="image-20200204165427906" src="./2020-02-03-专业笔记-Django/image-20200204165427906.png" /></p>
+<p><img alt="image-20200204165427906" src="./2020-02-03-physics-Django/image-20200204165427906.png" /></p>
 <p>成功！</p>
 <h1>修改 poetry/views.py 文件</h1>
 <p>至此为止，我们只能够在管理页面中看到诗经，下面让它在网页上显示。</p>
@@ -394,7 +394,7 @@ poetry</code></p>
 </code></pre>
 <p>```</p>
 <p>shijing_list 就是通过 render() 函数传递过来的字典的键。重启 httpd 从本地访问 IP/poetry，就看到如下界面了！</p>
-<p><img alt="image-20200204210647475" src="./2020-02-03-专业笔记-Django/image-20200204210647475.png" /></p>
+<p><img alt="image-20200204210647475" src="./2020-02-03-physics-Django/image-20200204210647475.png" /></p>
 <h1>后续操作</h1>
 <p>Apache 配置</p>
 <p>```</p>
@@ -492,7 +492,7 @@ pip 9.0.3 from /usr/lib/python3.6/site-packages (python 3.6)</code></p>
 <p><code>shell
 [root@cloud]$ systemctl start httpd</code></p>
 <p>从本机登录 IP 会看到测试界面</p>
-<p><img alt="image-20200204114524492" src="./2020-02-03-专业笔记-Django/image-20200204114524492.png" /></p>
+<p><img alt="image-20200204114524492" src="./2020-02-03-physics-Django/image-20200204114524492.png" /></p>
 <p>让 Apache 开机自动运行</p>
 <p><code>shell
 [root@cloud]$ systemctl enable httpd</code></p>
@@ -680,7 +680,7 @@ Starting development server at http://0.0.0.0:8000/
 Quit the server with CONTROL-C.</p>
 <p>```</p>
 <p>此时从本地访问 8000 端口，终于出现了小火箭界面</p>
-<p><img alt="image-20200204125926942" src="./2020-02-03-专业笔记-Django/image-20200204125926942.png" /></p>
+<p><img alt="image-20200204125926942" src="./2020-02-03-physics-Django/image-20200204125926942.png" /></p>
 <p>参考官方文档连接 Apache https://docs.djangoproject.com/zh-hans/3.0/howto/deployment/wsgi/modwsgi/</p>
 <h2>连接 mod_wsgi</h2>
 <p>首先安装 mod_wsgi</p>
@@ -949,7 +949,7 @@ Running migrations:
 <p>admin.site.register(Shijing)
 ```</p>
 <p>这时 IP::8000/admin/　就会看到 Shijing</p>
-<p><img alt="image-20200204153009618" src="./2020-02-03-专业笔记-Django/image-20200204153009618.png" /></p>
+<p><img alt="image-20200204153009618" src="./2020-02-03-physics-Django/image-20200204153009618.png" /></p>
 <h2>迁入 json 数据</h2>
 <p><code>mysql
 删除表中所有条目
@@ -1006,7 +1006,7 @@ poetry.commit()                                      # 提交更改             
 <p><code>shell
 (.sabafun)[root@cloud]$ python json_to_database.py</code></p>
 <p>进入管理界面，看到 305 个导入的数据</p>
-<p><img alt="image-20200204165427906" src="./2020-02-03-专业笔记-Django/image-20200204165427906.png" /></p>
+<p><img alt="image-20200204165427906" src="./2020-02-03-physics-Django/image-20200204165427906.png" /></p>
 <p>成功！</p>
 <h2>编写网页，来显示</h2>
 <p><code>shell
@@ -1045,7 +1045,7 @@ poetry</code></p>
     return render(request, 'poetry/poetry.html', context)
 ```</p>
 <p>重启 httpd 从本地访问 IP/poetry，就看到界面了</p>
-<p><img alt="image-20200204210647475" src="./2020-02-03-专业笔记-Django/image-20200204210647475.png" /></p>
+<p><img alt="image-20200204210647475" src="./2020-02-03-physics-Django/image-20200204210647475.png" /></p>
 <h1>参考资料</h1>
 <ol>
 <li>Eric Matthes 著，袁国忠 译, Python 编程从入门到实践，中国工信出版集团，2016，人民邮电出版社</li>

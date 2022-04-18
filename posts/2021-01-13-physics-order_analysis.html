@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2022-04-16 Sat 23:05 -->
+<!-- 2022-04-18 Mon 20:39 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>积分阶数的分析技巧</title>
@@ -221,19 +221,19 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#orga0a51f2">1. 问题</a></li>
-<li><a href="#orge867d10">2. 方法</a></li>
-<li><a href="#org4fe37fb">3. 评述</a></li>
-<li><a href="#org7add191">4. 数值验证</a></li>
-<li><a href="#org88a79f6">5. 致谢</a></li>
+<li><a href="#org7714c4c">1. 问题</a></li>
+<li><a href="#org5d63fbe">2. 方法</a></li>
+<li><a href="#orge58bc92">3. 评述</a></li>
+<li><a href="#orge1a2256">4. 数值验证</a></li>
+<li><a href="#orgcccdad6">5. 致谢</a></li>
 </ul>
 </div>
 </div>
 <!-- toc -->
 <!-- more -->
 
-<div id="outline-container-orga0a51f2" class="outline-2">
-<h2 id="orga0a51f2"><span class="section-number-2">1.</span> 问题</h2>
+<div id="outline-container-org7714c4c" class="outline-2">
+<h2 id="org7714c4c"><span class="section-number-2">1.</span> 问题</h2>
 <div class="outline-text-2" id="text-1">
 <p>
 已知积分 
@@ -248,8 +248,8 @@
 </div>
 </div>
 
-<div id="outline-container-orge867d10" class="outline-2">
-<h2 id="orge867d10"><span class="section-number-2">2.</span> 方法</h2>
+<div id="outline-container-org5d63fbe" class="outline-2">
+<h2 id="org5d63fbe"><span class="section-number-2">2.</span> 方法</h2>
 <div class="outline-text-2" id="text-2">
 <p>
 令 \(x = \kappa r\) , 则 
@@ -265,8 +265,8 @@
 </div>
 </div>
 
-<div id="outline-container-org4fe37fb" class="outline-2">
-<h2 id="org4fe37fb"><span class="section-number-2">3.</span> 评述</h2>
+<div id="outline-container-orge58bc92" class="outline-2">
+<h2 id="orge58bc92"><span class="section-number-2">3.</span> 评述</h2>
 <div class="outline-text-2" id="text-3">
 <p>
 比较直接的思路, 是直接把 \(F(\kappa r)\) 在 \(\kappa = 0\) 处展开, 再把 \(r\) 积掉. 但是 \(F\)
@@ -280,8 +280,8 @@
 </div>
 </div>
 
-<div id="outline-container-org7add191" class="outline-2">
-<h2 id="org7add191"><span class="section-number-2">4.</span> 数值验证</h2>
+<div id="outline-container-orge1a2256" class="outline-2">
+<h2 id="orge1a2256"><span class="section-number-2">4.</span> 数值验证</h2>
 <div class="outline-text-2" id="text-4">
 <p>
 对于 
@@ -295,8 +295,8 @@
 </p>
 
 <p>
-<img src="./2021-01-13-专业笔记-order_analysis/fig.png" alt="fig.png" />
-code: <a href="./2021-01-13-专业笔记-order_analysis/plot.ipynb">./2021-01-13-专业笔记-order_analysis/plot.ipynb</a> (第一次用 Sage, 有些函
+<img src="./2021-01-13-physics-order_analysis/fig.png" alt="fig.png" />
+code: <a href="./2021-01-13-physics-order_analysis/plot.ipynb">./2021-01-13-physics-order_analysis/plot.ipynb</a> (第一次用 Sage, 有些函
 数不知道怎么实现, 只能和 numpy, pyplot 混着用了 ^_^%)
 </p>
 <div class="org-src-container">
@@ -329,8 +329,8 @@ plt.savefig('fig.png')
 </div>
 </div>
 
-<div id="outline-container-org88a79f6" class="outline-2">
-<h2 id="org88a79f6"><span class="section-number-2">5.</span> 致谢</h2>
+<div id="outline-container-orgcccdad6" class="outline-2">
+<h2 id="orgcccdad6"><span class="section-number-2">5.</span> 致谢</h2>
 <div class="outline-text-2" id="text-5">
 <p>
 Qi
@@ -340,7 +340,7 @@ Qi
 </div>
 <div id="postamble" class="status">
 <p class="date">Date: 2021-01-13 Wed 00:00</p>
-<p class="date">Created: 2022-04-16 Sat 23:05</p>
+<p class="date">Created: 2022-04-18 Mon 20:39</p>
 <p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>

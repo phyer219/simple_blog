@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2022-04-16 Sat 23:05 -->
+<!-- 2022-04-18 Mon 20:39 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>FFT (Fast Fourier Transform) 笔记</title>
@@ -221,32 +221,32 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#org6c11bb2">1. 问题</a></li>
-<li><a href="#orgdc76dd6">2. DFT (Discreate Fourier Transform)</a></li>
-<li><a href="#orgb168320">3. 精髓</a></li>
-<li><a href="#org4d91ba6">4. 结论</a></li>
-<li><a href="#org5c07cf6">5. 简的可以手算的例子</a></li>
-<li><a href="#orgff080e4">6. 输出结果分析</a>
+<li><a href="#orgb388ac3">1. 问题</a></li>
+<li><a href="#orgd8afe5e">2. DFT (Discreate Fourier Transform)</a></li>
+<li><a href="#org8af55d6">3. 精髓</a></li>
+<li><a href="#org0668cac">4. 结论</a></li>
+<li><a href="#org901d0a8">5. 简的可以手算的例子</a></li>
+<li><a href="#orgac0fdf8">6. 输出结果分析</a>
 <ul>
-<li><a href="#org6ae8cea">6.1. 输出的对称性</a></li>
-<li><a href="#orgb65c8dc">6.2. 三角函数和 \(e\) 指数形式的 Fourier Transform 之间的联系</a></li>
-<li><a href="#org8789ffa">6.3. 输出结果中有价值的部分</a></li>
+<li><a href="#org1d351fb">6.1. 输出的对称性</a></li>
+<li><a href="#org7f40e5e">6.2. 三角函数和 \(e\) 指数形式的 Fourier Transform 之间的联系</a></li>
+<li><a href="#orgdef9808">6.3. 输出结果中有价值的部分</a></li>
 </ul>
 </li>
-<li><a href="#org4c2f3be">7. Python 程序示例</a>
+<li><a href="#org3fdf628">7. Python 程序示例</a>
 <ul>
-<li><a href="#org90d3d45">7.1. 三角函数的例子</a></li>
-<li><a href="#orgac78c24">7.2. 高斯函数的例子</a></li>
+<li><a href="#orgaff7d0d">7.1. 三角函数的例子</a></li>
+<li><a href="#org2fe36cc">7.2. 高斯函数的例子</a></li>
 </ul>
 </li>
-<li><a href="#org58bb2b9">8. 致谢与参考书</a></li>
+<li><a href="#orge224b1a">8. 致谢与参考书</a></li>
 </ul>
 </div>
 </div>
 <!-- toc -->
 <!-- more -->
-<div id="outline-container-org6c11bb2" class="outline-2">
-<h2 id="org6c11bb2"><span class="section-number-2">1.</span> 问题</h2>
+<div id="outline-container-orgb388ac3" class="outline-2">
+<h2 id="orgb388ac3"><span class="section-number-2">1.</span> 问题</h2>
 <div class="outline-text-2" id="text-1">
 <p>
 函数 \(f(t)\) 的 Fourier Transform 为
@@ -266,8 +266,8 @@
 </div>
 </div>
 
-<div id="outline-container-orgdc76dd6" class="outline-2">
-<h2 id="orgdc76dd6"><span class="section-number-2">2.</span> DFT (Discreate Fourier Transform)</h2>
+<div id="outline-container-orgd8afe5e" class="outline-2">
+<h2 id="orgd8afe5e"><span class="section-number-2">2.</span> DFT (Discreate Fourier Transform)</h2>
 <div class="outline-text-2" id="text-2">
 <p>
 如果用计算机进行数值上的计算, 会对积分进行离散化, 那么就变成了离散的 Fourier Transform .
@@ -291,8 +291,8 @@
 </div>
 </div>
 
-<div id="outline-container-orgb168320" class="outline-2">
-<h2 id="orgb168320"><span class="section-number-2">3.</span> 精髓</h2>
+<div id="outline-container-org8af55d6" class="outline-2">
+<h2 id="org8af55d6"><span class="section-number-2">3.</span> 精髓</h2>
 <div class="outline-text-2" id="text-3">
 <p>
 进行数值计算时, 对应每一个 \(\omega\) 都要算一个求和. 我们只能进行有限次数的计算, 因此必须要选取特定的 \(\omega\) 进行计算, 也就是
@@ -329,8 +329,8 @@ FFT 将 \(\omega\) 同样离散化成 \(N\) 个 (这样做的优势以后将会�
 </div>
 </div>
 
-<div id="outline-container-org4d91ba6" class="outline-2">
-<h2 id="org4d91ba6"><span class="section-number-2">4.</span> 结论</h2>
+<div id="outline-container-org0668cac" class="outline-2">
+<h2 id="org0668cac"><span class="section-number-2">4.</span> 结论</h2>
 <div class="outline-text-2" id="text-4">
 <p>
 这样选取 \(\Delta\omega\) 的结果就使原式变成了
@@ -382,8 +382,8 @@ FFT 将 \(\omega\) 同样离散化成 \(N\) 个 (这样做的优势以后将会�
 </div>
 </div>
 
-<div id="outline-container-org5c07cf6" class="outline-2">
-<h2 id="org5c07cf6"><span class="section-number-2">5.</span> 简的可以手算的例子</h2>
+<div id="outline-container-org901d0a8" class="outline-2">
+<h2 id="org901d0a8"><span class="section-number-2">5.</span> 简的可以手算的例子</h2>
 <div class="outline-text-2" id="text-5">
 <p>
 我之所以会对这个感兴趣, 是因为我想要用电脑对一些函数做 Fourier Transform ,于是得知有 FFT 这样现成的程序. 但是 FFT 给出的结果
@@ -482,12 +482,12 @@ print(F)
 </div>
 </div>
 
-<div id="outline-container-orgff080e4" class="outline-2">
-<h2 id="orgff080e4"><span class="section-number-2">6.</span> 输出结果分析</h2>
+<div id="outline-container-orgac0fdf8" class="outline-2">
+<h2 id="orgac0fdf8"><span class="section-number-2">6.</span> 输出结果分析</h2>
 <div class="outline-text-2" id="text-6">
 </div>
-<div id="outline-container-org6ae8cea" class="outline-3">
-<h3 id="org6ae8cea"><span class="section-number-3">6.1.</span> 输出的对称性</h3>
+<div id="outline-container-org1d351fb" class="outline-3">
+<h3 id="org1d351fb"><span class="section-number-3">6.1.</span> 输出的对称性</h3>
 <div class="outline-text-3" id="text-6-1">
 <p>
 变换矩阵中的元素
@@ -516,8 +516,8 @@ print(F)
 </div>
 </div>
 
-<div id="outline-container-orgb65c8dc" class="outline-3">
-<h3 id="orgb65c8dc"><span class="section-number-3">6.2.</span> 三角函数和 \(e\) 指数形式的 Fourier Transform 之间的联系</h3>
+<div id="outline-container-org7f40e5e" class="outline-3">
+<h3 id="org7f40e5e"><span class="section-number-3">6.2.</span> 三角函数和 \(e\) 指数形式的 Fourier Transform 之间的联系</h3>
 <div class="outline-text-3" id="text-6-2">
 <p>
 在我的印象中, Fourier Transform 的结果应该是一个实函数, 比如一个高斯函数的 Fourier Transform 的
@@ -583,8 +583,8 @@ print(F)
 </div>
 </div>
 
-<div id="outline-container-org8789ffa" class="outline-3">
-<h3 id="org8789ffa"><span class="section-number-3">6.3.</span> 输出结果中有价值的部分</h3>
+<div id="outline-container-orgdef9808" class="outline-3">
+<h3 id="orgdef9808"><span class="section-number-3">6.3.</span> 输出结果中有价值的部分</h3>
 <div class="outline-text-3" id="text-6-3">
 <p>
 输出结果的实部和虚部对应同一频率的振幅, 只不过实部是正弦部分, 虚部是余弦部分. 所以用其模长来刻画 Fourier Transform 的结果.
@@ -597,12 +597,12 @@ print(F)
 </div>
 </div>
 
-<div id="outline-container-org4c2f3be" class="outline-2">
-<h2 id="org4c2f3be"><span class="section-number-2">7.</span> Python 程序示例</h2>
+<div id="outline-container-org3fdf628" class="outline-2">
+<h2 id="org3fdf628"><span class="section-number-2">7.</span> Python 程序示例</h2>
 <div class="outline-text-2" id="text-7">
 </div>
-<div id="outline-container-org90d3d45" class="outline-3">
-<h3 id="org90d3d45"><span class="section-number-3">7.1.</span> 三角函数的例子</h3>
+<div id="outline-container-orgaff7d0d" class="outline-3">
+<h3 id="orgaff7d0d"><span class="section-number-3">7.1.</span> 三角函数的例子</h3>
 <div class="outline-text-3" id="text-7-1">
 <p>
 用 Numpy 中的 numpy.fft.fft() 函数计算三角函数
@@ -632,8 +632,8 @@ plt.show()
 </div>
 
 
-<div id="org50f0a87" class="figure">
-<p><img src="./2019-01-03-专业笔记-FFT(Fast Fourier Transformation)笔记/sin.png" alt="sin.png" />
+<div id="orgc6da370" class="figure">
+<p><img src="./2019-01-03-physics-FFT(Fast Fourier Transformation)笔记/sin.png" alt="sin.png" />
 </p>
 </div>
 
@@ -643,8 +643,8 @@ plt.show()
 </div>
 </div>
 
-<div id="outline-container-orgac78c24" class="outline-3">
-<h3 id="orgac78c24"><span class="section-number-3">7.2.</span> 高斯函数的例子</h3>
+<div id="outline-container-org2fe36cc" class="outline-3">
+<h3 id="org2fe36cc"><span class="section-number-3">7.2.</span> 高斯函数的例子</h3>
 <div class="outline-text-3" id="text-7-2">
 <p>
 用 Numpy 中的 numpy.fft.fft() 函数高斯函数
@@ -687,8 +687,8 @@ plt.show()
 </div>
 
 
-<div id="orga638aaa" class="figure">
-<p><img src="./2019-01-03-专业笔记-FFT(Fast Fourier Transformation)笔记/gau.png" alt="gau.png" />
+<div id="orgbeaf34f" class="figure">
+<p><img src="./2019-01-03-physics-FFT(Fast Fourier Transformation)笔记/gau.png" alt="gau.png" />
 </p>
 </div>
 
@@ -699,8 +699,8 @@ plt.show()
 </div>
 </div>
 
-<div id="outline-container-org58bb2b9" class="outline-2">
-<h2 id="org58bb2b9"><span class="section-number-2">8.</span> 致谢与参考书</h2>
+<div id="outline-container-orge224b1a" class="outline-2">
+<h2 id="orge224b1a"><span class="section-number-2">8.</span> 致谢与参考书</h2>
 <div class="outline-text-2" id="text-8">
 <p>
 苏变萍, 陈东立 编 复变函数与积分变换(第二版)
@@ -714,7 +714,7 @@ plt.show()
 </div>
 <div id="postamble" class="status">
 <p class="date">Date: 2019-01-03 Thu 00:00</p>
-<p class="date">Created: 2022-04-16 Sat 23:05</p>
+<p class="date">Created: 2022-04-18 Mon 20:39</p>
 <p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>

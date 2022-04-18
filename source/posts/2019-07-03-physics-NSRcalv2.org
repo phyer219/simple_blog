@@ -75,11 +75,11 @@ $\delta^p(\vec{q}, z)$ 的近似的解析表达式为
 以 $\tilde{q}$ 和 $\tilde{\omega}$ 为变量, 数值上画出的
 $\delta^p(\vec{q}, z)$ 的二维图为
 
-file:./2019-09-08-专业笔记-NSRcalv2/2Dfig.png
+file:./2019-09-08-physics-NSRcalv2/2Dfig.png
 
 是一个阶跃函数. 其边界和近似的解析表达式对比
 
-file:./2019-09-08-专业笔记-NSRcalv2/stepLine.png
+file:./2019-09-08-physics-NSRcalv2/stepLine.png
 
 * 计算 density I
 \begin{align}
@@ -116,7 +116,7 @@ $\tilde{\mu}$ 时积分部分的多条曲线.
 
 将结果与原文中的结果对比
 
-file:./2019-09-08-专业笔记-NSRcalv2/co-result.png
+file:./2019-09-08-physics-NSRcalv2/co-result.png
 
 - 蓝线: 原文结果
 - num 数值结果.
@@ -141,8 +141,8 @@ file:./2019-09-08-专业笔记-NSRcalv2/co-result.png
    \frac{n_{\varepsilon}}{n}\right)^{2/3}
 \end{align}
 
-file:./2019-09-08-专业笔记-NSRcalv2/Tc.png
+file:./2019-09-08-physics-NSRcalv2/Tc.png
 
-file:./2019-09-08-专业笔记-NSRcalv2/TcNum.png
+file:./2019-09-08-physics-NSRcalv2/TcNum.png
 
 

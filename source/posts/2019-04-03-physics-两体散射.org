@@ -232,11 +232,11 @@ $k'$ 在 $E_b$ 很小下的行为
 \end{align*}
 散射长度随势阱深度的变化, 以及低能束缚态在 $a_s\gg r_0$ 时的渐进行为如图所示
 
-[[file:./2019-04-03-专业笔记-两体散射/Figure_1.png]]
+[[file:./2019-04-03-physics-两体散射/Figure_1.png]]
 
-file:./2019-04-03-专业笔记-两体散射/Figure_1.eps
+file:./2019-04-03-physics-两体散射/Figure_1.eps
 
-file:./2019-04-03-专业笔记-两体散射/scatterlength.py
+file:./2019-04-03-physics-两体散射/scatterlength.py
 
 * Partial-Wave Expansion
 

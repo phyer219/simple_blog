@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2022-04-16 Sat 23:06 -->
+<!-- 2022-04-18 Mon 20:39 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>从此不再恐惧变分和高阶泛函导数(update 23/Sept/2020)</title>
@@ -221,28 +221,28 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#org325b32f">1. 前言</a></li>
-<li><a href="#org2e601ae">2. Definition</a></li>
-<li><a href="#org6bdf3c4">3. Example</a></li>
-<li><a href="#orgc546bff">4. Functional Derivative</a></li>
-<li><a href="#org6685cc6">5. High Order Derivative</a></li>
-<li><a href="#org40685bc">6. Example of High Order Derivative</a>
+<li><a href="#orge658b2b">1. 前言</a></li>
+<li><a href="#orgacab4f3">2. Definition</a></li>
+<li><a href="#orgdfb1b21">3. Example</a></li>
+<li><a href="#orgf569ab1">4. Functional Derivative</a></li>
+<li><a href="#org612edb6">5. High Order Derivative</a></li>
+<li><a href="#org3717d4a">6. Example of High Order Derivative</a>
 <ul>
-<li><a href="#orgc44ff44">6.1. Thomas-Fermi kinetic energy</a></li>
-<li><a href="#org70872da">6.2. Stationary Phase Approximation of a Single Particle Path Integral</a></li>
+<li><a href="#org010a7cd">6.1. Thomas-Fermi kinetic energy</a></li>
+<li><a href="#org54295c1">6.2. Stationary Phase Approximation of a Single Particle Path Integral</a></li>
 </ul>
 </li>
-<li><a href="#org56b6f67">7. Chain Rule for Functions to Functionals</a></li>
-<li><a href="#org25c4d94">8. Product Rule of Functional differentiation</a></li>
-<li><a href="#org5d7d00f">9. Reference</a></li>
+<li><a href="#orga1e9071">7. Chain Rule for Functions to Functionals</a></li>
+<li><a href="#org7716bab">8. Product Rule of Functional differentiation</a></li>
+<li><a href="#orgbd4c33c">9. Reference</a></li>
 </ul>
 </div>
 </div>
 <!-- toc -->
 <!-- more -->
 
-<div id="outline-container-org325b32f" class="outline-2">
-<h2 id="org325b32f"><span class="section-number-2">1.</span> 前言</h2>
+<div id="outline-container-orge658b2b" class="outline-2">
+<h2 id="orge658b2b"><span class="section-number-2">1.</span> 前言</h2>
 <div class="outline-text-2" id="text-1">
 <p>
 经常碰到, 将对泛的一些认识整理在这里, 以便查找.
@@ -250,8 +250,8 @@
 </div>
 </div>
 
-<div id="outline-container-org2e601ae" class="outline-2">
-<h2 id="org2e601ae"><span class="section-number-2">2.</span> Definition</h2>
+<div id="outline-container-orgacab4f3" class="outline-2">
+<h2 id="orgacab4f3"><span class="section-number-2">2.</span> Definition</h2>
 <div class="outline-text-2" id="text-2">
 <p>
 通俗地讲, function 的输入是一个数, 输出也是一个数. functional 输入的是一个
@@ -269,8 +269,8 @@ function, 输出是一个数
 </div>
 </div>
 
-<div id="outline-container-org6bdf3c4" class="outline-2">
-<h2 id="org6bdf3c4"><span class="section-number-2">3.</span> Example</h2>
+<div id="outline-container-orgdfb1b21" class="outline-2">
+<h2 id="orgdfb1b21"><span class="section-number-2">3.</span> Example</h2>
 <div class="outline-text-2" id="text-3">
 <p>
 functional \(G[f]\) 做用到一个 funciton \(f\) 上的结果如下
@@ -287,8 +287,8 @@ functional \(G[f]\) 做用到一个 funciton \(f\) 上的结果如下
 </div>
 </div>
 
-<div id="outline-container-orgc546bff" class="outline-2">
-<h2 id="orgc546bff"><span class="section-number-2">4.</span> Functional Derivative</h2>
+<div id="outline-container-orgf569ab1" class="outline-2">
+<h2 id="orgf569ab1"><span class="section-number-2">4.</span> Functional Derivative</h2>
 <div class="outline-text-2" id="text-4">
 <p>
 类似 function 的导数的定义, functional 的导数的定义如下
@@ -372,8 +372,8 @@ Example:
 </div>
 </div>
 
-<div id="outline-container-org6685cc6" class="outline-2">
-<h2 id="org6685cc6"><span class="section-number-2">5.</span> High Order Derivative</h2>
+<div id="outline-container-org612edb6" class="outline-2">
+<h2 id="org612edb6"><span class="section-number-2">5.</span> High Order Derivative</h2>
 <div class="outline-text-2" id="text-5">
 <p>
 functional 最 general 的导数的定义来来自于它的 Taylor 展开.
@@ -477,12 +477,12 @@ f(x)}\) 是一致的.
 </div>
 </div>
 
-<div id="outline-container-org40685bc" class="outline-2">
-<h2 id="org40685bc"><span class="section-number-2">6.</span> Example of High Order Derivative</h2>
+<div id="outline-container-org3717d4a" class="outline-2">
+<h2 id="org3717d4a"><span class="section-number-2">6.</span> Example of High Order Derivative</h2>
 <div class="outline-text-2" id="text-6">
 </div>
-<div id="outline-container-orgc44ff44" class="outline-3">
-<h3 id="orgc44ff44"><span class="section-number-3">6.1.</span> Thomas-Fermi kinetic energy</h3>
+<div id="outline-container-org010a7cd" class="outline-3">
+<h3 id="org010a7cd"><span class="section-number-3">6.1.</span> Thomas-Fermi kinetic energy</h3>
 <div class="outline-text-3" id="text-6-1">
 <p>
 参考 Ref[4] 中的例子, The energy functional of the simplest DFT, the
@@ -520,8 +520,8 @@ Thomas-Fermi kinetic energy
 </div>
 </div>
 
-<div id="outline-container-org70872da" class="outline-3">
-<h3 id="org70872da"><span class="section-number-3">6.2.</span> Stationary Phase Approximation of a Single Particle Path Integral</h3>
+<div id="outline-container-org54295c1" class="outline-3">
+<h3 id="org54295c1"><span class="section-number-3">6.2.</span> Stationary Phase Approximation of a Single Particle Path Integral</h3>
 <div class="outline-text-3" id="text-6-2">
 <p>
 此例子在 Simons 书的的第 110 页.
@@ -579,8 +579,8 @@ Thomas-Fermi kinetic energy
 </div>
 </div>
 
-<div id="outline-container-org56b6f67" class="outline-2">
-<h2 id="org56b6f67"><span class="section-number-2">7.</span> Chain Rule for Functions to Functionals</h2>
+<div id="outline-container-orga1e9071" class="outline-2">
+<h2 id="orga1e9071"><span class="section-number-2">7.</span> Chain Rule for Functions to Functionals</h2>
 <div class="outline-text-2" id="text-7">
 <p>
 对于泛函导数的链式法则, 首先要说明的是, 如 Ref[2] 中指出的, 并不存在 the
@@ -632,8 +632,8 @@ functional of a functional, 存在的是  functions to functional.
 </div>
 </div>
 
-<div id="outline-container-org25c4d94" class="outline-2">
-<h2 id="org25c4d94"><span class="section-number-2">8.</span> Product Rule of Functional differentiation</h2>
+<div id="outline-container-org7716bab" class="outline-2">
+<h2 id="org7716bab"><span class="section-number-2">8.</span> Product Rule of Functional differentiation</h2>
 <div class="outline-text-2" id="text-8">
 <p>
 直接用泛函导数的定义就可以得到
@@ -652,8 +652,8 @@ functional of a functional, 存在的是  functions to functional.
 </div>
 </div>
 
-<div id="outline-container-org5d7d00f" class="outline-2">
-<h2 id="org5d7d00f"><span class="section-number-2">9.</span> Reference</h2>
+<div id="outline-container-orgbd4c33c" class="outline-2">
+<h2 id="orgbd4c33c"><span class="section-number-2">9.</span> Reference</h2>
 <div class="outline-text-2" id="text-9">
 <ul class="org-ul">
 <li>[1] Tom Lancaster, Stephen J. Blundell, Quantum Field Theory for the Gifted
@@ -676,7 +676,7 @@ Edition-Cambridge University Press (2010)</li>
 </div>
 <div id="postamble" class="status">
 <p class="date">Date: 2020-05-18 Mon 00:00</p>
-<p class="date">Created: 2022-04-16 Sat 23:06</p>
+<p class="date">Created: 2022-04-18 Mon 20:39</p>
 <p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>

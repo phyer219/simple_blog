@@ -17,7 +17,7 @@ Schrodinger Equations deals only with pure states, can not describe loss and
 coherence.
 
 Exception:
-[[file:2021-11-24-专业笔记-MITAMO05/loss.png]]
+[[file:2021-11-24-physics-MITAMO05/loss.png]]
 
 can be still use a Hamiltonian with complex eigenvalues. 因为这种情况下我们只关
 心 $|e\rangle, |g\rangle$ 两个态, 不关心 decay 到的态
@@ -27,7 +27,7 @@ can be still use a Hamiltonian with complex eigenvalues. 因为这种情况下�
 
 However, many other proceesses require density matrix, such as spontaneous
 emission
-[[file:2021-11-24-专业笔记-MITAMO05/spontaneous.png]]
+[[file:2021-11-24-physics-MITAMO05/spontaneous.png]]
 因为此时我们对两个态都关心.
 
 * Density Operator

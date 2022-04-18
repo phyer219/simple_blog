@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2022-04-16 Sat 23:06 -->
+<!-- 2022-04-18 Mon 20:39 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>多体物理读书会: 5.2和5.3节 contraction-Grenn's Function-Feynman graphs三者之间的对应</title>
@@ -221,18 +221,18 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#orgacbdb2a">1. contraction 与因果格林函数对应</a>
+<li><a href="#orgf93821f">1. contraction 与因果格林函数对应</a>
 <ul>
-<li><a href="#orgf52cb57">1.1. 因果格林函数的定义式</a></li>
-<li><a href="#orgfd1bc0e">1.2. contraction 的定义</a></li>
-<li><a href="#orgb30e9f7">1.3. 结论</a></li>
+<li><a href="#orgebe9531">1.1. 因果格林函数的定义式</a></li>
+<li><a href="#org811a42b">1.2. contraction 的定义</a></li>
+<li><a href="#orgc395877">1.3. 结论</a></li>
 </ul>
 </li>
-<li><a href="#org610e8ba">2. time-ordering 算符的 convention</a></li>
-<li><a href="#org4f8dc9d">3. 因果格林函数与粒子数平均值的关系</a></li>
-<li><a href="#orgff1f4c4">4. Feynman graphs 的正负号问题</a></li>
-<li><a href="#org9ffc0a0">5. 总结</a></li>
-<li><a href="#org3c86770">6. 注</a></li>
+<li><a href="#org77491f5">2. time-ordering 算符的 convention</a></li>
+<li><a href="#orgc7d7f6b">3. 因果格林函数与粒子数平均值的关系</a></li>
+<li><a href="#org75f51a9">4. Feynman graphs 的正负号问题</a></li>
+<li><a href="#org5cdce13">5. 总结</a></li>
+<li><a href="#orgfea4311">6. 注</a></li>
 </ul>
 </div>
 </div>
@@ -262,12 +262,12 @@ mathjax: true
 });
 </script>
 
-<div id="outline-container-orgacbdb2a" class="outline-2">
-<h2 id="orgacbdb2a"><span class="section-number-2">1.</span> contraction 与因果格林函数对应</h2>
+<div id="outline-container-orgf93821f" class="outline-2">
+<h2 id="orgf93821f"><span class="section-number-2">1.</span> contraction 与因果格林函数对应</h2>
 <div class="outline-text-2" id="text-1">
 </div>
-<div id="outline-container-orgf52cb57" class="outline-3">
-<h3 id="orgf52cb57"><span class="section-number-3">1.1.</span> 因果格林函数的定义式</h3>
+<div id="outline-container-orgebe9531" class="outline-3">
+<h3 id="orgebe9531"><span class="section-number-3">1.1.</span> 因果格林函数的定义式</h3>
 <div class="outline-text-3" id="text-1-1">
 <p>
 第三章中因果格林函数的定义为
@@ -293,8 +293,8 @@ G_{kl}^{0,c}(t-t') = -\mathrm{i} \langle T_{\varepsilon}(a_k(t)a_l(t')) \rangle
 </div>
 </div>
 
-<div id="outline-container-orgfd1bc0e" class="outline-3">
-<h3 id="orgfd1bc0e"><span class="section-number-3">1.2.</span> contraction 的定义</h3>
+<div id="outline-container-org811a42b" class="outline-3">
+<h3 id="org811a42b"><span class="section-number-3">1.2.</span> contraction 的定义</h3>
 <div class="outline-text-3" id="text-1-2">
 <p>
 根据 contraction 的定义, 可得 ( 收缩符号不好在这打, 用大括号代替了 )
@@ -323,8 +323,8 @@ G_{kl}^{0,c}(t-t') = -\mathrm{i} \langle T_{\varepsilon}(a_k(t)a_l(t')) \rangle
 </div>
 </div>
 
-<div id="outline-container-orgb30e9f7" class="outline-3">
-<h3 id="orgb30e9f7"><span class="section-number-3">1.3.</span> 结论</h3>
+<div id="outline-container-orgc395877" class="outline-3">
+<h3 id="orgc395877"><span class="section-number-3">1.3.</span> 结论</h3>
 <div class="outline-text-3" id="text-1-3">
 <p>
 对比 (\ref{eq:contraction}) 和 \((2)\) 可得
@@ -337,8 +337,8 @@ G_{kl}^{0,c}(t-t') = -\mathrm{i} \langle T_{\varepsilon}(a_k(t)a_l(t')) \rangle
 </div>
 </div>
 
-<div id="outline-container-org610e8ba" class="outline-2">
-<h2 id="org610e8ba"><span class="section-number-2">2.</span> time-ordering 算符的 convention</h2>
+<div id="outline-container-org77491f5" class="outline-2">
+<h2 id="org77491f5"><span class="section-number-2">2.</span> time-ordering 算符的 convention</h2>
 <div class="outline-text-2" id="text-2">
 <p>
 当 time-ordering 算符作用的两个算符相等时,通常取消灭算符的时间要稍小于产生算符, 也就是
@@ -350,8 +350,8 @@ t_{\mathrm{annihilation operator}} - t_{\mathrm{creation operation}} = 0^-
 </div>
 </div>
 
-<div id="outline-container-org4f8dc9d" class="outline-2">
-<h2 id="org4f8dc9d"><span class="section-number-2">3.</span> 因果格林函数与粒子数平均值的关系</h2>
+<div id="outline-container-orgc7d7f6b" class="outline-2">
+<h2 id="orgc7d7f6b"><span class="section-number-2">3.</span> 因果格林函数与粒子数平均值的关系</h2>
 <div class="outline-text-2" id="text-3">
 <p>
 书中第三章中有结论
@@ -363,8 +363,8 @@ t_{\mathrm{annihilation operator}} - t_{\mathrm{creation operation}} = 0^-
 </div>
 </div>
 
-<div id="outline-container-orgff1f4c4" class="outline-2">
-<h2 id="orgff1f4c4"><span class="section-number-2">4.</span> Feynman graphs 的正负号问题</h2>
+<div id="outline-container-org75f51a9" class="outline-2">
+<h2 id="org75f51a9"><span class="section-number-2">4.</span> Feynman graphs 的正负号问题</h2>
 <div class="outline-text-2" id="text-4">
 <p>
 图的正负号与收缩中带 "\(\prime\)" 的 \(t\) 在右边时的符号相同.
@@ -372,8 +372,8 @@ t_{\mathrm{annihilation operator}} - t_{\mathrm{creation operation}} = 0^-
 </div>
 </div>
 
-<div id="outline-container-org9ffc0a0" class="outline-2">
-<h2 id="org9ffc0a0"><span class="section-number-2">5.</span> 总结</h2>
+<div id="outline-container-org5cdce13" class="outline-2">
+<h2 id="org5cdce13"><span class="section-number-2">5.</span> 总结</h2>
 <div class="outline-text-2" id="text-5">
 <p>
 综合上面的考虑, 我发现只要用以下五条规则就可以把 contraction-Grenn's Function-Feynman graphs 以及粒子数算符在基态上的期望相联系
@@ -424,8 +424,8 @@ t_{\mathrm{annihilation operator}} - t_{\mathrm{creation operation}} = 0^-
 
 
 
-<div id="outline-container-org3c86770" class="outline-2">
-<h2 id="org3c86770"><span class="section-number-2">6.</span> 注</h2>
+<div id="outline-container-orgfea4311" class="outline-2">
+<h2 id="orgfea4311"><span class="section-number-2">6.</span> 注</h2>
 <div class="outline-text-2" id="text-6">
 <p>
 \(LaTeX\) 中收缩的打法可以参考 <a href="http://tug.ctan.org/macros/latex/contrib/simplewick/simplewick.pdf">http://tug.ctan.org/macros/latex/contrib/simplewick/simplewick.pdf</a> 使用 simplewick.sty
@@ -435,7 +435,7 @@ t_{\mathrm{annihilation operator}} - t_{\mathrm{creation operation}} = 0^-
 </div>
 <div id="postamble" class="status">
 <p class="date">Date: 2018-12-03 Mon 00:00</p>
-<p class="date">Created: 2022-04-16 Sat 23:06</p>
+<p class="date">Created: 2022-04-18 Mon 20:39</p>
 <p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>

@@ -78,19 +78,19 @@
 
 * Fig
 
-file:./2019-10-09-专业笔记-NSRcalv3/numGiven.png
+file:./2019-10-09-physics-NSRcalv3/numGiven.png
 
-file:./2019-10-09-专业笔记-NSRcalv3/TcAll-ana.png
+file:./2019-10-09-physics-NSRcalv3/TcAll-ana.png
 
-file:./2019-10-09-专业笔记-NSRcalv3/fig3-p-wave.png
+file:./2019-10-09-physics-NSRcalv3/fig3-p-wave.png
 
-file:./2019-10-09-专业笔记-NSRcalv3/fig4-pwave.png
+file:./2019-10-09-physics-NSRcalv3/fig4-pwave.png
 
-file:./2019-10-09-专业笔记-NSRcalv3/fig5-a.png
+file:./2019-10-09-physics-NSRcalv3/fig5-a.png
 
-file:./2019-10-09-专业笔记-NSRcalv3/fig5-b.png
+file:./2019-10-09-physics-NSRcalv3/fig5-b.png
 
 fig3-p-nc
-file:./2019-10-09-专业笔记-NSRcalv3/fig3-p-nc.png
+file:./2019-10-09-physics-NSRcalv3/fig3-p-nc.png
 
-file:./2019-10-09-专业笔记-NSRcalv3/Tc-nc.png
+file:./2019-10-09-physics-NSRcalv3/Tc-nc.png

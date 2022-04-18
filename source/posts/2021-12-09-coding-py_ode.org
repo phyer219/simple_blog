@@ -38,8 +38,8 @@ plt.xlabel('t')
 plt.ylabel('y(t)')
 plt.savefig('1d.png')
 #+end_src
-[[file:2021-12-09-软件使用-py_ode/1d-real.py]]
-[[file:2021-12-09-软件使用-py_ode/1d-real.png]]
+[[file:2021-12-09-coding-py_ode/1d-real.py]]
+[[file:2021-12-09-coding-py_ode/1d-real.png]]
 
 * 1D Complex
 
@@ -103,8 +103,8 @@ plt.xlabel('t')
 plt.legend()
 plt.savefig('1d-complex.png')
 #+end_src
-[[file:2021-12-09-软件使用-py_ode/1d-complex.py]]
-[[file:2021-12-09-软件使用-py_ode/1d-complex.png]]
+[[file:2021-12-09-coding-py_ode/1d-complex.py]]
+[[file:2021-12-09-coding-py_ode/1d-complex.png]]
 
 
 * 2D Real
@@ -165,8 +165,8 @@ anifig = animation.FuncAnimation(fig=fig, func=ani, frames=len(Xs),
 ax.grid()
 anifig.save('2d-real.gif', writer='imagemagick')
 #+end_src
-[[file:2021-12-09-软件使用-py_ode/2d-real.py]]
-[[file:2021-12-09-软件使用-py_ode/2d-real.gif]]
+[[file:2021-12-09-coding-py_ode/2d-real.py]]
+[[file:2021-12-09-coding-py_ode/2d-real.gif]]
 
 * 2D Complex
 
@@ -239,8 +239,8 @@ plt.legend()
 plt.xlabel(r'$t$')
 plt.savefig('2d-complex.png')
 #+end_src
-file:2021-12-09-软件使用-py_ode/2d-complex.py
-[[file:2021-12-09-软件使用-py_ode/2d-complex.png]]
+file:2021-12-09-coding-py_ode/2d-complex.py
+[[file:2021-12-09-coding-py_ode/2d-complex.png]]
 
 * Reference
 

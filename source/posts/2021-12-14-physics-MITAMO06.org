@@ -55,7 +55,7 @@ So, "strongest" Coulomb interaction
 
 * One electron atoms with cores
 
-[[file:2021-12-14-专业笔记-MITAMO06/alkali.png]]
+[[file:2021-12-14-physics-MITAMO06/alkali.png]]
 
 \begin{align}
 E_n \sim \frac{R}{n^2}
@@ -253,7 +253,7 @@ E^{\mathrm{exch}}$ . *It looks like a ferromagnetic spin-spin interaction.* And
 well, it looks like it, it is actually an effective ferromagnetic spin-spin
 interaction. However, the coupling is purely electrostatic, not magnetic.
 
-[[file:2021-12-14-专业笔记-MITAMO06/helium.png]]
+[[file:2021-12-14-physics-MITAMO06/helium.png]]
 
 * New feature of two electrons
 
@@ -266,7 +266,7 @@ interaction. However, the coupling is purely electrostatic, not magnetic.
  - C. boths
  - D. none
 
-[[file:2021-12-14-专业笔记-MITAMO06/intercombination.png]]
+[[file:2021-12-14-physics-MITAMO06/intercombination.png]]
 
 ANSWER: $\Delta S = 0$ , selection rule.  Dipole operator acts only on spatial WF,
 NOT in spin part. Transverse B fields: $S_x, S_y, S_{x, y} = (S^+ \pm S^-)/\sqrt{2}$

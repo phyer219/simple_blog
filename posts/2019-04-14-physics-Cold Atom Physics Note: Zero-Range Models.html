@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2022-04-16 Sat 23:06 -->
+<!-- 2022-04-18 Mon 20:39 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Cold  Atom Physics Note: Zero-Range Models (update 4/Aug/2020)</title>
@@ -221,72 +221,72 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#org8ef3437">1. 问题</a></li>
-<li><a href="#org84497a5">2. Pseudopotential</a>
+<li><a href="#org94c189c">1. 问题</a></li>
+<li><a href="#orgadc9f1e">2. Pseudopotential</a>
 <ul>
-<li><a href="#org0b05b98">2.1. Intro</a></li>
-<li><a href="#org9196533">2.2. Dirac Delta Function</a>
+<li><a href="#org2ba667e">2.1. Intro</a></li>
+<li><a href="#orgd1716e0">2.2. Dirac Delta Function</a>
 <ul>
-<li><a href="#org81348d3">2.2.1. Equation</a></li>
-<li><a href="#org2ea491b">2.2.2. 结论</a></li>
-<li><a href="#org702fa34">2.2.3. 解释</a></li>
+<li><a href="#org4a8b3e7">2.2.1. Equation</a></li>
+<li><a href="#orga8d2315">2.2.2. 结论</a></li>
+<li><a href="#org62a50e5">2.2.3. 解释</a></li>
 </ul>
 </li>
-<li><a href="#orgf65254f">2.3. 李黄杨 Pseudopotential</a>
+<li><a href="#orgbdf93f3">2.3. 李黄杨 Pseudopotential</a>
 <ul>
-<li><a href="#org4caebd2">2.3.1. 思路</a></li>
-<li><a href="#org821f8b5">2.3.2. 李黄杨 Pseudopotential</a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li><a href="#orgc3f2b78">3. Renomalizable Contact Potential</a>
-<ul>
-<li><a href="#org5f33910">3.1. 问题</a></li>
-<li><a href="#org272746d">3.2. Hamiltonian</a></li>
-<li><a href="#org5e41ab9">3.3. T-matrix</a>
-<ul>
-<li><a href="#org4706ed2">3.3.1. 处理方法一: 将散射问题作为含时微扰, 求质心系相对运动的 T-matrix</a></li>
-<li><a href="#org6f21ccd">3.3.2. 处理方法二: 通过 Feynman 图方法求解 T-matrix</a></li>
-</ul>
-</li>
-<li><a href="#org83cced0">3.4. Renormalization</a>
-<ul>
-<li><a href="#orgd38e5d2">3.4.1. Diverge</a></li>
-<li><a href="#orgfc0dd09">3.4.2. Renormalization</a></li>
+<li><a href="#orgc6e1ca8">2.3.1. 思路</a></li>
+<li><a href="#orge46cff3">2.3.2. 李黄杨 Pseudopotential</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li><a href="#org5bcd0d6">4. Supplementary</a>
+<li><a href="#org955c936">3. Renomalizable Contact Potential</a>
 <ul>
-<li><a href="#org9f20432">4.1. The Derivative of T-matrix</a>
+<li><a href="#org21f680b">3.1. 问题</a></li>
+<li><a href="#orgfef48e5">3.2. Hamiltonian</a></li>
+<li><a href="#org98b124a">3.3. T-matrix</a>
 <ul>
-<li><a href="#org05aa176">4.1.1. Intro</a></li>
-<li><a href="#org6d8de01">4.1.2. Transition Amplitude</a></li>
-<li><a href="#orge09c683">4.1.3. Definition of T-matrix</a></li>
-<li><a href="#org916aef8">4.1.4. T-matrix and Cross Section</a></li>
+<li><a href="#org99d33c2">3.3.1. 处理方法一: 将散射问题作为含时微扰, 求质心系相对运动的 T-matrix</a></li>
+<li><a href="#org116dcda">3.3.2. 处理方法二: 通过 Feynman 图方法求解 T-matrix</a></li>
 </ul>
 </li>
-<li><a href="#org7503b5a">4.2. Solving for the T-matrix</a>
+<li><a href="#org89c8779">3.4. Renormalization</a>
 <ul>
-<li><a href="#orgbf76a96">4.2.1. Intro</a></li>
-<li><a href="#org14de137">4.2.2. Lippmann-Schwinger Equation</a></li>
-<li><a href="#orgbb6fcc0">4.2.3. Another Definition of T-matrix</a></li>
+<li><a href="#org7a957f7">3.4.1. Diverge</a></li>
+<li><a href="#orgbbccc3c">3.4.2. Renormalization</a></li>
 </ul>
 </li>
-<li><a href="#org92d624a">4.3. The Scattering Amplitude</a></li>
 </ul>
 </li>
-<li><a href="#orgb7fbfed">5. Reference</a></li>
-<li><a href="#orgcff0dd9">6. 前置技能</a></li>
+<li><a href="#org0d2eda2">4. Supplementary</a>
+<ul>
+<li><a href="#orga50b334">4.1. The Derivative of T-matrix</a>
+<ul>
+<li><a href="#orga31b6cc">4.1.1. Intro</a></li>
+<li><a href="#org91f4ea4">4.1.2. Transition Amplitude</a></li>
+<li><a href="#org7c1c118">4.1.3. Definition of T-matrix</a></li>
+<li><a href="#org926f379">4.1.4. T-matrix and Cross Section</a></li>
+</ul>
+</li>
+<li><a href="#org0ff29b1">4.2. Solving for the T-matrix</a>
+<ul>
+<li><a href="#orgeebf463">4.2.1. Intro</a></li>
+<li><a href="#orgc472a09">4.2.2. Lippmann-Schwinger Equation</a></li>
+<li><a href="#org8144b29">4.2.3. Another Definition of T-matrix</a></li>
+</ul>
+</li>
+<li><a href="#org991aa23">4.3. The Scattering Amplitude</a></li>
+</ul>
+</li>
+<li><a href="#orga7c7e2e">5. Reference</a></li>
+<li><a href="#orgfe5599c">6. 前置技能</a></li>
 </ul>
 </div>
 </div>
 <!-- toc -->
 <!-- more -->
-<div id="outline-container-org8ef3437" class="outline-2">
-<h2 id="org8ef3437"><span class="section-number-2">1.</span> 问题</h2>
+<div id="outline-container-org94c189c" class="outline-2">
+<h2 id="org94c189c"><span class="section-number-2">1.</span> 问题</h2>
 <div class="outline-text-2" id="text-1">
 <p>
 找一个 zero-range effective model 来重复出低能散射的性质, 比如
@@ -295,12 +295,12 @@
 </div>
 </div>
 
-<div id="outline-container-org84497a5" class="outline-2">
-<h2 id="org84497a5"><span class="section-number-2">2.</span> Pseudopotential</h2>
+<div id="outline-container-orgadc9f1e" class="outline-2">
+<h2 id="orgadc9f1e"><span class="section-number-2">2.</span> Pseudopotential</h2>
 <div class="outline-text-2" id="text-2">
 </div>
-<div id="outline-container-org0b05b98" class="outline-3">
-<h3 id="org0b05b98"><span class="section-number-3">2.1.</span> Intro</h3>
+<div id="outline-container-org2ba667e" class="outline-3">
+<h3 id="org2ba667e"><span class="section-number-3">2.1.</span> Intro</h3>
 <div class="outline-text-3" id="text-2-1">
 <p>
 这个 pseudopotential 应该形式简单. 最先考虑的是 Dirac delta function .
@@ -315,12 +315,12 @@
 </div>
 </div>
 
-<div id="outline-container-org9196533" class="outline-3">
-<h3 id="org9196533"><span class="section-number-3">2.2.</span> Dirac Delta Function</h3>
+<div id="outline-container-orgd1716e0" class="outline-3">
+<h3 id="orgd1716e0"><span class="section-number-3">2.2.</span> Dirac Delta Function</h3>
 <div class="outline-text-3" id="text-2-2">
 </div>
-<div id="outline-container-org81348d3" class="outline-4">
-<h4 id="org81348d3"><span class="section-number-4">2.2.1.</span> Equation</h4>
+<div id="outline-container-org4a8b3e7" class="outline-4">
+<h4 id="org4a8b3e7"><span class="section-number-4">2.2.1.</span> Equation</h4>
 <div class="outline-text-4" id="text-2-2-1">
 <p>
 取 pseudopotential 为
@@ -346,7 +346,7 @@ Dirac Delta Function 的性质体现在积分中, 所以对上式在无穷接近
 </div>
 
 <ol class="org-ol">
-<li><a id="org9db29fe"></a>左边第一项<br />
+<li><a id="orgde13214"></a>左边第一项<br />
 <div class="outline-text-5" id="text-2-2-1-1">
 <p>
 方程左边第一项可以用 Gauss 定理 ( 散度定理, 即, 对一个矢量场的面积分等
@@ -390,7 +390,7 @@ Dirac Delta Function 的性质体现在积分中, 所以对上式在无穷接近
 </div>
 </li>
 
-<li><a id="org7a3a097"></a>左边第二项<br />
+<li><a id="orga77e627"></a>左边第二项<br />
 <div class="outline-text-5" id="text-2-2-1-2">
 <p>
 方程左边第项是常数项
@@ -398,7 +398,7 @@ Dirac Delta Function 的性质体现在积分中, 所以对上式在无穷接近
 </div>
 </li>
 
-<li><a id="org37d8bd4"></a>右边第一项<br />
+<li><a id="orgd775819"></a>右边第一项<br />
 <div class="outline-text-5" id="text-2-2-1-3">
 <p>
 当 \(r\to 0\) 时, 波函数是一个有限的值. 对一个有限的值在无穷小体积内积分,
@@ -409,8 +409,8 @@ Dirac Delta Function 的性质体现在积分中, 所以对上式在无穷接近
 </ol>
 </div>
 
-<div id="outline-container-org2ea491b" class="outline-4">
-<h4 id="org2ea491b"><span class="section-number-4">2.2.2.</span> 结论</h4>
+<div id="outline-container-orga8d2315" class="outline-4">
+<h4 id="orga8d2315"><span class="section-number-4">2.2.2.</span> 结论</h4>
 <div class="outline-text-4" id="text-2-2-2">
 <p>
 所以积分完得到
@@ -425,12 +425,12 @@ Delta Function 做 pseudopotential 的话, 只允许散射相移是 \(0\) .
 </div>
 </div>
 
-<div id="outline-container-org702fa34" class="outline-4">
-<h4 id="org702fa34"><span class="section-number-4">2.2.3.</span> 解释</h4>
+<div id="outline-container-org62a50e5" class="outline-4">
+<h4 id="org62a50e5"><span class="section-number-4">2.2.3.</span> 解释</h4>
 <div class="outline-text-4" id="text-2-2-3">
 </div>
 <ol class="org-ol">
-<li><a id="orgad999d1"></a>Pseudopotential 模拟有限深方势阱的散射长度<br />
+<li><a id="org685fe1d"></a>Pseudopotential 模拟有限深方势阱的散射长度<br />
 <div class="outline-text-5" id="text-2-2-3-1">
 <p>
 最初的问题是用一个 pseudopotential 来模拟重复出低能散射的的性质, 比如
@@ -458,7 +458,7 @@ Delta Function 做 pseudopotential 的话, 只允许散射相移是 \(0\) .
 </div>
 </li>
 
-<li><a id="orgbe44c5d"></a>矛盾之处<br />
+<li><a id="orgf7b66b2"></a>矛盾之处<br />
 <div class="outline-text-5" id="text-2-2-3-2">
 <p>
 以上所做的, 就是用一个 \(g\delta^3(\vec{r})\) 代替了
@@ -503,12 +503,12 @@ Delta Function 做 pseudopotential 的话, 只允许散射相移是 \(0\) .
 </div>
 </div>
 
-<div id="outline-container-orgf65254f" class="outline-3">
-<h3 id="orgf65254f"><span class="section-number-3">2.3.</span> 李黄杨 Pseudopotential</h3>
+<div id="outline-container-orgbdf93f3" class="outline-3">
+<h3 id="orgbdf93f3"><span class="section-number-3">2.3.</span> 李黄杨 Pseudopotential</h3>
 <div class="outline-text-3" id="text-2-3">
 </div>
-<div id="outline-container-org4caebd2" class="outline-4">
-<h4 id="org4caebd2"><span class="section-number-4">2.3.1.</span> 思路</h4>
+<div id="outline-container-orgc6e1ca8" class="outline-4">
+<h4 id="orgc6e1ca8"><span class="section-number-4">2.3.1.</span> 思路</h4>
 <div class="outline-text-4" id="text-2-3-1">
 <p>
 式
@@ -522,8 +522,8 @@ Delta Function 做 pseudopotential 的话, 只允许散射相移是 \(0\) .
 </div>
 </div>
 
-<div id="outline-container-org821f8b5" class="outline-4">
-<h4 id="org821f8b5"><span class="section-number-4">2.3.2.</span> 李黄杨 Pseudopotential</h4>
+<div id="outline-container-orge46cff3" class="outline-4">
+<h4 id="orge46cff3"><span class="section-number-4">2.3.2.</span> 李黄杨 Pseudopotential</h4>
 <div class="outline-text-4" id="text-2-3-2">
 <p>
 李黄杨 Pseudopotential 将 \(g\delta^3 (\vec{r}) \to g \delta^3 (\vec{r})\frac{\partial}{\partial r}r\) ,式子变为
@@ -542,12 +542,12 @@ Delta Function 做 pseudopotential 的话, 只允许散射相移是 \(0\) .
 </div>
 </div>
 
-<div id="outline-container-orgc3f2b78" class="outline-2">
-<h2 id="orgc3f2b78"><span class="section-number-2">3.</span> Renomalizable Contact Potential</h2>
+<div id="outline-container-org955c936" class="outline-2">
+<h2 id="org955c936"><span class="section-number-2">3.</span> Renomalizable Contact Potential</h2>
 <div class="outline-text-2" id="text-3">
 </div>
-<div id="outline-container-org5f33910" class="outline-3">
-<h3 id="org5f33910"><span class="section-number-3">3.1.</span> 问题</h3>
+<div id="outline-container-org21f680b" class="outline-3">
+<h3 id="org21f680b"><span class="section-number-3">3.1.</span> 问题</h3>
 <div class="outline-text-3" id="text-3-1">
 <p>
 李黄杨 Pseudopotential 在解少体问题时是方便的, 但是也有很多情况下, 用
@@ -562,8 +562,8 @@ Pseudopotential
 </div>
 </div>
 
-<div id="outline-container-org272746d" class="outline-3">
-<h3 id="org272746d"><span class="section-number-3">3.2.</span> Hamiltonian</h3>
+<div id="outline-container-orgfef48e5" class="outline-3">
+<h3 id="orgfef48e5"><span class="section-number-3">3.2.</span> Hamiltonian</h3>
 <div class="outline-text-3" id="text-3-2">
 \begin{align*}
   \hat{H} =& \int d^3\vec{r} \cdot\left[ \psi^{\dagger}(\vec{r}) \left(
@@ -579,12 +579,12 @@ Pseudopotential
 </div>
 </div>
 
-<div id="outline-container-org5e41ab9" class="outline-3">
-<h3 id="org5e41ab9"><span class="section-number-3">3.3.</span> T-matrix</h3>
+<div id="outline-container-org98b124a" class="outline-3">
+<h3 id="org98b124a"><span class="section-number-3">3.3.</span> T-matrix</h3>
 <div class="outline-text-3" id="text-3-3">
 </div>
-<div id="outline-container-org4706ed2" class="outline-4">
-<h4 id="org4706ed2"><span class="section-number-4">3.3.1.</span> 处理方法一: 将散射问题作为含时微扰, 求质心系相对运动的 T-matrix</h4>
+<div id="outline-container-org99d33c2" class="outline-4">
+<h4 id="org99d33c2"><span class="section-number-4">3.3.1.</span> 处理方法一: 将散射问题作为含时微扰, 求质心系相对运动的 T-matrix</h4>
 <div class="outline-text-4" id="text-3-3-1">
 <p>
 T-matrix 的表达式( Supplementary 中有推导 )为
@@ -612,7 +612,7 @@ T-matrix 的表达式( Supplementary 中有推导 )为
 </div>
 
 <ol class="org-ol">
-<li><a id="orgfa58621"></a>第一项<br />
+<li><a id="orgdf0f350"></a>第一项<br />
 <div class="outline-text-5" id="text-3-3-1-1">
 <p>
 已经知道了算符 \(V\) 在坐标表象是对角的, 也就是
@@ -637,7 +637,7 @@ T-matrix 的表达式( Supplementary 中有推导 )为
 </div>
 </li>
 
-<li><a id="org2e7fd4a"></a>第二项<br />
+<li><a id="orgae2ddf9"></a>第二项<br />
 <div class="outline-text-5" id="text-3-3-1-2">
 <p>
 算符 \(V\) 在 \(\vec{k}\) 空间的形式前面已经求出, 且 \(|\vec{k}\rangle\) 也是
@@ -653,7 +653,7 @@ T-matrix 的表达式( Supplementary 中有推导 )为
 </div>
 </li>
 
-<li><a id="orga26b743"></a>结果<br />
+<li><a id="org72f1245"></a>结果<br />
 <div class="outline-text-5" id="text-3-3-1-3">
 <p>
 将上面的计算结果代入原式
@@ -689,12 +689,12 @@ T-matrix 的表达式( Supplementary 中有推导 )为
 </ol>
 </div>
 
-<div id="outline-container-org6f21ccd" class="outline-4">
-<h4 id="org6f21ccd"><span class="section-number-4">3.3.2.</span> 处理方法二: 通过 Feynman 图方法求解 T-matrix</h4>
+<div id="outline-container-org116dcda" class="outline-4">
+<h4 id="org116dcda"><span class="section-number-4">3.3.2.</span> 处理方法二: 通过 Feynman 图方法求解 T-matrix</h4>
 <div class="outline-text-4" id="text-3-3-2">
 
-<div id="orgda15de6" class="figure">
-<p><img src="./2019-04-14-专业笔记-Cold Atom Physics Note: Zero-Range Models/t-matrix.png" alt="t-matrix.png" />
+<div id="org4cd2a05" class="figure">
+<p><img src="./2019-04-14-physics-Cold Atom Physics Note: Zero-Range Models/t-matrix.png" alt="t-matrix.png" />
 </p>
 </div>
 
@@ -731,12 +731,12 @@ v_{\mathrm{eff}} = v + v \sum_{\vec{k}}
 </div>
 </div>
 
-<div id="outline-container-org83cced0" class="outline-3">
-<h3 id="org83cced0"><span class="section-number-3">3.4.</span> Renormalization</h3>
+<div id="outline-container-org89c8779" class="outline-3">
+<h3 id="org89c8779"><span class="section-number-3">3.4.</span> Renormalization</h3>
 <div class="outline-text-3" id="text-3-4">
 </div>
-<div id="outline-container-orgd38e5d2" class="outline-4">
-<h4 id="orgd38e5d2"><span class="section-number-4">3.4.1.</span> Diverge</h4>
+<div id="outline-container-org7a957f7" class="outline-4">
+<h4 id="org7a957f7"><span class="section-number-4">3.4.1.</span> Diverge</h4>
 <div class="outline-text-4" id="text-3-4-1">
 <p>
 下面计算 T-matrix 的具体结果. 计算求和, 可求和化积分
@@ -767,8 +767,8 @@ v_{\mathrm{eff}} = v + v \sum_{\vec{k}}
 </div>
 </div>
 
-<div id="outline-container-orgfc0dd09" class="outline-4">
-<h4 id="orgfc0dd09"><span class="section-number-4">3.4.2.</span> Renormalization</h4>
+<div id="outline-container-orgbbccc3c" class="outline-4">
+<h4 id="orgbbccc3c"><span class="section-number-4">3.4.2.</span> Renormalization</h4>
 <div class="outline-text-4" id="text-3-4-2">
 <p>
 没有散射了, 那算了半天不白算了. 不过, 这也是意料之路的发散, 因为之前在
@@ -876,16 +876,16 @@ Pseudopotential 一节中就已经得出过结论, 一个简单的 \(g\delta^3(\
 </div>
 </div>
 
-<div id="outline-container-org5bcd0d6" class="outline-2">
-<h2 id="org5bcd0d6"><span class="section-number-2">4.</span> Supplementary</h2>
+<div id="outline-container-org0d2eda2" class="outline-2">
+<h2 id="org0d2eda2"><span class="section-number-2">4.</span> Supplementary</h2>
 <div class="outline-text-2" id="text-4">
 </div>
-<div id="outline-container-org9f20432" class="outline-3">
-<h3 id="org9f20432"><span class="section-number-3">4.1.</span> The Derivative of T-matrix</h3>
+<div id="outline-container-orga50b334" class="outline-3">
+<h3 id="orga50b334"><span class="section-number-3">4.1.</span> The Derivative of T-matrix</h3>
 <div class="outline-text-3" id="text-4-1">
 </div>
-<div id="outline-container-org05aa176" class="outline-4">
-<h4 id="org05aa176"><span class="section-number-4">4.1.1.</span> Intro</h4>
+<div id="outline-container-orga31b6cc" class="outline-4">
+<h4 id="orga31b6cc"><span class="section-number-4">4.1.1.</span> Intro</h4>
 <div class="outline-text-4" id="text-4-1-1">
 <p>
 现根据将散射问题作为含时微扰的方法推导 T-matirx 的表达式
@@ -896,8 +896,8 @@ Pseudopotential 一节中就已经得出过结论, 一个简单的 \(g\delta^3(\
 </div>
 </div>
 
-<div id="outline-container-org6d8de01" class="outline-4">
-<h4 id="org6d8de01"><span class="section-number-4">4.1.2.</span> Transition Amplitude</h4>
+<div id="outline-container-org91f4ea4" class="outline-4">
+<h4 id="org91f4ea4"><span class="section-number-4">4.1.2.</span> Transition Amplitude</h4>
 <div class="outline-text-4" id="text-4-1-2">
 <p>
 考虑单个粒子在势场 \(V(\vec{r})\) 中的运动, Hamiltonian 为
@@ -951,8 +951,8 @@ U_D(t',t_0)| i \rangle = \delta_{mi}\) , 那么 Transition Amplitude 就近似�
 </div>
 </div>
 
-<div id="outline-container-orge09c683" class="outline-4">
-<h4 id="orge09c683"><span class="section-number-4">4.1.3.</span> Definition of T-matrix</h4>
+<div id="outline-container-org7c1c118" class="outline-4">
+<h4 id="org7c1c118"><span class="section-number-4">4.1.3.</span> Definition of T-matrix</h4>
 <div class="outline-text-4" id="text-4-1-3">
 <p>
 T-matrix 的定义就是, 如果将上式中的 \(\langle n|V| i\rangle\) 换为 T-matrix \(\langle
@@ -988,12 +988,12 @@ Delta 函数的存, 只有 \(E_n = E_i\) 的 T-matrix 才有实际物理意义. 
 </div>
 </div>
 
-<div id="outline-container-org916aef8" class="outline-4">
-<h4 id="org916aef8"><span class="section-number-4">4.1.4.</span> T-matrix and Cross Section</h4>
+<div id="outline-container-org926f379" class="outline-4">
+<h4 id="org926f379"><span class="section-number-4">4.1.4.</span> T-matrix and Cross Section</h4>
 <div class="outline-text-4" id="text-4-1-4">
 </div>
 <ol class="org-ol">
-<li><a id="org83fce23"></a>Physical Meaning of Transition Amplitude<br />
+<li><a id="orgea29df5"></a>Physical Meaning of Transition Amplitude<br />
 <div class="outline-text-5" id="text-4-1-4-1">
 <p>
 如果问, 假设一个系统在 \(t_0\) 时处于某个本征态 \(| a \rangle\) , 问在 \(t\) 时刻
@@ -1016,7 +1016,7 @@ Delta 函数的存, 只有 \(E_n = E_i\) 的 T-matrix 才有实际物理意义. 
 </div>
 </li>
 
-<li><a id="orgdbdf489"></a>Transition Rate<br />
+<li><a id="org55a4004"></a>Transition Rate<br />
 <div class="outline-text-5" id="text-4-1-4-2">
 <p>
 Transition rate 定义为
@@ -1044,7 +1044,7 @@ T_{ni} \int_{-\infty}^t e^{\mathrm{i}(\omega_{ni}  -\mathrm{i}0^{ + })t'}
 </div>
 </li>
 
-<li><a id="org3198614"></a>Differential Cross Section<br />
+<li><a id="org63d0764"></a>Differential Cross Section<br />
 <div class="outline-text-5" id="text-4-1-4-3">
 <p>
 Differential Cross Section 微分截面 \(\mathrm{d}\sigma(\theta,\phi)/\mathrm{d}\Omega\)
@@ -1068,7 +1068,7 @@ Differential Cross Section 微分截面 \(\mathrm{d}\sigma(\theta,\phi)/\mathrm{
 </div>
 </li>
 
-<li><a id="org04ce25f"></a>Number of particles scattered into \(\mathrm{d}\Omega\) /sec<br />
+<li><a id="org7d09c69"></a>Number of particles scattered into \(\mathrm{d}\Omega\) /sec<br />
 <div class="outline-text-5" id="text-4-1-4-4">
 <p>
 接下来考虑 \(\vec{k}\) 空间的情形. 三维自由粒子的能量简并的, 同一能量本
@@ -1123,7 +1123,7 @@ Differential Cross Section 微分截面 \(\mathrm{d}\sigma(\theta,\phi)/\mathrm{
 </div>
 </li>
 
-<li><a id="orgc6b3048"></a>Number incident /sec/area in the \(\vec{\rho}\) plane<br />
+<li><a id="org4fa63f4"></a>Number incident /sec/area in the \(\vec{\rho}\) plane<br />
 <div class="outline-text-5" id="text-4-1-4-5">
 <p>
 接着计算入射的概率流密度
@@ -1151,7 +1151,7 @@ Differential Cross Section 微分截面 \(\mathrm{d}\sigma(\theta,\phi)/\mathrm{
 </div>
 </li>
 
-<li><a id="orgded696d"></a>Result<br />
+<li><a id="orgcc6aec5"></a>Result<br />
 <div class="outline-text-5" id="text-4-1-4-6">
 <p>
 最终得到了 Differential Cross Section
@@ -1172,12 +1172,12 @@ Differential Cross Section 微分截面 \(\mathrm{d}\sigma(\theta,\phi)/\mathrm{
 </div>
 
 
-<div id="outline-container-org7503b5a" class="outline-3">
-<h3 id="org7503b5a"><span class="section-number-3">4.2.</span> Solving for the T-matrix</h3>
+<div id="outline-container-org0ff29b1" class="outline-3">
+<h3 id="org0ff29b1"><span class="section-number-3">4.2.</span> Solving for the T-matrix</h3>
 <div class="outline-text-3" id="text-4-2">
 </div>
-<div id="outline-container-orgbf76a96" class="outline-4">
-<h4 id="orgbf76a96"><span class="section-number-4">4.2.1.</span> Intro</h4>
+<div id="outline-container-orgeebf463" class="outline-4">
+<h4 id="orgeebf463"><span class="section-number-4">4.2.1.</span> Intro</h4>
 <div class="outline-text-4" id="text-4-2-1">
 <p>
 前面已知
@@ -1227,8 +1227,8 @@ U_D(t',t_0)|i \rangle\) 一项用前面的 T-matrix 的形式, 而不是上式�
 </div>
 </div>
 
-<div id="outline-container-org14de137" class="outline-4">
-<h4 id="org14de137"><span class="section-number-4">4.2.2.</span> Lippmann-Schwinger Equation</h4>
+<div id="outline-container-orgc472a09" class="outline-4">
+<h4 id="orgc472a09"><span class="section-number-4">4.2.2.</span> Lippmann-Schwinger Equation</h4>
 <div class="outline-text-4" id="text-4-2-2">
 <p>
 上面的式子可以看成是一个方程组, \(T_{ni}\) 可以由已知的矩阵元 \(V_{nm}\)
@@ -1285,8 +1285,8 @@ T-matrix 的迭代方程, 可得
 </div>
 </div>
 
-<div id="outline-container-orgbb6fcc0" class="outline-4">
-<h4 id="orgbb6fcc0"><span class="section-number-4">4.2.3.</span> Another Definition of T-matrix</h4>
+<div id="outline-container-org8144b29" class="outline-4">
+<h4 id="org8144b29"><span class="section-number-4">4.2.3.</span> Another Definition of T-matrix</h4>
 <div class="outline-text-4" id="text-4-2-3">
 <p>
 由于
@@ -1315,8 +1315,8 @@ T-matrix 的迭代方程, 可得
 </div>
 </div>
 
-<div id="outline-container-org92d624a" class="outline-3">
-<h3 id="org92d624a"><span class="section-number-3">4.3.</span> The Scattering Amplitude</h3>
+<div id="outline-container-org991aa23" class="outline-3">
+<h3 id="org991aa23"><span class="section-number-3">4.3.</span> The Scattering Amplitude</h3>
 <div class="outline-text-3" id="text-4-3">
 <p>
 将　Lippmann-Schwinger Equation 投影到坐标表象. 考虑到 \(H_0\) 在能量的
@@ -1417,8 +1417,8 @@ T-matrix 的迭代方程, 可得
 </div>
 </div>
 
-<div id="outline-container-orgb7fbfed" class="outline-2">
-<h2 id="orgb7fbfed"><span class="section-number-2">5.</span> Reference</h2>
+<div id="outline-container-orga7c7e2e" class="outline-2">
+<h2 id="orga7c7e2e"><span class="section-number-2">5.</span> Reference</h2>
 <div class="outline-text-2" id="text-5">
 <p>
 所有内容基于 Ran Qi 老师上课的笔记
@@ -1445,8 +1445,8 @@ R. Shankar, Principles of Quantum Mechanics 2ed:
 </div>
 </div>
 
-<div id="outline-container-orgcff0dd9" class="outline-2">
-<h2 id="orgcff0dd9"><span class="section-number-2">6.</span> 前置技能</h2>
+<div id="outline-container-orgfe5599c" class="outline-2">
+<h2 id="orgfe5599c"><span class="section-number-2">6.</span> 前置技能</h2>
 <div class="outline-text-2" id="text-6">
 <ul class="org-ul">
 <li>主值积分</li>
@@ -1457,7 +1457,7 @@ R. Shankar, Principles of Quantum Mechanics 2ed:
 </div>
 <div id="postamble" class="status">
 <p class="date">Date: 2019-04-14 Sun 00:00</p>
-<p class="date">Created: 2022-04-16 Sat 23:06</p>
+<p class="date">Created: 2022-04-18 Mon 20:39</p>
 <p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>

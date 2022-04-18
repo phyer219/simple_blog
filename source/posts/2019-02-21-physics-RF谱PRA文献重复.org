@@ -260,19 +260,19 @@ plt.show()
 
 结果如图
 
-[[file:./2019-02-21-专业笔记-RF谱RPA文献重复/fig4a.jpeg]]
+[[file:./2019-02-21-physics-RF谱RPA文献重复/fig4a.jpeg]]
 图中从上到下, $\tilde{\delta}$ 在区间 $[8,-8]$ 每间隔 $0.5$ 取一个值.
 
 上图的峰一些尖. 如果 Dirac delta 函数中的参数 $b$ 取得更大一些, 图就会平滑一些.
 
 下图是 $b=0.5$ 时的结果. 为了直观,线的间距也由 $100$ 改为 $10$ . 
 
-[[file:./2019-02-21-专业笔记-RF谱RPA文献重复/fig4a_b=.5.jpeg]]
+[[file:./2019-02-21-physics-RF谱RPA文献重复/fig4a_b=.5.jpeg]]
 
 
 
 eps矢量图:
-[[file:./2019-02-21-专业笔记-RF谱RPA文献重复/fig4a.eps]]
+[[file:./2019-02-21-physics-RF谱RPA文献重复/fig4a.eps]]
 
 * 零温解析
 
@@ -385,7 +385,7 @@ eps矢量图:
 r_1 = \tilde{q} + \sqrt{2(\tilde{\delta}-\tilde{\omega})}$ . 当
 $\tilde{p}, \tilde{\omega}$ 取不同的值时, 根的情况如图
 
-file:./2019-02-21-专业笔记-RF谱RPA文献重复/root.png
+file:./2019-02-21-physics-RF谱RPA文献重复/root.png
 
 no root 时
 \begin{align*}
@@ -556,11 +556,11 @@ plt.show()
 
 * 有限温及零温的最终重复结果
 ** code
-file:./2019-02-21-专业笔记-RF谱RPA文献重复/T=0.py
+file:./2019-02-21-physics-RF谱RPA文献重复/T=0.py
 
-file:./2019-02-21-专业笔记-RF谱RPA文献重复/T=1.py
+file:./2019-02-21-physics-RF谱RPA文献重复/T=1.py
 
-file:./2019-02-21-专业笔记-RF谱RPA文献重复/T=1.py
+file:./2019-02-21-physics-RF谱RPA文献重复/T=1.py
 #+BEGIN_SRC python
 import numpy as np
 from matplotlib import pyplot as plt
@@ -697,17 +697,17 @@ def AA(o,d,k):
 #+END_SRC
 ** 结果
 
-file:./2019-02-21-专业笔记-RF谱RPA文献重复/T=0.png
+file:./2019-02-21-physics-RF谱RPA文献重复/T=0.png
 
-file:./2019-02-21-专业笔记-RF谱RPA文献重复/T=1.png
+file:./2019-02-21-physics-RF谱RPA文献重复/T=1.png
 
-file:./2019-02-21-专业笔记-RF谱RPA文献重复/T=2.png
+file:./2019-02-21-physics-RF谱RPA文献重复/T=2.png
 
-file:./2019-02-21-专业笔记-RF谱RPA文献重复/T=0.eps
+file:./2019-02-21-physics-RF谱RPA文献重复/T=0.eps
 
-file:./2019-02-21-专业笔记-RF谱RPA文献重复/T=1.eps
+file:./2019-02-21-physics-RF谱RPA文献重复/T=1.eps
 
-file:./2019-02-21-专业笔记-RF谱RPA文献重复/T=2.eps
+file:./2019-02-21-physics-RF谱RPA文献重复/T=2.eps
 
 * Supplementary
 

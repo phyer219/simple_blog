@@ -42,7 +42,7 @@ s 波部分的 Hamiltonian
   = - \frac{4 e^{-2k^2/ \bar{\Lambda}_s^2}}{V} D_s(\vec{q}=0 , E = \frac{k^2}{M})
 \end{align}
 
-[[file:./2019-05-15-专业笔记-PAR99/fig1.png]]
+[[file:./2019-05-15-physics-PAR99/fig1.png]]
 
 由上面的 Feynman 图对应的 Dyson 方程为 $D = D_0 + D_0 \Sigma D$  , 化
 简为
@@ -114,7 +114,7 @@ $4\pi$ , 只剩下对 $k$ 的积分
     \mathrm{Erfi}\left(\frac{\sqrt{2M\Omega}}{\bar{\Lambda}_s}\right)
 \end{align}
 
-[[file:./2019-05-15-专业笔记-PAR99/SelfEnergy.png]]
+[[file:./2019-05-15-physics-PAR99/SelfEnergy.png]]
 
 将以上求得的自能 $\Sigma$ 代回到 T-matrix 的表达式
 \begin{align}
@@ -193,7 +193,7 @@ $4\pi$ , 只剩下对 $k$ 的积分
 F(z) = \frac{\sqrt{\pi}}{2}e^{-z^2} \mathrm{Erfi(z)}
 \end{align}
 
-file:./2019-05-15-专业笔记-PAR99/dawson.png
+file:./2019-05-15-physics-PAR99/dawson.png
 
 
 * d-wave
@@ -239,7 +239,7 @@ s 波部分的 Hamiltonian
 第二个等号取 $Y_{20}(\hat{k}) = \sqrt{\frac{5}{4\pi}}\left(
  \frac{3}{2}\cos^2\theta -\frac{1}{2} \right)$ .
 
-file:./2019-05-15-专业笔记-PAR99/dWaveInt.png
+file:./2019-05-15-physics-PAR99/dWaveInt.png
 
 所以
 \begin{align}

@@ -32,7 +32,7 @@
 
 由于 $f(x_0)$ 是极大值, 且 $M$ 很大, 所以积分主要由 $x_0$ 附近贡献. 下图是
 $f(x)= -x^2$ 时的情况, 可以看出 $M$ 越大, 积分的贡献越集中于 $x_{0}$ 处
-[[file:./2020-09-23-专业笔记-StationaryPhaseApprox/laplace.png]]
+[[file:./2020-09-23-physics-StationaryPhaseApprox/laplace.png]]
 只保留到展开的二阶项, 略去更高阶, 因此积分近似为
 \begin{align}
   \int_a^b  e^{Mf(x)} \cdot\mathrm{d} x 
@@ -59,7 +59,7 @@ $\Gamma$ function 为
   N! = \int_0^{\infty} \mathrm{d}x\cdot e^{-x +N\ln x} = N^{N + 1}\int_0^{\infty} \mathrm{d}t\cdot e^{Nf(t)}
 \end{align}
 其中 $f(t) = -t +\ln t$ 如下图
-[[file:./2020-09-23-专业笔记-StationaryPhaseApprox/stirling.png]]
+[[file:./2020-09-23-physics-StationaryPhaseApprox/stirling.png]]
 在 $t = 1$ 处有极大值. 因此可以用 Laplace's method 做近似为
 \begin{align}
   N! \approx N^{N + 1} e^{-N} \sqrt{\frac{2\pi}{N\cdot 1}} = \sqrt{2\pi N} e^{N(\ln N -1)}

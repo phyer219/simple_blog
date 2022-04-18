@@ -96,7 +96,7 @@ plt.show()
 : None
 
 ** Results
-[[file:./#2019-03-04-专业笔记-Cold Atom Physics Note:Energy Structure of Rb87 in Magnetic Field/fig1.png]]
+[[file:./#2019-03-04-physics-Cold Atom Physics Note:Energy Structure of Rb87 in Magnetic Field/fig1.png]]
 * Reference
 
 C. J. Pethick, H. Smith, Bose-Einstein Codensation in Dilute Gases

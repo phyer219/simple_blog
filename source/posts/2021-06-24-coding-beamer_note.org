@@ -5,5 +5,5 @@
 #+HTML: <!-- toc -->
 #+HTML: <!-- more -->
 
-[[file:./2021-06-24-软件使用-beamer_note/beamer_note.pdf][PDF version]]
-[[file:./2021-06-24-软件使用-beamer_note/beamer_note.tex][source file]]
+[[file:./2021-06-24-coding-beamer_note/beamer_note.pdf][PDF version]]
+[[file:./2021-06-24-coding-beamer_note/beamer_note.tex][source file]]

@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2022-04-16 Sat 23:06 -->
+<!-- 2022-04-18 Mon 20:39 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>厄米矩阵及其幺正对角化</title>
@@ -221,54 +221,54 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#org369843e">1. Intro: 实对称矩阵的正交对角化</a></li>
-<li><a href="#org01f2343">2. 厄米矩阵的幺正对角化</a>
+<li><a href="#orgff7bb51">1. Intro: 实对称矩阵的正交对角化</a></li>
+<li><a href="#orgfaf6141">2. 厄米矩阵的幺正对角化</a>
 <ul>
-<li><a href="#org5653302">2.1. 厄米矩阵</a>
+<li><a href="#org47dc3bc">2.1. 厄米矩阵</a>
 <ul>
-<li><a href="#org3f341d3">2.1.1. 定义</a></li>
-<li><a href="#org28eb4ff">2.1.2. \(2\times 2\)</a></li>
-<li><a href="#org794ac35">2.1.3. \(n\times n\)</a></li>
-<li><a href="#org9baf5a2">2.1.4. 性质</a></li>
+<li><a href="#org1512e1f">2.1.1. 定义</a></li>
+<li><a href="#org8a1cff7">2.1.2. \(2\times 2\)</a></li>
+<li><a href="#orge89b5f3">2.1.3. \(n\times n\)</a></li>
+<li><a href="#org02ceb38">2.1.4. 性质</a></li>
 </ul>
 </li>
-<li><a href="#org1081da5">2.2. 幺正矩阵</a>
+<li><a href="#orgfe48796">2.2. 幺正矩阵</a>
 <ul>
-<li><a href="#orgc4520fd">2.2.1. 定义</a></li>
-<li><a href="#org8b4cba8">2.2.2. \(2\times 2\)</a></li>
-<li><a href="#org7c5e68f">2.2.3. 问题</a></li>
+<li><a href="#org28773ff">2.2.1. 定义</a></li>
+<li><a href="#org402248c">2.2.2. \(2\times 2\)</a></li>
+<li><a href="#orgf290534">2.2.3. 问题</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li><a href="#org8a1ae16">3. 例: BCS Mean-Field Hamiltonian 的对角化</a></li>
-<li><a href="#org1c3e89b">4. Reference</a></li>
+<li><a href="#orgc5f8273">3. 例: BCS Mean-Field Hamiltonian 的对角化</a></li>
+<li><a href="#orgf726e42">4. Reference</a></li>
 </ul>
 </div>
 </div>
 <!-- toc -->
 <!-- more -->
 
-<div id="outline-container-org369843e" class="outline-2">
-<h2 id="org369843e"><span class="section-number-2">1.</span> Intro: 实对称矩阵的正交对角化</h2>
+<div id="outline-container-orgff7bb51" class="outline-2">
+<h2 id="orgff7bb51"><span class="section-number-2">1.</span> Intro: 实对称矩阵的正交对角化</h2>
 </div>
 
 
 
-<div id="outline-container-org01f2343" class="outline-2">
-<h2 id="org01f2343"><span class="section-number-2">2.</span> 厄米矩阵的幺正对角化</h2>
+<div id="outline-container-orgfaf6141" class="outline-2">
+<h2 id="orgfaf6141"><span class="section-number-2">2.</span> 厄米矩阵的幺正对角化</h2>
 <div class="outline-text-2" id="text-2">
 <p>
 接下来在复变量的范围内考虑, 也就是矩阵元都在复数的范围内讨论.
 </p>
 </div>
 
-<div id="outline-container-org5653302" class="outline-3">
-<h3 id="org5653302"><span class="section-number-3">2.1.</span> 厄米矩阵</h3>
+<div id="outline-container-org47dc3bc" class="outline-3">
+<h3 id="org47dc3bc"><span class="section-number-3">2.1.</span> 厄米矩阵</h3>
 <div class="outline-text-3" id="text-2-1">
 </div>
-<div id="outline-container-org3f341d3" class="outline-4">
-<h4 id="org3f341d3"><span class="section-number-4">2.1.1.</span> 定义</h4>
+<div id="outline-container-org1512e1f" class="outline-4">
+<h4 id="org1512e1f"><span class="section-number-4">2.1.1.</span> 定义</h4>
 <div class="outline-text-4" id="text-2-1-1">
 <p>
 厄米矩阵定义为满足
@@ -282,8 +282,8 @@
 </div>
 </div>
 
-<div id="outline-container-org28eb4ff" class="outline-4">
-<h4 id="org28eb4ff"><span class="section-number-4">2.1.2.</span> \(2\times 2\)</h4>
+<div id="outline-container-org8a1cff7" class="outline-4">
+<h4 id="org8a1cff7"><span class="section-number-4">2.1.2.</span> \(2\times 2\)</h4>
 <div class="outline-text-4" id="text-2-1-2">
 <p>
 比如对于一个 \(2\times 2\) 的厄米矩阵应满足
@@ -326,8 +326,8 @@
 </div>
 </div>
 
-<div id="outline-container-org794ac35" class="outline-4">
-<h4 id="org794ac35"><span class="section-number-4">2.1.3.</span> \(n\times n\)</h4>
+<div id="outline-container-orge89b5f3" class="outline-4">
+<h4 id="orge89b5f3"><span class="section-number-4">2.1.3.</span> \(n\times n\)</h4>
 <div class="outline-text-4" id="text-2-1-3">
 <p>
 更一般地, 可以证明, 对于 \(n\times n\) 的厄米矩阵, 对角元都是实的, 非对角元是一组
@@ -336,8 +336,8 @@
 </div>
 </div>
 
-<div id="outline-container-org9baf5a2" class="outline-4">
-<h4 id="org9baf5a2"><span class="section-number-4">2.1.4.</span> 性质</h4>
+<div id="outline-container-org02ceb38" class="outline-4">
+<h4 id="org02ceb38"><span class="section-number-4">2.1.4.</span> 性质</h4>
 <div class="outline-text-4" id="text-2-1-4">
 <ul class="org-ul">
 <li>厄米矩阵的本征值都是实数.</li>
@@ -347,12 +347,12 @@
 </div>
 </div>
 
-<div id="outline-container-org1081da5" class="outline-3">
-<h3 id="org1081da5"><span class="section-number-3">2.2.</span> 幺正矩阵</h3>
+<div id="outline-container-orgfe48796" class="outline-3">
+<h3 id="orgfe48796"><span class="section-number-3">2.2.</span> 幺正矩阵</h3>
 <div class="outline-text-3" id="text-2-2">
 </div>
-<div id="outline-container-orgc4520fd" class="outline-4">
-<h4 id="orgc4520fd"><span class="section-number-4">2.2.1.</span> 定义</h4>
+<div id="outline-container-org28773ff" class="outline-4">
+<h4 id="org28773ff"><span class="section-number-4">2.2.1.</span> 定义</h4>
 <div class="outline-text-4" id="text-2-2-1">
 <p>
 幺正矩阵定义为
@@ -369,8 +369,8 @@
 </div>
 </div>
 
-<div id="outline-container-org8b4cba8" class="outline-4">
-<h4 id="org8b4cba8"><span class="section-number-4">2.2.2.</span> \(2\times 2\)</h4>
+<div id="outline-container-org402248c" class="outline-4">
+<h4 id="org402248c"><span class="section-number-4">2.2.2.</span> \(2\times 2\)</h4>
 <div class="outline-text-4" id="text-2-2-2">
 <p>
 \(2\times 2\) 的幺正矩阵应满足
@@ -434,8 +434,8 @@
 </div>
 </div>
 
-<div id="outline-container-org7c5e68f" class="outline-4">
-<h4 id="org7c5e68f"><span class="section-number-4">2.2.3.</span> 问题</h4>
+<div id="outline-container-orgf290534" class="outline-4">
+<h4 id="orgf290534"><span class="section-number-4">2.2.3.</span> 问题</h4>
 <div class="outline-text-4" id="text-2-2-3">
 <p>
 厄米矩阵一定可以通过幺正变换对角化吗?
@@ -445,8 +445,8 @@
 </div>
 </div>
 
-<div id="outline-container-org8a1ae16" class="outline-2">
-<h2 id="org8a1ae16"><span class="section-number-2">3.</span> 例: BCS Mean-Field Hamiltonian 的对角化</h2>
+<div id="outline-container-orgc5f8273" class="outline-2">
+<h2 id="orgc5f8273"><span class="section-number-2">3.</span> 例: BCS Mean-Field Hamiltonian 的对角化</h2>
 <div class="outline-text-2" id="text-3">
 <p>
 BCS 平均场的 Hamiltonian 为
@@ -786,8 +786,8 @@ where
 </div>
 </div>
 
-<div id="outline-container-org1c3e89b" class="outline-2">
-<h2 id="org1c3e89b"><span class="section-number-2">4.</span> Reference</h2>
+<div id="outline-container-orgf726e42" class="outline-2">
+<h2 id="orgf726e42"><span class="section-number-2">4.</span> Reference</h2>
 <div class="outline-text-2" id="text-4">
 <p>
 [1]
@@ -806,7 +806,7 @@ where
 </div>
 <div id="postamble" class="status">
 <p class="date">Date: 2019-11-25 Mon 00:00</p>
-<p class="date">Created: 2022-04-16 Sat 23:06</p>
+<p class="date">Created: 2022-04-18 Mon 20:39</p>
 <p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>

@@ -93,12 +93,12 @@ $E = \sqrt{p^{2} + m^2}$ , if $p = 0$ , the energy is not zero, that's the mass.
 Oscillations of a field when it is homogeneous when is has infinite wavelength
 those are the things we call mass.
 
-[[file:2021-09-06-专业笔记-SusskindsParticlePhysicsII/dispersion.png]]
+[[file:2021-09-06-physics-SusskindsParticlePhysicsII/dispersion.png]]
 
 The Goldstone boson got eaten by the gauge boson resulting in giving the Higgs
 boson a mass.
 
-[[file:2021-09-06-专业笔记-SusskindsParticlePhysicsII/mexico.png]]
+[[file:2021-09-06-physics-SusskindsParticlePhysicsII/mexico.png]]
 
 
 * Lecture 8: The Higgs Field

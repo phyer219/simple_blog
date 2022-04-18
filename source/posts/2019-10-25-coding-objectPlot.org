@@ -117,11 +117,11 @@ myFigure.savefig('myFigure.jpg', bbox_inches = 'tight', facecolor='pink')
 
 * Results
 
-[[file:./2019-10-25-软件使用-objectPlot/myFigure.jpg]]
+[[file:./2019-10-25-coding-objectPlot/myFigure.jpg]]
 
 * Code
 
-[[file:./2019-10-25-软件使用-objectPlot/objectPlot.py]]
+[[file:./2019-10-25-coding-objectPlot/objectPlot.py]]
 
 * Reference: 
 

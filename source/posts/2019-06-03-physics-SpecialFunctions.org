@@ -134,14 +134,14 @@ plt.xlabel(r"$x$")
 plt.ylabel(r"$P_ { l }(x)$")
 plt.title("Legendre Polynomials")
 plt.legend()
-plt.savefig("./2019-06-03-专业笔记-PartialWaveExpansion/LegenderPolynomials.jpg"\
+plt.savefig("./2019-06-03-physics-PartialWaveExpansion/LegenderPolynomials.jpg"\
     ,writer='imageffmagick', dpi=100)
 #+END_SRC
 
 #+RESULTS:
 : None
 
-[[file:./2019-06-03-专业笔记-PartialWaveExpansion/LegenderPolynomials.jpg]]
+[[file:./2019-06-03-physics-PartialWaveExpansion/LegenderPolynomials.jpg]]
 
 下面是用 sympy 输出前七阶 Legendre Polynomials
 #+BEGIN_SRC python :results output 
@@ -419,14 +419,14 @@ plt.title("Bessel Functions")
 
 end = time.process_time()
 print('time is',end-start)
-plt.savefig("./2019-06-03-专业笔记-PartialWaveExpansion/BFF.jpg"\
+plt.savefig("./2019-06-03-physics-PartialWaveExpansion/BFF.jpg"\
     ,writer='imageffmagick', dpi=100)
 #+END_SRC
 
 #+RESULTS:
 : time is 0.765683398
 
-[[file:./2019-06-03-专业笔记-PartialWaveExpansion/BFF.jpg]]
+[[file:./2019-06-03-physics-PartialWaveExpansion/BFF.jpg]]
 
 可以看出它在 $x=0$ 处没有发散.
 
@@ -527,14 +527,14 @@ plt.title("Modified Bessel Functions")
 
 end = time.process_time()
 print('time is',end-start)
-plt.savefig("./2019-06-03-专业笔记-PartialWaveExpansion/MBFF.jpg"\
+plt.savefig("./2019-06-03-physics-PartialWaveExpansion/MBFF.jpg"\
     ,writer='imageffmagick', dpi=100)
 #+END_SRC
 
 #+RESULTS:
 : time is 0.721994943
 
-[[file:./2019-06-03-专业笔记-PartialWaveExpansion/MBFF.jpg]]
+[[file:./2019-06-03-physics-PartialWaveExpansion/MBFF.jpg]]
 
 *** Modified Bessel Functions of the Second Kind
 

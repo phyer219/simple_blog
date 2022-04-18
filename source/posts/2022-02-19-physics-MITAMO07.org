@@ -203,7 +203,7 @@ An Introduction to Atomic-, Molecular- and Quantum Physics. (Springer Berlin
 Heidelberg, 2018)  第 167, 168 页 5.5.4
 Spin-Orbit Coupling and Fine Structure.
 
-[[file:2022-02-19-专业笔记-MITAMO07/FS_Hydrogen.png]]
+[[file:2022-02-19-physics-MITAMO07/FS_Hydrogen.png]]
 
 So that means at the level of $10^{-4}$ eV, we understand atomic structure. But
 we want to go further. And the next thing we want to discuss is that --- what is
@@ -216,7 +216,7 @@ When we bring in the proton. So far we have said there is a point charge, but
 the proton is a particle which has finite size. But also, it has finite angular
 momentum. And then we have HFS.
 
-[[file:2022-02-19-专业笔记-MITAMO07/RoadMap.png]]
+[[file:2022-02-19-physics-MITAMO07/RoadMap.png]]
 
 * Lamb Shift (QED)
 

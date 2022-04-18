@@ -49,4 +49,4 @@ writer = ani.FFMpegFileWriter(fps=60, metadata=dict(artist='Me'), bitrate=180)
 plt.show()
 #+end_src
 
-[[file:./2020-09-18-软件使用-animation_plot/Harmonic.gif]]
+[[file:./2020-09-18-coding-animation_plot/Harmonic.gif]]

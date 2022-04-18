@@ -11,7 +11,7 @@
 
 2020 年在家度过的那个学期, 把 ipad 的屏幕摔碎了, 如图
 
-file:2021-07-24-想说-ipad_sereen/intro1.jpg
+file:2021-07-24-thinking-ipad_sereen/intro1.jpg
 
 同年 9 月份开学后, 由于疫情, 校外寄修, 280元修好.
 
@@ -34,7 +34,7 @@ file:2021-07-24-想说-ipad_sereen/intro1.jpg
 
 自己买了胶, 打算粘一边上的裂缝. 但一不小心, 裂缝又扩到了全屏(裂缝效果如图)
 
-[[file:2021-07-24-想说-ipad_sereen/intro2.jpg]]
+[[file:2021-07-24-thinking-ipad_sereen/intro2.jpg]]
 
 对第三方的维修很失望, 又有些生气! 所以要自己换.
 
@@ -43,7 +43,7 @@ file:2021-07-24-想说-ipad_sereen/intro1.jpg
 工具非常重要, 工具不全, 很有可能对机器造成二次伤害. 因此我准备了充足的工具. 最终
 用到的工具如下图
 
-[[file:2021-07-24-想说-ipad_sereen/tools1.png]]
+[[file:2021-07-24-thinking-ipad_sereen/tools1.png]]
 
 胶是单独买的, 清洗液, 螺丝刀也是好久之前买的. 刀片和撬片是买屏幕和 home 键送的. 刮
 刀是之前买墙纸送的. 所以新买的物品及价格如下表
@@ -62,7 +62,7 @@ file:2021-07-24-想说-ipad_sereen/intro1.jpg
 
 下图是买屏幕和 home 键送的一些工具, 但是没有用到
 
-[[file:2021-07-24-想说-ipad_sereen/tools2.jpg]]
+[[file:2021-07-24-thinking-ipad_sereen/tools2.jpg]]
 
 * 过程
 
@@ -72,50 +72,50 @@ file:2021-07-24-想说-ipad_sereen/intro1.jpg
 
 准备开始(11:50)
 
-[[file:2021-07-24-想说-ipad_sereen/prepare1.jpg]]
+[[file:2021-07-24-thinking-ipad_sereen/prepare1.jpg]]
 
 首先关机.
 
 沿着屏幕没有音量键的一侧(原因是有音量键的一侧有排线)用热风枪吹一下, 用刀
 片划出缝隙, 插入撬片, 如下图(12:00)
 
-[[file:2021-07-24-想说-ipad_sereen/disassemble1.jpg]]
+[[file:2021-07-24-thinking-ipad_sereen/disassemble1.jpg]]
 
 同样吹一下上下两侧, 撬开(12:02)
 
-[[file:2021-07-24-想说-ipad_sereen/disassemble2.jpg]]
+[[file:2021-07-24-thinking-ipad_sereen/disassemble2.jpg]]
 
 撬的过程中又出现了新的裂缝, 但是没关系, 旧屏幕不要了.
 
 撬开三侧的屏幕后, 把剩下的一侧也用热风枪吹一下, 掀开屏幕, 并拧下内屏四个
 角上的螺丝(图中红色圈出的) (12:03)
 
-[[file:2021-07-24-想说-ipad_sereen/disassemble3.jpg]]
+[[file:2021-07-24-thinking-ipad_sereen/disassemble3.jpg]]
 
 拧下内屏四个角上的螺丝后, 掀开内屏, 注意保护排线, 如下图, (第一次维修的标签还在)
 (12:06)
 
-[[file:2021-07-24-想说-ipad_sereen/disassemble4.jpg]]
+[[file:2021-07-24-thinking-ipad_sereen/disassemble4.jpg]]
 
 拧开三颗螺丝(下图红圈)看见排线(12:11)
 
-file:2021-07-24-想说-ipad_sereen/disassemble5.jpg
+file:2021-07-24-thinking-ipad_sereen/disassemble5.jpg
 
 下图中红色圈出三个排线, 都要小心拔下
 
-file:2021-07-24-想说-ipad_sereen/disassemble6.jpg
+file:2021-07-24-thinking-ipad_sereen/disassemble6.jpg
 
 用镊子撬起左边两个(12:13)
 
-file:2021-07-24-想说-ipad_sereen/disassemble7.jpg
+file:2021-07-24-thinking-ipad_sereen/disassemble7.jpg
 
 右边一个, 揭下上面的一块黑色胶布, 向下图中右侧方向拉出即可 (12:14)
 
-file:2021-07-24-想说-ipad_sereen/disassemble8.jpg
+file:2021-07-24-thinking-ipad_sereen/disassemble8.jpg
 
 所有排线都已拆下, 此时内外屏可以一起拿下来了 (12:15)
 
-file:2021-07-24-想说-ipad_sereen/disassemble9.jpg
+file:2021-07-24-thinking-ipad_sereen/disassemble9.jpg
 
 所以, 一个像我一样没有任何拆机经验的人, 在准备好工具, 看过一些教程后, 25分钟可以
 拆下屏幕. 此过程没有任何难度, 只要注意排线即可.
@@ -126,25 +126,25 @@ file:2021-07-24-想说-ipad_sereen/disassemble9.jpg
 
 用热风枪吹一下, 用镊子取下旧屏幕的原装的 home 键 (12:16)
 
-file:2021-07-24-想说-ipad_sereen/homekey1.jpg
+file:2021-07-24-thinking-ipad_sereen/homekey1.jpg
 
 
 把新屏幕上的也用热风枪吹一下, 用镊子取下. 因为粘的比较
 结实, 所以一开始用力大了点, 听到一点响声, 还以为屏幕碎了, 好在不是. 之后拆的就比
 较温柔了(12:26)
 
-file:2021-07-24-想说-ipad_sereen/homekey2.jpg
+file:2021-07-24-thinking-ipad_sereen/homekey2.jpg
 
 取下之后, 发现原来的 home 是有回弹的. 但是放进屏幕上的坑里又没有回弹了.
 
 我以为是上面残胶导致没有贴合好, 就用热风枪吹一下, 用镊子取下殘胶
 (12:34)
 
-file:2021-07-24-想说-ipad_sereen/homekey3.jpg
+file:2021-07-24-thinking-ipad_sereen/homekey3.jpg
 
 残胶已经取下(12:36)
 
-file:2021-07-24-想说-ipad_sereen/homekey4.jpg
+file:2021-07-24-thinking-ipad_sereen/homekey4.jpg
 
 但是装到坑里还是没有回弹. 我也终于发现了原因!
 
@@ -154,33 +154,33 @@ file:2021-07-24-想说-ipad_sereen/homekey4.jpg
 我的处理方法是, 在 C 处的屏幕上滴上几滴胶(A处有残留的双面胶, 就不滴胶了), 然后准
 B 处, 使 B 处接触但微动开关处于不按下的状态, 静置, 等胶表面凝固
 
-file:2021-07-24-想说-ipad_sereen/figure1.jpg
+file:2021-07-24-thinking-ipad_sereen/figure1.jpg
 
 在此附上三个 home 键的对比 (12:37)
 
-file:2021-07-24-想说-ipad_sereen/homekey5.jpg
+file:2021-07-24-thinking-ipad_sereen/homekey5.jpg
 
 可以发现, 原装的和第三方生产的 home 键结构不一样. 第三方的 home 键微动开关是一体
 的, 因此比较好安装. 但是第三方的没有指纹功能.
 
 为了保险起见, 在 A处也上了一些胶 (12:47)
 
-file:2021-07-24-想说-ipad_sereen/homekey6.jpg
+file:2021-07-24-thinking-ipad_sereen/homekey6.jpg
 
 ** 清胶
 
 home 键上的胶外表固化需要一些时间. 此时可以清理主机上的殘胶 (不得不说, 这项工作还有
 点解压... 将整块的胶撕下...)  (12:54)
 
-file:2021-07-24-想说-ipad_sereen/clean1.jpg
+file:2021-07-24-thinking-ipad_sereen/clean1.jpg
 
 意外地发现, 磁吸就是这几块磁铁的作用 (13:00)
 
-file:2021-07-24-想说-ipad_sereen/clean2.jpg
+file:2021-07-24-thinking-ipad_sereen/clean2.jpg
 
 四周的残胶全部清理干净! (13:09)
 
-file:2021-07-24-想说-ipad_sereen/clean3.jpg
+file:2021-07-24-thinking-ipad_sereen/clean3.jpg
 
 ** 装
 
@@ -189,7 +189,7 @@ file:2021-07-24-想说-ipad_sereen/clean3.jpg
 
 接上新屏幕的排线 (13:17)
 
-file:2021-07-24-想说-ipad_sereen/assemble1.jpg
+file:2021-07-24-thinking-ipad_sereen/assemble1.jpg
 
 
 稍稍拧上内屏螺丝. 合上屏幕. 过程中发现需要把排线折一下, 才能把屏幕合上. 这样一来
@@ -198,7 +198,7 @@ file:2021-07-24-想说-ipad_sereen/assemble1.jpg
 像其它教程中一样, 拖动一个图标四处划一下测试触屏. 顺便还测试了回弹和指纹, 都正常.
 (13:29)
 
-file:2021-07-24-想说-ipad_sereen/assemble2.jpg
+file:2021-07-24-thinking-ipad_sereen/assemble2.jpg
 
 把内屏的四颗螺丝拧紧. 擦干净内屏. 擦内屏这个活, 我擦了 20 分钟, 但总不能完全擦干
 净. 也许没有办法做到完全干净的, 但其实也没有大的影响.
@@ -208,14 +208,14 @@ file:2021-07-24-想说-ipad_sereen/assemble2.jpg
 再测试一下, 所有功能都没问题, 完美. 放个视频, 试一下声音也没问题(重影不是屏幕的
 原因, 是因为西片受到了惊吓...) (13:50)
 
-file:2021-07-24-想说-ipad_sereen/assemble3.jpg
+file:2021-07-24-thinking-ipad_sereen/assemble3.jpg
 
 ** 完
 
 顺便把送的膜也贴上了! 不太放心有排线的一侧, 然后又上了一下胶, 过后再清掉多余的.
 找几本书压一下吧! ^ _ ^ (14:03)
 
-file:2021-07-24-想说-ipad_sereen/complete1.jpg
+file:2021-07-24-thinking-ipad_sereen/complete1.jpg
 
 总共用时两小时十三分钟. 如果再来一次的话, 大概一个小时即可. 内屏的灰也没了, home
 键也有回弹了!

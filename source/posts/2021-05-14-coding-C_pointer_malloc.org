@@ -336,9 +336,9 @@ include <stdio.h>
  }
 #+end_src
 
-结果是几秒后内存就满了. 但是系统会有保护机制? 直接杀掉了进程([[file:2021-05-14-软件使用-C_pointer_malloc/memory_leak.c][memory_leak.c]] [[file:2021-05-14-软件使用-C_pointer_malloc/makefile][makefile]]):
+结果是几秒后内存就满了. 但是系统会有保护机制? 直接杀掉了进程([[file:2021-05-14-coding-C_pointer_malloc/memory_leak.c][memory_leak.c]] [[file:2021-05-14-coding-C_pointer_malloc/makefile][makefile]]):
 
-[[file:2021-05-14-软件使用-C_pointer_malloc/memory_leak_res.png]]
+[[file:2021-05-14-coding-C_pointer_malloc/memory_leak_res.png]]
 
 * Reference
 

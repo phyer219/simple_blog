@@ -169,7 +169,7 @@ ALLOWED_HOSTS = [‘服务器IP地址’]
 
 此时从本地访问 http://你的服务器IP:8000 ，出现如下小火箭界面，表示成功
 
-![image-20200204125926942](./2020-02-03-专业笔记-Django/image-20200204125926942.png)
+![image-20200204125926942](./2020-02-03-physics-Django/image-20200204125926942.png)
 
 如果无法访问，可以查看一下服务器的 8000 端口是否开放。一般都可以从云服务器的管理页面中找到安全组设置。
 
@@ -475,7 +475,7 @@ admin.site.register(Shijing)
 
 在本地通过浏览器访问 IP::8000/admin/ 就会看到 Shijing
 
-![image-20200204153009618](./2020-02-03-专业笔记-Django/image-20200204153009618.png)
+![image-20200204153009618](./2020-02-03-physics-Django/image-20200204153009618.png)
 
 # 迁入 json 数据
 
@@ -551,7 +551,7 @@ poetry.commit()                                      # 提交更改
 
 进入管理界面，看到 305 个导入的数据
 
-![image-20200204165427906](./2020-02-03-专业笔记-Django/image-20200204165427906.png)
+![image-20200204165427906](./2020-02-03-physics-Django/image-20200204165427906.png)
 
 成功！
 
@@ -606,7 +606,7 @@ poetry
 
 shijing_list 就是通过 render() 函数传递过来的字典的键。重启 httpd 从本地访问 IP/poetry，就看到如下界面了！
 
-![image-20200204210647475](./2020-02-03-专业笔记-Django/image-20200204210647475.png)
+![image-20200204210647475](./2020-02-03-physics-Django/image-20200204210647475.png)
 
 # 后续操作
 
@@ -768,7 +768,7 @@ pip 9.0.3 from /usr/lib/python3.6/site-packages (python 3.6)
 从本机登录 IP 会看到测试界面
 
 
-![image-20200204114524492](./2020-02-03-专业笔记-Django/image-20200204114524492.png)
+![image-20200204114524492](./2020-02-03-physics-Django/image-20200204114524492.png)
 
 让 Apache 开机自动运行
 
@@ -1036,7 +1036,7 @@ Quit the server with CONTROL-C.
 
 此时从本地访问 8000 端口，终于出现了小火箭界面
 
-![image-20200204125926942](./2020-02-03-专业笔记-Django/image-20200204125926942.png)
+![image-20200204125926942](./2020-02-03-physics-Django/image-20200204125926942.png)
 
 参考官方文档连接 Apache https://docs.djangoproject.com/zh-hans/3.0/howto/deployment/wsgi/modwsgi/
 
@@ -1422,7 +1422,7 @@ admin.site.register(Shijing)
 
 这时 IP::8000/admin/　就会看到 Shijing
 
-![image-20200204153009618](./2020-02-03-专业笔记-Django/image-20200204153009618.png)
+![image-20200204153009618](./2020-02-03-physics-Django/image-20200204153009618.png)
 
 ## 迁入 json 数据
 
@@ -1505,7 +1505,7 @@ poetry.commit()                                      # 提交更改
 
 进入管理界面，看到 305 个导入的数据
 
-![image-20200204165427906](./2020-02-03-专业笔记-Django/image-20200204165427906.png)
+![image-20200204165427906](./2020-02-03-physics-Django/image-20200204165427906.png)
 
 成功！
 
@@ -1559,7 +1559,7 @@ def poetry(request):
 
 重启 httpd 从本地访问 IP/poetry，就看到界面了
 
-![image-20200204210647475](./2020-02-03-专业笔记-Django/image-20200204210647475.png)
+![image-20200204210647475](./2020-02-03-physics-Django/image-20200204210647475.png)
 
 # 参考资料
 

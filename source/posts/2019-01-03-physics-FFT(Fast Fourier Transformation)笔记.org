@@ -280,7 +280,7 @@ plt.show()
 
 #+RESULTS:
 
-[[file:./2019-01-03-专业笔记-FFT(Fast Fourier Transformation)笔记/sin.png]]
+[[file:./2019-01-03-physics-FFT(Fast Fourier Transformation)笔记/sin.png]]
 
 正如预期, 分别在频率为 $17, 57, 97$ 出现峰. $57$ 的峰最高, $97$ 次之, $17$ 最低.
 
@@ -321,7 +321,7 @@ plt.show()
 
 #+RESULTS:
 
-[[file:./2019-01-03-专业笔记-FFT(Fast Fourier Transformation)笔记/gau.png]]
+[[file:./2019-01-03-physics-FFT(Fast Fourier Transformation)笔记/gau.png]]
 
 这也符合预期, 原来更尖的高斯函数, 变换之后变得更平.
 
